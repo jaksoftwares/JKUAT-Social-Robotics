@@ -42,7 +42,16 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_tailwind",
     # LOCAL APPS
+    "accounts",
     "core",
+    "news",
+    "team",
+    "projects",
+    "robots",
+    "publications",
+    "responsible_computing",
+    "outreach",
+    "faqs",
 ]
 
 

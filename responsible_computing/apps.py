@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class OutreachActivitiesConfig(AppConfig):
+class ResponsibleComputingConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'outreach_activities'
+    name = 'responsible_computing'
