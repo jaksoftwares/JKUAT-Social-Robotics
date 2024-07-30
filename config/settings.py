@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django_browser_reload",
     "crispy_forms",
     "crispy_tailwind",
+    "django_ckeditor_5",
     # LOCAL APPS
     "accounts",
     "core",
