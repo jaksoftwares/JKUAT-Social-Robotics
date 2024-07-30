@@ -151,3 +151,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Crispy forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"
+
+
+AUTH_USER_MODEL = "accounts.CustomUser"
+LOGIN_REDIRECT_URL = "core:moderator"
+LOGOUT_REDIRECT_URL = "core:home"

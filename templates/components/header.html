@@ -2,7 +2,17 @@
     <nav>
         <ul>
             <li><a href="{% url 'core:home' %}">Home</a></li>
-            <li><a href="{% url 'accounts:login' %}">Login</a></li>
+            {% if user.is_authenticated %}
+            Hi {{ user.username }}!
+            <form id="logout-form" method="post" action="{% url 'accounts:logout' %}">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+
+            {% else %}
+            <p>You are not logged in</p>
+            <a href="{% url 'accounts:login' %}">Login</a>
+            {% endif %}
             <li><a href="{% url 'news:news' %}">News</a></li>
             <li><a href="{% url 'team:team' %}">Team</a></li>
             <li><a href="{% url 'projects:projects' %}">Projects</a></li>
