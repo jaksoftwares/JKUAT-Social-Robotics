@@ -5,5 +5,9 @@ def home(request):
     return render(request, "core/index.html")
 
 
+def about(request):
+    return render(request, "core/about.html")
+
+
 def admin(request):
     return render(request, "core/moderator.html")
