@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     "accounts",
     "core",
     "news",
-    "team",
+    "people",
     "projects",
     "robots",
     "publications",

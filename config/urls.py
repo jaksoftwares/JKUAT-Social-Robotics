@@ -11,7 +11,7 @@ urlpatterns = [
     path("faqs/", include("faqs.urls", namespace="faqs")),
     path("news/", include("news.urls", namespace="news")),
     path("outreach/", include("outreach.urls", namespace="outreach")),
-    path("team/", include("team.urls", namespace="team")),
+    path("team/", include("people.urls", namespace="team")),
     path("robots/", include("robots.urls", namespace="robots")),
     path(
         "responsible_computing/",

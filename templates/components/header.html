@@ -1,5 +1,5 @@
 {% load static %}
-<link href="{% static 'css/tailwind.css' %}" rel="stylesheet" />
+
 <header class="bg-[#019ED5] p-5" id="main-header">
   <nav class="flex items-center justify-center gap-12" id="main-nav">
     <div class="flex items-center mr-24 lg:mr-36">
@@ -19,7 +19,7 @@
         </li>
         <li>
           <a
-            href="{% url 'team:team' %}"
+            href="{% url 'people:list' %}"
             class="text-white no-underline hover:text-red-500 hover:underline {% if request.path == '/team/' %}text-red-500 underline{% endif %}"
           >
             Team
