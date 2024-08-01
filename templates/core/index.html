@@ -8,5 +8,101 @@
 
 
 {% block body %}
-<h1 class="text-center text-blue-600">Home page</h1>
+
+{% load static %}
+
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+
+<body class="bg-gray-100">
+    
+    <!-- Hero Section -->
+    <section class="bg-Custom-Gray p-8 shadow-lg mx-auto">
+        
+        <div class="container mx-auto flex flex-col items-center md:flex-row">
+            <div class="w-full md:w-1/2 mb-8 md:mb-0">
+               <img src="{% static 'img/image 2.png' %}" alt="Robot Image" class="mx-auto">
+           </div> 
+            <div class="flex flex-col items-start text-left text-center mt-16">
+                    <h1 class="text-6xl font-raleway font-bold text-black">Welcome to JKUAT</h1>        
+                    <h2 class="font-raleway  text-6xl font-light text-gray-800 mt-2 ">SOCIAL ROBOTICS</h2>
+                <div class="flex flex-col items-start text-left mt-8">
+                    <p class="mt-2 text-left font-semibold text-6*l font-lato" >Tagline: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#" class="mt-4 inline-block bg-custom-green text-white px-4 py-2 rounded-full">Meet the team</a> 
+                    
+            </div>
+        
+    </section>
+
+    <!-- About Section -->
+    <!-- <section class=" flex flex-col md:flex-row ">
+        <div class="flex-1 md:pr-4 bg-white p-6 shadow-lg">
+            <div class="mt-4">
+                <img src="{% static 'img/image 3.png' %}" alt="About Image" class="w-full h-64 object-cover">
+            </div>
+            <div class="flex-1 md:pl-4 mt-4 md:mt-0">
+                    <h2 class="text-center text-2xl font-bold text-gray-800">About Social Robotics</h2> 
+                    <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris efficitur, vitae egestas lectus molestie.</p>
+                    <a href="#" class="mt-4 inline-block bg-green-500 text-white py-2 px-4 rounded">Read more</a>
+            </div>
+        </div>
+    </section> -->
+    <section class="flex flex-col md:flex-row mr-32 ml-32 mb-2">
+        <!-- Image Column -->
+        <div class="flex-1 md:pr-4 ml-12 mt-12 mb-12 mr-12">
+          <img src="{% static 'img/image 3.png' %}" alt="About Image" class="w-full h-64 object-cover">
+        </div>
+    
+        <!-- Text Column -->
+        <div class="flex-1 md:pl-4 mt-4 md:mt-0">
+          <h2 class="text-center text-5xl font-bold font-raleway mb-2 mt-8">About Social Robotics</h2>
+            <div class="text-center p-2 mt-4">
+                 <p class="text-gray-700 text-4*1 font-lato text-left ">
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque  placerat nibh vitae mauris efficitur, vitae egestas lectus molestie.  Duis dictum orci massa, sit amet pulvinar nisi porta vitae.
+                </p>
+                <a href="#" class="mt-8 inline-block bg-custom-green font-bold font-lato  text-white py-2 px-4 rounded">Read more</a>
+            </div>
+        </div>
+      </section>
+
+    <!-- Latest News Section -->
+    <section class="ml-32 mr-32 mt-8" >
+        <h2 class="text-center text-5xl mb-5 font-bold font-raleway">Latest News</h2>
+
+        <div class="flex flex-wrap -mx-4 ">
+            
+            <div class="w-full md:w-1/3 px-4 mb-8">
+                <div class="bg-white p-6 shadow-lg">
+                    <a href="#"class="group">
+                     <img src="{% static 'img/image 3.png' %}" alt="News Image 1" class="transition duration-600 ease-in-out transform hover:scale-110 hover:opacity-70 rounded-lg shadow-md w-full h-48 object-cover"> 
+                    </a>
+                     <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque  placerat nibh vitae mauris efficitur, vitae egestas lectus molestie.  Duis dictum orci massa, sit amet pulvinar nisi porta vitae.</p>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-1/3 px-4 mb-8 ">
+                <div class="bg-white p-6 shadow-lg">
+                    <a href="#"class="group">
+                        <img src="{% static 'img/image 3.png' %}" alt="News Image 1" class="transition duration-600 ease-in-out transform hover:scale-110 hover:opacity-70 rounded-lg shadow-md w-full h-48 object-cover"> 
+                       </a> 
+                    <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque  placerat nibh vitae mauris efficitur, vitae egestas lectus molestie.  Duis dictum orci massa, sit amet pulvinar nisi porta vitae.</p>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-1/3 px-4 mb-8">
+                <div class="bg-white p-6 shadow-lg">
+                    <a href="#"class="group">
+                        <img src="{% static 'img/image 3.png' %}" alt="News Image 1" class="transition duration-600 ease-in-out transform hover:scale-110 hover:opacity-70 rounded-lg shadow-md w-full h-48 object-cover"> 
+                    </a> 
+                    <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque  placerat nibh vitae mauris efficitur, vitae egestas lectus molestie.  Duis dictum orci massa, sit amet pulvinar nisi porta vitae.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+</html>
+
 {% endblock body %}
