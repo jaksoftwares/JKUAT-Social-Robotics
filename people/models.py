@@ -7,15 +7,20 @@ from accounts import models as ACCOUNTS_MODELS
 
 
 class Person(ACCOUNTS_MODELS.Profile):
+    """"    
+    degree
+    specialty
+    pursuing
+    focus
+    quote
+    description
+    """
     bio = models.TextField("Bio", blank=True, null=True)
     slug = models.SlugField(unique=True, max_length=100)
 
     class Meta:
         verbose_name = "Person"
         verbose_name_plural = "People"
-
-    def __str__(self):
-        return f"{self.first_name} {self.last_name}"
 
     def save(self, *args, **kwargs):
         if not self.slug:
