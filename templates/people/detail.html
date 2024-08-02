@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Team
+{% endblock title %}
+
+
+{% block body %}
+<h1>{{ person }}</h1>
+<p>{{ person.bio }}</p>
+<img src="{{ person.profile_picture.url }}" alt="{{ person }}">
+<a href="{% url 'people:list' %}">Back to list</a>
+{% endblock body %}

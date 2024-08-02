@@ -2,11 +2,16 @@
 
 
 {% block title %}
-    Team
+Team
 {% endblock title %}
-    
+
 
 
 {% block body %}
 <h1 class="text-center text-blue-600">Meet the minds behind JKUAT Social Robotics</h1>
+<ul>
+    {% for person in people %}
+    <li><a href="{% url 'people:detail' person.slug %}">{{ person }}</a></li>
+    {% endfor %}
+</ul>
 {% endblock body %}
