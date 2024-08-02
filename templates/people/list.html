@@ -1,17 +1,79 @@
 {% extends 'base.html' %}
 
+{% load static %}
 
 {% block title %}
 Team
 {% endblock title %}
 
-
-
 {% block body %}
-<h1 class="text-center text-blue-600">Meet the minds behind JKUAT Social Robotics</h1>
-<ul>
-    {% for person in people %}
-    <li><a href="{% url 'people:detail' person.slug %}">{{ person }}</a></li>
-    {% endfor %}
-</ul>
+<h1 class="text-center text-6xl py-5 text-green-700">Meet the minds behind JKUAT Social Robotics</h1>
+<div class="container mx-auto px-4">
+    <h2 class="text-6xl">Postgraduate Students</h2>
+    <div class="border border-black"></div>
+</div>
+<div class="container mx-auto my-32">
+    <div class="flex items-center gap-5 justify-center">
+        <div>
+            <img src="{% static 'img/default-profile.png' %}" alt="" class="w-64 h-64 object-contain rounded-full">
+        </div>
+        <div class="flex flex-col gap-5">
+            <div>
+                <h2 class="font-bold text-4xl">Paul Ndemo</h2>
+                <h4 class="text-red-500">Software Engineer</h4>
+            </div>
+            <div>
+                <h4 class="italic">Focus</h4>
+                <p class="container mx-auto">
+                    Using State Transition Graphs (STGs) in coordinating gazes between children with Autism Spectrum Disorder (ASD) and social robots to help them improve their social interaction skills. Studies in other contexts have explored the use of STGs in coordinating tasks and found them to be effective in reducing complexity and improving task execution efficiency. Hence, his research aims to explore how STGs can be used to coordinate gazes for effective interactions between children with ASD and social robots.
+                </p>
+            </div>
+            <a class="p-5 w-fit bg-green-700 text-white font-bold border-2 rounded-lg hover:bg-transparent hover:border-2 border-green-700 hover:text-green-700 transition duration-300" href="{% url 'people:detail' 'daniel-karume-20240801185840' %}">Visit Profile</a>
+        </div>
+    </div>
+</div>
+<div class="border border-black m-5 container mx-auto my-16"></div>
+<div class="container mx-auto my-16 text-end">
+    <div class="flex items-center gap-10 justify-center">
+        <div class="flex flex-col gap-5 w-full">
+            <div>
+                <h2 class="font-bold text-4xl">Paul 1Ndemo</h2>
+                <h4 class="text-red-500">Software Engineer</h4>
+            </div>
+            <div>
+                <h4 class="italic">Focus</h4>
+                <p class="container mx-auto">
+                    Using State Transition Graphs (STGs) in coordinating gazes between children with Autism Spectrum Disorder (ASD) and social robots to help them improve their social interaction skills. Studies in other contexts have explored the use of STGs in coordinating tasks and found them to be effective in reducing complexity and improving task execution efficiency. Hence, his research aims to explore how STGs can be used to coordinate gazes for effective interactions between children with ASD and social robots.
+                </p>
+            </div>
+            <div class="flex justify-end">
+                <a class="p-5 w-fit bg-green-700 text-white border-2 font-bold rounded-lg hover:bg-transparent hover:border-2 border-green-700 hover:text-green-700 transition duration-300" href="{% url 'people:detail' 'daniel-karume-20240801185840' %}">Visit Profile</a>
+            </div>
+        </div>
+        <div>
+            <img src="{% static 'img/default-profile.png' %}" alt="" class="w-64 h-64 object-contain rounded-full">
+        </div>
+    </div>
+</div>
+<div class="border border-black m-5 container mx-auto my-16"></div>
+<div class="container mx-auto my-16">
+    <div class="flex items-center gap-5 justify-center">
+        <div>
+            <img src="{% static 'img/default-profile.png' %}" alt="" class="w-64 h-64 object-contain rounded-full">
+        </div>
+        <div class="flex flex-col gap-5">
+            <div>
+                <h2 class="font-bold text-4xl">Paul Ndemo</h2>
+                <h4 class="text-red-500">Software Engineer</h4>
+            </div>
+            <div>
+                <h4 class="italic">Focus</h4>
+                <p class="container mx-auto">
+                    Using State Transition Graphs (STGs) in coordinating gazes between children with Autism Spectrum Disorder (ASD) and social robots to help them improve their social interaction skills. Studies in other contexts have explored the use of STGs in coordinating tasks and found them to be effective in reducing complexity and improving task execution efficiency. Hence, his research aims to explore how STGs can be used to coordinate gazes for effective interactions between children with ASD and social robots.
+                </p>
+            </div>
+            <a class="p-5 w-fit bg-green-700 text-white font-bold border-2 rounded-lg hover:bg-transparent hover:border-2 border-green-700 hover:text-green-700 transition duration-300" href="{% url 'people:detail' 'daniel-karume-20240801185840' %}">Visit Profile</a>
+        </div>
+    </div>
+</div>
 {% endblock body %}
