@@ -1,7 +1,18 @@
 from django.urls import path
-from . import views
+from .views import (
+    OutreachListView,
+    OutreachDetailView,
+    OutreachCreateView,
+    OutreachUpdateView,
+    OutreachDeleteView,
+)
+
 
 app_name = "outreach"
 urlpatterns = [
-    path("", views.index, name="outreach"),
+    path("", OutreachListView.as_view(), name="list"),
+    path("<slug:slug>/", OutreachDetailView.as_view(), name="detail"),
+    path("create/", OutreachCreateView.as_view(), name="create"),
+    path("<slug:slug>/update/", OutreachUpdateView.as_view(), name="update"),
+    path("<slug:slug>/delete/", OutreachDeleteView.as_view(), name="delete"),
 ]
