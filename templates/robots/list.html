@@ -9,4 +9,8 @@
 
 {% block body %}
 <h1 class="text-center text-blue-600">List of Robots</h1>
+{% for robot in robots %}
+<h1>{{robot}}</h1>
+{% endfor %}
+    
 {% endblock body %}
