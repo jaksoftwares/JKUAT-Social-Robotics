@@ -1,6 +1,6 @@
 {% load static %}
 
-<header class="bg-[#019ED5] p-5" id="main-header">
+<header class="bg-[#019ED5] py-5 relative" id="main-header">
   <nav class="flex items-center justify-center gap-12" id="main-nav">
     <div class="flex items-center mr-24 lg:mr-36">
       <a href="{% url 'core:home' %}">
@@ -68,12 +68,11 @@
       </ul>
     </div>
   </nav>
-  <div id="redbottomline">
+  <div>
     <img
+     class="w-screen h-3 absolute top-[87px]"
       src="{% static 'img/headerredbottom.png' %}"
       alt="redbottomline"
-      class="h-12"
-      id="redimg"
     />
   </div>
 </header>

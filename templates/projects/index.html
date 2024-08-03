@@ -15,19 +15,19 @@
 <div class="flex">
     <!-- Main Content -->
     <div class="p-4 ml-auto">
-        <h1 class="text-4xl font-bold text-center font-martel text-[#95CB48] mb-8">Projects</h1>
-
+        <h1 class="text-4xl font-bold text-center font-martel text-[#95CB48] mb-8 mt-4">Projects</h1>
+{% for project in projects %}
         <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
             <div class="flex">
                 <img src="{% static 'img/labrobots.jpeg' %}" alt="Building robot one" class="w-1/4 rounded-lg">
                 <div class="ml-6">
-                    <h2 class="text-3xl font-raleway font-semibold mb-2">Building robot one</h2>
-                    <p class="text-gray-700 font-lato">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris efficitur, vitae egestas lectus molestie. Duis dictum orci massa, sit amet pulvinar nisi porta vitae. Pellentesque aliquam sem metus, tincidunt mattis sapien tempor vitae. Nullam volutpat sit amet metus id scelerisque. Praesent felis tortor, fringilla ac condimentum a, ornare et sapien. Donec a turpis ultrices, fringilla eros vel, lobortis velit.</p>
+                    <h2 class="text-3xl font-raleway font-semibold mb-2">{{project.title}}</h2>
+                    <p class="text-gray-700 font-lato">{{project.description}}</p>
                 </div>
             </div>
         </div>
-
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+{% endfor %}
+        <!--<div class="bg-white rounded-lg shadow-lg p-6 mb-6">
             <div class="flex">
                 <img src="{% static 'img/labrobots.jpeg' %}"  alt="Building robot one" class="w-1/4 rounded-lg">
                 <div class="ml-6">
@@ -45,7 +45,7 @@
                     <p class="text-gray-700 font-lato">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris efficitur, vitae egestas lectus molestie. Duis dictum orci massa, sit amet pulvinar nisi porta vitae. Pellentesque aliquam sem metus, tincidunt mattis sapien tempor vitae. Nullam volutpat sit amet metus id scelerisque. Praesent felis tortor, fringilla ac condimentum a, ornare et sapien. Donec a turpis ultrices, fringilla eros vel, lobortis velit.</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 
