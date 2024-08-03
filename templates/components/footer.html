@@ -1,15 +1,112 @@
 {% load static %}
-<footer class="bg-black text-white py-8 mt-auto" id="mainfooter">
+
+<footer style="margin-top: 150px" class="bg-[#003B6D] text-white py-8 relative" id="mainfooter">
+    <!-- Added relative positioning for consistent layout -->
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+            <!-- Updated layout to be responsive with space between items -->
+            <div>
+                <h3 class="text-xl font-bold mb-2">Reach out to us</h3>
+                <p>
+                    Social Robotics
+                    <br /> JKUAT <br /> Juja, Kiambu
+                </p>
+                <p class="mt-4">
+                    <span class="block">📧 socialrobotics@gmail.com</span>
+                    <span class="block">📞 0712345678</span>
+                </p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-2">Links</h3>
+                <ul class="space-y-2">
+                    <!-- Added spacing between list items -->
+                    <li>
+                        <a href="{% url 'core:about' %}" class="target-link">About</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'people:list' %}" class="target-link">Team</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'news:list' %}" class="target-link">News</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'projects:projects' %}" class="target-link">Projects</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'outreach:list' %}" class="target-link">Outreach</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'publications:list' %}" class="target-link">Publications</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'responsible_computing:responsible_computing' %}" class="target-link">Responsible Computing</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'robots:list' %}" class="target-link">Robots</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="relative" id="footer-robot">
+                <!-- Added relative positioning for the image container -->
+                <img src="{% static 'img/naorobot2.png' %}" alt="Robot" class="w-64 h-auto transition-transform duration-500 hover:scale-105" id="footer-robot-img" />
+                <!-- Added hover effect to slightly enlarge the image -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Hover effect for target links */
+    
+    .target-link {
+        color: #b0b0b0;
+        /* Gray color for links */
+        text-decoration: none;
+        /* Remove default underline */
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+        /* Smooth transition for color and border */
+    }
+    
+    .target-link:hover {
+        color: #ffffff;
+        /* White color on hover */
+        border-bottom: 2px solid #ffffff;
+        /* Underline on hover */
+    }
+    /* Smooth transition for image scaling */
+    
+    .transition-transform {
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .target-link:hover::after {
+        width: 100%;
+        background: #ffffff;
+        /* Underline color on hover */
+    }
+    
+    #footer-robot {
+        margin-right: -200px;
+        margin-top: -300px;
+        margin-bottom: -120px;
+    }
+    /* CSS for the footer robot image */
+    
+    #footer-robot-img {
+        height: 400px;
+        width: 440px;
+    }
+</style>
+
+{% comment %} {% load static %}
+<footer class="bg-[#003B6D] text-white py-8 mt-auto" id="mainfooter">
     <div class="max-w-6xl mx-auto px-4 relative">
         <div class="flex justify-between items-center">
             <div>
                 <h3 class="text-xl font-bold">Reach out to us</h3>
                 <p>
                     Social Robotics
-                    <br>
-                    JKUAT
-                    <br>
-                    Juja, Kiambu
+                    <br /> JKUAT <br /> Juja, Kiambu
                 </p>
                 <p class="mt-4">
                     <span class="block">📧 socialrobotics@gmail.com</span>
@@ -43,8 +140,9 @@
                 </ul>
             </div>
             <div>
-                <img src="{% static 'img/naorobot2.png' %}" alt="Robot" class="w-64 h-auto absolute">
+                <img src="{% static 'img/naorobot2.png' %}" alt="Robot" class="w-64 h-auto absolute" />
             </div>
         </div>
     </div>
 </footer>
+{% endcomment %}

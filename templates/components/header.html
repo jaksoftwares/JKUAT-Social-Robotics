@@ -1,5 +1,195 @@
 {% load static %}
 
+<header class="bg-[#669ACC] py-5 relative sticky top-0 z-50" id="main-header">
+  <!-- Sticky Header: Ensures the header remains at the top of the page when scrolling -->
+  <nav class="flex items-center justify-center gap-12" id="main-nav">
+    <div class="flex items-center mr-24 lg:mr-36">
+      <a href="{% url 'core:home' %}" class="logo-link">
+        <img
+          src="{% static 'img/jkuatlogo.png' %}"
+          alt="Logo"
+          class="h-16 w-auto transition-transform duration-300"
+        />
+        <!-- Increased Logo Size: Made the logo bigger by changing h-12 to h-16 -->
+        <!-- Spin Effect: Logo spins on hover -->
+      </a>
+    </div>
+    <div class="ml-18">
+      <ul class="flex items-center gap-8 text-white ml-12 lg:ml-12 fade-in">
+        <!-- Increased Space Between Nav Text Labels: Changed gap-5 to gap-8 -->
+        <li>
+          <a
+            href="{% url 'core:about' %}"
+            class="nav-link text-lg {% if request.path == '/about/' %}active{% endif %}"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="{% url 'people:list' %}"
+            class="nav-link text-lg {% if request.path == '/team/' %}active{% endif %}"
+          >
+            Team
+          </a>
+        </li>
+        <li>
+          <a
+            href="{% url 'news:list' %}"
+            class="nav-link text-lg {% if request.path == '/news/' %}active{% endif %}"
+          >
+            News
+          </a>
+        </li>
+        <li>
+          <a
+            href="{% url 'projects:projects' %}"
+            class="nav-link text-lg {% if request.path == '/projects/' %}active{% endif %}"
+          >
+            Projects
+          </a>
+        </li>
+        <li>
+          <a
+            href="{% url 'outreach:list' %}"
+            class="nav-link text-lg {% if request.path == '/outreach/' %}active{% endif %}"
+          >
+            Outreach
+          </a>
+        </li>
+        <li>
+          <a
+            href="{% url 'publications:list' %}"
+            class="nav-link text-lg {% if request.path == '/publications/' %}active{% endif %}"
+          >
+            Publications
+          </a>
+        </li>
+        <li>
+          <a
+            href="{% url 'responsible_computing:responsible_computing' %}"
+            class="nav-link text-lg {% if request.path == '/responsible_computing/' %}active{% endif %}"
+          >
+            Responsible Computing
+          </a>
+        </li>
+        <li>
+          <a
+            href="{% url 'robots:list' %}"
+            class="nav-link text-lg {% if request.path == '/robots/' %}active{% endif %}"
+          >
+            Robots
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div>
+    <img
+      class="w-screen h-3 absolute top-[102px]"
+      src="{% static 'img/headerredbottom.png' %}"
+      alt="redbottomline"
+    />
+  </div>
+</header>
+
+<style>
+  /* Fade-in effect */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Underline slide-in on hover */
+  .nav-link {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: red;
+    transition: width 0.4s ease;
+    -webkit-transition: width 0.4s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+    background: red;
+  }
+
+  /* Bounce effect on hover */
+  .nav-link:hover {
+    transform: translateY(-3px);
+    transition: transform 0.3s;
+  }
+
+  /* Logo spin effect */
+  .logo-link:hover img {
+    transform: rotate(360deg);
+    transition: transform 0.6s;
+  }
+
+  /* Active nav link styles */
+  .nav-link.active {
+    color: red;
+    pointer-events: none; /* Disable clicking on active link */
+  }
+
+  /* Hide header smoothly */
+  #main-header {
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hiding */
+  }
+
+  #main-header.hide {
+    transform: translateY(-100%);
+  }
+</style>
+
+<script>
+  let lastScrollTop = 0;
+  let isScrolling;
+  const header = document.getElementById("main-header");
+
+  window.addEventListener("scroll", function () {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down
+      header.classList.add("hide");
+    } else {
+      // Scrolling up
+      header.classList.remove("hide");
+    }
+
+    // Clear any previous timeout
+    clearTimeout(isScrolling);
+
+    // Set a timeout to hide the header when scrolling stops
+    isScrolling = setTimeout(function () {
+      header.classList.remove("hide");
+    }, 100); // 100ms delay before hiding the header after scrolling stops
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+  });
+</script>
+
+{% comment %} {% load static %}
+
 <header class="bg-[#019ED5] py-5 relative" id="main-header">
   <nav class="flex items-center justify-center gap-12" id="main-nav">
     <div class="flex items-center mr-24 lg:mr-36">
@@ -78,14 +268,14 @@
   </nav>
   <div>
     <img
-     class="w-screen h-3 absolute top-[87px]"
+      class="w-screen h-3 absolute top-[87px]"
       src="{% static 'img/headerredbottom.png' %}"
       alt="redbottomline"
     />
   </div>
 </header>
 
-{% comment %} {% if user.is_authenticated %}
+{% endcomment %} {% comment %} {% if user.is_authenticated %}
 <li class="flex items-center">
   Hi {{ user.username }}!
   <form
