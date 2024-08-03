@@ -2,7 +2,7 @@
 
 
 {% block title %}
-{% if object %}Edit{% else %}Create{% endif %} Outreach Activity
+{% if object %}Edit{% else %}Create{% endif %} Publication
 {% endblock title %}
 
 
@@ -13,5 +13,5 @@
     {{ form.as_p }}
     <button type="submit">{% if object %}Update{% else %}Create{% endif %}</button>
 </form>
-<a href="{% url 'outreach:list' %}">Back to list</a>
+<a href="{% url 'publications:list' %}">Back to list</a>
 {% endblock body %}
