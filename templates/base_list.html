@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="bg-custom-navyBlue p-8">
+    <h1 class="text-white font-bold text-3xl">
+        {% block banner_title %}{% endblock banner_title %}
+    </h1>
+</div>
+<div>
+    {% block content %}{% endblock content %}
+</div>
+{% endblock body %}

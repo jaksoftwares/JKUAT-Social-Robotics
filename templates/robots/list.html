@@ -1,16 +1,18 @@
-{% extends 'base.html' %}
+{% extends 'base_list.html' %}
 
 
 {% block title %}
-    Robots
+Robots
 {% endblock title %}
-    
 
 
-{% block body %}
+{% block banner_title %}
+    Robots
+{% endblock banner_title %}
+
+{% block content %}
 <h1 class="text-center text-blue-600">List of Robots</h1>
 {% for robot in robots %}
 <h1>{{robot}}</h1>
 {% endfor %}
-    
-{% endblock body %}
+{% endblock content %}
