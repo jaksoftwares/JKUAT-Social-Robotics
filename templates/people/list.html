@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_list.html' %}
 
 {% load static %}
 
@@ -6,8 +6,13 @@
 Team
 {% endblock title %}
 
-{% block body %}
-<h1 class="text-center text-6xl py-5 my-5 text-custom-navyBlue">Meet the minds behind JKUAT Social Robotics</h1>
+
+{% block banner_title %}
+Meet the minds behind JKUAT Social Robotics
+{% endblock banner_title %}
+
+
+{% block content %}
 <div class="container mx-auto px-4">
     <h2 class="text-6xl">Postgraduate Students</h2>
     <div class="border border-black"></div>
@@ -165,4 +170,4 @@ Team
         </div>
     </div>
 </div>
-{% endblock body %}
+{% endblock content %}

@@ -1,17 +1,20 @@
-{% extends 'base.html' %}
-
+{% extends 'base_list.html' %}
 
 {% block title %}
-News
+    News
 {% endblock title %}
 
+{% block banner_title %}
+    News
+{% endblock banner_title %}
 
 
-{% block body %}
-<h1 class="text-center text-blue-600">List of News</h1>
+{% block content %}
 <ul>
     {% for news in news %}
-    <li><a href="{% url 'news:detail' news.slug %}">{{ news }}</a></li>
+    <li>
+        <a href="{% url 'news:detail' news.slug %}">{{ news }}</a>
+    </li>
     {% endfor %}
 </ul>
-{% endblock body %}
+{% endblock content %}
