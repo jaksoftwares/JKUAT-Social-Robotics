@@ -5,16 +5,30 @@ from django.db import models
 from datetime import datetime
 from accounts import models as ACCOUNTS_MODELS
 
+POSTGRADUATE = "P"
+UNDERGRADRUATE = "U"
+ADMIN = "A"
+PI = "I"
+LECTURER = "L"
+PERSON_CATEGORIES = (
+    (POSTGRADUATE, "Postgraduate"),
+    (UNDERGRADRUATE, "Undergraduate"),
+    (ADMIN, "Admin"),
+    (PI, "PI"),
+    (LECTURER, "Lecturer"),
+)
+
 
 class Person(ACCOUNTS_MODELS.Profile):
-    """"    
-    degree
-    specialty
-    pursuing
-    focus
-    quote
-    description
-    """
+    degree = models.CharField("Degree", blank=True, null=True, max_length=200)
+    specialty = models.CharField("Specialty", blank=True, null=True, max_length=200)
+    pursuing = models.CharField("Pursuing", blank=True, null=True, max_length=200)
+    focus = models.CharField("Focus", blank=True, null=True, max_length=200)
+    quote = models.TextField("Quote", blank=True, null=True)
+    category = models.CharField(
+        _("Category"), choices=PERSON_CATEGORIES, max_length=1, blank=True, null=True
+    )
+    description = models.TextField("Description", blank=True, null=True)
     bio = models.TextField("Bio", blank=True, null=True)
     slug = models.SlugField(unique=True, max_length=100)
 
@@ -31,4 +45,4 @@ class Person(ACCOUNTS_MODELS.Profile):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse("person_detail", kwargs={"slug": self.slug})
+        return reverse("people:detail", kwargs={"slug": self.slug})

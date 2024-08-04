@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Publications
+{% endblock title %}
+    
+
+
+{% block body %}
+<h1 class="text-center text-blue-600">List of Publications</h1>
+{% for publication in publications %}
+    {{publication}}
+{% endfor %}
+{% endblock body %}

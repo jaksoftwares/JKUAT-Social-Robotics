@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Outreach
+{% endblock title %}
+    
+
+
+{% block body %}
+<h1 class="text-center text-blue-600">List of Outreach Activities</h1>
+{% for outreach in  outreach %}
+<h1>{{outreach}}</h1>
+{% endfor %}
+    
+{% endblock body %}

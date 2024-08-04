@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block title %}
 Team
@@ -7,8 +7,24 @@ Team
 
 
 {% block body %}
-<h1>{{ person }}</h1>
-<p>{{ person.bio }}</p>
-<img src="{{ person.profile_picture.url }}" alt="{{ person }}">
-<a href="{% url 'people:list' %}">Back to list</a>
+<div class="mx-auto container">
+    <span class="italic my-5 items-center justify-center flex">“A passionate software engineer who believes in using technology to create problem-solving solutions that make people's lives better”</span>
+    <h2 class="font-bold text-6xl">Paul Ndemo</h2>
+    <h4 class="text-red-500">Software Engineer</h4>
+    <div class="flex gap-5">
+        <div>
+            <h4>Bachelor of Science degree in Electronic and Computer Engineering</h4>
+            <h4>Puruing</h4>
+            <p>Master of Science degree in Software Engineering at the Department of Computing, Department of Computing, School of Computing and Information Technology (JKUAT)</p>
+        </div>
+        <div class="bg-black rounded-lg">
+            <img src="{% static 'img/default-profile.png' %}" alt="" class="w-64 h-64 object-contain rounded-full">
+        </div>
+    </div>
+    <div class="border border-black m-5 container mx-auto my-16"></div>
+    <div>
+        <h4>Focus: State Transition Graphs (STGs)</h4>
+        <p>His research at the Social Robotics lab in JKUAT is about using State Transition Graphs (STGs) in coordinating gazes between children with Autism Spectrum Disorder (ASD) and social robots to help them improve their social interaction skills. Studies in other contexts have explored the use of STGs in coordinating tasks and found them to be effective in reducing complexity and improving task execution efficiency. Hence, his research aims to explore how STGs can be used to coordinate gazes for effective interactions between children with ASD and social robots.</p>
+    </div>
+</div>
 {% endblock body %}

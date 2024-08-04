@@ -10,5 +10,5 @@ News
 <h1>{{ news }}</h1>
 <p>{{ person.bio }}</p>
 <img src="{{ news.profile_picture.url }}" alt="{{ news }}">
-<a href="{% url 'people:list' %}">Back to list</a>
+<a href="{% url 'news:list' %}">Back to list</a>
 {% endblock body %}
