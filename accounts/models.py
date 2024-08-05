@@ -16,7 +16,7 @@ class Profile(models.Model):
     last_name = models.CharField(_("Last Name"), max_length=50)
     profile_picture = models.ImageField(
         _("Profile Picture"),
-        upload_to=None,
+        upload_to="profiles/",
         height_field=None,
         width_field=None,
         max_length=None,
