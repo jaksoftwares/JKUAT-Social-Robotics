@@ -12,6 +12,20 @@ class CustomUser(AbstractUser):
 
 
 class Profile(models.Model):
+    class Title(models.TextChoices):
+        MR = "MR", _("Mr.")
+        MRS = "MRS", _("Mrs.")
+        MS = "MS", _("Ms.")
+        DR = "DR", _("Dr.")
+        PROF = "PROF", _("Prof.")
+
+    title = models.CharField(
+        _("Title"),
+        max_length=5,
+        choices=Title.choices,
+        blank=True,
+        null=True
+    )
     first_name = models.CharField(_("First Name"), max_length=50)
     last_name = models.CharField(_("Last Name"), max_length=50)
     profile_picture = models.ImageField(
@@ -31,7 +45,7 @@ class Profile(models.Model):
         verbose_name_plural = _("Profiles")
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return f"{self.title} {self.first_name} {self.last_name}"
 
     def __repr__(self):
-        return f"{self.first_name} {self.last_name}"
+        return f"{self.title} {self.first_name} {self.last_name}"
