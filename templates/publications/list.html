@@ -1,19 +1,78 @@
-{% extends 'base_list.html' %}
-
-{% block title %}
-    Publications
-{% endblock title %}
-
-{% block banner_title %}
-    Publications
-{% endblock banner_title %}
-
-{% block content %}
+{% extends 'base_list.html' %} {% block title %} Publications {% endblock title %} {% block banner_title %} Publications {% endblock banner_title %} {% block content %}
 <div class="container mx-auto px-4">
     {% for publication in publications %}
-        <div class="border-b py-2">
-            {{ publication }}
-        </div>
+    <div class="border-b py-2">{{ publication }}</div>
     {% endfor %}
 </div>
+
+<div class="max-w-4xl mx-auto py-8">
+    <!-- Publication 1 -->
+    <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+        <h2 class="text-xl font-bold mb-2">Directing Attention through Gaze Hints Improves Task Solving in Human-Humanoid Interaction</h2>
+        <div class="flex items-center mb-4">
+            <img src="path_to_image" class="h-10 w-10 rounded-full mr-2 bg-gray-300 border border-gray-300">
+            <div>
+                <p class="text-gray-700 font-semibold">By Dr. Eunice Njeri</p>
+            </div>
+        </div>
+        <p class="text-gray-700 mb-4">
+            Abstract : At present, robots are showing increasing potential to be incorporated efficiently into various social settings, for example, in educational and therapeutic facilities for children and nursing homes for elderly among others [5, 8, 24]. Accordingly,
+            it is increasingly important to design natural social behaviors for robots. In human–human interactions, people rely on non-verbal cues such as gaze, gestures, body language, and facial expressions to communicate. Feldman and Rimé [17], showed
+            that non-verbal cues contribute significantly to the meaning exchanged in the interaction. Therefore, implementing these cues in social human–robot interaction may increase its naturalness and effectiveness.
+        </p>
+        <button class="bg-[#003B6D] text-white px-6 py-1 rounded-full hover:bg-white hover:text-[#003B6D] border border-[#003B6D]">Go to paper</button>
+    </div>
+
+    <!-- Publication 2 -->
+    <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+        <h2 class="text-xl font-bold mb-2">Directing Attention through Gaze Hints Improves Task Solving in Human-Humanoid Interaction</h2>
+        <div class="flex items-center mb-4">
+            <img src="path_to_image" class="h-10 w-10 rounded-full mr-2 bg-gray-300 border border-gray-300">
+            <div>
+                <p class="text-gray-700 font-semibold">By Dr. Eunice Njeri</p>
+            </div>
+        </div>
+        <p class="text-gray-700 mb-4">
+            Abstract : At present, robots are showing increasing potential to be incorporated efficiently into various social settings, for example, in educational and therapeutic facilities for children and nursing homes for elderly among others [5, 8, 24]. Accordingly,
+            it is increasingly important to design natural social behaviors for robots. In human–human interactions, people rely on non-verbal cues such as gaze, gestures, body language, and facial expressions to communicate. Feldman and Rimé [17], showed
+            that non-verbal cues contribute significantly to the meaning exchanged in the interaction. Therefore, implementing these cues in social human–robot interaction may increase its naturalness and effectiveness.
+        </p>
+        <button class="bg-[#003B6D] text-white px-6 py-1 rounded-full hover:bg-white hover:text-[#003B6D] border border-[#003B6D]">Go to paper</button>
+    </div>
+
+    <!-- Publication 2 -->
+    <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+        <h2 class="text-xl font-bold mb-2">Directing Attention through Gaze Hints Improves Task Solving in Human-Humanoid Interaction</h2>
+        <div class="flex items-center mb-4">
+            <img src="path_to_image" class="h-10 w-10 rounded-full mr-2 bg-gray-300 border border-gray-300">
+            <div>
+                <p class="text-gray-700 font-semibold">By Dr. Eunice Njeri</p>
+            </div>
+        </div>
+        <p class="text-gray-700 mb-4">
+            Abstract : At present, robots are showing increasing potential to be incorporated efficiently into various social settings, for example, in educational and therapeutic facilities for children and nursing homes for elderly among others [5, 8, 24]. Accordingly,
+            it is increasingly important to design natural social behaviors for robots. In human–human interactions, people rely on non-verbal cues such as gaze, gestures, body language, and facial expressions to communicate. Feldman and Rimé [17], showed
+            that non-verbal cues contribute significantly to the meaning exchanged in the interaction. Therefore, implementing these cues in social human–robot interaction may increase its naturalness and effectiveness.
+        </p>
+        <button class="bg-[#003B6D] text-white px-6 py-1 rounded-full hover:bg-white hover:text-[#003B6D] border border-[#003B6D]">Go to paper</button>
+    </div>
+
+    <!-- Publication 2 -->
+    <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+        <h2 class="text-xl font-bold mb-2">Directing Attention through Gaze Hints Improves Task Solving in Human-Humanoid Interaction</h2>
+        <div class="flex items-center mb-4">
+            <img src="path_to_image" class="h-10 w-10 rounded-full mr-2 bg-gray-300 border border-gray-300">
+            <div>
+                <p class="text-gray-700 font-semibold">By Dr. Eunice Njeri</p>
+            </div>
+        </div>
+        <p class="text-gray-700 mb-4">
+            Abstract : At present, robots are showing increasing potential to be incorporated efficiently into various social settings, for example, in educational and therapeutic facilities for children and nursing homes for elderly among others [5, 8, 24]. Accordingly,
+            it is increasingly important to design natural social behaviors for robots. In human–human interactions, people rely on non-verbal cues such as gaze, gestures, body language, and facial expressions to communicate. Feldman and Rimé [17], showed
+            that non-verbal cues contribute significantly to the meaning exchanged in the interaction. Therefore, implementing these cues in social human–robot interaction may increase its naturalness and effectiveness.
+        </p>
+        <button class="bg-[#003B6D] text-white px-6 py-1 rounded-full hover:bg-white hover:text-[#003B6D] border border-[#003B6D]">Go to paper</button>
+    </div>
+</div>
+
 {% endblock content %}
