@@ -15,4 +15,4 @@ class Project(CORE_MODELS.BaseModel):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("project_detail", kwargs={"pk": self.pk})
+        return reverse("projects:detail", kwargs={"slug": self.slug})

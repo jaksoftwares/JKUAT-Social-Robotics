@@ -9,4 +9,4 @@ class Outreach(CORE_MODELS.BaseModel):
         verbose_name_plural = _("Outreaches")
 
     def get_absolute_url(self):
-        return reverse("outreach_detail", kwargs={"pk": self.pk})
+        return reverse("outreach:detail", kwargs={"slug": self.slug})

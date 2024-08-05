@@ -1,16 +1,27 @@
 {% load static %}
-<header class="bg-[#669ACC] sticky top-0  " id="main-header">
+<header class="bg-[#669ACC] sticky top-0" id="main-header">
     <nav class="px-10" id="main-nav">
         <div class="p-3 flex justify-between ">
             <a href="{% url 'core:home' %}" class="">
                 <span>Social robotics logo</span>
             </a>
-            <div class="flex gap-10">
-                <form action="" class="flex flex-row border rounded-2xl items-center p-2 gap-2">
-                    <img src="../../static/img/search-icon.png" alt="" class="size-5">
-                    <input type="text" class="appearance-none  bg-custom-lightBlue text-white focus:outline-none focus:shadow-outline placeholder:text-white" placeholder="Search">
-                </form>
-                <button class="bg-custom-navyBlue text-white p-2 px-4 rounded-xl border-2 border-custom-navyBlue  hover:bg-transparent hover:text-custom-navyBlue hover:-translate-y hover:transform duration-300">Login</button>
+            <div class="flex gap-10 items-center justify-center">
+                <div>
+                    <form action="{% url 'core:search' %}" method="get" class="flex flex-row border rounded-2xl items-center p-2 gap-2">
+                        <img src="{% static 'img/search-icon.png' %}" alt="" class="size-5">
+                        <input
+                            type="text"
+                            name="q"
+                            required
+                            class="appearance-none bg-custom-lightBlue text-white focus:outline-none focus:shadow-outline placeholder:text-white"
+                            placeholder="Type to search ..."
+                        >
+                        <button type="submit" class="bg-custom-navyBlue text-white p-2 rounded-xl border-2 border-none hover:bg-blue-900 hover:transform duration-300">Search</button>
+                    </form>
+                </div>
+                <div>
+                    <a class="bg-custom-navyBlue text-white p-2 rounded-xl border-2 border-none hover:bg-blue-900 hover:transform duration-300" href="{% url 'accounts:login' %}">Login</a>
+                </div>
             </div>
         </div>
         <div class="border-b  "></div>

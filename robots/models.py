@@ -9,4 +9,4 @@ class Robot(CORE_MODELS.BaseModel):
         verbose_name_plural = _("Robots")
 
     def get_absolute_url(self):
-        return reverse("robot_detail", kwargs={"pk": self.pk})
+        return reverse("robots:detail", kwargs={"slug": self.slug})
