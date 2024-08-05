@@ -15,4 +15,4 @@ class Publication(CORE_MODELS.BaseModel):
         verbose_name_plural = _("Publications")
 
     def get_absolute_url(self):
-        return reverse("publication_detail", kwargs={"pk": self.pk})
+        return reverse("publications:detail", kwargs={"slug": self.slug})

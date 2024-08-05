@@ -9,4 +9,4 @@ class News(CORE_MODELS.BaseModel):
         verbose_name_plural = _("News")
 
     def get_absolute_url(self):
-        return reverse("news_detail", kwargs={"pk": self.pk})
+        return reverse("news:detail", kwargs={"slug": self.slug})
