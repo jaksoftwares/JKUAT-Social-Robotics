@@ -1,12 +1,17 @@
-{% extends 'base.html' %}
-
-{% block body %}
-<div class="bg-custom-navyBlue p-8">
-    <h1 class="text-white font-bold text-3xl">
-        {% block banner_title %}{% endblock banner_title %}
-    </h1>
-</div>
-<div>
-    {% block content %}{% endblock content %}
-</div>
-{% endblock body %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JKUAT Social Robotics | {% block title %}{% endblock title %}</title>
+        {% include './dependancies/css.html' %}
+    </head>
+    <body>
+        {% include './components/header.html' %}
+        {% include './components/sidebar.html' %}
+        <div class="mx-auto container">
+            {% block content %}{% endblock content %}
+        </div>
+        {% include './components/footer.html' %}
+    </body>
+</html>
