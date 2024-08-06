@@ -1,0 +1,9 @@
+[
+    {
+        "title": "Directing Attention Through Gaze Hints Improves Task Solving in Human-Humanoid Interaction",
+        "description": "In this paper, we report an experimental study designed to examine how participants perceive and interpret social hints from gaze exhibited by either a robot or a human tutor when carrying out a matching task. The underlying notion is that knowing where an agent is looking at provides cues that can direct attention to an object of interest during the activity. In this regard, we asked human participants to play a card matching game in the presence of either a human or a robotic tutor under two conditions. In one case, the tutor gave hints to help the participant find the matching cards by gazing toward the correct match, in the other case, the tutor only looked at the participants and did not give them any help. The performance was measured based on the time and the number of tries taken to complete the game. Results show that gaze hints (helping tutor) made the matching task significantly easier (fewer tries) with the robot tutor. Furthermore, we found out that the robots’ gaze hints were recognized significantly more often than the human tutor gaze hints, and consequently, the participants performed significantly better with the robot tutor. The reported study provides new findings towards the use of non-verbal gaze hints in human–robot interaction, and lays out new design implications, especially for robot-based educative interventions",
+        "cover_image": "./../static/img/publications/pub-1.png",
+        "external_link": "https://doi.org/10.1007/s12369-018-0473-8",
+        "author": 1
+    }
+]

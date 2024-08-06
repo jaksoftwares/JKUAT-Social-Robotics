@@ -1,0 +1,62 @@
+[
+    {
+        "title": "MR",
+        "first_name": "Paul",
+        "last_name": "Ndemo",
+        "specialty": "Software Engineer",
+        "profile_picture": "./../static/img/people/paul-ndemo.png",
+        "degree": "Bachelor of Science in Electronic and Computer Engineering",
+        "pursuing": "Master of Science Degree in Software Engineering at the Department of Computing, Department of Computing, School of Computing and Information Technology (JKUAT)",
+        "focus_title": "State Transition Graphs (STGs)",
+        "focus_short": "Using State Transition Graphs (STGs) in coordinating gazes between children with Autism Spectrum Disorder (ASD) and social robots to help them improve their social interaction skills.",
+        "focus_long": "His research at the Social Robotics lab in JKUAT is about using State Transition Graphs (STGs) in coordinating gazes between children with Autism Spectrum Disorder (ASD) and social robots to help them improve their social interaction skills. Studies in other contexts have explored the use of STGs in coordinating tasks and found them to be effective in reducing complexity and improving task execution efficiency. Hence, his research aims to explore how STGs can be used to coordinate gazes for effective interactions between children with ASD and social robots",
+        "quote": "A passionate software engineer who believes in using technology to create problem-solving solutions that make people's lives better",
+        "bio": "A passionate software engineer who believes in using technology to create problem-solving solutions that make people's lives better.",
+        "category": "P"
+    },
+    {
+        "title": "MR",
+        "first_name": "Eric",
+        "last_name": "Otieno",
+        "specialty": " Software Quality Assurance Engineer",
+        "profile_picture": "",
+        "degree": "Bachelor of Science Degree in Computer Science",
+        "pursuing": "Master of Science Degree in Software Engineering",
+        "focus_title": "Human Fall Detection",
+        "focus_short": "Human Fall Detection using an Ensemble Deep Learning model integrated with a social robot.",
+        "focus_long": "Eric's research at the robotics lab focuses on Human Fall Detection using an Ensemble Deep  Learning model integrated with a social robot. This research involves developing an ensemble model capable of detecting falls and integrating it with a robot to monitor the elderly and call for assistance whenever a fall is detected. This innovation aims to enhance the quality of life for the elderly by ensuring they receive immediate help in case of a fall",
+        "quote": "A passionate software engineer who believes in using technology to create problem-solving solutions that make people's lives better",
+        "bio": "An experienced Software Developer with expertise in the design, development, testing, and maintenance of software systems",
+        "category": "P"
+    },
+    {
+        "title": "MS",
+        "first_name": "Caroline",
+        "last_name": "Katumbi",
+        "specialty": " DevOps Engineer",
+        "profile_picture": "",
+        "degree": "Bachelor of Science in Information Technology (First class honours)",
+        "pursuing": "Master of Science Degree in Software Engineering",
+        "focus_title": "Designing robot behavior",
+        "focus_short": "Investigating how to design robot behavior while focusing on speech and gaze with the goal of proposing guidelines that can be used to enhance learning among children in a classroom setup",
+        "focus_long": "At the social robotics lab in JKUAT, Caroline is focused on investigating how to design robot behavior while focusing on speech and gaze with the goal of proposing guidelines that can be used to enhance learning among children in a classroom setup. With the increased uptake of social robots in the classroom setup, this research project is aimed at designing acceptable social robots that provide natural and intuitive interactions.",
+        "quote": "A passionate software engineer who believes in using technology to create problem-solving solutions that make people's lives better",
+        "bio": "A dedicated and results-driven DevOps Engineer with a robust background in designing, implementing, and maintaining scalable and reliable systems",
+        "category": "P"
+    },
+    {
+        "title": "MR",
+        "first_name": "Peter",
+        "last_name": "Kabunyi",
+        "specialty": "Software Engineer",
+        "profile_picture": "",
+        "degree": "Bachelors of Science in Computer Technology",
+        "pursuing": "Master of Science Degree in Software Engineering",
+        "focus_title": "Knowledge Graphs and semantic understanding",
+        "focus_short": "Leveraging Knowledge Graphs to enhance the semantic understanding of text in robotics. This approach is particularly vital for designing a robot tutor tailored for visually impaired students",
+        "focus_long": "At the social robotics lab, my work focuses on leveraging Knowledge Graphs to enhance the semantic understanding of text in robotics. This approach is particularly vital for designing a robot tutor tailored for visually impaired students. By utilizing Knowledge Graphs, we can create more intuitive and context-aware interactions, allowing the robot to understand and respond to the educational needs of these students more effectively. This work not only aims to improve the accessibility of education but also pushes the boundaries of how robots can be integrated into specialized learning environments",
+        "quote": "A passionate software engineer who believes in using technology to create problem-solving solutions that make people's lives better",
+        "bio": " A passionate, highly motivated and skilled professional with a passion for designing, developing, and implementing innovative software solutions",
+        "category": "P"
+    }
+]

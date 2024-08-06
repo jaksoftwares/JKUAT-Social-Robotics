@@ -28,6 +28,11 @@
         <div class="p-2">
             <ul class="flex items-center justify-center gap-6 md:gap-12 text-white  opacity-0 animate-fadeIn">
                 <li>
+                    <a href="{% url 'core:home' %}" class="relative inline-block pb-1 text-lg {% if request.path == '/about/' %}text-custom-navyBlue {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        Home
+                    </a>
+                </li>
+                <li>
                     <a href="{% url 'core:about' %}" class="relative inline-block pb-1 text-lg {% if request.path == '/about/' %}text-custom-navyBlue {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
                         About
                     </a>
