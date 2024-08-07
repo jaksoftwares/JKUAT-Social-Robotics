@@ -23,12 +23,13 @@ class Person(ACCOUNTS_MODELS.Profile):
     degree = models.CharField("Degree", blank=True, null=True, max_length=200)
     specialty = models.CharField("Specialty", blank=True, null=True, max_length=200)
     pursuing = models.CharField("Pursuing", blank=True, null=True, max_length=200)
-    focus = models.CharField("Focus", blank=True, null=True, max_length=200)
+    focus_title = models.CharField("Focus Title", blank=True, null=True, max_length=200)
+    focus_short = models.CharField("Focus Short", blank=True, null=True, max_length=200)
+    focus_long = models.TextField("Focus Long", blank=True, null=True)
     quote = models.TextField("Quote", blank=True, null=True)
     category = models.CharField(
         _("Category"), choices=PERSON_CATEGORIES, max_length=1, blank=True, null=True
     )
-    description = models.TextField("Description", blank=True, null=True)
     bio = models.TextField("Bio", blank=True, null=True)
     slug = models.SlugField(unique=True, max_length=100)
 

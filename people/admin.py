@@ -15,7 +15,10 @@ class PersonAdmin(admin.ModelAdmin):
     ]
 
     prepopulated_fields = {
-        "slug": ["first_name", "last_name"],
+        "slug": [
+            "first_name",
+            "last_name",
+        ],
     }
 
     def save_model(self, request, obj, form, change):

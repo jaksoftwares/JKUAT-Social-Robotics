@@ -1,0 +1,43 @@
+[{
+        "title": "Directing Attention through Gaze Hints Improves Task Solving in Human-Humanoid Interaction",
+        "description": "At present, robots are showing increasing potential to be incorporated efficiently into various social settings, for example, in educational and therapeutic facilities for children and nursing homes for elderly among others [5, 8, 24]. Accordingly, it is increasingly important to design natural social behaviors for robots. In human–human interactions, people rely on non-verbal cues such as gaze, gestures, body language, and facial expressions to communicate. Feldman and Rimé [17], showed that non-verbal cues contribute significantly to the meaning exchanged in the interaction. Therefore, implementing these cues in social human–robot interaction may increase its naturalness and effectiveness.",
+        "cover_image": "",
+        "external_link": "https://link.springer.com/article/10.1007/s12369-018-0473-8#citeas",
+        "author": 1
+    },
+    {
+        "title": "Dyadic Gaze Patterns During Child-Robot Collaborative Gameplay in a Tutoring Interaction",
+        "description": "To improve child-robot interaction outcomes in tutoring and other persuasion tasks, the design of intuitive interactions between robots and users is crucial. The use of verbal or nonverbal communicative cues by a social robot can improve task performance and learning [2], [4], [2]–1,[2] [2], provide positive experience including engagement [27], [28]; promote emotional bonding [7], enhance compliance during an activity [9], and help regulate human-robot collaboration [11]–​[13]. Gaze behavior, in particular, has paramount importance in the field of non-verbal human-robot interaction [1], [6], [25]. Gaze facilitates many social functions in human communication [14], [15], [17], [29]. One primary role of gaze is to act as a pointer (i.e. referential gaze) both in human-human communication, [15], [19] and in human-robot interaction [22].",
+        "cover_image": "",
+        "external_link": "https://ieeexplore.ieee.org/document/8525799",
+        "author": 1
+    },
+    {
+        "title": "Can Children Take Advantage of Nao Gaze-Based Hints During GamePlay?",
+        "description": "This paper presents a study that analyzes the effects of robots' gaze hints on children's performance in a card-matching game. We conducted a within-subjects study, in which children played a card matching game 'Memory' in the presence of a robot tutor in two sessions. In one session, the robot gave hints to help the child find matching cards by looking at the correct match and, in the other session, the robot only looked at the child and did not give them any help. Children performance was measured using the number of tries and overall time used to complete the game. Our findings show that the use of gaze hints (help condition) made the matching task significantly easier and that children used significantly fewer tries than without help.",
+        "cover_image": "",
+        "external_link": "https://dl.acm.org/doi/10.1145/3125739.3132613",
+        "author": 1
+    },
+    {
+        "title": "Gaze-Based Hints During Child-Robot Gameplay",
+        "description": "This paper presents a study that examines whether gaze hints provided by a robot tutor influences the behavior of children in a card matching game. In this regard, we conducted a within-subjects experiment, in which children played a card game 'Memory' in the presence of a robot tutor in two sessions. In one session (Help), the robot tutor gives gaze hints to help children find matching cards and, in the other session (No_Help), the robot tutor does not provide help to the children. Gaze hints involved looking toward the correct matching cart. We analyzed the child-robot interaction regarding execution performance, gaze behavior, and level of engagement. Children performance was measured using the number of trials and overall time used to complete the game. We found that children used significantly fewer trials in the Help condition than in the No_Help condition. In addition, there were more instances of mutual gaze in the Help condition than in the No_Help condition. These findings suggest that designing a robot with dynamic gaze increases the effectiveness of the robot tutor as a helping agent.",
+        "cover_image": "",
+        "external_link": "https://link.springer.com/chapter/10.1007/978-3-319-70022-9_41",
+        "author": 1
+    },
+    {
+        "title": "See Where I am Looking at: Perceiving Gaze Cues With a NAO Robot",
+        "description": "Gaze is an important nonverbal cue in human - human communication, for example, in communicating direction of attention. Therefore, presumably being able to understand and provide gaze cues is an important aspect in robot's interactive behavior. While there is considerable progress, as regards the design of social gaze cues for robots, there is little that has been done to examine the ability of humans to read and accept help signals from a robot's gaze. In this study, we examine how people perceive gaze cues and head angles directed towards different target positions on a table when human and NAO robot are sitting against each other as in board game scenarios. From the results, we show that when the head pitch angle is higher (24±2) and the depth is less, approximately 20 cm from the robot, participants detected the positions with good accuracy. Unexpectedly, the locations on the left of the robot were detected with lower accuracy. In conclusion, we discuss the implications of this research for design of interaction settings between human and a robot that is intended for social and educational support.",
+        "cover_image": "",
+        "external_link": "https://dl.acm.org/doi/10.1145/2974804.2980479",
+        "author": 1
+    },
+    {
+        "title": "Textual Emotion Communication with Non-verbal Symbols in Online Environments",
+        "description": "Recently computer mediated communication became a popular way of interaction. Unfortunately nonverbal elements are normally absent in these online communications. This paper describes the results of a study carried out to determine the use of textual symbols/patterns to provide nonverbal cues and to express emotions in online text based environments. The focus is on the use of online textual symbols/patterns of vocalics (e.g. the use of capitals and use of punctuation '!' and '!!s!' or '?' and '???', length of response e.t.c), and those of chronemics (e.g. time to respond to an email or to a chat message) to communicate emotions in text. The study forms a basis for the development of an affect recognition model that is able to recognize emotions from written language and especially in environments where informal styles of writing are used.",
+        "cover_image": "",
+        "external_link": "https://link.springer.com/chapter/10.1007/978-3-319-07227-2_5",
+        "author": 1
+    }
+]

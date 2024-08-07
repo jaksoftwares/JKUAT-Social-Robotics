@@ -7,24 +7,34 @@ Team
 
 
 {% block body %}
-<div class="mx-auto container">
-    <span class="italic my-5 items-center justify-center flex">“A passionate software engineer who believes in using technology to create problem-solving solutions that make people's lives better”</span>
-    <h2 class="font-bold text-6xl">Paul Ndemo</h2>
-    <h4 class="text-red-500">Software Engineer</h4>
-    <div class="flex gap-5">
-        <div>
-            <h4>Bachelor of Science degree in Electronic and Computer Engineering</h4>
-            <h4>Puruing</h4>
-            <p>Master of Science degree in Software Engineering at the Department of Computing, Department of Computing, School of Computing and Information Technology (JKUAT)</p>
+<div class="mx-auto container p-2">
+    <div class=" flex-col-reverse flex md:flex-row md:gap-10 ">
+        <div class="flex flex-col gap-8  ">
+            <span class="italic  font-light">“A passionate software engineer who believes in using technology to create problem-solving solutions that make people's lives better”</span>
+            <div>
+                    <h2 class="font-bold text-6xl">Paul Ndemo</h2>
+                    <h4 class="text-custom-navyBlue">Software Engineer</h4>
+                </div>
+            <h4 class="text-xl">Bachelor of Science degree in Electronic and Computer Engineering</h4>
+            <div>
+                <h6 class="font-semibold">Pursuing</h6>
+                <p class="text-xl">Master of Science degree in Software Engineering at the Department of Computing, <br>
+                    Department of Computing, School of Computing and Information Technology (JKUAT)</p>
+            </div>
         </div>
         <div class="bg-black rounded-lg">
-            <img src="{% static 'img/default-profile.png' %}" alt="" class="w-64 h-64 object-contain rounded-full">
+            <img src="{% static 'img/default-profile.png' %}" alt="" class="size-96 object-contain rounded-full">
         </div>
     </div>
-    <div class="border border-black m-5 container mx-auto my-16"></div>
+    <div class="border border-black container mx-auto my-12"></div>
     <div>
-        <h4>Focus: State Transition Graphs (STGs)</h4>
-        <p>His research at the Social Robotics lab in JKUAT is about using State Transition Graphs (STGs) in coordinating gazes between children with Autism Spectrum Disorder (ASD) and social robots to help them improve their social interaction skills. Studies in other contexts have explored the use of STGs in coordinating tasks and found them to be effective in reducing complexity and improving task execution efficiency. Hence, his research aims to explore how STGs can be used to coordinate gazes for effective interactions between children with ASD and social robots.</p>
+        <h4 class="pb-3 font-semibold italic text-3xl">Focus: <span class="font-normal not-italic">State Transition Graphs (STGs)</span> </h4>
+        <p>His research at the Social Robotics lab in JKUAT is about using State Transition Graphs (STGs) in
+            coordinating gazes between children with Autism Spectrum Disorder (ASD) and social robots to help them
+            improve their social interaction skills. Studies in other contexts have explored the use of STGs in
+            coordinating tasks and found them to be effective in reducing complexity and improving task execution
+            efficiency. Hence, his research aims to explore how STGs can be used to coordinate gazes for effective
+            interactions between children with ASD and social robots.</p>
     </div>
 </div>
 {% endblock body %}

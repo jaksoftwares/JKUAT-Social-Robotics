@@ -2,15 +2,14 @@ from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from datetime import datetime
 from django.db import models
-from django_ckeditor_5.fields import CKEditor5Field
 
 
 class BaseModel(models.Model):
     title = models.CharField(_("Title"), max_length=50)
-    description = CKEditor5Field("Text", blank=True, null=True, config_name="extends")
+    description = models.TextField(_("Description"), blank=True, null=True)
     cover_image = models.ImageField(
         _("Cover Image"),
-        upload_to=None,
+        upload_to="images/",
         height_field=None,
         width_field=None,
         max_length=None,

@@ -1,16 +1,81 @@
-{% extends 'base.html' %}
+{% extends 'base_list.html' %} 
+{% load static %}
+{% block title %} Robots {% endblock title %} 
+{%block banner_title %} Robots {% endblock banner_title %}
+
+{% block content %}
+
+ <!-- NAO Robot Section -->
+<div class="relative bg-[#c5c5c6] shadow-md rounded-lg p-6 pb-4 mb-24 mt-16 mr-16 ml-16 sm:mr-4 sm:ml-4">
+  <div class="-mb-4"><img
+    src="{% static 'img/robots/softbank-logo.png' %}"
+    alt="SoftBank Logo"
+    class="h-6 absolute top-2 left-4"
+  />
+  </div>
+  <div class="flex sm:flex-row flex-col items-center mb-4 -mt-8 sm:-mt-2">
+    <div class="w-full sm:w-3/4 ml-4 sm:ml-0">
+      <h2 class="text-xl font-bold mt-4 sm:mt-0">NAO</h2>
+      <p class="text-gray-700 mb-4 mt-4 sm:mt-0">
+        NAO is a robot with a knack for knowledge – both learning and sharing
+        it. Fluent in over 20 languages, communicates effortlessly with
+        students from diverse cultures. NAO is equipped with tactile sensors
+        in its head, hands, and feet. NAO responds to its environment by
+        recognizing people and their emotions. Designed for natural movement,
+        NAO can detect obstacles, avoid falls, and recover independently.
+        Fully programmable, NAO operates on the flexible NAOqi OS, offering
+        customization through various Software Development Kits, visual
+        programming interfaces like Blockly and Scratch, and user-friendly
+        graphical software like Choregraphe.
+      </p>
+      <a href="#" class="text-[#0b0b0b] px-6 py-1 hover:text-[#003B6D] transition duration-300">
+        Learn more →
+      </a>
+    </div>
+    <div class=" sm:w-1/2 items-left mb-4 sm:mb-0 sm:mt-0 ">
+      <img src="{% static 'img/robots/nao-robot.png' %}" alt="NAO" class="rounded-lg h-48 sm:h-auto" />
+    </div>
+  </div>
+</div>
 
 
-{% block title %}
-    Robots
-{% endblock title %}
-    
 
+<!-- Pepper Robot Section -->
+<div class="bg-[#c5c5c6] shadow-md rounded-lg p-6 mt-16 mr-16 ml-16 sm:mr-4 sm:ml-4">
+  <div class="flex flex-col sm:flex-row items-center mb-4">
+    <div class="w-full sm:w-1/4">
+      <img
+        src="{% static 'img/robots/pepper-robot.png' %}"
+        alt="Pepper"
+        class="rounded-lg"
+      />
+    </div>
+    <div class="w-full sm:w-3/4 ml-4">
+      <div class="items-right mb-2">
+        <img src="{% static 'img/robots/softbank-logo.png' %}" alt="SoftBank Logo" class="h-6" />
+      </div>
+      <h2 class="text-xl font-bold">PEPPER</h2>
+      <p class="text-gray-700 mb-4">
+        Pepper, developed by SoftBank Robotics, is an advanced humanoid robot
+        designed for interactive and engaging human-robot interactions. Pepper
+        features a high-resolution touch screen and multiple sensors,
+        including 3D cameras, two HD cameras, and four directional
+        microphones, enabling it to perceive and interpret human emotions. It
+        can respond to vocal analysis. Its natural language processing
+        capabilities allow it to communicate in multiple languages, making it
+        an invaluable tool in customer interaction and various social
+        settings. Equipped with an intuitive content management system, Pepper
+        can be tailored to deliver personalized conversations, provide
+        assistance, and serve as a versatile tool for customer service,
+        education, and research environments.
+      </p>
+      <a href="#" class="text-[#0b0b0b] px-6 py-1 hover:text-[#003B6D] transition duration-300">
+        Learn more →
+      </a>
+    </div>
+  </div>
+</div>
 
-{% block body %}
-<h1 class="text-center text-blue-600">List of Robots</h1>
 {% for robot in robots %}
 <h1>{{robot}}</h1>
-{% endfor %}
-    
-{% endblock body %}
+{% endfor %} {% endblock content %}

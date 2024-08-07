@@ -1,19 +1,59 @@
-from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+)
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
+from .models import Project
 
 
-def index(request):
-    return render(request, "projects/index.html",
-                  context={
-                      "projects":[
-                          {"title": "New", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris efficitur, vitae egestas lectus molestie. Duis dictum orci massa, sit amet pulvinar nisi porta vitae. Pellentesque aliquam sem metus, tincidunt mattis sapien tempor vitae. Nullam volutpat sit amet metus id scelerisque. Praesent felis tortor, fringilla ac condimentum a, ornare et sapien. Donec a turpis ultrices, fringilla eros vel, lobortis velit."},
-                          {"title": "New", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris efficitur, vitae egestas lectus molestie. Duis dictum orci massa, sit amet pulvinar nisi porta vitae. Pellentesque aliquam sem metus, tincidunt mattis sapien tempor vitae. Nullam volutpat sit amet metus id scelerisque. Praesent felis tortor, fringilla ac condimentum a, ornare et sapien. Donec a turpis ultrices, fringilla eros vel, lobortis velit."},
-                          {"title": "New", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris efficitur, vitae egestas lectus molestie. Duis dictum orci massa, sit amet pulvinar nisi porta vitae. Pellentesque aliquam sem metus, tincidunt mattis sapien tempor vitae. Nullam volutpat sit amet metus id scelerisque. Praesent felis tortor, fringilla ac condimentum a, ornare et sapien. Donec a turpis ultrices, fringilla eros vel, lobortis velit."},
-                          {"title": "New", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris efficitur, vitae egestas lectus molestie. Duis dictum orci massa, sit amet pulvinar nisi porta vitae. Pellentesque aliquam sem metus, tincidunt mattis sapien tempor vitae. Nullam volutpat sit amet metus id scelerisque. Praesent felis tortor, fringilla ac condimentum a, ornare et sapien. Donec a turpis ultrices, fringilla eros vel, lobortis velit."},
-                          {"title": "New", "description": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris efficitur, vitae egestas lectus molestie. Duis dictum orci massa, sit amet pulvinar nisi porta vitae. Pellentesque aliquam sem metus, tincidunt mattis sapien tempor vitae. Nullam volutpat sit amet metus id scelerisque. Praesent felis tortor, fringilla ac condimentum a, ornare et sapien. Donec a turpis ultrices, fringilla eros vel, lobortis velit."},
-                      ]
-                  }
-                
-                  
-                  
-                  
-                  )
+class ProjectListView(ListView):
+    model = Project
+    template_name = "projects/list.html"
+    context_object_name = "projects"
+
+
+class ProjectDetailView(DetailView):
+    model = Project
+    template_name = "projects/detail.html"
+    context_object_name = "publicatioon"
+    slug_field = "slug"
+    slug_url_kwarg = "slug"
+
+
+class ProjectCreateView(LoginRequiredMixin, CreateView):
+    model = Project
+    template_name = "projects/form.html"
+    fields = [
+        "title",
+        "description",
+        "cover_image",
+        "external_link",
+    ]
+    success_url = reverse_lazy("projects:list")
+
+
+class ProjectUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Project
+    template_name = "projects/form.html"
+    fields = ["first_name", "last_name", "profile_picture", "bio"]
+    success_url = reverse_lazy("projects:list")
+    slug_field = "slug"
+    slug_url_kwarg = "slug"
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+
+class ProjectDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Project
+    template_name = "projects/confirm_delete.html"
+    success_url = reverse_lazy("projects:list")
+    slug_field = "slug"
+    slug_url_kwarg = "slug"
+
+    def test_func(self):
+        return self.request.user.is_staff
