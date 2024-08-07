@@ -9,7 +9,7 @@
 <div class="bg-white mt-4 shadow-md rounded-lg">
     <h2 class="text-xl font-bold mb-2">{{ publication.title }}</h2>
     <div class="flex items-center mb-4">
-        <img src="{{ publication.author.profile_picture.url }}" class="h-10 w-10 rounded-full mr-2 bg-gray-300 border border-gray-300">
+        <img src="{% if publication.author.profile_picture %}{{ publication.author.profile_picture.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ publication.author.first_name }} {{ publication.author.last_name }} picture" class="h-10 w-10 rounded-full mr-2 bg-gray-300 border border-gray-300">
         <div>
             <p class="text-gray-700 font-semibold">By {{ publication.author.title }} {{ publication.author.first_name }} {{ publication.author.last_name }}</p>
         </div>

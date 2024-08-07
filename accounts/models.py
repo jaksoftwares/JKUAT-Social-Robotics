@@ -11,18 +11,16 @@ class CustomUser(AbstractUser):
         return self.username
 
 
-TITLE_CHOICES = (
-    ("MR", "Mr."),
-    ("MRS", "Mrs."),
-    ("MS", "Ms."),
-    ("DR", "Dr."),
-    ("PROF", "Prof."),
-)
-
-
 class Profile(models.Model):
+    TITLE_CHOICES = (
+        ("MR", "Mr."),
+        ("MRS", "Mrs."),
+        ("MS", "Ms."),
+        ("DR", "Dr."),
+        ("PROF", "Prof."),
+    )
     title = models.CharField(
-        _("Title"), max_length=5, choices=TITLE_CHOICES, blank=True, null=True
+        _("Title"), max_length=5, blank=True, null=True
     )
     first_name = models.CharField(_("First Name"), max_length=50)
     last_name = models.CharField(_("Last Name"), max_length=50)

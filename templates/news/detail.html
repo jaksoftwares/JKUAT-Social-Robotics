@@ -9,6 +9,7 @@ News
 {% block body %}
 <h1>{{ news }}</h1>
 <p>{{ person.bio }}</p>
-<img src="{{ news.profile_picture.url }}" alt="{{ news }}">
+
+<img src="{% if news.cover_image %}{{ news.cover_image.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ news }}">
 <a href="{% url 'news:list' %}">Back to list</a>
 {% endblock body %}

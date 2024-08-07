@@ -10,146 +10,110 @@ Home
 
 {% block body %}
 <!-- Hero Section -->
-<section class="bg-custom-lightBlue w-screen shadow-lg">
-    <div class="flex flex-col items-center md:flex-row md:justify-between">
-        <div>
-            <img src="{% static 'img/image 19.png' %}" alt="Robot Image" class="w-full md:w-auto">
+<section class="bg-custom-lightBlue w-screen shadow-lg ">
+    <div class="flex flex-col items-center md:flex-row md:items-center md:justify-between ">
+        
+        
+        <div class="-mr-12">
+            <img src="{% static 'img/image 19.png' %}" alt="Robot Image" class="w-full md:w-auto  ">
         </div>
-        <div class="flex flex-col justify-center items-start text-left mt-8 mb-10 md:mt-0 md:mb-0 md:mr-6">
-            <div class="md:-ml-12">
-                <h1 class="text-4xl md:text-6xl font-raleway font-bold text-white">Welcome to JKUAT</h1>
-                <h2 class="font-raleway text-4xl md:text-6xl font-light text-white mt-2">SOCIAL ROBOTICS</h2>
+        
+        
+        <div class="flex flex-col items-center md:mt-0 md:mb-0 md:mr-6 mt-32 mb-8 mr-16 -ml-20 md:-ml-56">
+            
+            <div class="md:-ml-12 md: ">
+                <h1 class="text-4xl md:text-6xl font-raleway font-semibold text-white">Welcome to JKUAT</h1>
+                <h2 class="font-raleway text-4xl md:text-5xl font-light text-white mt-2">SOCIAL ROBOTICS</h2>
             </div>
-            <div class="mt-8 md:-ml-12">
-                <p class="text-white font-medium text-xl md:text-2xl font-lato ml-0 md:ml-12">
-                    Tagline: Lorem ipsum dolor sit amet,<br>
-                    consectetur adipiscing elit.
-                </p>
-            </div>
-            <div class="mt-8 md:-ml-12">
-                <a href="#"
-                    class="inline-block bg-custom-navyBlue font-bold font-lato text-white py-2 px-4 rounded hover:bg-white hover:text-custom-navyBlue hover:border hover:border-custom-navyBlue">
-                    Meet The Team
-                </a>
+           
+               
+
+                    <div class="mt-8 md:-ml-12  mr-36 ">
+                        <p class="text-white font-medium text-2xl md:text-2xl font-lato ml-0 md:ml-12">
+                            Tagline: Lorem ipsum dolor sit amet,<br>
+                            consectetur adipiscing elit.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-4 md:-ml-12 mr-36">
+                        <a href="#"
+                            class="bg-custom-navyBlue border-custom-navyBlue font-bold font-lato text-white py-2 px-4 w-fit rounded-lg hover:bg-white hover:text-custom-navyBlue hover:border hover:border-custom-navyBlue transform duration-700">
+                            About Us
+                        </a>
+                    </div>
+                
             </div>
         </div>
     </div>
-</section>
+</section>  
+  
 
-<!-- <style>
-    #img1{
-        height: 800px;
-        width:1200px;
-
-    } -->
-
-<!-- </style> -->
-
-<!-- About Section -->
-<!-- <section class=" flex flex-col md:flex-row ">
-        <div class="flex-1 md:pr-4 bg-white p-6 shadow-lg">
-            <div class="mt-4">
-                <img src="{% static 'img/image 3.png' %}" alt="About Image" class="w-full h-64 object-cover">
-            </div>
-            <div class="flex-1 md:pl-4 mt-4 md:mt-0">
-                    <h2 class="text-center text-2xl font-bold text-gray-800">About Social Robotics</h2> 
-                    <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris efficitur, vitae egestas lectus molestie.</p>
-                    <a href="#" class="mt-4 inline-block bg-green-500 text-white py-2 px-4 rounded">Read more</a>
-            </div>
-        </div>
-    </section> -->
+<!-- ABOUT SECTION -->
 
 
-
-<!--About Social Robotics section  -->
-<!-- <section class="flex flex-col md:flex-row mr-32 ml-32 mt-20 pt-2 ">
-   
-    <div class="flex-1 md:pr-4 ml-48 mt-12 mb-12 ">
-        <img src="{% static 'img/image 3.png' %}" alt="About Image" class="w-545 h-370 object-cover">
-    </div>
-       
+<section class="relative flex flex-col md:flex-row items-center justify-center mx-auto mt-20 pt-2 max-w-7xl px-4 lg:px-8 -pr-10">
     
-    <div class="flex-1 md:pl-4 mt-4 md:mt-0">
-        <h2 class="text-center text-5xl font-bold font-raleway mb-2 mt-8">About Social Robotics</h2>
-        <div class="text-center p-2 mt-4 w-485 h-145">
-            <p class="text-gray-700 text-4*1 font-lato text-left ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris
-                efficitur, vitae egestas lectus molestie. Duis dictum orci massa, sit amet pulvinar nisi porta
-                vitae.
-            </p>
-            <a href="#" class="mt-8 inline-block bg-custom-green font-bold font-lato  text-white py-2 px-4 rounded">Read
-                more</a>
-        </div>
-    </div>
-                            </section> -->
-<section
-    class="relative flex flex-col md:flex-row items-center justify-center z mt-20 pt-2 max-w-7xl px-4 lg:px-8 -pr-10">
-    <!-- Image Column -->
-    <div class="w-full md:w-1/3 flex items-center justify-center md:pr-4 mt-12 mb-12">
-        <img src="{% static 'img/image 3.png' %}" alt="About Image" class="w-full h-auto object-cover">
+    <div class="w-full md:w-2/5 flex items-center justify-center md:pr-4 mt-12 mb-12 ">
+        <img src="{% static 'img/image 3.png' %}" alt="About Image" class="w-3/4 h-auto object-cover">
     </div>
 
-    <!-- Text Column -->
-    <div class="w-full md:w-2/3 md:pl-4 mt-4 md:mt-0 flex flex-col items-center text-center">
-        <!-- Center items and text -->
-        <h2 class="text-5xl font-bold font-raleway mb-2 mt-8">About Social Robotics</h2>
+    
+    <div class="w-3/5 md:w-ful md:pl-4 mt-42 md:mt-0 flex flex-col items-center text-center ">
+        <h2 class="text-4xl font-bold font-raleway mb-2 ">About Social Robotics</h2>
         <div class="p-2 mt-4 max-w-prose">
-            <p class="text-black font-lato font-medium text-2xl">
+            <p class="text-black font-lato text-2xl ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris
                 efficitur, vitae egestas lectus molestie. Duis dictum orci massa, sit amet pulvinar nisi porta
                 vitae.
             </p>
-            <a href="#"
-                class="mt-8 inline-block bg-custom-navyBlue font-bold font-lato text-white py-2 px-4 rounded hover:bg-white hover:text-custom-navyBlue hover:border hover:border-custom-navyBlue">
+            <div class="mt-12">
+            <a class="py-2 px-4 w-fit bg-custom-navyBlue text-white border-2 rounded-2xl hover:bg-transparent hover:border-2 border-custom-navyBlue hover:text-custom-navyBlue transition duration-300" href="#">
                 Read more
             </a>
+                
+            </div>
         </div>
     </div>
 
-</section>
+</section> 
 
 
-
-
-
-
-
-<!--Upcoming events section  -->
-<section class="pt-3 bg-custom-lightGray mt-1 mb-12"> <!-- Reduced margin-bottom -->
+                                    <!--Upcoming events section  -->
+<section class="pt-3 bg-custom-lightGray mt-1 mb-12"> 
 
     <h2 class="text-4xl font-raleway font-semibold text-center mb-4 mt-2">Upcoming events</h2>
-    <!-- Adjusted margin-bottom -->
+    
 
-    <div class="space-y-4 mx-auto max-w-4xl"> <!-- Centered container and limited width -->
+    <div class="space-y-4 mx-auto max-w-4xl"> 
 
         <!-- Event 1 -->
-        <a href="#" class="block bg-white rounded-lg shadow-md p-4"> <!-- Reduced padding -->
+        <a href="#" class="block bg-white rounded-lg shadow-md p-4"> 
             <div class="flex items-center space-x-4">
                 <div class="w-24 h-24 bg-gray-300 hover:bg-blue-50 transition duration-300 rounded-md"></div>
-                <!-- Increased size -->
-                <div class="ml-4 flex-1"> <!-- Reduced margin-left -->
+                
+                <div class="ml-4 flex-1"> 
                     <h3 class="text-lg font-lato font-bold text-gray-900">Mozilla Event in India</h3>
                 </div>
             </div>
         </a>
 
         <!-- Event 2 -->
-        <a href="#" class="block bg-white rounded-lg shadow-md p-4"> <!-- Reduced padding -->
+        <a href="#" class="block bg-white rounded-lg shadow-md p-4"> 
             <div class="flex items-center space-x-4">
                 <div class="w-24 h-24 bg-gray-300 hover:bg-blue-50 transition duration-300 rounded-md"></div>
-                <!-- Increased size -->
-                <div class="ml-4 flex-1"> <!-- Reduced margin-left -->
+                
+                <div class="ml-4 flex-1"> 
                     <h3 class="text-lg font-lato  font-bold text-gray-900">Tours UNESCO skill building workshop</h3>
                 </div>
             </div>
         </a>
 
         <!-- Event 3 -->
-        <a href="#" class="block bg-white rounded-lg shadow-md p-4 mb-8"> <!-- Reduced padding -->
+        <a href="#" class="block bg-white rounded-lg shadow-md p-4 mb-8"> 
             <div class="flex items-center space-x-4">
                 <div class="w-24 h-24 bg-gray-300 hover:bg-blue-50 transition duration-300 rounded-md"></div>
-                <!-- Increased size -->
-                <div class="ml-4 flex-1"> <!-- Reduced margin-left -->
+                
+                <div class="ml-4 flex-1"> 
                     <h3 class="text-lg font-lato font-semibold  text-gray-900">National Research Festival(NRF) to be attended by Msc. Students</h3>
                 </div>
             </div>
@@ -161,15 +125,14 @@ Home
 
 <!-- Latest News Section -->
 
-<section class="ml-32 mr-32 mt-15">
+<section class="">
     <h2 class="text-center text-5xl mb-5 font-bold font-raleway">Latest News</h2>
 
     <!-- Navigation buttons -->
     <!--  Prev Button  -->
-    <div class="relative">
-        <!-- Previous Button -->
+    <div class="relative p-16">
         <button id="prevBtn"
-            class="absolute top-1/2 left-0 transform -translate-x-full -translate-y-1/2 bg-custom-navyBlue rounded-full p-2 hover:bg-gray-400 transition">
+            class="absolute top-1/2 left-16 transform -translate-x-full -translate-y-1/2 bg-custom-navyBlue rounded-full p-2 hover:bg-gray-400 transition">
             <svg class="h-6 w-6 text-white font-raleway font-bold text-2xl" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -177,55 +140,80 @@ Home
         </button>
 
         <!-- Carousel Container -->
-        <div id="carousel" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory">
+        <div id="carousel" class="flex  scroll-smooth snap-x snap-mandatory">
             <!-- Slide 1 -->
             <div class="w-full md:w-1/3 px-2 flex-shrink-0 flex justify-center snap-start">
-                <div class="bg-white p-4 shadow-lg w-full h-full flex flex-col">
+                <div class="bg-white p-4  w-full h-full flex flex-col">
+                        
+                            <!-- image -->
                     <a href="#" class="group flex-grow">
-                        <img src="{% static 'img/image 3.png' %}" alt="News Image 1"
-                            class="transition duration-600 ease-in-out transform hover:scale-110 hover:opacity-70 rounded-lg shadow-md w-full h-auto object-cover">
+                        <img src="{% static 'img/image 3.png' %}" alt="News Image 1" class="rounded-lg shadow-md w-full h-auto object-cover">
                     </a>
-                    <p class="mt-6 text-black font-lato font-bold ">
+                      
+                        <!-- Description -->
+                    <p class="mt-6 text-black font-lato font-semibold ">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris
                         efficitur, vitae egestas lectus molestie. Duis dictum orci massa, sit amet pulvinar nisi porta
                         vitae.
                     </p>
+                        <!-- Link  -->
+                    <div>
+                        <a href="#" > <p class="font-lato font-medium text-2xl text-custom-navyBlue mt-4">Read more -></p></a>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- Slide 2 -->
-            <div class="w-full md:w-1/3 px-2 flex-shrink-0 flex justify-center snap-start">
-                <div class="bg-white p-4 shadow-lg w-full h-full flex flex-col">
+             <!-- Slide 2 -->
+             <div class="w-full md:w-1/3 px-2 flex-shrink-0 flex justify-center snap-start">
+                <div class="bg-white p-4  w-full h-full flex flex-col">
+                        
+                            <!-- image -->
                     <a href="#" class="group flex-grow">
-                        <img src="{% static 'img/image 3.png' %}" alt="News Image 1"
-                            class="transition duration-600 ease-in-out transform hover:scale-110 hover:opacity-70 rounded-lg shadow-md w-full h-auto object-cover">
+                        <img src="{% static 'img/image 3.png' %}" alt="News Image 1" class="rounded-lg shadow-md w-full h-auto object-cover">
                     </a>
-                    <p class="mt-6 text-black font-lato font-bold ">
+                      
+                        <!-- Description -->
+                    <p class="mt-6 text-black font-lato font-semibold ">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris
                         efficitur, vitae egestas lectus molestie. Duis dictum orci massa, sit amet pulvinar nisi porta
                         vitae.
                     </p>
+                        <!-- Link  -->
+                    <div>
+                        <a href="#" > <p class="font-lato font-medium text-2xl text-custom-navyBlue mt-4">Read more -></p></a>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- Slide 3 -->
-            <div class="w-full md:w-1/3 px-2 flex-shrink-0 flex justify-center snap-start">
-                <div class="bg-white p-4 shadow-lg w-full h-full flex flex-col">
+             <!-- Slide 3 -->
+             <div class="w-full md:w-1/3 px-2 flex-shrink-0 flex justify-center snap-start">
+                <div class="bg-white p-4  w-full h-full flex flex-col">
+                        
+                            <!-- image -->
                     <a href="#" class="group flex-grow">
-                        <img src="{% static 'img/image 3.png' %}" alt="News Image 1"
-                            class="transition duration-600 ease-in-out transform hover:scale-110 hover:opacity-70 rounded-lg shadow-md w-full h-auto object-cover">
+                        <img src="{% static 'img/image 3.png' %}" alt="News Image 1" class="rounded-lg shadow-md w-full h-auto object-cover">
                     </a>
-                    <p class="mt-6 text-black font-lato font-bold ">
+                      
+                        <!-- Description -->
+                    <p class="mt-6 text-black font-lato font-semibold ">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris
                         efficitur, vitae egestas lectus molestie. Duis dictum orci massa, sit amet pulvinar nisi porta
                         vitae.
                     </p>
+                        <!-- Link  -->
+                    <div>
+                        <a href="#" > <p class="font-lato font-medium text-2xl text-custom-navyBlue mt-4">Read more -></p></a>
+                    </div>
+
                 </div>
             </div>
-        </div>
+
+          
         <!-- Next Button -->
         <button id="nextBtn"
-            class="absolute top-1/2 right-0 transform translate-x-full -translate-y-1/2 bg-custom-navyBlue rounded-full p-2 hover:bg-gray-400 transition">
+            class="absolute top-1/2 right-16 transform translate-x-full -translate-y-1/2 bg-custom-navyBlue rounded-full p-2 hover:bg-gray-400 transition">
             <svg class="h-6 w-6 text-white font-raleway font-bold text-2xl" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -233,56 +221,13 @@ Home
         </button>
         </div>
     </div>
-
-
-
-
 </section>
 
 
 
 
 
-<!-- <section class="ml-32 mr-32 mt-8">
-    <h2 class="text-center text-5xl mb-5 font-bold font-raleway">Latest News</h2>
-    <div class="flex flex-wrap -mx-4 ">
-        <div class="w-full md:w-1/3 px-4 mb-8">
-            <div class="bg-white p-6 shadow-lg">
-                <a href="#" class="group">
-                    <img src="{% static 'img/image 3.png' %}" alt="News Image 1"  
-                        class="transition duration-600 ease-in-out transform hover:scale-110 hover:opacity-70 rounded-lg shadow-md w-545 h-370 object-cover">
-                </a>
-                <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-                    placerat nibh vitae mauris efficitur, vitae egestas lectus molestie. Duis dictum orci massa, sit
-                    amet pulvinar nisi porta vitae.</p>
-            </div>
-        </div>
 
-        <div class="w-full md:w-1/3 px-4 mb-8 ">
-            <div class="bg-white p-6 shadow-lg">
-                <a href="#" class="group">
-                    <img src="{% static 'img/image 3.png' %}" alt="News Image 1"
-                        class="transition duration-600 ease-in-out transform hover:scale-110 hover:opacity-70 rounded-lg shadow-md w-545 h-370 object-cover">
-                </a>
-                <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-                    placerat nibh vitae mauris efficitur, vitae egestas lectus molestie. Duis dictum orci massa, sit
-                    amet pulvinar nisi porta vitae.</p>
-            </div>
-        </div>
-
-        <div class="w-full md:w-1/3 px-4 mb-8">
-            <div class="bg-white p-6 shadow-lg">
-                <a href="#" class="group">
-                    <img src="{% static 'img/image 3.png' %}" alt="News Image 1"
-                        class="transition duration-600 ease-in-out transform hover:scale-110 hover:opacity-70 rounded-lg shadow-md w-545 h-370 object-cover">
-                </a>
-                <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-                    placerat nibh vitae mauris efficitur, vitae egestas lectus molestie. Duis dictum orci massa, sit
-                    amet pulvinar nisi porta vitae.</p>
-            </div>
-        </div>
-    </div>
-</section> -->
 {% endblock body %}
 
 
@@ -300,7 +245,7 @@ Home
             <div class="bg-white p-4 shadow-lg w-full h-full flex flex-col">
                 <a href="#" class="group flex-grow">
                     <img src="{% static 'img/image 3.png' %}" alt="News Image 1"
-                        class="transition duration-600 ease-in-out transform hover:scale-110 hover:opacity-70 rounded-lg shadow-md w-full h-auto object-cover">
+                        class="rounded-lg shadow-md w-full h-auto object-cover">
                 </a>
                 <p class="mt-6 text-black font-lato font-bold text-2xl text-sm">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris
@@ -318,7 +263,7 @@ Home
             <div class="bg-white p-4 shadow-lg w-full h-full flex flex-col">
                 <a href="#" class="group flex-grow">
                     <img src="{% static 'img/image 3.png' %}" alt="News Image 1"
-                        class="transition duration-600 ease-in-out transform hover:scale-110 hover:opacity-70 rounded-lg shadow-md w-full h-auto object-cover">
+                        class="rounded-lg shadow-md w-full h-auto object-cover">
                 </a>
                 <p class="mt-6 text-black font-lato font-bold text-2xl text-sm">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris
@@ -335,7 +280,7 @@ Home
             <div class="bg-white p-4 shadow-lg w-full h-full flex flex-col">
                 <a href="#" class="group flex-grow">
                     <img src="{% static 'img/image 3.png' %}" alt="News Image 1"
-                        class="transition duration-600 ease-in-out transform hover:scale-110 hover:opacity-70 rounded-lg shadow-md w-full h-auto object-cover">
+                        class="rounded-lg shadow-md w-full h-auto object-cover">
                 </a>
                 <p class="mt-6 text-black font-lato font-bold text-2xl text-sm">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nibh vitae mauris

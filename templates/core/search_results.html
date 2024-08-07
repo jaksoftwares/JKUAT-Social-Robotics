@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+
+{% block title %}
+    Search
+{% endblock title %}
+
 {% block body %}
 <div class="container  px-4 py-8">
     <h1 class="text-3xl font-bold mb-8">Search Results for "{{ query }}"</h1>
@@ -26,7 +32,8 @@
         <h2 class="text-2xl font-semibold mb-4">Publications</h2>
         <div>
             {% for publication in publications %}
-                <a href="{{ publication.get_absolute_url }}" class="text-blue-600 hover:underline">{{ publication.title }}</a>
+            <li class="mb-2">
+                <a href="{{ publication.external_link }}" class="text-blue-600 hover:underline">{{ publication.title }}</a>
                 <p class="text-gray-600">{{ publication.description|truncatewords:20 }}</p>
                 <button>{{ publication.external_link}}</button>
             {% endfor %}
@@ -47,6 +54,19 @@
     </section>
     {% endif %}
 
+    {% if outreach %}
+    <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">Outreach</h2>
+        <ul>
+            {% for outreach in outreach %}
+            <li class="mb-2">
+                <a href="{{ outreach.get_absolute_url }}" class="text-blue-600 hover:underline">{{ outreach.title }}</a>
+                <p class="text-gray-600">{{ outreach.description|truncatewords:20 }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
 
     {% if robots %}
     <section class="mb-8">
