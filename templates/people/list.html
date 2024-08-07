@@ -9,7 +9,7 @@
 
 {% block content %}
 <div class="container mx-auto px-4">
-    <h2 class="text-4xl md:text-5xl lg:text-6xl mb-4">Postgraduate Students</h2>
+    <h2 class="text-4xl md:text-5xl lg:text-6xl my-4">Postgraduate Students</h2>
     <div class="border border-black"></div>
     {% for postgrad in postgraduates %}
     <div class="my-8 md:my-16 {% if forloop.counter|divisibleby:2 %}md:text-end{% endif %}">
