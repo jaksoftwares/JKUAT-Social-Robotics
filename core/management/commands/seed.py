@@ -1,30 +1,100 @@
 import json
 from django.core.management.base import BaseCommand
+from django.core.exceptions import ValidationError
+from news.models import News
 from people.models import Person
 from config.settings import BASE_DIR
+from projects.models import Project
+from publications.models import Publication
+from robots.models import Robot
 
 
 class Command(BaseCommand):
-    help = "Import people from a JSON file"
+    help = "Import data from JSON files into Django models"
 
     def handle(self, *args, **kwargs):
-        with open(f"{BASE_DIR}/data/people.json") as f:
-            data = json.load(f)
-        for person_data in data:
-            Person.objects.create(
-                title=person_data["title"],
-                first_name=person_data["first_name"],
-                last_name=person_data["last_name"],
-                specialty=person_data["specialty"],
-                profile_picture=person_data["profile_picture"],
-                degree=person_data["degree"],
-                pursuing=person_data["pursuing"],
-                focus_title=person_data["focus_title"],
-                focus_short=person_data["focus_short"],
-                focus_long=person_data["focus_long"],
-                quote=person_data["quote"],
-                bio=person_data["bio"],
-                category=person_data["category"],
-            )
+        BASE_FILE_PATH = f"{BASE_DIR}/data"
+        DATA = [
+            {
+                "name": "news",
+                "file_path": f"{BASE_FILE_PATH}/news.json",
+                "class": News,
+            },
+            {
+                "name": "people",
+                "file_path": f"{BASE_FILE_PATH}/people.json",
+                "class": Person,
+            },
+            {
+                "name": "projects",
+                "file_path": f"{BASE_FILE_PATH}/projects.json",
+                "class": Project,
+            },
+            {
+                "name": "publications",
+                "file_path": f"{BASE_FILE_PATH}/publications.json",
+                "class": Publication,
+            },
+            {
+                "name": "robots",
+                "file_path": f"{BASE_FILE_PATH}/robots.json",
+                "class": Robot,
+            },
+        ]
 
-        self.stdout.write(self.style.SUCCESS("Successfully imported people data"))
+        for entry in DATA:
+            try:
+                with open(entry["file_path"]) as f:
+                    data_list = json.load(f)
+            except FileNotFoundError:
+                self.stdout.write(
+                    self.style.ERROR(f"File not found: {entry['file_path']}")
+                )
+                continue
+            except json.JSONDecodeError as e:
+                self.stdout.write(
+                    self.style.ERROR(
+                        f"Error decoding JSON in file {entry['file_path']}: {e}"
+                    )
+                )
+                continue
+
+            for data in data_list:
+                if entry["name"] == "publications" and "author" in data:
+                    author_id = data.pop("author")
+                    try:
+                        author_instance = Person.objects.get(id=author_id)
+                        data["author"] = author_instance
+                    except Person.DoesNotExist:
+                        self.stdout.write(
+                            self.style.ERROR(
+                                f"Person with id {author_id} does not exist. Skipping publication."
+                            )
+                        )
+                        continue
+                    except Exception as e:
+                        self.stdout.write(
+                            self.style.ERROR(
+                                f"Unexpected error fetching Person with id {author_id}: {e}"
+                            )
+                        )
+                        continue
+
+                try:
+                    entry["class"].objects.create(**data)
+                except ValidationError as e:
+                    self.stdout.write(
+                        self.style.ERROR(
+                            f"Validation error creating {entry['name']} instance: {e}"
+                        )
+                    )
+                except Exception as e:
+                    self.stdout.write(
+                        self.style.ERROR(
+                            f"Unexpected error creating {entry['name']} instance: {e}"
+                        )
+                    )
+
+            self.stdout.write(
+                self.style.SUCCESS(f"Successfully imported {entry['name']} data")
+            )
