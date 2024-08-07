@@ -31,6 +31,10 @@ class Person(ACCOUNTS_MODELS.Profile):
         _("Category"), choices=PERSON_CATEGORIES, max_length=1, blank=True, null=True
     )
     bio = models.TextField("Bio", blank=True, null=True)
+    linked_in_link = models.URLField(
+        _("LinkedIn Profile Link"), max_length=200, blank=True, null=True
+    )
+    personal_website_link = models.URLField(_("Personal Website Link"), max_length=200)
     slug = models.SlugField(unique=True, max_length=100)
 
     class Meta:
