@@ -15,6 +15,15 @@ class PersonListView(ListView):
     template_name = "people/list.html"
     context_object_name = "people"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["postgraduates"] = Person.objects.filter(category=Person.POSTGRADUATE)
+        context["undergraduates"] = Person.objects.filter(
+            category=Person.UNDERGRADRUATE
+        )
+        print(Person.objects.filter(first_name="Daniel")[1].category)
+        return context
+
 
 class PersonDetailView(DetailView):
     model = Person

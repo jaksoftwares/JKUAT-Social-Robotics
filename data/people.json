@@ -62,36 +62,41 @@
     {
         "first_name": "Daniel",
         "last_name": "Karume",
-        "course": "Bachelors of Science in Computer Technology",
-        "profile_picture": "./../static/img/people/postgraduate/undergraduate/daniel-karume.jpeg",
-        "linked_in_link": "https://www.linkedin.com/in/daniel-karume/"
+        "degree": "Bachelors of Science in Computer Technology",
+        "profile_picture": "./../static/img/people/undergraduate/daniel-karume.jpeg",
+        "linked_in_link": "https://www.linkedin.com/in/daniel-karume/",
+        "category": "U"
     },
     {
         "first_name": "Peaches",
         "last_name": "Njenga",
-        "course": "Bachelors of Science in Computer Technology",
-        "profile_picture": "./../static/img/people/postgraduate/undergraduate/peaches-njenga.jpeg",
-        "linked_in_link": "https://www.linkedin.com/in/peaches-njenga/"
+        "degree": "Bachelors of Science in Computer Technology",
+        "profile_picture": "./../static/img/people/undergraduate/peaches-njenga.jpeg",
+        "linked_in_link": "https://www.linkedin.com/in/peaches-njenga/",
+        "category": "U"
     },
     {
         "first_name": "Irke",
         "last_name": "Konzolo",
-        "course": "Bachelors of Science in Computer Technology",
-        "profile_picture": "./../static/img/people/postgraduate/undergraduate/irke-konzolo.jpeg",
-        "linked_in_link": "https://www.linkedin.com/in/irke-konzolo/"
+        "degree": "Bachelors of Science in Computer Technology",
+        "profile_picture": "./../static/img/people/undergraduate/irke-konzolo.jpeg",
+        "linked_in_link": "https://www.linkedin.com/in/irke-konzolo/",
+        "category": "U"
     },
     {
         "first_name": "Jeff",
         "last_name": "Kimani",
-        "course": "Bachelors of Science in Computer Technology",
-        "profile_picture": "./../static/img/people/postgraduate/undergraduate/jeff.jpeg",
-        "linked_in_link": "https://www.linkedin.com/in/jeff-chege-502387277/"
+        "degree": "Bachelors of Science in Computer Technology",
+        "profile_picture": "./../static/img/people/undergraduate/jeff.jpeg",
+        "linked_in_link": "https://www.linkedin.com/in/jeff-chege-502387277/",
+        "category": "U"
     },
     {
         "first_name": "Joseph",
         "last_name": "Kirika",
-        "course": "Bachelors of Science in Computer Technology",
-        "profile_picture": "./../static/img/people/postgraduate/undergraduate/joseph-kirika.jpeg",
-        "linked_in_link": "https://www.linkedin.com/in/joseph-kirika-4a821b278/"
+        "degree": "Bachelors of Science in Computer Technology",
+        "profile_picture": "./../static/img/people/undergraduate/joseph-kirika.jpeg",
+        "linked_in_link": "https://www.linkedin.com/in/joseph-kirika-4a821b278/",
+        "category": "U"
     }
 ]
