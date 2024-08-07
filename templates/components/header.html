@@ -2,40 +2,47 @@
 <header class="bg-[#669ACC] sticky top-0" id="main-header">
     <nav class="px-10" id="main-nav">
         <div class="p-3 flex justify-between items-center relative">
-            <a href="{% url 'core:home' %}" class="sticky top-0">
+            <a href="{% url 'core:home' %}" class="">
                 <span>Social robotics logo</span>
             </a>
-            <div class=" md:hidden flex flex-row gap-3 sticky ">
-                <button><img src="{% static 'img/search-icon.png' %}" alt="" class="size-5" id="search-button"></button>
-                <!-- menu button in mobile view -->
-                <button id="menu-toggle" class=" text-white focus:outline-none z-20">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16m-7 6h7" />
+            <div class="flex items-center gap-4 md:hidden">
+                <!-- search button in mobile view -->
+                <button id="search-toggle" class="block text-white focus:outline-none z-20">
+                    <img src="{% static 'img/search-icon.png' %}" alt="" class="size-5">
+                </button>
+                <!-- menu toggle button in mobile view -->
+                <button id="menu-toggle" class="block text-white focus:outline-none z-20">
+                    <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
-
             <div class="hidden md:flex gap-10 items-center justify-center">
-                <!-- search bar -->
-                <div>
-                    <form action="{% url 'core:search' %}" method="get"
-                        class="md:flex flex-row border rounded-2xl items-center gap-2 pl-2 hidden"
-                        id="search-form">
-                        
-                        <input type="text" name="q" required
-                            class="appearance-none bg-custom-lightBlue text-white focus:outline-none focus:shadow-outline placeholder:text-white"
-                            placeholder="Type to search ...">
-                        <button type="submit"
-                            class="bg-custom-navyBlue text-white p-2 rounded-e-2xl border-none hover:bg-blue-900 hover:transform duration-300">
-                            <img src="{% static 'img/search-icon.png' %}" alt="" class="size-5">
-                        </button>
-                    </form>
-                </div>
+                <!-- search bar for desktop view -->
+                <form action="{% url 'core:search' %}" method="get" class="flex flex-row border rounded-2xl items-center gap-2 pl-2">
+                    <input type="text" name="q" required class="appearance-none bg-custom-lightBlue text-white focus:outline-none focus:shadow-outline placeholder:text-white" placeholder="Type to search ...">
+                    <button type="submit" class="bg-custom-navyBlue text-white p-2 rounded-e-2xl border-none hover:bg-blue-900 hover:transform duration-300">
+                        <img src="{% static 'img/search-icon.png' %}" alt="" class="size-5">
+                    </button>
+                </form>
             </div>
         </div>
+
         <div class="border-b"></div>
+        
+        <!-- Search bar for mobile view -->
+        <div id="mobile-search-bar" class="hidden md:hidden mt-2 drop-shadow-lg  shadow-black text-white">
+            <form action="{% url 'core:search' %}" method="get" class=" w-full flex flex-row border rounded-2xl justify-between gap-2 pl-2">
+                <input type="text" name="q" required class="appearance-none bg-custom-lightBlue text-white focus:outline-none focus:shadow-outline w-full placeholder:text-white" placeholder="Type to search ...">
+                <button type="submit" class="bg-custom-navyBlue text-white p-3 px-4 rounded-e-2xl border-none hover:bg-blue-900 hover:transform duration-300">
+                    <img src="{% static 'img/search-icon.png' %}" alt="" class="size-5">
+                </button>
+            </form>
+        </div>
+        <!-- <div class="border-b"></div> -->
         <div class="p-2 relative">
             <ul id="navbar-items"
                 class="hidden py-2 md:flex md:items-center md:justify-center gap-6 md:gap-12 text-white opacity-90 md:opacity-1 duration-300  absolute top-0 left-0 right-0 bg-custom-navyBlue z-10 md:relative md:bg-transparent">
@@ -132,24 +139,58 @@
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 
-    <!-- toggle the menu bar in mobile view -->
-    document.getElementById('menu-toggle').addEventListener('click', function () {
+    document.getElementById('menu-toggle').addEventListener('click', function (e) {
+        e.stopPropagation();
         const navbarItems = document.getElementById('navbar-items');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        
         if (navbarItems.classList.contains('hidden')) {
             navbarItems.classList.remove('hidden');
             navbarItems.classList.add('flex', 'flex-col', 'items-center', 'gap-4');
+            menuIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
         } else {
             navbarItems.classList.add('hidden');
             navbarItems.classList.remove('flex', 'flex-col', 'items-center', 'gap-4');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
         }
     });
-    document.getElementById('search-button').addEventListener('click', function () {
-        const searchForm = document.getElementById('search-form');
-        if (searchForm.classList.contains('hidden')) {
-            searchForm.classList.remove('hidden');
-            searchForm.classList.add('flex' ,'items-center', 'gap-4');
+
+    document.getElementById('search-toggle').addEventListener('click', function (e) {
+        e.stopPropagation();
+        const searchBar = document.getElementById('mobile-search-bar');
+        if (searchBar.classList.contains('hidden')) {
+            searchBar.classList.remove('hidden');
         } else {
-            searchForm.classList.add('hidden');
+            searchBar.classList.add('hidden');
         }
+    });
+
+    document.addEventListener('click', function () {
+        const navbarItems = document.getElementById('navbar-items');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const searchBar = document.getElementById('mobile-search-bar');
+        
+        if (!navbarItems.classList.contains('hidden')) {
+            navbarItems.classList.add('hidden');
+            navbarItems.classList.remove('flex', 'flex-col', 'items-center', 'gap-4');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        }
+        
+        if (!searchBar.classList.contains('hidden')) {
+            searchBar.classList.add('hidden');
+        }
+    });
+
+    // Prevent hiding when clicking inside the navbar or search bar
+    document.getElementById('navbar-items').addEventListener('click', function (e) {
+        e.stopPropagation();
+    });
+    document.getElementById('mobile-search-bar').addEventListener('click', function (e) {
+        e.stopPropagation();
     });
 </script>
