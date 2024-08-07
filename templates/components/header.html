@@ -1,126 +1,108 @@
 {% load static %}
 <header class="bg-[#669ACC] sticky top-0" id="main-header">
-  <nav class="px-10" id="main-nav">
-    <div class="p-3 flex justify-between">
-      <a href="{% url 'core:home' %}" class="">
-        <span>Social robotics logo</span>
-      </a>
-      <div class="flex gap-10 items-center justify-center">
-        <div>
-          <form
-            action="{% url 'core:search' %}"
-            method="get"
-            class="flex flex-row border rounded-2xl items-center p-2 gap-2"
-          >
-            <img
-              src="{% static 'img/search-icon.png' %}"
-              alt=""
-              class="size-5"
-            />
-            <input
-              type="text"
-              name="q"
-              required
-              class="appearance-none bg-custom-lightBlue text-white focus:outline-none focus:shadow-outline placeholder:text-white"
-              placeholder="Type to search ..."
-            />
-            <button
-              type="submit"
-              class="bg-custom-navyBlue text-white p-2 rounded-xl border-2 border-none hover:bg-blue-900 hover:transform duration-300"
-            >
-              Search
-            </button>
-          </form>
+    <nav class="px-10" id="main-nav">
+        <div class="p-3 flex justify-between items-center relative">
+            <a href="{% url 'core:home' %}" class="">
+                <span>Social robotics logo</span>
+            </a>
+            <div class="flex items-center gap-4 md:hidden">
+                <!-- search button in mobile view -->
+                <button id="search-toggle" class="block text-white focus:outline-none z-20">
+                    <img src="{% static 'img/search-icon.png' %}" alt="" class="size-5">
+                </button>
+                <!-- menu toggle button in mobile view -->
+                <button id="menu-toggle" class="block text-white focus:outline-none z-20">
+                    <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden md:flex gap-10 items-center justify-center">
+                <!-- search bar for desktop view -->
+                <form action="{% url 'core:search' %}" method="get" class="flex flex-row border rounded-2xl items-center gap-2 pl-2">
+                    <input type="text" name="q" required class="appearance-none bg-custom-lightBlue text-white focus:outline-none focus:shadow-outline placeholder:text-white" placeholder="Type to search ...">
+                    <button type="submit" class="bg-custom-navyBlue text-white p-2 rounded-e-2xl border-none hover:bg-blue-900 hover:transform duration-300">
+                        <img src="{% static 'img/search-icon.png' %}" alt="" class="size-5">
+                    </button>
+                </form>
+            </div>
         </div>
-        <div>
-          <a
-            class="bg-custom-navyBlue text-white p-2 rounded-xl border-2 border-none hover:bg-blue-900 hover:transform duration-300"
-            href="{% url 'accounts:login' %}"
-            >Login</a
-          >
+
+        <div class="border-b"></div>
+        
+        <!-- Search bar for mobile view -->
+        <div id="mobile-search-bar" class="hidden md:hidden mt-2 drop-shadow-lg  shadow-black text-white">
+            <form action="{% url 'core:search' %}" method="get" class=" w-full flex flex-row border rounded-2xl justify-between gap-2 pl-2">
+                <input type="text" name="q" required class="appearance-none bg-custom-lightBlue text-white focus:outline-none focus:shadow-outline w-full placeholder:text-white" placeholder="Type to search ...">
+                <button type="submit" class="bg-custom-navyBlue text-white p-3 px-4 rounded-e-2xl border-none hover:bg-blue-900 hover:transform duration-300">
+                    <img src="{% static 'img/search-icon.png' %}" alt="" class="size-5">
+                </button>
+            </form>
         </div>
-      </div>
-    </div>
-    <div class="border-b"></div>
-    <div class="p-2">
-      <ul
-        class="flex items-center justify-center gap-6 md:gap-12 text-white opacity-0 animate-fadeIn"
-      >
-        <li>
-          <a
-            href="{% url 'core:home' %}"
-            class="relative inline-block pb-1 text-lg {% if request.path == '/about/' %}text-custom-navyBlue {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform"
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            href="{% url 'core:about' %}"
-            class="relative inline-block pb-1 text-lg {% if request.path == '/about/' %}text-custom-navyBlue {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform"
-          >
-            About
-          </a>
-        </li>
-        <li>
-          <a
-            href="{% url 'people:list' %}"
-            class="relative inline-block pb-1 text-lg {% if request.path == '/team/' %}text-custom-navyBlue {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform"
-          >
-            Team
-          </a>
-        </li>
-        <li>
-          <a
-            href="{% url 'news:list' %}"
-            class="relative inline-block pb-1 text-lg {% if request.path == '/news/' %}text-custom-navyBlue {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform"
-          >
-            News
-          </a>
-        </li>
-        <li>
-          <a
-            href="{% url 'projects:list' %}"
-            class="relative inline-block pb-1 text-lg {% if request.path == '/projects/' %}text-custom-navyBlue {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform"
-          >
-            Projects
-          </a>
-        </li>
-        <li>
-          <a
-            href="{% url 'outreach:list' %}"
-            class="relative inline-block pb-1 text-lg {% if request.path == '/outreach/' %}text-custom-navyBlue {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform"
-          >
-            Outreach
-          </a>
-        </li>
-        <li>
-          <a
-            href="{% url 'publications:list' %}"
-            class="relative inline-block pb-1 text-lg {% if request.path == '/publications/' %}text-custom-navyBlue {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform"
-          >
-            Publications
-          </a>
-        </li>
-        <li>
-          <a
-            href="{% url 'responsible_computing:responsible_computing' %}"
-            class="relative inline-block pb-1 text-lg {% if request.path == '/responsible_computing/' %}text-custom-navyBlue {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform"
-          >
-            Responsible Computing
-          </a>
-        </li>
-        <li>
-          <a
-            href="{% url 'robots:list' %}"
-            class="relative inline-block pb-1 text-lg {% if request.path == '/robots/' %}text-custom-navyBlue {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform"
-          >
-            Robots
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+        <!-- <div class="border-b"></div> -->
+        <div class="p-2 relative">
+            <ul id="navbar-items"
+                class="hidden py-2 md:flex md:items-center md:justify-center gap-6 md:gap-12 text-white opacity-90 md:opacity-1 duration-300  absolute top-0 left-0 right-0 bg-custom-navyBlue z-10 md:relative md:bg-transparent">
+                <li>
+                    <a href="{% url 'core:home' %}"
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/' %}text-custom-lightGray  font-bold{% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'core:about' %}"
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/about/' %}text-custom-lightGray font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'people:list' %}"
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/team/' %}text-custom-lightGray font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        Team
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'news:list' %}"
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/news/' %}text-custom-lightGray font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        News
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'projects:list' %}"
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/projects/' %}text-custom-lightGray font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'outreach:list' %}"
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/outreach/' %}text-custom-lightGray font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        Outreach
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'publications:list' %}"
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/publications/' %}text-custom-lightGray font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        Publications
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'responsible_computing:responsible_computing' %}"
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/responsible_computing/' %}text-custom-lightGray font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        Responsible Computing
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'robots:list' %}"
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/robots/' %}text-custom-lightGray font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        Robots
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </header>
 <style>
   /* Hide header smoothly */
@@ -160,12 +142,12 @@
   }
 </style>
 <script>
-  let lastScrollTop = 0;
-  let isScrolling;
-  const header = document.getElementById("main-header");
+    let lastScrollTop = 0;
+    let isScrolling;
+    const header = document.getElementById("main-header");
 
-  window.addEventListener("scroll", function () {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    window.addEventListener("scroll", function () {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > lastScrollTop) {
       // Scrolling down
