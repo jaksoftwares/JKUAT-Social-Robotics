@@ -8,47 +8,49 @@
 {% endblock title %}
 
 {% block body %}
-<div class="container mx-auto px-4 py-8">
+<div class="container  px-4 py-8">
     <h1 class="text-3xl font-bold mb-8">Search Results for "{{ query }}"</h1>
     {% if people %}
     <section class="mb-8">
         <h2 class="text-2xl font-semibold mb-4">People</h2>
-        <ul>
+        <div>
             {% for person in people %}
-            <li class="mb-2">
                 <a href="{{ person.get_absolute_url }}" class="text-blue-600 hover:underline">{{ person.first_name }} {{ person.last_name }}</a>
-                <p class="text-gray-600">{{ person.degree }} - {{ person.specialty }}</p>
-            </li>
+                <p class="text-gray-600">{{ person.degree }} </p>
+                <p>{{ person.pursuing }}</p>
+                <p>{{ person.focus}}</p>
+                <p>{{ person.short}}</p>
+                <button>Visit Profile</button>
+
             {% endfor %}
-        </ul>
+        </div>
     </section>
     {% endif %}
 
     {% if publications %}
     <section class="mb-8">
         <h2 class="text-2xl font-semibold mb-4">Publications</h2>
-        <ul>
+        <div>
             {% for publication in publications %}
             <li class="mb-2">
                 <a href="{{ publication.external_link }}" class="text-blue-600 hover:underline">{{ publication.title }}</a>
                 <p class="text-gray-600">{{ publication.description|truncatewords:20 }}</p>
-            </li>
+                <button>{{ publication.external_link}}</button>
             {% endfor %}
-        </ul>
+        </div>
     </section>
     {% endif %}
 
     {% if projects %}
     <section class="mb-8">
         <h2 class="text-2xl font-semibold mb-4">Projects</h2>
-        <ul>
+        <div>
             {% for project in projects %}
-            <li class="mb-2">
                 <a href="{{ project.get_absolute_url }}" class="text-blue-600 hover:underline">{{ project.title }}</a>
                 <p class="text-gray-600">{{ project.description|truncatewords:20 }}</p>
-            </li>
+                <button>{{project.external_link}}</button>
             {% endfor %}
-        </ul>
+        </div>
     </section>
     {% endif %}
 
@@ -69,33 +71,35 @@
     {% if robots %}
     <section class="mb-8">
         <h2 class="text-2xl font-semibold mb-4">Robots</h2>
-        <ul>
+        <div>
             {% for robot in robots %}
-            <li class="mb-2">
                 <a href="{{ robot.get_absolute_url }}" class="text-blue-600 hover:underline">{{ robot.title }}</a>
                 <p class="text-gray-600">{{ robot.description|truncatewords:20 }}</p>
-            </li>
-            {% endfor %}
-        </ul>
+                <button>{{ robot.external_link }}</button>
+        </div>
     </section>
     {% endif %}
 
     {% if news %}
     <section class="mb-8">
         <h2 class="text-2xl font-semibold mb-4">News</h2>
-        <ul>
+        <div>
             {% for item in news %}
-            <li class="mb-2">
                 <a href="{{ item.get_absolute_url }}" class="text-blue-600 hover:underline">{{ item.title }}</a>
                 <p class="text-gray-600">{{ item.description|truncatewords:20 }}</p>
-            </li>
+                <button>{{ news.external_link }}</button>
             {% endfor %}
-        </ul>
+        </div>
     </section>
     {% endif %}
 
     {% if not people and not publications and not projects and not outreach and not robots and not news %}
-    <p class="text-gray-600">No results found for "{{ query }}"</p>
-    {% endif %}
+    <div class="flex flex-col items-center justify-center w-full ">
+        <img src="{% static 'img/no-results.png' %}" alt="" class="h-80">
+        <p class="text-4xl font-raleway">Oops!</p>
+        <p class="text-gray-600 font-lato">No results found for "{{ query }}"</p>
+        <button class="font-lato mt-2 bg-custom-navyBlue p-2 text-white  rounded-xl border border-custom-navyBlue hover:bg-white hover:text-custom-navyBlue hover:border-1 hover:border-custom-navyBlue -translate-y-1 transition-colors duration-300 ">Back to home</button>
+    </div>
+        {% endif %}
 </div>
 {% endblock body %}
