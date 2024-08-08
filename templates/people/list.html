@@ -1,172 +1,80 @@
 {% extends 'base_list.html' %}
-
 {% load static %}
 
-{% block title %}
-Team
-{% endblock title %}
-
+{% block title %}Team{% endblock title %}
 
 {% block banner_title %}
     Meet the minds behind JKUAT Social Robotics
 {% endblock banner_title %}
 
-
 {% block content %}
-<div>
-    <h2 class="text-6xl mb-4">Postgraduate Students</h2>
+<div class="container mx-auto px-4">
+    <h2 class="text-4xl md:text-5xl lg:text-6xl my-4">Postgraduate Students</h2>
     <div class="border border-black"></div>
-</div>
-<div>
-    <div class="flex items-center gap-5 justify-center">
-        <div>
-            <img src="{% static 'img/default-profile.png' %}" alt="" class="w-64 h-64 object-contain rounded-full">
-        </div>
-        <div class="flex flex-col gap-5">
-            <div>
-                <h2 class="font-bold text-4xl">Paul Ndemo</h2>
-                <h4 class="text-custom-navyBlue">Software Engineer</h4>
+    {% for postgrad in postgraduates %}
+    <div class="my-8 md:my-16 {% if forloop.counter|divisibleby:2 %}{% endif %}">
+        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10 justify-center {% if forloop.counter|divisibleby:2 %}md:flex-row-reverse{% endif %}">
+            <div class="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
+                <div>
+                    <h2 class="font-bold text-2xl md:text-3xl lg:text-4xl">{{ postgrad.first_name }} {{ postgrad.last_name }}</h2>
+                    <h4 class="text-custom-navyBlue text-lg md:text-xl">{{ postgrad.specialty }}</h4>
+                </div>
+                <div>
+                    <h4 class="italic text-lg md:text-xl">Focus</h4>
+                    <p class="text-sm md:text-base">{{ postgrad.focus_long }}</p>
+                </div>
+                <div class="{% if forloop.counter|divisibleby:2 %}{% endif %}">
+                    <a class="inline-block p-2 bg-custom-lightBlue text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lightBlue hover:text-custom-lightBlue transition duration-300" href="{% url 'people:detail' postgrad.slug %}">Visit Profile</a>
+                </div>
             </div>
-            <div>
-                <h4 class="italic">Focus</h4>
-                <p>
-                    Using State Transition Graphs (STGs) in coordinating gazes between children with Autism Spectrum Disorder (ASD) and social robots to help them improve their social interaction skills. Studies in other contexts have explored the use of STGs in coordinating tasks and found them to be effective in reducing complexity and improving task execution efficiency. Hence, his research aims to explore how STGs can be used to coordinate gazes for effective interactions between children with ASD and social robots.
-                </p>
+            <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
+                <img src="{% if postgrad.profile_picture %}{{ postgrad.profile_picture.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ postgrad.first_name }} {{ postgrad.last_name }}" class="w-full h-full object-cover rounded-full">
             </div>
-            <a class="p-2 w-fit bg-custom-lightBlue text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lightBlue hover:text-custom-lightBlue transition duration-300" href="{% url 'people:detail' 'daniel-karume-20240801185840' %}">Visit Profile</a>
         </div>
     </div>
-</div>
-<div class="border border-black m-5 my-16"></div>
-<div class="my-16 text-end">
-    <div class="flex items-center gap-10 justify-center">
-        <div class="flex flex-col gap-5 w-full">
-            <div>
-                <h2 class="font-bold text-4xl">Paul 1Ndemo</h2>
-                <h4 class="text-custom-navyBlue">Software Engineer</h4>
-            </div>
-            <div>
-                <h4 class="italic">Focus</h4>
-                <p>
-                    Using State Transition Graphs (STGs) in coordinating gazes between children with Autism Spectrum Disorder (ASD) and social robots to help them improve their social interaction skills. Studies in other contexts have explored the use of STGs in coordinating tasks and found them to be effective in reducing complexity and improving task execution efficiency. Hence, his research aims to explore how STGs can be used to coordinate gazes for effective interactions between children with ASD and social robots.
-                </p>
-            </div>
-            <div class="flex justify-end">
-                <a class="p-2 w-fit bg-custom-lightBlue text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lightBlue hover:text-custom-lightBlue transition duration-300" href="{% url 'people:detail' 'daniel-karume-20240801185840' %}">Visit Profile</a>
-            </div>
-        </div>
-        <div>
-            <img src="{% static 'img/default-profile.png' %}" alt="" class="w-64 h-64 object-contain rounded-full">
-        </div>
-    </div>
-</div>
-<div class="border border-black m-5  my-16"></div>
-<div class="my-16">
-    <div class="flex items-center gap-5 justify-center">
-        <div>
-            <img src="{% static 'img/default-profile.png' %}" alt="" class="w-64 h-64 object-contain rounded-full">
-        </div>
-        <div class="flex flex-col gap-5">
-            <div>
-                <h2 class="font-bold text-4xl">Paul Ndemo</h2>
-                <h4 class="text-custom-navyBlue">Software Engineer</h4>
-            </div>
-            <div>
-                <h4 class="italic">Focus</h4>
-                <p>
-                    Using State Transition Graphs (STGs) in coordinating gazes between children with Autism Spectrum Disorder (ASD) and social robots to help them improve their social interaction skills. Studies in other contexts have explored the use of STGs in coordinating tasks and found them to be effective in reducing complexity and improving task execution efficiency. Hence, his research aims to explore how STGs can be used to coordinate gazes for effective interactions between children with ASD and social robots.
-                </p>
-            </div>
-            <a class="p-2 w-fit bg-custom-lightBlue text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lightBlue hover:text-custom-lightBlue transition duration-300" href="{% url 'people:detail' 'daniel-karume-20240801185840' %}">Visit Profile</a>
-        </div>
-    </div>
-</div>
-<div>
-    <div class="mb-5">
-        <h2 class="text-6xl">Undergraduate Students</h2>
-        <div class="border border-black"></div>
-    </div>
-    <div class="grid grid-cols-3 gap-4">
-        <div class="aspect-square border rounded-lg bg-custom-navyBlue text-white flex flex-col">
-            <div class="h-3/4 px-16 pt-4">
-                <h2 class="font-bold text-6xl">
-                    Our 
-                    Undergraduate students
-                </h2>
-            </div>
-            <div class="text-2xl px-16 pt-4 h-1/4">
-                <p>An enthusiastic group of students with a passion  to learn</p>
-            </div>
-        </div>
-        <div class="aspect-square border rounded-lg border-black flex flex-col">
-            <div class="bg-black h-3/4">
-                <img src="{% static 'img/default-profile.png' %}" alt="" class="w-full h-full object-cover">
-            </div>
-            <div class="flex items-center justify-between p-2 h-1/4">
-                <div>
-                    <h2 class="font-bold text-2xl">Daniel Karume</h2>
-                    <span class="italic">Bsc. Computer Science</span>
+    {% if not forloop.last %}
+    <div class="border border-black my-8 md:my-16"></div>
+    {% endif %}
+    {% endfor %}
+    <div class="mt-16">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl mb-4">Undergraduate Students</h2>
+        <div class="border border-black mb-8"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="aspect-square border rounded-lg bg-custom-navyBlue text-white flex flex-col p-6">
+                <div class="h-3/4">
+                    <h2 class="font-bold text-3xl md:text-4xl lg:text-5xl">
+                        Our Undergraduate students
+                    </h2>
                 </div>
-                <div>
-                    <a href="#">LinkedIn</a>
+                <div class="text-lg md:text-xl lg:text-2xl h-1/4">
+                    <p>An enthusiastic group of students with a passion to learn</p>
                 </div>
             </div>
-        </div>
-        <div class="aspect-square border rounded-lg border-black flex flex-col">
-            <div class="bg-black h-3/4">
-                <img src="{% static 'img/default-profile.png' %}" alt="" class="w-full h-full object-cover">
-            </div>
-            <div class="flex items-center justify-between p-2 h-1/4">
-                <div>
-                    <h2 class="font-bold text-2xl">Daniel Karume</h2>
-                    <span class="italic">Bsc. Computer Science</span>
+            {% for undergrad in undergraduates %}
+            <div class="aspect-square rounded-lg shadow-lg flex flex-col overflow-hidden">
+                <div class="bg-black h-3/4">
+                    <img src="{% if undergrad.profile_picture %}{{ undergrad.profile_picture.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ undergrad.first_name }} {{ undergrad.last_name }}" class="w-full h-full object-cover rounded-t-lg">
                 </div>
-                <div>
-                    <a href="#">LinkedIn</a>
-                </div>
-            </div>
-        </div>
-        <div class="aspect-square border rounded-lg border-black flex flex-col">
-            <div class="bg-black h-3/4">
-                <img src="{% static 'img/default-profile.png' %}" alt="" class="w-full h-full object-cover">
-            </div>
-            <div class="flex items-center justify-between p-2 h-1/4">
-                <div>
-                    <h2 class="font-bold text-2xl">Daniel Karume</h2>
-                    <span class="italic">Bsc. Computer Science</span>
-                </div>
-                <div>
-                    <a href="#">LinkedIn</a>
+                <div class="flex items-center justify-center gap-4 p-4 h-1/4 md:gap-20">
+                    <div>
+                        <h2 class="font-bold text-lg md:text-xl">{{ undergrad.first_name }} {{ undergrad.last_name }}</h2>
+                        <span class="italic text-sm md:text-base">{{ undergrad.degree }}</span>
+                    </div>
+                    <div>
+                        {% if undergrad.linked_in_link %}
+                        <a
+                            href="{{ undergrad.linked_in_link }}"
+                            class="text-blue-600 hover:text-blue-800"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fa-brands fa-linkedin fa-2xl" style="color: #4071b1;"></i>
+                        </a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="aspect-square border rounded-lg border-black flex flex-col">
-            <div class="bg-black h-3/4">
-                <img src="{% static 'img/default-profile.png' %}" alt="" class="w-full h-full object-cover">
-            </div>
-            <div class="flex items-center justify-between p-2 h-1/4">
-                <div>
-                    <h2 class="font-bold text-2xl">Daniel Karume</h2>
-                    <span class="italic">Bsc. Computer Science</span>
-                </div>
-                <div>
-                    <a href="#">LinkedIn</a>
-                </div>
-            </div>
-        </div>
-        <div class="aspect-square border rounded-lg border-black flex flex-col">
-            <div class="bg-black h-3/4">
-                <img src="{% static 'img/default-profile.png' %}" alt="" class="w-full h-full object-cover">
-            </div>
-            <div class="flex items-center justify-between p-2 h-1/4">
-                <div>
-                    <h2 class="font-bold text-2xl">Daniel Karume</h2>
-                    <span class="italic">Bsc. Computer Science</span>
-                </div>
-                <div>
-                    <a href="#">LinkedIn</a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
