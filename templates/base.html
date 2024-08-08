@@ -9,9 +9,7 @@
     <body>
         {% include './components/header.html' %}
         {% include './components/sidebar.html' %}
-        <div>
-            {% block body %}{% endblock body %}
-        </div>
+        {% block body %}{% endblock body %}
         {% include './components/footer.html' %}
     </body>
 </html>
