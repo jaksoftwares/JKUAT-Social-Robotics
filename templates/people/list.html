@@ -12,7 +12,7 @@
     <h2 class="text-4xl md:text-5xl lg:text-6xl my-4">Postgraduate Students</h2>
     <div class="border border-black"></div>
     {% for postgrad in postgraduates %}
-    <div class="my-8 md:my-16 {% if forloop.counter|divisibleby:2 %}md:text-end{% endif %}">
+    <div class="my-8 md:my-16 {% if forloop.counter|divisibleby:2 %}{% endif %}">
         <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10 justify-center {% if forloop.counter|divisibleby:2 %}md:flex-row-reverse{% endif %}">
             <div class="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
                 <div>
@@ -23,7 +23,7 @@
                     <h4 class="italic text-lg md:text-xl">Focus</h4>
                     <p class="text-sm md:text-base">{{ postgrad.focus_long }}</p>
                 </div>
-                <div class="{% if forloop.counter|divisibleby:2 %}md:flex md:justify-end{% endif %}">
+                <div class="{% if forloop.counter|divisibleby:2 %}{% endif %}">
                     <a class="inline-block p-2 bg-custom-lightBlue text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lightBlue hover:text-custom-lightBlue transition duration-300" href="{% url 'people:detail' postgrad.slug %}">Visit Profile</a>
                 </div>
             </div>
