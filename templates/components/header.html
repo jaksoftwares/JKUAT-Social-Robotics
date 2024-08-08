@@ -105,41 +105,16 @@
     </nav>
 </header>
 <style>
-  /* Hide header smoothly */
-  #main-header {
-    transition: transform 0.3s ease-in-out; /* Smooth transition for hiding */
-  }
-
-  #main-header.hide {
-    transform: translateY(-100%);
-  }
-  #main-nav ul {
-    overflow: hidden;
-  }
-
-  /* Animate fadeIn */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
     }
-    to {
-      opacity: 1;
-    }
-  }
 
-  .animate-fadeIn {
-    animation: fadeIn 1s forwards;
-    opacity: 1;
-  }
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
+    .animate-fadeIn {
+        opacity: 0;
+        animation: fadeIn 1s forwards;
     }
-  }
-  .animate-fadeIn {
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-  }
 </style>
 <script>
     let lastScrollTop = 0;
@@ -149,22 +124,73 @@
     window.addEventListener("scroll", function () {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop > lastScrollTop) {
-      // Scrolling down
-      header.classList.add("hide");
-    } else {
-      // Scrolling up
-      header.classList.remove("hide");
-    }
+        if (scrollTop > lastScrollTop) {
+            header.classList.add("hide");
+        } else {
+            header.classList.remove("hide");
+        }
 
-    // Clear any previous timeout
-    clearTimeout(isScrolling);
+        clearTimeout(isScrolling);
 
-    // Set a timeout to hide the header when scrolling stops
-    isScrolling = setTimeout(function () {
-      header.classList.remove("hide");
-    }, 100); // 100ms delay before hiding the header after scrolling stops
+        isScrolling = setTimeout(function () {
+            header.classList.remove("hide");
+        }, 100);
 
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-  });
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    document.getElementById('menu-toggle').addEventListener('click', function (e) {
+        e.stopPropagation();
+        const navbarItems = document.getElementById('navbar-items');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        
+        if (navbarItems.classList.contains('hidden')) {
+            navbarItems.classList.remove('hidden');
+            navbarItems.classList.add('flex', 'flex-col', 'items-center', 'gap-4');
+            menuIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
+        } else {
+            navbarItems.classList.add('hidden');
+            navbarItems.classList.remove('flex', 'flex-col', 'items-center', 'gap-4');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        }
+    });
+
+    document.getElementById('search-toggle').addEventListener('click', function (e) {
+        e.stopPropagation();
+        const searchBar = document.getElementById('mobile-search-bar');
+        if (searchBar.classList.contains('hidden')) {
+            searchBar.classList.remove('hidden');
+        } else {
+            searchBar.classList.add('hidden');
+        }
+    });
+
+    document.addEventListener('click', function () {
+        const navbarItems = document.getElementById('navbar-items');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const searchBar = document.getElementById('mobile-search-bar');
+        
+        if (!navbarItems.classList.contains('hidden')) {
+            navbarItems.classList.add('hidden');
+            navbarItems.classList.remove('flex', 'flex-col', 'items-center', 'gap-4');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        }
+        
+        if (!searchBar.classList.contains('hidden')) {
+            searchBar.classList.add('hidden');
+        }
+    });
+
+    // Prevent hiding when clicking inside the navbar or search bar
+    document.getElementById('navbar-items').addEventListener('click', function (e) {
+        e.stopPropagation();
+    });
+    document.getElementById('mobile-search-bar').addEventListener('click', function (e) {
+        e.stopPropagation();
+    });
 </script>
