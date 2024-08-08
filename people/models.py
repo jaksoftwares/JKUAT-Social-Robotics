@@ -6,7 +6,6 @@ from datetime import datetime
 from accounts import models as ACCOUNTS_MODELS
 
 
-
 class Person(ACCOUNTS_MODELS.Profile):
     POSTGRADUATE = "P"
     UNDERGRADRUATE = "U"
@@ -34,7 +33,9 @@ class Person(ACCOUNTS_MODELS.Profile):
     linked_in_link = models.URLField(
         _("LinkedIn Profile Link"), max_length=200, blank=True, null=True
     )
-    personal_website_link = models.URLField(_("Personal Website Link"), max_length=200, blank=True, null=True)
+    personal_website_link = models.URLField(
+        _("Personal Website Link"), max_length=200, blank=True, null=True
+    )
     slug = models.SlugField(unique=True, max_length=100)
 
     class Meta:

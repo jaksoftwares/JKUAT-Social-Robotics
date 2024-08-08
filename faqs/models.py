@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Question(models.Model):
-    text = models.TextField(_("Question"))
+    text = models.TextField(_("Question"), unique=True)
 
     class Meta:
         verbose_name = _("Question")
@@ -18,7 +18,7 @@ class Question(models.Model):
 
 
 class Response(models.Model):
-    text = models.TextField(_("Response"))
+    text = models.TextField(_("Response"), unique=True)
 
     class Meta:
         verbose_name = _("Response")
