@@ -12,16 +12,13 @@
     <h1 class="text-3xl font-bold mb-8">Search Results for "{{ query }}"</h1>
     {% if people %}
     <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">People</h2>
-        <div>
+        <h2 class="text-2xl font-semibold mb-4 md:pl-20">People</h2>
+        <div class="flex flex-col md:pl-20">
             {% for person in people %}
-                <a href="{{ person.get_absolute_url }}" class="text-blue-600 hover:underline">{{ person.first_name }} {{ person.last_name }}</a>
-                <p class="text-gray-600">{{ person.degree }} </p>
+                <a href="{{ person.get_absolute_url }}" class="text-custom-navyBlue hover:underline text-xl font-semibold">{{ person.first_name }} {{ person.last_name }}</a>
+                <p>{{ person.specialty}}</p>
                 <p>{{ person.pursuing }}</p>
-                <p>{{ person.focus}}</p>
-                <p>{{ person.short}}</p>
-                <button>Visit Profile</button>
-
+                <p class='pb-5'>{{ person.focus_title}}</p>
             {% endfor %}
         </div>
     </section>
@@ -29,13 +26,11 @@
 
     {% if publications %}
     <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Publications</h2>
-        <div>
+        <h2 class="text-2xl font-semibold mb-4 md:pl-20">Publications</h2>
+        <div class="md:pl-20 flex flex-col">
             {% for publication in publications %}
-            <li class="mb-2">
-                <a href="{{ publication.external_link }}" class="text-blue-600 hover:underline">{{ publication.title }}</a>
-                <p class="text-gray-600">{{ publication.description|truncatewords:20 }}</p>
-                <button>{{ publication.external_link}}</button>
+                <a href="{{ publication.external_link }}" class="text-custom-navyBlue text-xl hover:underline">{{ publication.title }}</a>
+                <p class="text-gray-600 pb-5 ">{{ publication.description|truncatewords:40 }}</p>
             {% endfor %}
         </div>
     </section>
@@ -48,7 +43,6 @@
             {% for project in projects %}
                 <a href="{{ project.get_absolute_url }}" class="text-blue-600 hover:underline">{{ project.title }}</a>
                 <p class="text-gray-600">{{ project.description|truncatewords:20 }}</p>
-                <button>{{project.external_link}}</button>
             {% endfor %}
         </div>
     </section>
@@ -70,12 +64,12 @@
 
     {% if robots %}
     <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Robots</h2>
-        <div>
+        <h2 class="text-2xl font-semibold mb-4 md:pl-20">Robots</h2>
+        <div class="md:pl-20">
             {% for robot in robots %}
-                <a href="{{ robot.get_absolute_url }}" class="text-blue-600 hover:underline">{{ robot.title }}</a>
-                <p class="text-gray-600">{{ robot.description|truncatewords:20 }}</p>
-                <button>{{ robot.external_link }}</button>
+                <a href="{{ robot.get_absolute_url }}" class="text-custom-navyBlue font-semibold text-xl hover:underline">{{ robot.title }}</a>
+                <p class="text-gray-600 pb-5">{{ robot.description|truncatewords:20 }}</p>
+                {% endfor %}
         </div>
     </section>
     {% endif %}
@@ -85,11 +79,10 @@
         <h2 class="text-2xl font-semibold mb-4">News</h2>
         <div>
             {% for item in news %}
-                <a href="{{ item.get_absolute_url }}" class="text-blue-600 hover:underline">{{ item.title }}</a>
-                <p class="text-gray-600">{{ item.description|truncatewords:20 }}</p>
-                <button>{{ news.external_link }}</button>
+                <a href="{{ item.get_absolute_url }}" class="text-custom-navyBlue hover:underline text-xl">{{ item.title }}</a>
+                <p class="text-gray-600 pb-10">{{ item.description|truncatewords:20 }}</p>
             {% endfor %}
-        </div>
+        </div> 
     </section>
     {% endif %}
 

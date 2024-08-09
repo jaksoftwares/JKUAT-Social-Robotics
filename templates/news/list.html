@@ -23,6 +23,8 @@
             <h1 class="text-3xl font-bold font-raleway mb-2">
                 {{news.title}}
             </h1>
+        </a> <a href="{{ news.external_link }}" target="_blank">
+            <p class="font-lato font-medium text-3xl text-custom-navyBlue mt-8">Read more -></p>
         </a>
         <!-- News creation date -->
         <h2 class="text-2xl font-lato underline font-semibold text-gray-700 mb-4">
@@ -33,9 +35,7 @@
             {{news.description}}
         </p>
         <!-- News link -->
-        <a href="{{ news.external_link }}" target="_blank">
-            <p class="font-lato font-medium text-3xl text-custom-navyBlue mt-8">Read more -></p>
-        </a>
+       
     </div>
 </div>
 {% endfor %}
