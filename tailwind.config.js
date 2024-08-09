@@ -14,7 +14,7 @@ module.exports = {
         'custom-navyBlue': '#003B6D',
         'custom-lightBlue': '#669ACC',
         'custom-lightGray': '#ECEDF2',
-        'custom-gray': '#BDBDBD',
+        'custom-gray': '#D9D9D9',
         'custom-darkGray': '#676767',
       },
     },

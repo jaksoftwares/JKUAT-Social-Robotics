@@ -1,8 +1,22 @@
 [
     {
-        "title": "",
-        "description": "",
-        "cover_image": "",
-        "external_link": ""
+        "title": " Autonomous Drone Navigation",
+        "description": " This project focuses on developing an autonomous drone capable of navigating through complex environments using computer vision and machine learning algorithms. The drone can detect obstacles, map its surroundings, and find the most efficient path to reach its destination without human intervention.",
+        "cover_image": "./../static/img/Projects/Drone.jpg",
+        "external_link": "View Project"
+    },
+    
+    {
+        "title": " Humanoid Robot Assistant",
+        "description": " The Humanoid Robot Assistant is designed to assist with daily tasks, such as delivering items, providing information, and interacting with users in a human-like manner. The robot uses advanced speech recognition, facial recognition, and natural language processing to engage with people in a more intuitive way.",
+        "cover_image": "./../static/img/Projects/Pepper.png",
+        "external_link": "View Project"
+    },
+
+    {
+        "title": " Swarm Robotics for Disaster Response",
+        "description": "This project explores the use of swarm robotics in disaster response scenarios. Multiple small robots work together to perform search and rescue operations, coordinate relief efforts, and gather crucial data from affected areas. The robots communicate and collaborate to optimize their performance in real-time.",
+        "cover_image": "./../static/img/Projects/Swarm.jpg",
+        "external_link": "View Project"
     }
 ]
