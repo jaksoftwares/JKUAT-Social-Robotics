@@ -14,14 +14,28 @@
 
 {% block content %}
 {% for project in projects %}
-<div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-    <div class="flex">
-        <img src="{% static 'img/labrobots.jpeg' %}" alt="Building robot one" class="w-1/4 rounded-lg">
-        <div class="ml-6">
-            <h2 class="text-3xl font-raleway font-semibold mb-2">{{project.title}}</h2>
+ 
+<div class="bg-white rounded-lg shadow-lg p-6 mb-6 sm:mx-2 lg:mx-16">
+    <div class="flex flex-col md:flex-row items-start justify-center container mt-2 px-4 lg:px-6">
+        
+        <div class="w-full md:w-1/2 flex items-center justify-center sm:mx-2">
+            <img src="{% static 'img/Projects/demo1.jpg' %}" alt="Building robot one" class="w-full h-full md:h-auto rounded-lg object-contain">
+        </div>
+        
+        <div class="md:ml-6 sm:mx-2 flex flex-col justify-center">
+            <h2 class="text-3xl font-raleway font-semibold mb-2 text-center">{{project.title}}</h2>
             <p class="text-gray-700 font-lato">{{project.description}}</p>
+            <a href="{{ news.external_link }}" target="_blank">
+                <p class="font-lato font-bold text-custom-navyBlue mt-2">Read more -></p>
+            </a>
         </div>
     </div>
 </div>
+
+
+
+
+
+
 {% endfor %}
 {% endblock content %}

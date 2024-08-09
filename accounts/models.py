@@ -19,9 +19,7 @@ class Profile(models.Model):
         ("DR", "Dr."),
         ("PROF", "Prof."),
     )
-    title = models.CharField(
-        _("Title"), max_length=5, blank=True, null=True
-    )
+    title = models.CharField(_("Title"), max_length=5, blank=True, null=True)
     first_name = models.CharField(_("First Name"), max_length=50)
     last_name = models.CharField(_("Last Name"), max_length=50)
     profile_picture = models.ImageField(
@@ -39,6 +37,11 @@ class Profile(models.Model):
     class Meta:
         verbose_name = _("Profile")
         verbose_name_plural = _("Profiles")
+        unique_together = (
+            "title",
+            "first_name",
+            "last_name",
+        )
 
     def __str__(self):
         return f"{self.title} {self.first_name} {self.last_name}"
