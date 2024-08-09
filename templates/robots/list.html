@@ -6,17 +6,17 @@
 {% block content %}
 
  <!-- NAO Robot Section -->
-<div class="relative bg-[#c5c5c6] shadow-md rounded-lg p-6 pb-4 mb-24 mt-16 mr-16 ml-16 sm:mr-4 sm:ml-4">
-  <div class="-mb-4"><img
+<div class="relative bg-[#c5c5c6] shadow-md rounded-lg pt-6 px-6    mt-36 mr-16 ml-16 sm:mr-4 sm:ml-4">
+  <div class="-mb-44"><img
     src="{% static 'img/robots/softbank-logo.png' %}"
     alt="SoftBank Logo"
-    class="h-6 absolute top-2 left-4"
+    class=" absolute top-2 left-4"
   />
   </div>
-  <div class="flex sm:flex-row flex-col items-center mb-4 -mt-8 sm:-mt-2">
-    <div class="w-full sm:w-3/4 ml-4 sm:ml-0">
-      <h2 class="text-xl font-bold mt-4 sm:mt-0">NAO</h2>
-      <p class="text-gray-700 mb-4 mt-4 sm:mt-0">
+  <div class="flex sm:flex-row flex-col items-center mb-4  sm:mt-4">
+    <div class="w-full mt-8 sm:w-3/4 ml-4 sm:ml-0 sm:mt-8">
+      <h2 class="text-xl font-bold  sm:mt-0">NAO</h2>
+      <p class="text-gray-700 mb-4  sm:mt-0">
         NAO is a robot with a knack for knowledge – both learning and sharing
         it. Fluent in over 20 languages, communicates effortlessly with
         students from diverse cultures. NAO is equipped with tactile sensors
@@ -28,12 +28,14 @@
         programming interfaces like Blockly and Scratch, and user-friendly
         graphical software like Choregraphe.
       </p>
-      <a href="#" class="text-[#0b0b0b] px-6 py-1 hover:text-[#003B6D] transition duration-300">
+      <button class="bg-[#003B6D] text-white px-6 py-1 rounded-full hover:bg-white hover:text-[#003B6D] border border-[#003B6D] transition duration-300">
+      <a href="#" >
         Learn more →
       </a>
+    </button>
     </div>
-    <div class=" sm:w-1/2 items-left mb-4 sm:mb-0 sm:mt-0 ">
-      <img src="{% static 'img/robots/nao-robot.png' %}" alt="NAO" class="rounded-lg h-48 sm:h-auto" />
+    <div class="sm:w-1/2 sm:mb-0 sm:mt-0">
+      <img src="{% static 'img/robots/nao-robot.png' %}" alt="NAO" class="rounded-lg h- sm:h-auto" />
     </div>
   </div>
 </div>
@@ -69,13 +71,12 @@
         assistance, and serve as a versatile tool for customer service,
         education, and research environments.
       </p>
-      <a href="#" class="text-[#0b0b0b] px-6 py-1 hover:text-[#003B6D] transition duration-300">
+       <button class="bg-[#003B6D] text-white px-6 py-1 rounded-full hover:bg-white hover:text-[#003B6D] border border-[#003B6D] transition duration-300">
+      <a href="#" >
         Learn more →
       </a>
+    </button>
     </div>
   </div>
 </div>
-
-{% for robot in robots %}
-<h1>{{robot}}</h1>
-{% endfor %} {% endblock content %}
+{% endblock content %}
