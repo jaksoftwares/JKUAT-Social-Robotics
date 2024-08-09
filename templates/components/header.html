@@ -2,10 +2,10 @@
 <header class="bg-[#669ACC] sticky top-0" id="main-header">
     <nav class="" id="main-nav">
         <div class="flex justify-between items-center px-2 md:px-5 pt-2 relative">
-            {% comment %} LOGO {% endcomment %}
             <a href="{% url 'core:home' %}" class="">
                 <img src="{% static 'img/core/logo.png' %}" alt="" class="h-14 ">
             </a>
+            </div>
             <div class="flex items-center gap-4 md:hidden">
                 <!-- search button in mobile view -->
                 <button id="search-toggle" class="block text-white focus:outline-none z-20">
