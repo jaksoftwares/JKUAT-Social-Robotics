@@ -15,8 +15,31 @@
 
     {
         "title": " Swarm Robotics for Disaster Response",
-        "description": "This project explores the use of swarm robotics in disaster response scenarios. Multiple small robots work together to perform search and rescue operations, coordinate relief efforts, and gather crucial data from affected areas. The robots communicate and collaborate to optimize their performance in real-time.",
+        "description": "Swarm Robotics for Disaster Response is an innovative project that utilizes a network of autonomous robots working collaboratively to perform search, rescue, and support operations in disaster-affected areas. Inspired by the collective behavior of biological swarms, these robots can efficiently navigate complex terrains, communicate in real-time, and dynamically adapt to changing environments.",
         "cover_image": "./../static/img/Projects/Swarm.jpg",
         "external_link": "View Project"
+    },
+    {
+        "title": " Object sorting robot",
+        "description": "The Object Sorting Robot is an advanced automated system designed to streamline the process of categorizing and sorting items. Equipped with state-of-the-art sensors, including cameras and color sensors, the robot is capable of detecting and distinguishing objects based on various attributes such as size, shape, color, and material composition.",
+        "cover_image": "./../static/img/Projects/Swarm.jpg",
+        "external_link": "View Project"
+
+    },
+    {
+        "title": "Automated plant watering system",
+        "description": "Designed to maintain optimal soil moisture, this robot autonomously waters plants based on real-time moisture readings or a pre-set schedule. Equipped with soil sensors and an automated irrigation system, it ensures plants receive consistent care, promoting healthy growth and reducing manual watering efforts.",
+        "cover_image": "./../static/img/Projects/Swarm.jpg",
+        "external_link": "View Project"
+
+    },
+    {
+        "title": "Home Assistant Robot",
+        "description": "This versatile robot performs various household tasks, such as fetching items and controlling smart home devices. With capabilities like voice recognition and object manipulation, it enhances convenience and efficiency, making everyday chores more manageable and integrating seamlessly with home automation systems.",
+        "cover_image": "./../static/img/Projects/Swarm.jpg",
+        "external_link": "View Project"
+
     }
+    
+
 ]
