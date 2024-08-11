@@ -21,7 +21,6 @@ class PersonListView(ListView):
         context["undergraduates"] = Person.objects.filter(
             category=Person.UNDERGRADRUATE
         )
-        print(Person.objects.filter(first_name="Daniel")[1].category)
         return context
 
 
