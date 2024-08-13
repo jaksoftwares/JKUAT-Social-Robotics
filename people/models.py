@@ -12,8 +12,10 @@ class Person(ACCOUNTS_MODELS.Profile):
     ADMIN = "A"
     PI = "I"
     LECTURER = "L"
+    MSC = "M"
     PERSON_CATEGORIES = (
         (POSTGRADUATE, "Postgraduate"),
+        (MSC, "MSC"),
         (UNDERGRADRUATE, "Undergraduate"),
         (ADMIN, "Admin"),
         (PI, "PI"),
@@ -35,6 +37,13 @@ class Person(ACCOUNTS_MODELS.Profile):
     )
     personal_website_link = models.URLField(
         _("Personal Website Link"), max_length=200, blank=True, null=True
+    )
+    project = models.ForeignKey(
+        "projects.Project",
+        verbose_name=_("Project"),
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
     )
     slug = models.SlugField(unique=True, max_length=100)
 

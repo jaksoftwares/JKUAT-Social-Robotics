@@ -11,37 +11,25 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         MODELS = [
-            {
-                "name": "news",
-                "class": News,
-            },
-            {
-                "name": "people",
-                "class": Person,
-            },
-            {
-                "name": "projects",
-                "class": Project,
-            },
-            {
-                "name": "publications",
-                "class": Publication,
-            },
-            {
-                "name": "robots",
-                "class": Robot,
-            },
+            {"name": "news", "class": News},
+            {"name": "people", "class": Person},
+            {"name": "projects", "class": Project},
+            {"name": "publications", "class": Publication},
+            {"name": "robots", "class": Robot},
         ]
 
         for entry in MODELS:
-            try:
-                count, _ = entry["class"].objects.all().delete()
-                self.stdout.write(
-                    self.style.SUCCESS(
-                        f"Successfully deleted {count} {entry['name']} instances"
-                    )
+            self.delete_data(entry)
+
+    def delete_data(self, entry):
+        try:
+            count, _ = entry["class"].objects.all().delete()
+            self.stdout.write(
+                self.style.SUCCESS(
+                    f"Successfully deleted {count} {entry['name']} instances"
                 )
-            except Exception as e:
-                self.stdout.write(
-                    self.style.ERROR(f"Error deleting {entry['name']} instances: {e}")
-                )
+            )
+        except Exception as e:
+            self.stdout.write(
+                self.style.ERROR(f"Error deleting {entry['name']} instances: {e}")
+            )
