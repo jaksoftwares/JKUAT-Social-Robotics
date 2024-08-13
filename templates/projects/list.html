@@ -10,6 +10,7 @@
 {% endblock banner_title %}
 
 {% block content %}
+
 {% for project in projects %}
 <div class="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-6 mx-2 sm:mx-4 lg:mx-16 flex flex-col sm:flex-row items-center">
     <!-- Project Image -->
@@ -21,7 +22,7 @@
         <h2 class="text-2xl sm:text-3xl font-raleway font-semibold mb-2">{{ project.title }}</h2>
         <p class="text-sm sm:text-base text-gray-700 font-lato mb-4 line-clamp-3 sm:line-clamp-none">{{ project.description }}</p>
         <!-- Read More Button -->
-        <div class="mt-4 w-fit flex justify-between items-center  p-2 bg-custom-lightBlue text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lightBlue hover:text-custom-lightBlue transition duration-300">
+        <div class="mt-4 w-fit flex justify-between items-center p-2 bg-custom-navyBlue text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-navyBlue hover:text-custom-navyBlue transition duration-300">
             <a href="{{ project.get_absolute_url }}">
                 Read more
             </a>

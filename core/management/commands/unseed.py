@@ -1,4 +1,5 @@
 from django.core.management.base import BaseCommand
+from events.models import Event
 from news.models import News
 from people.models import Person
 from projects.models import Project
@@ -14,6 +15,7 @@ class Command(BaseCommand):
             {"name": "news", "class": News},
             {"name": "people", "class": Person},
             {"name": "projects", "class": Project},
+            {"name": "events", "class": Event},
             {"name": "publications", "class": Publication},
             {"name": "robots", "class": Robot},
         ]

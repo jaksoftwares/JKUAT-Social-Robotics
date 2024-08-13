@@ -9,16 +9,8 @@
 {% for publication in publications %}
 <div class="bg-white shadow-md rounded-lg p-5 my-6">
     <h2 class="text-xl font-bold mb-2">{{ publication.title }}</h2>
-    <div class="flex items-center">
-        <img src="{% if publication.author.profile_picture %}{{ publication.author.profile_picture.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ publication.author.first_name }} {{ publication.author.last_name }} picture" class="h-10 w-10 rounded-full mr-2 bg-gray-300 border border-gray-300">
-        <div>
-            <p class="text-gray-700 font-semibold">By {{ publication.author.title }} {{ publication.author.first_name }} {{ publication.author.last_name }}</p>
-        </div>
-    </div>
-    <p class="text-gray-700">
-        {{ publication.description }}
-    </p>
-    <a href="{{ publication.external_link }}" class="mt-4 w-fit flex justify-between items-center  p-2 bg-custom-lightBlue text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lightBlue hover:text-custom-lightBlue transition duration-300" target="_blank">
+    <img src="{% if publication.cover_image %}{{ publication.cover_image.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ publication.title }}" class="object-cover rounded-lg w-full h-full">
+    <a href="{{ publication.external_link }}" class="mt-4 w-fit flex justify-between items-center p-2 bg-custom-navyBlue text-white border-2 border-custom-navyBlue rounded-lg hover:bg-transparent hover:border-2 hover:text-custom-navyBlue transition duration-300" target="_blank">
         <span>Go to Paper</span>
         <i class="ml-2 fa fa-external-link" aria-hidden="true"></i>
     </a>

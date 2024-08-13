@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "responsible_computing",
     "outreach",
     "faqs",
+    "events",
 ]
 
 

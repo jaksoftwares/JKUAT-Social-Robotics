@@ -10,27 +10,26 @@ Home
 
 {% block body %}
 <!-- Hero Section -->
-<section class="bg-custom-lightBlue ">
-    <div class="flex flex-col md:flex-row items-center md:justify-evenly px-4 md:px-8 ">
+<section class="bg-custom-lightBlue">
+    <div class="flex flex-col md:flex-row items-center md:justify-evenly px-4 md:px-8">
         <!-- Robot Image -->
-        <div class="w-full md:w-1/2  md:mb-0 md:ml-24 sm:ml-2">
+        <div class="w-full md:w-1/2 md:mb-0 md:ml-24 sm:ml-2">
             <img src="{% static 'img/image 19.png' %}" alt="Robot" class="w-full max-w-full h-auto">
         </div>
         <!-- Text Section -->
         <div class="w-full md:w-1/2 text-white text-center sm:mt-6 sm:mb-8 px-4 md:mr-16 lg:mr-24">
             <h1 class="text-4xl md:text-6xl font-raleway font-bold text-white mb-2 sm:mt-2">Welcome to JKUAT</h1>
-            <h2 class="text-3xl sm:mt-4 sm:mx-2 md:text-6xl font-raleway mb-2 ">SOCIAL ROBOTICS</h2>
+            <h2 class="text-3xl sm:mt-4 sm:mx-2 md:text-6xl font-raleway mb-2">SOCIAL ROBOTICS</h2>
             <p class="mt-8 text-2xl mb-8 font-lato"></p>
             <div class="sm:mb-8">
-                <a href="#about-us"
-                    class="inline-block mb-10 bg-custom-navyBlue text-white font-bold font-lato py-2 px-4 border-2 border-custom-navyBlue rounded-xl  hover:bg-white hover:text-custom-navyBlue   transform duration-300">
-                    About Us
+                <a href="#about-us" class="p-2 bg-custom-navyBlue text-white border-2 border-custom-navyBlue rounded-lg hover:bg-transparent hover:border-2 hover:text-custom-navyBlue transition duration-300">
+                    <span class="text-xl">About us</span>
+                    <i class="fa-solid fa-arrow-right-long ml-2"></i>
                 </a>
             </div>
         </div>
     </div>
 </section>
-
 {% comment %} ABOUT SECTION {% endcomment %}
 <section class="py-20" id="about-us">
     <div class="flex flex-col-reverse md:flex-row justify-center items-center gap-10 py-10 px-4 md:px-8">
@@ -44,9 +43,9 @@ Home
                 emotions, promote social inclusion, and address the ethical implications of robotic technology.
                 technological boundaries but also ensure that technology serves society in meaningful, responsible ways.
             </p>
-            <a class="py-2 px-4 mt-4 md:mt-0 bg-custom-navyBlue w-fit items-center text-white border-2 rounded-xl hover:bg-transparent hover:border-2 border-custom-navyBlue hover:text-custom-navyBlue transition duration-300"
-                href="{% url 'core:about' %}">
-                Learn more
+            <a href="{% url 'core:about' %}" class="p-2 bg-custom-navyBlue text-white border-2 border-custom-navyBlue rounded-lg hover:bg-transparent hover:border-2 hover:text-custom-navyBlue transition duration-300">
+                <span class="text-xl">Learn more</span>
+                <i class="fa-solid fa-arrow-right-long ml-2"></i>
             </a>
         </div>
         <!-- Image Section -->
@@ -55,7 +54,6 @@ Home
         </div>
     </div>
 </section>
-
 {% comment %} TEAM SECTION {% endcomment %}
 <section class="py-20">
     <div class="flex flex-col md:flex-row justify-center gap-10 py-10 px-4 md:px-8">
@@ -70,102 +68,59 @@ Home
                 Our team consists of researchers, engineers, and students who are passionate about creating robots that align with human values and promote social well-being. 
                 Together, we work to push the boundaries of social robotics research and develop innovative solutions that address real-world challenges.
             </p>
-            <a class="py-2 px-4 mt-4 md:mt-0 bg-custom-navyBlue w-fit items-center text-white border-2 rounded-xl hover:bg-transparent hover:border-2 border-custom-navyBlue hover:text-custom-navyBlue transition duration-300"
-                href="{% url 'people:list' %}">
-                Meet our team
+            <a href="{% url 'core:about' %}" class="p-2 bg-custom-navyBlue text-white border-2 border-custom-navyBlue rounded-lg hover:bg-transparent hover:border-2 hover:text-custom-navyBlue transition duration-300">
+                <span class="text-xl">Meet the Team</span>
+                <i class="fa-solid fa-arrow-right-long ml-2"></i>
             </a>
         </div>
     </div>
 </section>
-
-
-
 <!--Upcoming events section  -->
 <section class="py-20 px-5 bg-white">
     <div>
         <h2 class=" text-2xl md:text-3xl  font-raleway  text-center mb-10">UPCOMING EVENTS</h2>
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 font-lato">
-            <!-- Event 1 -->
+            {% for event in events %}
             <div class="bg-custom-lightGray p-6 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-semibold mb-4">A tour to UNESCO Skill building workshop</h3>
-                <p class="text-gray-600 mb-4">Date: August 25, 2024</p>
-                <p class="text-gray-600 mb-6">Location: Online</p>
-                <p class="text-gray-700 mb-4">Brief description of the event goes here. This might include the main
-                    topics or activities.</p>
-                <a href="#" class="text-custom-navyBlue font-semibold hover:underline">Learn More</a>
+                <h3 class="text-2xl font-semibold mb-4">{{ event.title }}</h3>
+                <p class="text-gray-600 mb-4">{{ event.date_starting }}</p>
+                <p class="text-gray-600 mb-6">{{ event.location }}</p>
+                <p class="text-gray-700 mb-4">{{ event.description }}</p>
+                <a href="{{ event.external_link }}" class="text-custom-navyBlue font-semibold hover:underline">Learn More</a>
             </div>
-            <!-- Event 2 -->
-            <div class="bg-custom-lightGray p-6 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-semibold mb-4">Mozilla Festival</h3>
-                <p class="text-gray-600 mb-4">Date: September 10, 2024</p>
-                <p class="text-gray-600 mb-6">Location: JKUAT Campus</p>
-                <p class="text-gray-700 mb-4">Brief description of the event goes here. This might include the main
-                    topics or activities.</p>
-                <a href="#" class="text-custom-navyBlue font-semibold hover:underline">Learn More</a>
-            </div>
-            <!-- Event 3 -->
-            <div class="bg-custom-lightGray p-6 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-semibold mb-4">National Research Festival (NRF)</h3>
-                <p class="text-gray-600 mb-4">Date: October 5, 2024</p>
-                <p class="text-gray-600 mb-6">Location: Nairobi Conference Center</p>
-                <p>National Research Festival (NRF)
-                    to be
-                    attended by MSc StudentsBrief description of the event goes here. This might include the main topics
-                    or
-                    activities.</p>
-                <a href="#" class="text-custom-navyBlue font-semibold hover:underline">Learn More</a>
-            </div>
+            {% empty %}
+            <div>No events</div>
+            {% endfor %}
         </div>
     </div>
 </section>
-
 <!-- Latest News Section -->
 <section class="py-20 px-5">
     <div>
         <h2 class="text-2xl md:text-3xl font-raleway text-center mb-10">LATEST NEWS</h2>
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <!-- News Article 1 -->
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+            {% for news in news %}
             <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-semibold mb-2">Arrival of a new robot, Pepper.</h3>
-                <p class="text-gray-500 text-sm mb-4">Published on August 15, 2024</p>
+                <h3 class="text-2xl font-semibold mb-2">{{ news.title }}</h3>
+                <p class="text-gray-500 text-sm mb-4">Published on {{ news.date_published }}</p>
                 <div class="w-full h-48 mb-4">
                     <img src="" alt="news image" class="w-full h-full object-cover rounded-md">
                 </div>
-                <p class="text-gray-700 mb-6">Brief description of the news article goes here. It should give a quick overview of the main points or highlights.</p>
-                <a href="#" class="text-custom-navyBlue font-semibold hover:underline">Read More</a>
+                <p class="text-gray-700 mb-6">{{ news.description }}</p>
+                {% if news.external_link %}
+                <a href="{{ news.external_link }}" class="text-custom-navyBlue font-semibold hover:underline">Read More</a>
+                {% endif %}
             </div>
-            <!-- News Article 2 -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-semibold mb-2">News Title 2</h3>
-                <p class="text-gray-500 text-sm mb-4">Published on August 10, 2024</p>
-                <div class="w-full h-48 mb-4">
-                    <img src="" alt="news image" class="w-full h-full object-cover rounded-md">
-                </div>
-                <p class="text-gray-700 mb-6">Brief description of the news article goes here. It should give a quick overview of the main points or highlights.</p>
-                <a href="#" class="text-custom-navyBlue font-semibold hover:underline">Read More</a>
-            </div>
-            <!-- News Article 3 -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-semibold mb-2">News Title 3</h3>
-                <p class="text-gray-500 text-sm mb-4">Published on August 5, 2024</p>
-                <div class="w-full h-48 mb-4">
-                    <img src="" alt="news image" class="w-full h-full object-cover rounded-md">
-                </div>
-                <p class="text-gray-700 mb-6">Brief description of the news article goes here. It should give a quick overview of the main points or highlights.</p>
-                <a href="#" class="text-custom-navyBlue font-semibold hover:underline">Read More</a>
-            </div>
+            {% empty %}
+            <div>No news</div>
+            {% endfor %}
         </div>
     </div>
 </section>
-
-
-
-
-
 <!-- patners -->
 <section class="py-20 px-5 bg-custom-lightGray">
     <div class="container mx-auto">
-        <h2 class="text-2xl md:text-3xl  font-raleway text-center mb-10">OUR PATNERS</h2>
+        <h2 class="text-2xl md:text-3xl  font-raleway text-center mb-10">OUR PARTNERS / FOUNDERS</h2>
         <div class="flex flex-col md:flex-row justify-center items-center gap-8">
             <!-- Logo 1 -->
             <div class="w-1/2 sm:w-1/4 flex justify-center">
@@ -182,5 +137,4 @@ Home
         </div>
     </div>
 </section>
-
 {% endblock body %}
