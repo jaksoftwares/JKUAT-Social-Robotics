@@ -15,8 +15,6 @@ class PublicationListView(ListView):
     template_name = "publications/list.html"
     context_object_name = "publications"
 
-    def get_queryset(self):
-        return Publication.objects.select_related("author")
 
 
 class PublicationDetailView(DetailView):
