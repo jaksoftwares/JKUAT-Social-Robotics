@@ -1,32 +1,36 @@
 {% extends 'base_list.html' %}
 {% load static %}
 
-
 {% block title %}
     Projects
 {% endblock title %}
-
 
 {% block banner_title %}
     Projects
 {% endblock banner_title %}
 
-
 {% block content %}
 {% for project in projects %}
-<div class="bg-white rounded-lg shadow-lg p-6 mb-6 sm:mx-2 lg:mx-16">
-    <div class="flex flex-col md:flex-row items-start justify-center container mt-2 px-4 lg:px-6">
-        <div class="w-full md:w-1/2 flex items-center justify-center sm:mx-2">
-            <img src="{% if project.cover_image %}{{ project.cover_image.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ project.title }}" class="w-full h-full object-cover">
-        </div>
-        <div class="md:ml-6 sm:mx-2 flex flex-col justify-center">
-            <h2 class="text-3xl font-raleway font-semibold mb-2 text-center">{{project.title}}</h2>
-            <p class="text-gray-700 font-lato">{{project.description}}</p>
-            <a href="{{ project.get_absolute_url }}" target="_blank">
-                <p class="font-lato font-bold text-custom-navyBlue mt-2">Read more -></p>
+<div class="bg-white rounded-lg shadow-lg p-6 mb-6 sm:mx-2 lg:mx-16 flex flex-col sm:flex-row items-center">
+
+    <!-- Project Image -->
+    <div class="flex-shrink-0  w-[150px] h-[100px] sm:w-[300px] sm:h-[225px] lg:w-[300px] lg:h-[225px] mb-4 mr-10 sm:mb-0">
+        <img src="{% static 'img/Projects/demo1.jpg' %}" alt="Building robot one" class="object-cover rounded-lg w-auto h-auto">
+    </div>
+
+    <!-- Project Description -->
+    <div class="p-4 w-full sm:w-1/2 flex flex-col justify-center ">
+        <h2 class=" text-3xl font-raleway font-semibold mb-2">{{ project.title }}</h2>
+        <p class=" text-gray-700 font-lato mb-4">{{ project.description }}</p>
+        
+        <!-- Read More Button -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="{{ project.external_link }}" target="_blank" class="bg-[#003B6D] text-white px-4 py-2 rounded-full hover:bg-white hover:text-[#003B6D] border border-[#003B6D] font-lato font-bold">
+                Read more >>
             </a>
         </div>
     </div>
+
 </div>
 {% endfor %}
 {% endblock content %}
