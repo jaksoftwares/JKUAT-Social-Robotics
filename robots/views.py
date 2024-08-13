@@ -19,7 +19,7 @@ class RobotListView(ListView):
 class RobotDetailView(DetailView):
     model = Robot
     template_name = "robots/detail.html"
-    context_object_name = "Robot"
+    context_object_name = "robot"
     slug_field = "slug"
     slug_url_kwarg = "slug"
 

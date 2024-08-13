@@ -1,41 +1,33 @@
 {% extends 'base_list.html' %}
 {% load static %}
 
-
 {% block title %}
     Projects
 {% endblock title %}
-
 
 {% block banner_title %}
     Projects
 {% endblock banner_title %}
 
-
 {% block content %}
 {% for project in projects %}
- 
-<div class="bg-white rounded-lg shadow-lg p-6 mb-6 sm:mx-2 lg:mx-16">
-    <div class="flex flex-col md:flex-row items-start justify-center container mt-2 px-4 lg:px-6">
-        
-        <div class="w-full md:w-1/2 flex items-center justify-center sm:mx-2">
-            <img src="{% static 'img/Projects/demo1.jpg' %}" alt="Building robot one" class="w-full h-full md:h-auto rounded-lg object-contain">
-        </div>
-        
-        <div class="md:ml-6 sm:mx-2 flex flex-col justify-center">
-            <h2 class="text-3xl font-raleway font-semibold mb-2 text-center">{{project.title}}</h2>
-            <p class="text-gray-700 font-lato">{{project.description}}</p>
-            <a href="{{ news.external_link }}" target="_blank">
-                <p class="font-lato font-bold text-custom-navyBlue mt-2">Read more -></p>
+<div class="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-6 mx-2 sm:mx-4 lg:mx-16 flex flex-col sm:flex-row items-center">
+    <!-- Project Image -->
+    <div class="flex-shrink-0 w-full sm:w-1/3 lg:w-1/4 mb-4 sm:mb-0 sm:mr-6">
+        <img src="{% if project.cover_image %}{{ project.cover_image.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ project.title }}" class="object-cover rounded-lg w-full h-auto">
+    </div>
+    <!-- Project Description -->
+    <div class="w-full sm:w-2/3 lg:w-3/4 flex flex-col justify-center">
+        <h2 class="text-2xl sm:text-3xl font-raleway font-semibold mb-2">{{ project.title }}</h2>
+        <p class="text-sm sm:text-base text-gray-700 font-lato mb-4 line-clamp-3 sm:line-clamp-none">{{ project.description }}</p>
+        <!-- Read More Button -->
+        <div class="mt-4 w-fit flex justify-between items-center  p-2 bg-custom-lightBlue text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lightBlue hover:text-custom-lightBlue transition duration-300">
+            <a href="{{ project.get_absolute_url }}">
+                Read more
             </a>
+            <i class="fa-solid fa-arrow-right-long ml-2"></i>
         </div>
     </div>
 </div>
-
-
-
-
-
-
 {% endfor %}
 {% endblock content %}
