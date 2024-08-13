@@ -18,12 +18,10 @@
     <p class="text-gray-700">
         {{ publication.description }}
     </p>
-    <div class="mt-4 w-fit flex justify-between items-center  p-2 bg-custom-lightBlue text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lightBlue hover:text-custom-lightBlue transition duration-300">
-        <a href="{{ publication.external_link }}" target="_blank">
-            Go to Paper
-        </a>
+    <a href="{{ publication.external_link }}" class="mt-4 w-fit flex justify-between items-center  p-2 bg-custom-lightBlue text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lightBlue hover:text-custom-lightBlue transition duration-300" target="_blank">
+        <span>Go to Paper</span>
         <i class="ml-2 fa fa-external-link" aria-hidden="true"></i>
-    </div>
+    </a>
 </div>
 {% endfor %}
 {% endblock content %}

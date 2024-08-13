@@ -14,20 +14,15 @@
             <p class="text-gray-700 mb-4 sm:mb-2 sm:mt-0">
                 {{ robot.description }}
             </p>
-            <div class="sm:mb-8">
-                <a href="#" class="inline-block bg-custom-navyBlue text-white font-bold font-lato py-2 px-4 mb-4 rounded-lg hover:bg-white hover:text-custom-navyBlue hover:border hover:border-custom-navyBlue transform duration-700">
-                   Learn more →
-                </a>
-            </div>
-            
+            <a href="{{ publication.external_link }}" class="mt-4 w-fit flex justify-between items-center  p-2 bg-custom-lightBlue text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lightBlue hover:text-custom-lightBlue transition duration-300" target="_blank">
+                <span>Learn more</span>
+                <i class="ml-2 fa fa-external-link" aria-hidden="true"></i>
+            </a>
         </div>
         <div class="sm:w-1/2 sm:mb-0 sm:mt-0 sm:order-2">
             <img src="{% if robot.cover_image %}{{ robot.cover_image.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ robot.title }}" class="rounded-lg h-64 sm:h-auto">
         </div>
     </div>
 </div>
-
-
-
 {% endfor %}
 {% endblock content %}
