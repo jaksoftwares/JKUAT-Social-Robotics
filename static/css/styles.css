@@ -39,4 +39,29 @@
     #footerimage img {
         height: auto;
     }
+    #robot-section {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 20px;
+    }
+    #publication-card {
+        padding: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        justify-content: space-between;
+    }
+    #about-lower {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    #lower-section1 {
+        margin: 0px;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+#publication-card {
+    padding: 80px;
 }

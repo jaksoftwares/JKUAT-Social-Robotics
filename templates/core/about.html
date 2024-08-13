@@ -1,12 +1,73 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block title %} About {% endblock title %} {% load static %} {% block body %}
+<div class="bg-white p-8">
+    <!-- Section Heading -->
+    <div class="text-center mb-12">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">Exploring the Intersection of Technology and Humanity</h1>
+        <p class="text-gray-600 max-w-3xl mx-auto">Welcome to the JKUAT Social Robotics Lab, where cutting-edge technology meets ethical responsibility. Our lab is dedicated to exploring the intersection of robotics and human interaction, with a focus on creating socially aware robots that enhance
+            human well-being. Through interdisciplinary research and education, we aim to develop innovative robotic solutions that are not only technically advanced but also ethically grounded, ensuring that technology serves humanity in meaningful and
+            responsible ways.</p>
+    </div>
 
+    <!-- Vision Section -->
+    <div class="mb-16">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2 text-center ">Our Vision</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto">We envision a future where technological innovation is deeply intertwined with ethical responsibility. The JKUAT Social Robotics initiative is at the forefront of this vision, particularly through the Mozilla Responsible Computing project. By
+            embedding responsible computing practices into Human-Computer Interaction (HCI) courses, we challenge our students to consider the societal impacts of their work and to develop robotic applications that prioritize human welfare and ethical
+            accountability.
+        </p>
+    </div>
 
-{% block title %}
-    About
-{% endblock title %}
-    
+    <!-- Methodology Section -->
+    <div class="mb-16 flex flex-col md:flex-row items-center bg-[#ECEDF2] pb-8">
+        <div class="ml-16 mr-12 md:pr-0 mb-8 md:mb-0 mt-8 ">
+            <img src="{% static 'img/about-image.png' %}" alt="about-image" class="rounded-lg shadow-md">
+        </div>
+        <div class="md:w-1/2">
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Methodology</h2>
+            <h3 class="text-gray-600 mb-4 font-semibold i ">An innovative learning approach </h3>
+            <p class="text-gray-600 mb-4">Our approach to education goes beyond technical proficiency. We start with a strong theoretical foundation in ethical frameworks and human-centered design principles. Students are organized into teams to work on projects that require them
+                to incorporate responsible computing practices into their designs. This hands-on approach is complemented by continuous guidance from faculty and peers, fostering an environment of shared learning and critical reflection.<br/></p>
+            <P text-gray-600 mb-4>This is followed by project-based learning in a collaborative lab environment, where students apply these principles to real-world scenarios. Teams work on projects that integrate responsible computing practices, guided by continuous faculty
+                support and peer collaboration. The program concludes with a rigorous evaluation process, where students present their projects, showcasing both their technical skills and ethical considerations.<br/></p>
 
+            <p text-gray-600 mb-4>This peer-reviewed process serves to reinforce the importance of ethical accountability and collaborative learning.</p>
+        </div>
 
-{% block body %}
-<h1 class="text-center text-blue-600">About</h1>
+    </div>
+
+    <!-- Team Section -->
+    <div class="mb-16 text-center">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Our Team</h2>
+        <h2 class="text-gray-600 mb-4  text-left text-xl font-semibold">Guided by visionary leaders</h2>
+        <p class="text-gray-600 mb-4 text-left">The JKUAT Social Robotics initiative is spearheaded by Eunice Njeri, a distinguished lecturer in the Department of Computing at Jomo Kenyatta University of Agriculture and Technology (JKUAT). As the Principal Investigator of the Mozilla Responsible
+            Computing project, Ms. Njeri, alongside Professor Kimani, provides visionary leadership that drives this pioneering initiative.</p>
+        <h2 class="text-gray-600 mb-4 mt-4 text-left text-xl font-semibold">Collaborative Excellence</h2>
+        <p class="text-gray-600 mb-4 text-left">Our team comprises of four dedicated MSc students—Caroline Kabunyi, Erick Otieno, Paul Ndemo, and Peter Kaburu—who bring their intellectual rigor and passion for ethical computing to the forefront of this initiative. Their contributions are instrumental
+            in advancing our mission and making a lasting impact on both the academic community and society. It also includes 5 undergraduate students who are eager to learn and enthusiastic about social robotics and ethics in technology</p>
+
+    </div>
+    <!--Last section-->
+    <div class="bg-[#ECEDF2] p-6 " id="about-lower">
+        <!-- Impact Section -->
+        <div class="bg-white p-6 rounded-lg mr-16 ml-16 mt-16  mb-16" id="lower-section1">
+            <img src="{% static 'img/impact-icon.png' %}" alt="about-image" class="float-left rounded-lg">
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Impact and Societal Contribution</h2>
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Trasformative Outcomes</h2>
+            <p class="text-gray-600">The JKUAT Social Robotics initiative is already making significant strides. Our projects have led to innovations that support children with special needs, advancements in AI accessibility, and the development of ethical computing applications.
+                These achievements underscore the project's commitment to aligning technological innovation with societal well-being, positioning JKUAT at the forefront of ethical technology education.</p>
+        </div>
+
+        <!-- Reflections Section -->
+        <div class="bg-white p-6 rounded-lg  mr-16 ml-16 mt-16   mb-16" id="lower-section1">
+            <div>
+                <img src="{% static 'img/reflections-icon.png' %}" alt="about-image" class="float-left">
+                <h2 class="text-xl font-semibold text-gray-800 mb-2">Reflections and Future Directions</h2>
+                <h2 class="text-xl font-semibold text-gray-800 mb-2">Shaping the future of social robotics</h2>
+                <p class="text-gray-600">As we look to the future, we are committed to addressing the challenges and opportunities at the intersection of ethics and technology. Key lessons from our initiative highlight the importance of data protection and privacy, especially
+                    in sensitive sectors like healthcare. Guided by Mozilla’s ethical guidelines, we emphasize responsible data stewardship and explicit consent, setting a strong foundation for future generations of technologists.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock body %}
