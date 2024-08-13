@@ -10,7 +10,7 @@ Home
 
 {% block body %}
 <!-- Hero Section -->
-<section class="bg-custom-lightBlue shadow-lg ">
+<section class="bg-custom-lightBlue ">
     <div class="flex flex-col md:flex-row items-center md:justify-evenly px-4 md:px-8 ">
         <!-- Robot Image -->
         <div class="w-full md:w-1/2  md:mb-0 md:ml-24 sm:ml-2">
@@ -20,80 +20,167 @@ Home
         <div class="w-full md:w-1/2 text-white text-center sm:mt-6 sm:mb-8 px-4 md:mr-16 lg:mr-24">
             <h1 class="text-4xl md:text-6xl font-raleway font-bold text-white mb-2 sm:mt-2">Welcome to JKUAT</h1>
             <h2 class="text-3xl sm:mt-4 sm:mx-2 md:text-6xl font-raleway mb-2 ">SOCIAL ROBOTICS</h2>
-            <p class="mt-8 text-2xl mb-8 font-lato">Tagline: Lorem ipsum dolor sit amet,
-                <br>
-                consectetur adipiscing elit.
-            </p>
+            <p class="mt-8 text-2xl mb-8 font-lato"></p>
             <div class="sm:mb-8">
-                <a href="#" class="inline-block bg-custom-navyBlue text-white font-bold font-lato py-2 px-4 mb-4rounded-lg hover:bg-white hover:text-custom-navyBlue hover:border hover:border-custom-navyBlue transform duration-700">
+                <a href="#about-us"
+                    class="inline-block mb-10 bg-custom-navyBlue text-white font-bold font-lato py-2 px-4 border-2 border-custom-navyBlue rounded-xl  hover:bg-white hover:text-custom-navyBlue   transform duration-300">
                     About Us
                 </a>
             </div>
         </div>
     </div>
 </section>
-<section class="flex flex-col md:flex-row items-center justify-center pt-24 pb-24 container mt-1 px-4 lg:px-6 ">
-    <!-- Image Section -->
-    <div class="w-full md:w-1/3 flex items-center justify-center mx-4 lg:mx-16  ">
-        <img src="{% static 'img/image 3.png' %}" alt="About Image" class="w-full h-auto object-cover">
-    </div>
-    <!-- Text Section -->
-    <div class="w-full md:w-1/3 flex flex-col text-center md:items-center md:text-left ml-4 px-4 sm:mx-2   ">
-        <h2 class="text-4xl font-bold font-raleway mb-2">About Social Robotics</h2>
-        <div class="p-2 mt-4 md:items-center">
-            <p class="text-black font-lato text-2xl mb-6 mt:2">
-                Lorem ipsum dolor sit amet, consectetur
-                <br>
-                adipiscing elit. Pellentesque placerat nibh
-                <br>
-                vitae mauris efficitur, vitae egestas lectus
-                <br>
-                molestie. Duis dictum orci massa, sit amet
-                <br>
-                pulvinar nisi porta vitae.
+
+{% comment %} ABOUT SECTION {% endcomment %}
+<section class="py-20" id="about-us">
+    <div class="flex flex-col-reverse md:flex-row justify-center items-center gap-10 py-10 px-4 md:px-8">
+        <!-- Text Section -->
+        <div class="w-full md:w-1/3 items-center flex flex-col text-center md:text-left gap-6">
+            <h2 class="text-2xl md:text-3xl font-raleway">ABOUT US</h2>
+            <p class="text-gray-800 text-lg font-lato  px-7 md:px-20 ">
+                The lab focuses on creating robots that enhance social interaction and support human well-being through
+                empathetic and inclusive design. Research at the social robotics lab focuses on various aspects of
+                human-robot interaction, including how robots can be designed to understand and respond to human
+                emotions, promote social inclusion, and address the ethical implications of robotic technology.
+                technological boundaries but also ensure that technology serves society in meaningful, responsible ways.
             </p>
-            <div class="mt-12 text-center">
-                <a class="py-2 px-4 w-fit bg-custom-navyBlue text-white border-2 rounded-2xl hover:bg-transparent hover:border-2 border-custom-navyBlue hover:text-custom-navyBlue transition duration-300" href="#">
-                    Read more
-                </a>
+            <a class="py-2 px-4 mt-4 md:mt-0 bg-custom-navyBlue w-fit items-center text-white border-2 rounded-xl hover:bg-transparent hover:border-2 border-custom-navyBlue hover:text-custom-navyBlue transition duration-300"
+                href="{% url 'core:about' %}">
+                Learn more
+            </a>
+        </div>
+        <!-- Image Section -->
+        <div class="w-full md:w-1/4 md:ml-4 lg:ml-16 mb-8 md:mb-0">
+            <img src="{% static 'img/image 3.jpg' %}" alt="About Image" class="w-full h-auto object-cover  shadow-lg">
+        </div>
+    </div>
+</section>
+
+{% comment %} TEAM SECTION {% endcomment %}
+<section class="py-20">
+    <div class="flex flex-col md:flex-row justify-center gap-10 py-10 px-4 md:px-8">
+        <!-- Image Section -->
+        <div class="w-full md:w-1/4 md:ml-4 lg:ml-16 mb-8 md:mb-0">
+            <img src="{% static 'img/image 3.jpg' %}" alt="About Image" class="w-full h-auto object-cover  shadow-lg">
+        </div>
+        <!-- Text Section -->
+        <div class="w-full md:w-1/3 items-center flex flex-col text-center md:text-left gap-6">
+            <h2 class="text-2xl md:text-3xl font-raleway">MEET OUR TEAM</h2>
+            <p class="text-gray-800 font-lato text-lg  px-7 md:px-20 ">
+                Our team consists of researchers, engineers, and students who are passionate about creating robots that align with human values and promote social well-being. 
+                Together, we work to push the boundaries of social robotics research and develop innovative solutions that address real-world challenges.
+            </p>
+            <a class="py-2 px-4 mt-4 md:mt-0 bg-custom-navyBlue w-fit items-center text-white border-2 rounded-xl hover:bg-transparent hover:border-2 border-custom-navyBlue hover:text-custom-navyBlue transition duration-300"
+                href="{% url 'people:list' %}">
+                Meet our team
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+<!--Upcoming events section  -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto">
+        <h2 class=" text-2xl md:text-3xl  font-raleway  text-center mb-10">UPCOMING EVENTS</h2>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 font-lato">
+            <!-- Event 1 -->
+            <div class="bg-custom-lightGray p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-semibold mb-4">A tour to UNESCO Skill building workshop</h3>
+                <p class="text-gray-600 mb-4">Date: August 25, 2024</p>
+                <p class="text-gray-600 mb-6">Location: Online</p>
+                <p class="text-gray-700 mb-4">Brief description of the event goes here. This might include the main
+                    topics or activities.</p>
+                <a href="#" class="text-custom-navyBlue font-semibold hover:underline">Learn More</a>
+            </div>
+            <!-- Event 2 -->
+            <div class="bg-custom-lightGray p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-semibold mb-4">Mozilla Festival</h3>
+                <p class="text-gray-600 mb-4">Date: September 10, 2024</p>
+                <p class="text-gray-600 mb-6">Location: JKUAT Campus</p>
+                <p class="text-gray-700 mb-4">Brief description of the event goes here. This might include the main
+                    topics or activities.</p>
+                <a href="#" class="text-custom-navyBlue font-semibold hover:underline">Learn More</a>
+            </div>
+            <!-- Event 3 -->
+            <div class="bg-custom-lightGray p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-semibold mb-4">National Research Festival (NRF)</h3>
+                <p class="text-gray-600 mb-4">Date: October 5, 2024</p>
+                <p class="text-gray-600 mb-6">Location: Nairobi Conference Center</p>
+                <p>National Research Festival (NRF)
+                    to be
+                    attended by MSc StudentsBrief description of the event goes here. This might include the main topics
+                    or
+                    activities.</p>
+                <a href="#" class="text-custom-navyBlue font-semibold hover:underline">Learn More</a>
             </div>
         </div>
     </div>
 </section>
-<section class=" bg-gray-300 mt-1 border-gray-300 border-2">
-    <h2 class="text-4xl font-raleway font-semibold text-center mb-16 mt-8">Upcoming events</h2>
-    <div class="mb-10">
-        <div class="space-y-4 mx-auto max-w-4xl mt-10 mb-30">
-            <!-- Event 1 -->
-            <a href="#" class="block bg-white rounded-lg shadow-md p-4 ">
-                <div class="flex items-start">
-                    <div class="w-1/4 h-24 bg-gray-300 hover:bg-blue-50 transition duration-300 rounded-md"></div>
-                    <div class="ml-4 flex-1">
-                        <h3 class="text-2xl font-lato font-bold text-gray-900">Mozilla Event in India</h3>
-                    </div>
+
+<!-- Latest News Section -->
+<section class="py-20">
+    <div class="container mx-auto">
+        <h2 class="text-2xl md:text-3xl font-raleway text-center mb-10">LATEST NEWS</h2>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <!-- News Article 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-semibold mb-2">Arrival of a new robot, Pepper.</h3>
+                <p class="text-gray-500 text-sm mb-4">Published on August 15, 2024</p>
+                <div class="w-full h-48 mb-4">
+                    <img src="" alt="news image" class="w-full h-full object-cover rounded-md">
                 </div>
-            </a>
-            <!-- Event 2 -->
-            <a href="#" class="block bg-white rounded-lg shadow-md p-4">
-                <div class="flex items-start">
-                    <div class="w-1/4 h-24 bg-gray-300 hover:bg-blue-50 transition duration-300 rounded-md"></div>
-                    <div class="ml-4 flex-1">
-                        <h3 class="text-2xl font-lato font-bold text-gray-900">Tours UNESCO skill building workshop</h3>
-                    </div>
+                <p class="text-gray-700 mb-6">Brief description of the news article goes here. It should give a quick overview of the main points or highlights.</p>
+                <a href="#" class="text-custom-navyBlue font-semibold hover:underline">Read More</a>
+            </div>
+            <!-- News Article 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-semibold mb-2">News Title 2</h3>
+                <p class="text-gray-500 text-sm mb-4">Published on August 10, 2024</p>
+                <div class="w-full h-48 mb-4">
+                    <img src="" alt="news image" class="w-full h-full object-cover rounded-md">
                 </div>
-            </a>
-            <!-- Event 3 -->
-            <a href="#" class="block bg-white rounded-lg shadow-md p-4 mb-8 ">
-                <div class="flex items-start">
-                    <div class="w-1/4 h-24 bg-gray-300 hover:bg-blue-50 transition duration-300 rounded-md"></div>
-                    <div class="ml-4 flex-1">
-                        <h3 class="text-2xl font-lato font-bold text-gray-900">National Research Festival (NRF) to be attended by MSc Students</h3>
-                    </div>
+                <p class="text-gray-700 mb-6">Brief description of the news article goes here. It should give a quick overview of the main points or highlights.</p>
+                <a href="#" class="text-custom-navyBlue font-semibold hover:underline">Read More</a>
+            </div>
+            <!-- News Article 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-semibold mb-2">News Title 3</h3>
+                <p class="text-gray-500 text-sm mb-4">Published on August 5, 2024</p>
+                <div class="w-full h-48 mb-4">
+                    <img src="" alt="news image" class="w-full h-full object-cover rounded-md">
                 </div>
-            </a>
+                <p class="text-gray-700 mb-6">Brief description of the news article goes here. It should give a quick overview of the main points or highlights.</p>
+                <a href="#" class="text-custom-navyBlue font-semibold hover:underline">Read More</a>
+            </div>
         </div>
     </div>
 </section>
-<!--Upcoming events section  -->
-<!-- Latest News Section -->
+
+
+
+
+
+<!-- patners -->
+<section class="py-20 px-5 bg-custom-lightGray">
+    <div class="container mx-auto">
+        <h2 class="text-2xl md:text-3xl  font-raleway text-center mb-10">OUR PATNERS</h2>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+            <!-- Logo 1 -->
+            <div class="w-1/2 sm:w-1/4 flex justify-center">
+                <img src="{% static 'img/mozilla-logo.png' %}" alt="Partner 1 Logo" class="h-20">
+            </div>
+            <!-- Logo 2 -->
+            <div class=" sm:w-1/3 flex justify-center">
+                <img src="{% static 'img/unesco-logo.png' %}" alt="Partner 2 Logo" class="h-20">
+            </div>
+            <!-- Logo 3 -->
+            <div class="w-1/2 sm:w-1/4 flex justify-center">
+                <img src="{% static 'img/german-logo.png' %}" alt="Partner 3 Logo" class="">
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock body %}
