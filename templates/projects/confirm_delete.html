@@ -6,11 +6,11 @@ Delete
 {% endblock title %}
 
 {% block body %}
-<h1>Delete {{ publication }}</h1>
+<h1>Delete {{ project }}</h1>
 <form method="post">
     {% csrf_token %}
-    <p>Are you sure you want to delete "{{ publication }}"?</p>
+    <p>Are you sure you want to delete "{{ project }}"?</p>
     <button type="submit">Confirm</button>
 </form>
-<a href="{% url 'publication:list' %}">Back to list</a>
+<a href="{% url 'project:list' %}">Back to list</a>
 {% endblock body %}
