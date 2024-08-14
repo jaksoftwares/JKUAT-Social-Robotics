@@ -5,7 +5,7 @@ from django.db import models
 
 
 class BaseModel(models.Model):
-    title = models.CharField(_("Title"), max_length=200, unique=True)
+    title = models.CharField(_("Title"), max_length=150, unique=True)
     description = models.TextField(_("Description"), blank=True, null=True)
     cover_image = models.ImageField(
         _("Cover Image"),
@@ -19,7 +19,7 @@ class BaseModel(models.Model):
     external_link = models.URLField(
         _("External Link"), max_length=200, blank=True, null=True
     )
-    slug = models.SlugField(unique=True, max_length=100)
+    slug = models.SlugField(unique=True, max_length=200)
     created_at = models.DateTimeField(_("Date Created"), auto_now_add=True)
     updated_at = models.DateTimeField(_("Date Updated"), auto_now=True)
 
