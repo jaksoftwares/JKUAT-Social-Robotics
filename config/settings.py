@@ -194,8 +194,9 @@ MEDIA_ROOT = f"{BASE_DIR}/media"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Crispy forms
-CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
-CRISPY_TEMPLATE_PACK = "tailwind"
+if DEBUG:
+    CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+    CRISPY_TEMPLATE_PACK = "tailwind"
 
 
 AUTH_USER_MODEL = "accounts.CustomUser"
