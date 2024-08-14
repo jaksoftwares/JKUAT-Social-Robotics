@@ -38,19 +38,20 @@ ALLOWED_HOSTS = config(
 
 
 # Application definition
-INSTALLED_APPS = [
+BASE_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # THIRD PARTY APPS
-    "django_browser_reload",
+]
+
+THIRD_PARTY_APPS = [
     "crispy_forms",
-    "crispy_tailwind",
-    "fontawesomefree",
-    # LOCAL APPS
+]
+
+INTERNAL_APPS = [
     "accounts",
     "core",
     "news",
@@ -63,6 +64,15 @@ INSTALLED_APPS = [
     "faqs",
     "events",
 ]
+
+INSTALLED_APPS = BASE_APPS + THIRD_PARTY_APPS + INTERNAL_APPS
+
+if DEBUG:
+    INSTALLED_APPS += [
+        "django_browser_reload",
+        "crispy_tailwind",
+        "fontawesomefree",
+    ]
 
 
 MIDDLEWARE = [

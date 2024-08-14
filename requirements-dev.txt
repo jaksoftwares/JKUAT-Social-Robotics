@@ -1,0 +1,4 @@
+-r requirements.txt
+
+crispy-tailwind==1.0.3
+django-browser-reload==1.13.0

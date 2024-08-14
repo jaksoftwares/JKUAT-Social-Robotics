@@ -11,12 +11,15 @@ from robots.models import Robot
 from events.models import Event
 from django.conf import settings
 from django.db import IntegrityError
+from decouple import config
+from django.contrib.auth import get_user_model
 
 
 class Command(BaseCommand):
     help = "Seed data from JSON files into Django models"
 
     def handle(self, *args, **kwargs):
+        self.create_admin()
         BASE_FILE_PATH = f"{settings.BASE_DIR}/data"
         DATA = [
             {
@@ -49,6 +52,30 @@ class Command(BaseCommand):
 
         for entry in DATA:
             self.seed_data(entry)
+
+    def create_admin(self):
+        User = get_user_model()
+
+        username = config("ADMIN_USERNAME")
+        password = config("ADMIN_PASSWORD")
+
+        if not all([username, password]):
+            self.stdout.write(
+                self.style.ERROR(
+                    "Missing environment variables for admin user creation"
+                )
+            )
+            return
+
+        if User.objects.filter(username=username).exists():
+            self.stdout.write(
+                self.style.WARNING(f'Admin user "{username}" already exists.')
+            )
+        else:
+            User.objects.create_superuser(username=username, password=password)
+            self.stdout.write(
+                self.style.SUCCESS(f'Successfully created admin user "{username}".')
+            )
 
     def seed_data(self, entry):
         try:
