@@ -1,85 +1,96 @@
 {% load static %}
-
-<footer
-  style="margin-top: 150px"
-  class="bg-[#003B6D] text-white py-8 relative"
-  id="mainfooter"
->
-  <!-- Added relative positioning for consistent layout -->
-  <div class="max-w-6xl mx-auto px-4">
-    <div
-      class="flex flex-col md:flex-row justify-between  space-y-8 md:space-y-0"
-    >
-      <!-- Updated layout to be responsive with space between items -->
-      <div>
-        <a href="{% url 'core:home' %}">
-          <img src="{% static 'img/core/footer-logo.png' %}" alt="" class="h-14 ">
-      </a>
-        <h3 class="text-xl font-bold my-2">Reach out to us</h3>
-        <p>
-          Social Robotics
-          <br />
-          JKUAT <br />
-          Juja, Kiambu
-        </p>
-        <p class="mt-4">
-          <span class="block">📧 socialrobotics@gmail.com</span>
-          <span class="block">📞 0712345678</span>
-        </p>
-      </div>
-      <div>
-        <h3 class="text-xl font-bold mb-2">Links</h3>
-        <ul class="space-y-2">
-          <!-- Added spacing between list items -->
-          <li>
-            <a href="{% url 'core:about' %}" class="target-link">About</a>
-          </li>
-          <li>
-            <a href="{% url 'people:list' %}" class="target-link">Team</a>
-          </li>
-          <li>
-            <a href="{% url 'news:list' %}" class="target-link">News</a>
-          </li>
-          <li>
-            <a href="{% url 'projects:list' %}" class="target-link">Projects</a>
-          </li>
-          <li>
-            <a href="{% url 'outreach:list' %}" class="target-link">Outreach</a>
-          </li>
-          <li>
-            <a href="{% url 'publications:list' %}" class="target-link"
-              >Publications</a
-            >
-          </li>
-          <li>
-            <a
-              href="{% url 'responsible_computing:responsible_computing' %}"
-              class="target-link"
-              >Responsible Computing</a
-            >
-          </li>
-          <li>
-            <a href="{% url 'robots:list' %}" class="target-link">Robots</a>
-          </li>
-          <li>
-            <a href="{% url 'accounts:login' %}" class="target-link">Login</a>
-          </li>
-        </ul>
-      </div>
-      <div class="relative" id="footer-robot">
-        <!-- Added relative positioning for the image container -->
-        <img
-          src="{% static 'img/naorobot2.png' %}"
-          alt="Robot"
-          class="w-64 h-auto"
-          id="footer-robot-img"
-        />
-        <!-- Added hover effect to slightly enlarge the image -->
-      </div>
+<footer style="margin-top: 150px" class="bg-[#003B6D] text-white py-8 relative" id="mainfooter">
+    <!-- Added relative positioning for consistent layout -->
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+            <!-- Updated layout to be responsive with space between items -->
+            <div>
+                <h3 class="text-xl font-bold mb-2">Reach out to us</h3>
+                <div>
+                    Social Robotics
+                    <br>
+                    JKUAT
+                    <br>
+                    Juja, Kiambu
+                </div>
+                <div class="mt-4">
+                    <span class="block">
+                        <i class="fa-solid fa-envelope"></i>
+                        eunice.njeri@jkuat.ac.ke
+                    </span>
+                    <span class="block">
+                        <i class="fa-solid fa-phone"></i>
+                        +254 721 284110
+                    </span>
+                </div>
+                <div>
+                    <br>
+                    JKUAT Computing Department
+                    <br>
+                    P.O. BOX 62000-010000
+                    <br>
+                    NAIROBI – KENYA
+                    <br>
+                    <i class="fa-solid fa-envelope"></i>
+                    067-5352711 ext.2805
+                    <br>
+                    <i class="fa-solid fa-phone"></i>
+                    computing@icsit.jkuat.ac.ke
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-2">Links</h3>
+                <ul class="space-y-2">
+                    <!-- Added spacing between list items -->
+                    <li>
+                        <a href="{% url 'core:about' %}" class="target-link">About</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'people:list' %}" class="target-link">Team</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'news:list' %}" class="target-link">News</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'events:list' %}" class="target-link">Events</a>
+                  </li>
+                    <li>
+                        <a href="{% url 'projects:list' %}" class="target-link">Projects</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'outreach:list' %}" class="target-link">Outreach</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'publications:list' %}" class="target-link">
+                            Publications
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'responsible_computing:responsible_computing' %}" class="target-link">
+                            Responsible Computing
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'robots:list' %}" class="target-link">Robots</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'accounts:login' %}" class="target-link">Login</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="relative" id="footer-robot">
+                <!-- Added relative positioning for the image container -->
+                <img
+                    src="{% static 'img/naorobot2.png' %}"
+                    alt="Robot"
+                    class="w-64 h-auto"
+                    id="footer-robot-img"
+                >
+                <!-- Added hover effect to slightly enlarge the image -->
+            </div>
+        </div>
     </div>
-  </div>
 </footer>
-
 <style>
   /* Hover effect for target links */
 

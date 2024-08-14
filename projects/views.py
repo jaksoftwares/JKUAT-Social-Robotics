@@ -19,7 +19,7 @@ class ProjectListView(ListView):
 class ProjectDetailView(DetailView):
     model = Project
     template_name = "projects/detail.html"
-    context_object_name = "publicatioon"
+    context_object_name = "project"
     slug_field = "slug"
     slug_url_kwarg = "slug"
 

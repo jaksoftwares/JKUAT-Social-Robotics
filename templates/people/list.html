@@ -24,7 +24,7 @@
                     <p class="text-sm md:text-base">{{ postgrad.focus_long }}</p>
                 </div>
                 <div class="{% if forloop.counter|divisibleby:2 %}{% endif %}">
-                    <a class="inline-block p-2 bg-custom-lightBlue text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lightBlue hover:text-custom-lightBlue transition duration-300" href="{% url 'people:detail' postgrad.slug %}">Visit Profile</a>
+                    <a class="inline-block p-2 bg-custom-navyBlue text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-navyBlue hover:text-custom-navyBlue transition duration-300" href="{% url 'people:detail' postgrad.slug %}">Visit Profile</a>
                 </div>
             </div>
             <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
@@ -43,11 +43,11 @@
             <div class="aspect-square border rounded-lg bg-custom-navyBlue text-white flex flex-col p-6">
                 <div class="h-3/4">
                     <h2 class="font-bold text-3xl md:text-4xl lg:text-5xl">
-                        Our Undergraduate students
+                        Computer Science Undergraduate Students
                     </h2>
                 </div>
                 <div class="text-lg md:text-xl lg:text-2xl h-1/4">
-                    <p>An enthusiastic group of students with a passion to learn</p>
+                    <p>A group of students in the Robotics Dojo Program 2024</p>
                 </div>
             </div>
             {% for undergrad in undergraduates %}

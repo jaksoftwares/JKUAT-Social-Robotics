@@ -1,9 +1,16 @@
 [
     {
-        "title": "",
-        "description": "",
-        "cover_image": "",
+        "title": "Arrival of the pepper robot in JKUAT",
+        "description": "We are thrilled to announce the arrival of our very first Pepper robot at the JKUAT Social Robotics Club! Pepper is a humanoid robot known for its advanced capabilities in human-robot interaction, designed to recognize faces, understand emotions, and engage in meaningful conversations. This cutting-edge addition to our club will allow members to explore innovative research, develop new applications, and advance their understanding of social robotics. With Pepper, we aim to pioneer projects that push the boundaries of technology, making significant strides in the field of robotics and artificial intelligence. Stay tuned for exciting developments and projects as we embark on this new chapter in our club’s journey!",
+        "cover_image": "./../static/img/News/Pepper.jpg",
         "external_link": "",
-        "date_published": ""
+        "date_published": "2024-08-10T00:00:00+03:00"
+    },
+    {
+        "title": "Girls In ICT - JKUAT",
+        "description": "The enduring perception, mostly stereotypical, that girls are not well adopted to pursue courses and careers in science, technology, engineering and mathematics (STEM) has stopped many girls from enrolling into STEM subjects.To unroll this practice, Jomo Kenyatta University of Agriculture and Technology has launched a strategic initiative designed to empower and woo young women enrolled in the Competency-Based Curriculum (CBC) system, guiding them toward Science, Technology, Engineering, and Mathematics (STEM) careers.",
+        "cover_image": "./../static/img/News/ICTGirls.jpg",
+        "external_link": "https://www.jkuat.ac.ke/programme-to-attract-young-women-to-stem-unveiled/#:~:text=To%20unroll%20this%20practice%2C%20Jomo,and%20Mathematics%20(STEM)%20careers.",
+        "date_published": "2024-04-05T00:00:00+03:00"
     }
 ]

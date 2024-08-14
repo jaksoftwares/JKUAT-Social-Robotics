@@ -1,30 +1,33 @@
 import json
 from django.core.management.base import BaseCommand
 from django.core.exceptions import ValidationError
+from django.utils.text import slugify
+from datetime import datetime
 from news.models import News
 from people.models import Person
-from config.settings import BASE_DIR
 from projects.models import Project
 from publications.models import Publication
 from robots.models import Robot
+from events.models import Event
+from django.conf import settings
+from django.db import IntegrityError
+from decouple import config
+from django.contrib.auth import get_user_model
 
 
 class Command(BaseCommand):
-    help = "Import data from JSON files into Django models"
+    help = "Seed data from JSON files into Django models"
 
     def handle(self, *args, **kwargs):
-        BASE_FILE_PATH = f"{BASE_DIR}/data"
+        self.create_admin()
+        BASE_FILE_PATH = f"{settings.BASE_DIR}/data"
         DATA = [
-            {
-                "name": "news",
-                "file_path": f"{BASE_FILE_PATH}/news.json",
-                "class": News,
-            },
             {
                 "name": "people",
                 "file_path": f"{BASE_FILE_PATH}/people.json",
                 "class": Person,
             },
+            {"name": "news", "file_path": f"{BASE_FILE_PATH}/news.json", "class": News},
             {
                 "name": "projects",
                 "file_path": f"{BASE_FILE_PATH}/projects.json",
@@ -40,61 +43,150 @@ class Command(BaseCommand):
                 "file_path": f"{BASE_FILE_PATH}/robots.json",
                 "class": Robot,
             },
+            {
+                "name": "events",
+                "file_path": f"{BASE_FILE_PATH}/events.json",
+                "class": Event,
+            },
         ]
 
         for entry in DATA:
-            try:
-                with open(entry["file_path"]) as f:
-                    data_list = json.load(f)
-            except FileNotFoundError:
-                self.stdout.write(
-                    self.style.ERROR(f"File not found: {entry['file_path']}")
-                )
-                continue
-            except json.JSONDecodeError as e:
-                self.stdout.write(
-                    self.style.ERROR(
-                        f"Error decoding JSON in file {entry['file_path']}: {e}"
-                    )
-                )
-                continue
+            self.seed_data(entry)
 
-            for data in data_list:
-                if entry["name"] == "publications" and "author" in data:
-                    author_id = data.pop("author")
-                    try:
-                        author_instance = Person.objects.get(id=author_id)
-                        data["author"] = author_instance
-                    except Person.DoesNotExist:
-                        self.stdout.write(
-                            self.style.ERROR(
-                                f"Person with id {author_id} does not exist. Skipping publication."
-                            )
-                        )
-                        continue
-                    except Exception as e:
-                        self.stdout.write(
-                            self.style.ERROR(
-                                f"Unexpected error fetching Person with id {author_id}: {e}"
-                            )
-                        )
-                        continue
+    def create_admin(self):
+        User = get_user_model()
 
-                try:
-                    entry["class"].objects.create(**data)
-                except ValidationError as e:
-                    self.stdout.write(
-                        self.style.ERROR(
-                            f"Validation error creating {entry['name']} instance: {e}"
-                        )
-                    )
-                except Exception as e:
-                    self.stdout.write(
-                        self.style.ERROR(
-                            f"Unexpected error creating {entry['name']} instance: {e}"
-                        )
-                    )
+        username = config("ADMIN_USERNAME")
+        password = config("ADMIN_PASSWORD")
 
+        if not all([username, password]):
             self.stdout.write(
-                self.style.SUCCESS(f"Successfully imported {entry['name']} data")
+                self.style.ERROR(
+                    "Missing environment variables for admin user creation"
+                )
             )
+            return
+
+        if User.objects.filter(username=username).exists():
+            self.stdout.write(
+                self.style.WARNING(f'Admin user "{username}" already exists.')
+            )
+        else:
+            User.objects.create_superuser(username=username, password=password)
+            self.stdout.write(
+                self.style.SUCCESS(f'Successfully created admin user "{username}".')
+            )
+
+    def seed_data(self, entry):
+        try:
+            with open(entry["file_path"]) as f:
+                data_list = json.load(f)
+        except FileNotFoundError:
+            self.stdout.write(self.style.ERROR(f"File not found: {entry['file_path']}"))
+            return
+        except json.JSONDecodeError as e:
+            self.stdout.write(
+                self.style.ERROR(
+                    f"Error decoding JSON in file {entry['file_path']}: {e}"
+                )
+            )
+            return
+
+        for data in data_list:
+            if entry["name"] == "projects":
+                self.handle_project(data, entry)
+            elif entry["name"] == "people":
+                self.handle_person(data, entry)
+            else:
+                self.create_instance(data, entry)
+
+    def handle_person(self, data, entry):
+        try:
+            current_datetime = datetime.now().strftime("%Y%m%d%H%M%S%f")
+            data["slug"] = slugify(
+                f"{data['first_name']}-{data['last_name']}___{current_datetime}"
+            )
+            person, created = Person.objects.get_or_create(
+                first_name=data["first_name"],
+                last_name=data["last_name"],
+                defaults=data,
+            )
+            if created:
+                self.stdout.write(
+                    self.style.SUCCESS(f"Successfully created person: {person}")
+                )
+            else:
+                self.stdout.write(
+                    self.style.WARNING(f"Person already exists: {person}")
+                )
+        except Exception as e:
+            self.stdout.write(self.style.ERROR(f"Error creating person: {e}"))
+
+    def handle_project(self, data, entry):
+        if "team" in data:
+            team_data = data.pop("team")
+            project, created = self.create_instance(data, entry)
+            if project:
+                for member in team_data:
+                    current_datetime = datetime.now().strftime("%Y%m%d%H%M%S%f")
+                    member["slug"] = slugify(
+                        f"{member['first_name']}-{member['last_name']}___{current_datetime}"
+                    )
+                    person, person_created = Person.objects.get_or_create(
+                        first_name=member["first_name"],
+                        last_name=member["last_name"],
+                        defaults=member,
+                    )
+                    if person_created:
+                        self.stdout.write(
+                            self.style.SUCCESS(f"Created new team member: {person}")
+                        )
+                    person.project = project
+                    person.save()
+                    self.stdout.write(
+                        self.style.SUCCESS(
+                            f"Added team member: {person} to project: {project}"
+                        )
+                    )
+        else:
+            self.create_instance(data, entry)
+
+    def create_instance(self, data, entry):
+        try:
+            if "slug" not in data:
+                current_datetime = datetime.now().strftime("%Y%m%d%H%M%S%f")
+                data["slug"] = slugify(f"{data.get('title', '')}___{current_datetime}")
+
+            instance, created = entry["class"].objects.get_or_create(**data)
+            if created:
+                self.stdout.write(
+                    self.style.SUCCESS(
+                        f"Successfully created {entry['name']} instance: {instance}"
+                    )
+                )
+            else:
+                self.stdout.write(
+                    self.style.WARNING(
+                        f"{entry['name']} instance already exists: {instance}"
+                    )
+                )
+            return instance, created
+        except IntegrityError as e:
+            self.stdout.write(
+                self.style.ERROR(
+                    f"Integrity error creating {entry['name']} instance: {e}"
+                )
+            )
+        except ValidationError as e:
+            self.stdout.write(
+                self.style.ERROR(
+                    f"Validation error creating {entry['name']} instance: {e}"
+                )
+            )
+        except Exception as e:
+            self.stdout.write(
+                self.style.ERROR(
+                    f"Unexpected error creating {entry['name']} instance: {e}"
+                )
+            )
+        return None, False

@@ -21,6 +21,7 @@ class Profile(models.Model):
     )
     title = models.CharField(_("Title"), max_length=5, blank=True, null=True)
     first_name = models.CharField(_("First Name"), max_length=50)
+    surname = models.CharField(_("Surname"), max_length=50, blank=True, null=True)
     last_name = models.CharField(_("Last Name"), max_length=50)
     profile_picture = models.ImageField(
         _("Profile Picture"),
