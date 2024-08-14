@@ -48,7 +48,10 @@ BASE_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    "django_browser_reload",
+    "crispy_tailwind",
     "crispy_forms",
+    "fontawesomefree",
 ]
 
 INTERNAL_APPS = [
@@ -67,29 +70,18 @@ INTERNAL_APPS = [
 
 INSTALLED_APPS = BASE_APPS + THIRD_PARTY_APPS + INTERNAL_APPS
 
-if DEBUG:
-    INSTALLED_APPS += [
-        "django_browser_reload",
-        "crispy_tailwind",
-        "fontawesomefree",
-    ]
-
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
-if DEBUG:
-    MIDDLEWARE += [
-        "django_browser_reload.middleware.BrowserReloadMiddleware",
-    ]
 
 ROOT_URLCONF = "config.urls"
 
@@ -194,9 +186,8 @@ MEDIA_ROOT = f"{BASE_DIR}/media"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Crispy forms
-if DEBUG:
-    CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
-    CRISPY_TEMPLATE_PACK = "tailwind"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_TEMPLATE_PACK = "tailwind"
 
 
 AUTH_USER_MODEL = "accounts.CustomUser"

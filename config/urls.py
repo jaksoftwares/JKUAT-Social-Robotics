@@ -5,6 +5,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("__reload__/", include("django_browser_reload.urls")),
     path("", include("core.urls", namespace="core")),
     path("accounts/", include("accounts.urls", namespace="accounts")),
     path("publications/", include("publications.urls", namespace="publications")),
@@ -23,5 +24,4 @@ urlpatterns = [
 
 
 if settings.DEBUG:
-    urlpatterns += path("__reload__/", include("django_browser_reload.urls"))
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
