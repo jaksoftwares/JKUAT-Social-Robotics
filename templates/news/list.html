@@ -11,7 +11,7 @@
 
 {% block content %}
 {% for news in news %}
-<div class="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-6 mx-2 sm:mx-4 lg:mx-16 flex flex-col sm:flex-row items-center">
+<div class="bg-white rounded-lg shadow-lg  sm:p-6 mb-6 mx-2 sm:mx-4 lg:mx-16 flex flex-col sm:flex-row items-center">
     <!-- Image  -->
     <div class="lg:w-1/2 w-full mb-6 lg:mb-4 lg:mr-4 lg:mt-6 sm:w-2/3 lg:h-auto">
         <img src="{% if news.cover_image %}{{ news.cover_image.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ news }}" class="mx-auto object-cover rounded-xl w-full border-black lg:w-3/4">
