@@ -6,10 +6,16 @@ from projects import models as PROJECTS_MODELS
 from outreach import models as OUTREACH_MODELS
 from robots import models as ROBOTS_MODELS
 from news import models as NEWS_MODELS
+from events import models as EVENTS_MODELS
 
 
 def home(request):
-    return render(request, "core/index.html")
+    context = {
+        "news": NEWS_MODELS.News.objects.all(),
+        "events": EVENTS_MODELS.Event.objects.all(),
+    }
+
+    return render(request, "core/index.html", context=context)
 
 
 def about(request):

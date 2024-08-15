@@ -1,5 +1,9 @@
 from django.shortcuts import render
+from projects.models import Project
 
 
 def index(request):
-    return render(request, "responsible_computing/index.html")
+    context = {
+        "projects": Project.objects.all(),
+    }
+    return render(request, "responsible_computing/index.html", context=context)

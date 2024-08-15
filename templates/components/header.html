@@ -71,6 +71,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{% url 'events:list' %}"
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/events/' %}text-custom-navyBlue font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        Events
+                    </a>
+                </li>
+                <li>
                     <a href="{% url 'projects:list' %}"
                         class="relative inline-block pb-1 text-lg {% if request.path == '/projects/' %}text-custom-navyBlue font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
                         Projects

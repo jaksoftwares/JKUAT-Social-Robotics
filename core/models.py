@@ -5,7 +5,7 @@ from django.db import models
 
 
 class BaseModel(models.Model):
-    title = models.CharField(_("Title"), max_length=100, unique=True)
+    title = models.CharField(_("Title"), max_length=200, unique=True)
     description = models.TextField(_("Description"), blank=True, null=True)
     cover_image = models.ImageField(
         _("Cover Image"),
@@ -32,5 +32,5 @@ class BaseModel(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             current_datetime = datetime.now().strftime("%Y%m%d%H%M%S")
-            self.slug = slugify(f"{self.title}___{current_datetime}")
+            self.slug = slugify(f"{self.title[:10]}___{current_datetime}")
         super().save(*args, **kwargs)

@@ -8,14 +8,18 @@ from people.models import Person
 from projects.models import Project
 from publications.models import Publication
 from robots.models import Robot
+from events.models import Event
 from django.conf import settings
 from django.db import IntegrityError
+from decouple import config
+from django.contrib.auth import get_user_model
 
 
 class Command(BaseCommand):
     help = "Seed data from JSON files into Django models"
 
     def handle(self, *args, **kwargs):
+        self.create_admin()
         BASE_FILE_PATH = f"{settings.BASE_DIR}/data"
         DATA = [
             {
@@ -39,10 +43,39 @@ class Command(BaseCommand):
                 "file_path": f"{BASE_FILE_PATH}/robots.json",
                 "class": Robot,
             },
+            {
+                "name": "events",
+                "file_path": f"{BASE_FILE_PATH}/events.json",
+                "class": Event,
+            },
         ]
 
         for entry in DATA:
             self.seed_data(entry)
+
+    def create_admin(self):
+        User = get_user_model()
+
+        username = config("ADMIN_USERNAME")
+        password = config("ADMIN_PASSWORD")
+
+        if not all([username, password]):
+            self.stdout.write(
+                self.style.ERROR(
+                    "Missing environment variables for admin user creation"
+                )
+            )
+            return
+
+        if User.objects.filter(username=username).exists():
+            self.stdout.write(
+                self.style.WARNING(f'Admin user "{username}" already exists.')
+            )
+        else:
+            User.objects.create_superuser(username=username, password=password)
+            self.stdout.write(
+                self.style.SUCCESS(f'Successfully created admin user "{username}".')
+            )
 
     def seed_data(self, entry):
         try:
@@ -60,9 +93,7 @@ class Command(BaseCommand):
             return
 
         for data in data_list:
-            if entry["name"] == "publications":
-                self.handle_publication(data, entry)
-            elif entry["name"] == "projects":
+            if entry["name"] == "projects":
                 self.handle_project(data, entry)
             elif entry["name"] == "people":
                 self.handle_person(data, entry)
@@ -90,24 +121,6 @@ class Command(BaseCommand):
                 )
         except Exception as e:
             self.stdout.write(self.style.ERROR(f"Error creating person: {e}"))
-
-    def handle_publication(self, data, entry):
-        if "author" in data:
-            author_data = data.pop("author")
-            current_datetime = datetime.now().strftime("%Y%m%d%H%M%S%f")
-            author_data["slug"] = slugify(
-                f"{author_data['first_name']}-{author_data['last_name']}___{current_datetime}"
-            )
-            author, created = Person.objects.get_or_create(
-                first_name=author_data["first_name"],
-                last_name=author_data["last_name"],
-                defaults=author_data,
-            )
-            if created:
-                self.stdout.write(self.style.SUCCESS(f"Created new author: {author}"))
-            data["author"] = author
-
-        self.create_instance(data, entry)
 
     def handle_project(self, data, entry):
         if "team" in data:
