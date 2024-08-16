@@ -49,6 +49,9 @@ BASE_APPS = [
 
 THIRD_PARTY_APPS = [
     "crispy_forms",
+    
+
+    
 ]
 
 INTERNAL_APPS = [
