@@ -8,53 +8,70 @@
 {% endblock title %}
 
 {% block body %}
-<div class="container  px-4 py-8">
-    <h1 class="text-3xl font-bold mb-8">Search Results for "{{ query }}"</h1>
+<div class="container mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold mb-8 text-center">Search Results for "{{ query }}"</h1>
+
     {% if people %}
-    <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4 md:pl-20">People</h2>
-        <div class="flex flex-col md:pl-20">
+    <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-3">People</h2>
+        <div class="grid md:grid-cols-2 gap-5">
             {% for person in people %}
-                <a href="{{ person.get_absolute_url }}" class="text-custom-navyBlue hover:underline text-xl font-semibold">{{ person.first_name }} {{ person.last_name }}</a>
-                <p>{{ person.specialty}}</p>
-                <p>{{ person.pursuing }}</p>
-                <p class='pb-5'>{{ person.focus_title}}</p>
+            <div>
+                <a href="{{ person.get_absolute_url }}" class="text-custom-navyBlue hover:underline text-lg md:text-xl ">
+                    {{ person.first_name }} {{ person.last_name }}
+                </a>
+                <p class="text-gray-700">{{ person.specialty }}</p>
+                <p class="text-gray-700">{{ person.pursuing }}</p>
+                <p class="text-gray-700 pb-5">{{ person.focus_title }}</p>
+            </div>
             {% endfor %}
         </div>
     </section>
     {% endif %}
 
     {% if publications %}
-    <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4 md:pl-20">Publications</h2>
-        <div class="md:pl-20 flex flex-col">
+    <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-3">Publications</h2>
+        <div class="space-y-5">
             {% for publication in publications %}
-                <a href="{{ publication.external_link }}" class="text-custom-navyBlue text-xl hover:underline">{{ publication.title }}</a>
-                <p class="text-gray-600 pb-5 ">{{ publication.description|truncatewords:40 }}</p>
+            <div>
+                <a href="{{ publication.external_link }}" class="text-custom-navyBlue text-lg md:text-xl hover:underline"
+                target="_blank" 
+                rel="noopener noreferrer">
+                    {{ publication.title }}
+                </a>
+                <p class="text-gray-600">{{ publication.description|truncatewords:40 }}</p>
+            </div>
             {% endfor %}
         </div>
     </section>
     {% endif %}
 
     {% if projects %}
-    <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Projects</h2>
-        <div>
+    <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-3">Projects</h2>
+        <div class="space-y-5">
             {% for project in projects %}
-                <a href="{{ project.get_absolute_url }}" class="text-blue-600 hover:underline">{{ project.title }}</a>
+            <div>
+                <a href="{{ project.get_absolute_url }}" class="text-custom-navyBlue hover:underline text-lg md:text-xl ">
+                    {{ project.title }}
+                </a>
                 <p class="text-gray-600">{{ project.description|truncatewords:20 }}</p>
+            </div>
             {% endfor %}
         </div>
     </section>
     {% endif %}
 
     {% if outreach %}
-    <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Outreach</h2>
-        <ul>
+    <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-3">Outreach</h2>
+        <ul class="space-y-4">
             {% for outreach in outreach %}
-            <li class="mb-2">
-                <a href="{{ outreach.get_absolute_url }}" class="text-blue-600 hover:underline">{{ outreach.title }}</a>
+            <li>
+                <a href="{{ outreach.get_absolute_url }}" class="text-custom-navyBlue hover:underline text-lg md:text-xl font-semibold">
+                    {{ outreach.title }}
+                </a>
                 <p class="text-gray-600">{{ outreach.description|truncatewords:20 }}</p>
             </li>
             {% endfor %}
@@ -63,36 +80,47 @@
     {% endif %}
 
     {% if robots %}
-    <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4 md:pl-20">Robots</h2>
-        <div class="md:pl-20">
+    <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-3">Robots</h2>
+        <div class="grid md:grid-cols-2 gap-8">
             {% for robot in robots %}
-                <a href="{{ robot.get_absolute_url }}" class="text-custom-navyBlue font-semibold text-xl hover:underline">{{ robot.title }}</a>
-                <p class="text-gray-600 pb-5">{{ robot.description|truncatewords:20 }}</p>
-                {% endfor %}
+            <div>
+                <a href="{{ robot.get_absolute_url }}" class="text-custom-navyBlue hover:underline text-lg md:text-xl ">
+                    {{ robot.title }}
+                </a>
+                <p class="text-gray-600">{{ robot.description|truncatewords:20 }}</p>
+            </div>
+            {% endfor %}
         </div>
     </section>
     {% endif %}
 
     {% if news %}
-    <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">News</h2>
-        <div>
+    <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-3">News</h2>
+        <div class="space-y-8">
             {% for item in news %}
-                <a href="{{ item.get_absolute_url }}" class="text-custom-navyBlue hover:underline text-xl">{{ item.title }}</a>
-                <p class="text-gray-600 pb-10">{{ item.description|truncatewords:20 }}</p>
+            <div>
+                <a href="{{ item.get_absolute_url }}" class="text-custom-navyBlue hover:underline text-xl font-semibold">
+                    {{ item.title }}
+                </a>
+                <p class="text-gray-600">{{ item.description|truncatewords:20 }}</p>
+            </div>
             {% endfor %}
-        </div> 
+        </div>
     </section>
     {% endif %}
 
     {% if not people and not publications and not projects and not outreach and not robots and not news %}
-    <div class="flex flex-col items-center justify-center w-full ">
-        <img src="{% static 'img/no-results.png' %}" alt="" class="h-80">
-        <p class="text-4xl font-raleway">Oops!</p>
-        <p class="text-gray-600 font-lato">No results found for "{{ query }}"</p>
-        <button class="font-lato mt-2 bg-custom-navyBlue p-2 text-white  rounded-xl border border-custom-navyBlue hover:bg-white hover:text-custom-navyBlue hover:border-1 hover:border-custom-navyBlue -translate-y-1 transition-colors duration-300 ">Back to home</button>
+    <div class="flex flex-col items-center justify-center w-full mt-12  py-12 rounded-lg">
+        <img src="{% static 'img/no-results.png' %}" alt="No results" class="h-48 mb-6">
+        <p class="text-4xl font-raleway mb-4">Oops!</p>
+        <p class="text-gray-600 font-lato mb-4">No results found for "{{ query }}"</p>
+        <a href="{% url 'core:home' %}" class="font-lato mt-2 bg-custom-navyBlue p-3 text-white rounded-xl border border-custom-navyBlue hover:bg-white hover:text-custom-navyBlue transition-colors duration-300">
+            Back to home
+        </a>
     </div>
-        {% endif %}
+    {% endif %}
 </div>
+
 {% endblock body %}
