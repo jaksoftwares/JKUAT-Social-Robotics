@@ -65,27 +65,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{% url 'news:list' %}"
-                        class="relative inline-block pb-1 text-lg {% if request.path == '/news/' %}text-custom-navyBlue font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
-                        News
-                    </a>
-                </li>
-                <li>
-                    <a href="{% url 'events:list' %}"
-                        class="relative inline-block pb-1 text-lg {% if request.path == '/events/' %}text-custom-navyBlue font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
-                        Events
+                    <a href="{% url 'core:activities' %}"
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/activities/' %}text-custom-navyBlue font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        Activities
                     </a>
                 </li>
                 <li>
                     <a href="{% url 'projects:list' %}"
                         class="relative inline-block pb-1 text-lg {% if request.path == '/projects/' %}text-custom-navyBlue font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
                         Projects
-                    </a>
-                </li>
-                <li>
-                    <a href="{% url 'outreach:list' %}"
-                        class="relative inline-block pb-1 text-lg {% if request.path == '/outreach/' %}text-custom-navyBlue font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-navyBlue after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
-                        Outreach
                     </a>
                 </li>
                 <li>
