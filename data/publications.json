@@ -2,41 +2,49 @@
     {
         "title": "Directing Attention through Gaze Hints Improves Task Solving in Human-Humanoid Interaction",
         "cover_image": "./../static/img/publications/directing-attention.png",
-        "external_link": "https://link.springer.com/article/10.1007/s12369-018-0473-8#citeas"
+        "external_link": "https://link.springer.com/article/10.1007/s12369-018-0473-8#citeas",
+        "description":"We conducted an experiment to explore how people perceive and interpret social cues from gaze, given by either a robot or a human tutor, during a card matching game. Participants played under two conditions: one where the tutor used gaze to hint at the correct matches, and one where the tutor only looked at them without offering help. The results showed that participants found the task easier with the robot tutor’s gaze hints, recognizing them more often than the human’s, leading to better performance. This study highlights the potential of non-verbal cues in human-robot interactions, particularly in educational settings."
     },
     {
         "title": "Dyadic Gaze Patterns During Child-Robot Collaborative Gameplay in a Tutoring Interaction",
         "cover_image": "./../static/img/publications/gaze-base.png",
-        "external_link": "https://ieeexplore.ieee.org/document/8525799"
+        "external_link": "https://ieeexplore.ieee.org/document/8525799",
+        "description":"This study explores how children and a robot (NAO) coordinate their gaze during a card matching game called \"Memory\" By analyzing gaze behaviors like mutual gaze, gaze following, and joint attention, the research aimed to understand how these interactions reflect the child's engagement and the quality of interaction with the robot. Eighteen children participated, with the robot either offering gaze hints or just observing. The findings showed that mutual gaze and gaze following helped children recognize hints, enhancing the robot's role as an effective tutor. The study offers insights for designing better child-robot interactions in educational settings."
     },
     {
         "title": "Can Children Take Advantage of Nao Gaze-Based Hints During GamePlay?",
         "cover_image": "./../static/img/publications/gaze-base.png",
-        "external_link": "https://dl.acm.org/doi/10.1145/3125739.3132613"
+        "external_link": "https://dl.acm.org/doi/10.1145/3125739.3132613",
+        "description":"This study explores how robots' gaze hints affect children's performance in a card-matching game. In a within-subjects experiment, children played \"Memory\" with a robot tutor in two different sessions. In one session, the robot provided gaze hints by looking at the correct cards, while in the other session, the robot only looked at the child without offering hints. The results showed that gaze hints significantly improved the children's performance, as they used fewer attempts and completed the game more quickly when receiving help from the robot."
     },
     {
         "title": "Textual Emotion Communication with Non-verbal Symbols in Online Environments",
         "cover_image": "./../static/img/publications/textual-emotion.png",
-        "external_link": "https://link.springer.com/chapter/10.1007/978-3-319-07227-2_5"
+        "external_link": "https://link.springer.com/chapter/10.1007/978-3-319-07227-2_5",
+        "description":"As online communication grows in popularity, nonverbal cues often get lost in text-based interactions. This study examines how people use textual symbols and patterns to convey emotions and nonverbal cues in these environments. The focus is on elements like vocalics (e.g., using capital letters, exclamation marks, and the length of responses) and chronemics (e.g., the time taken to reply to a message). The findings help lay the groundwork for developing models that can recognize emotions from written text, especially in informal communication settings."
     },
     {
         "title": "Who is a Better Tutor?: Gaze Hints with a Human or Humanoid Tutor in Game Play",
         "cover_image": "./../static/img/publications/better-tutor.png",
-        "external_link": "https://dl.acm.org/doi/10.1145/3029798.3038331"
+        "external_link": "https://dl.acm.org/doi/10.1145/3029798.3038331",
+        "description":"This study explores how gaze hints from either a robot or a human tutor influence participants' choices in a card matching game. Participants played the game with either a human or robotic tutor, who provided gaze cues to help direct their attention. The findings revealed that participants performed better when they received gaze hints, and they were more likely to recognize and respond to these hints when they came from the robot rather than the human tutor, leading to improved performance with the robot."
     },
     {
         "title": "Personalizing Educational Game Play with a Robot Partner",
         "cover_image": "",
-        "external_link": "https://link.springer.com/chapter/10.1007/978-3-319-42975-5_23"
+        "external_link": "https://link.springer.com/chapter/10.1007/978-3-319-42975-5_23",
+        "description":"Personalizing educational and behavioral training to a child's developmental stage is standard in education and therapy, but it's newer in robot-based learning. This pilot study explores embedding Pivotal Response Training (PRT) elements into a game played by a robot and a child. Seven levels were designed to match different communication skills targeted by PRT, varying in social complexity rather than game logic. The study found that as the game's social demands increased, children were happier and more engaged, even though the game's challenge level stayed the same."
     },
     {
         "title": "Gaze-Based Hints During Child-Robot Gameplay",
         "cover_image": "",
-        "external_link": "https://link.springer.com/chapter/10.1007/978-3-319-70022-9_41"
+        "external_link": "https://link.springer.com/chapter/10.1007/978-3-319-70022-9_41",
+        "description":"This study explores how gaze hints from a robot tutor affect children's behavior in a card matching game. In a within-subjects experiment, children played \"Memory\" with a robot tutor in two sessions. In the \"Help\" session, the robot gave gaze hints by looking at the correct cards, while in the \"No Help\" session, it did not offer any assistance. The study found that children completed the game with fewer attempts and engaged in more mutual gaze with the robot in the \"Help\" condition, suggesting that dynamic gaze cues enhance the robot's effectiveness as a tutor."
     },
     {
         "title": "See Where I am Looking at: Perceiving Gaze Cues With a NAO Robot",
         "cover_image": "",
-        "external_link": "https://dl.acm.org/doi/10.1145/2974804.2980479"
+        "external_link": "https://dl.acm.org/doi/10.1145/2974804.2980479",
+        "description":"Gaze is a key nonverbal cue in human communication, especially for directing attention. This study explores how well people perceive and interpret gaze cues from a robot, compared to a human, during a board game-like setup. Participants sat across from either a human or a NAO robot and observed gaze cues directed at different spots on a table. The study found that people accurately identified targets when the robot's head pitch was higher and closer, though they struggled more with targets on the robot's left. The findings offer insights for designing better human-robot interactions in social and educational contexts."
     }
 ]
