@@ -1,19 +1,18 @@
-{% extends 'base_list.html' %}
-{% load static %}
-
-{% block title %} Publications {% endblock title %}
-
-{% block banner_title %} Publications {% endblock banner_title %}
-
-{% block content %}
-{% for publication in publications %}
-<div class="bg-white shadow-md rounded-lg p-5 my-6">
+{% extends 'base_list.html' %} {% load static %} {% block title %} Publications {% endblock title %} {% block banner_title %} Publications {% endblock banner_title %} {% block content %} {% for publication in publications %}
+<div class="bg-white shadow-md rounded-lg p-5 my-6 mx-4 sm:mx-6 lg:mx-96">
     <h2 class="text-xl font-bold mb-2">{{ publication.title }}</h2>
-    <img src="{% if publication.cover_image %}{{ publication.cover_image.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ publication.title }}" class="object-cover rounded-lg w-full h-full">
-    <a href="{{ publication.external_link }}" class="mt-4 w-fit flex justify-between items-center p-2 bg-custom-navyBlue text-white border-2 border-custom-navyBlue rounded-lg hover:bg-transparent hover:border-2 hover:text-custom-navyBlue transition duration-300" target="_blank">
-        <span>Go to Paper</span>
-        <i class="ml-2 fa fa-external-link" aria-hidden="true"></i>
-    </a>
+    <div class="flex flex-col sm:flex-row gap-2">
+        <img src="{% if publication.cover_image %}{{ publication.cover_image.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ publication.title }}" class="object-cover rounded-lg w-full sm:w-1/2 h-auto">
+        <p class="mt-2 sm:mt-0">{{ publication.description }}</p>
+    </div>
+    <div class="flex justify-end">
+        <a href="{{ publication.external_link }}" class="mt-4 w-fit flex justify-between items-center p-2 bg-custom-navyBlue text-white border-2 border-custom-navyBlue rounded-lg hover:bg-transparent hover:border-2 hover:text-custom-navyBlue transition duration-300"
+            target="_blank">
+            <span>Go to Paper</span>
+            <i class="ml-2 fa fa-external-link" aria-hidden="true"></i>
+        </a>
+    </div>
 </div>
-{% endfor %}
-{% endblock content %}
+
+
+{% endfor %} {% endblock content %}
