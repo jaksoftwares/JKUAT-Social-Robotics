@@ -30,30 +30,6 @@ Home
         </div>
     </div>
 </section>
-{% comment %} ABOUT SECTION {% endcomment %}
-<section class="py-20" id="about-us">
-    <div class="flex flex-col-reverse md:flex-row justify-center items-center gap-10 py-10 px-4 md:px-8">
-        <!-- Text Section -->
-        <div class="w-full md:w-1/3 items-center flex flex-col text-center md:text-left gap-6">
-            <h2 class="text-2xl md:text-3xl font-raleway">ABOUT US</h2>
-            <p class="text-gray-800 text-lg font-lato  px-7 md:px-20 ">
-                The lab focuses on creating robots that enhance social interaction and support human well-being through
-                empathetic and inclusive design. Research at the social robotics lab focuses on various aspects of
-                human-robot interaction, including how robots can be designed to understand and respond to human
-                emotions, promote social inclusion, and address the ethical implications of robotic technology.
-                technological boundaries but also ensure that technology serves society in meaningful, responsible ways.
-            </p>
-            <a href="{% url 'core:about' %}" class="p-2 bg-custom-navyBlue text-white border-2 border-custom-navyBlue rounded-lg hover:bg-transparent hover:border-2 hover:text-custom-navyBlue transition duration-300">
-                <span class="text-xl">Learn more</span>
-                <i class="fa-solid fa-arrow-right-long ml-2"></i>
-            </a>
-        </div>
-        <!-- Image Section -->
-        <div class="w-full md:w-1/4 md:ml-4 lg:ml-16 mb-8 md:mb-0">
-            <img src="{% static 'img/image 3.jpg' %}" alt="About Image" class="w-full h-auto object-cover  shadow-lg">
-        </div>
-    </div>
-</section>
 {% comment %} TEAM SECTION {% endcomment %}
 <section class="py-20">
     <div class="flex flex-col md:flex-row justify-center gap-10 py-10 px-4 md:px-8">
@@ -120,22 +96,22 @@ Home
 <!-- patners -->
 <section class="py-20 px-5 bg-custom-lightGray">
     <div class="container mx-auto">
-        <h2 class="text-2xl md:text-3xl  font-raleway text-center mb-10">OUR PARTNERS / FOUNDERS</h2>
+        <h2 class="text-2xl md:text-3xl  font-raleway text-center mb-10">OUR PARTNERS / FUNDERS</h2>
         <div class="flex flex-col md:flex-row justify-center items-center gap-8">
             <!-- Logo 1 -->
             <div class="w-1/2 sm:w-1/4 flex justify-center">
-                <img src="{% static 'img/mozilla-logo.png' %}" alt="Mozilla" class="h-20">
+                <img src="{% static 'img/home/mozilla-logo.png' %}" alt="Mozilla" class="h-20">
             </div>
             <!-- Logo 2 -->
             <div class=" sm:w-1/3 flex justify-center">
-                <img src="{% static 'img/unesco-logo.png' %}" alt="UNESCO" class="h-20">
+                <img src="{% static 'img/home/unesco-logo.png' %}" alt="UNESCO" class="h-20">
             </div>
             <!-- Logo 3 -->
             <div class="w-1/2 sm:w-1/4 flex justify-center">
-                <img src="{% static 'img/german-logo.png' %}" alt="Partner" class="">
+                <img src="{% static 'img/home/german-logo.png' %}" alt="Partner" class="">
             </div>
             <div class="w-1/2 sm:w-1/4 flex justify-center">
-                <img src="{% static 'img/jkuat-logo.png' %}" alt="JKAUT" class="">
+                <img src="{% static 'img/home/jkuat-logo.png' %}" alt="JKAUT" class="">
             </div>
         </div>
     </div>

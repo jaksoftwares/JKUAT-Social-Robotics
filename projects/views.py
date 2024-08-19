@@ -24,6 +24,7 @@ class ProjectDetailView(DetailView):
     slug_url_kwarg = "slug"
 
 
+
 class ProjectCreateView(LoginRequiredMixin, CreateView):
     model = Project
     template_name = "projects/form.html"
