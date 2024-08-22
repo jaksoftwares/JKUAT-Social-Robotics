@@ -11,23 +11,23 @@ Responsible Computing
 {% endblock banner_title %}
 
 {% block content %}
-<div class="my-10">
+<div class="my-5">
     <h2 class="text-3xl font-bold font-raleway">SELECTED PROJECTS</h2>
-    <div class="w-full p-1 bg-black"></div>
+    <div class="w-full p-0.5 bg-black"></div>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
     {% for project in projects %}
-    <div class="bg-white rounded-lg shadow-lg my-5 p-4 gap-5 flex flex-col lg:flex-row">
+    <div class="bg-white rounded-lg shadow-lg my-3 p-4 flex flex-col">
         <!-- Project Image -->
-        <div class="lg:w-1/3 mb-4 lg:mb-0">
+        <div class="lg:w-full mb-4 lg:mb-0">
             <img src="{% if project.cover_image %}{{ project.cover_image.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ project.title }}" class="object-cover rounded-lg w-full h-64">
         </div>
         <!-- Project Description -->
-        <div class="lg:w-2/3 flex flex-col justify-between">
+        <div class="lg:w-full flex flex-col justify-between flex-grow">
             <h2 class="text-xl sm:text-2xl font-semibold mb-2">{{ project.title }}</h2>
-            <p class="text-sm sm:text-base text-gray-700 mb-4 line-clamp-3 sm:line-clamp-none">{{ project.short_description }}</p>
+            <p class="text-sm sm:text-base text-gray-700 mb-2 line-clamp-3 sm:line-clamp-none">{{ project.short_description }}</p>
             <!-- Read More Button -->
-            <a href="{{ project.get_absolute_url }}" class="w-fit items-center px-4 py-2 bg-custom-navyBlue text-white border-2 border-custom-navyBlue rounded-lg hover:bg-transparent hover:text-custom-navyBlue transition duration-300">
+            <a href="{{ project.get_absolute_url }}" class="mt-auto self-end w-fit items-center px-4 py-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:text-custom-lintingGreenDark transition duration-300">
                 Read more
                 <i class="fa-solid fa-arrow-right-long ml-2"></i>
             </a>
@@ -35,45 +35,51 @@ Responsible Computing
     </div>
     {% endfor %}
 </div>
-<div class="my-10">
+<div class="my-5">
     <h2 class="text-3xl font-bold font-raleway">CONTRIBUTIONS</h2>
-    <div class="w-full p-1 bg-black"></div>
+    <div class="w-full p-0.5 bg-black"></div>
 </div>
 <!-- Larger flex box with the three images -->
-<div class="flex mt-5 flex-col lg:flex-row justify-between gap-10 lg:gap-20 overflow-hidden">
+<div class="flex mt-5 flex-col lg:flex-row justify-between gap-5 lg:gap-20 overflow-hidden">
     <!-- Left Side with Two Images and a Paragraph in one flexbox -->
-    <div class="flex flex-col">
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+    <div class="flex flex-col justify-between">
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-5">
             <div class="w-full sm:w-1/2 lg:w-128 overflow-hidden">
-                <img src="{% static 'img/Responsible-1.jpeg' %}" alt="Responsible-Computing-1" class="w-full h-auto">
+                <img src="{% static 'img/Responsible-1.jpeg' %}" alt="Responsible-Computing-1" class="w-full h-48 lg:h-64 object-cover">
             </div>
             <div class="w-full sm:w-1/2 lg:w-128 overflow-hidden">
-                <img src="{% static 'img/Responsible-2.jpeg' %}" alt="Responsible-Computing-2" class="w-full h-auto">
+                <img src="{% static 'img/Responsible-2.jpeg' %}" alt="Responsible-Computing-2" class="w-full h-48 lg:h-64 object-cover">
             </div>
         </div>
-        <div class="mt-4 sm:mt-0 lg:mt-4">
-            <a href="https://foundation.mozilla.org/en/blog/robotics-and-ethics-intersect-for-rcc-awardee-jomo-kenyatta-university/" target="_blank">
-                <h2 class="text-lg font-bold mb-2 hover:underline hover:text-blue-500">Mozilla pledges to support JKUAT in training to enhance Responsible Computer Science (RCC) capacity.</h2>
-            </a>
+        <div class="mt-4 sm:mt-0 lg:mt-4 flex flex-col flex-grow">
+            <h2 class="text-lg font-bold mb-2">Mozilla pledges to support JKUAT in training to enhance Responsible Computer Science (RCC) capacity.</h2>
             <p class="text-gray-600 text-sm">During a visit to the university on Wednesday, February 28, 2024, Dr. Mbogho revealed developments stemming from JKUAT's successful acquisition of two Mozilla grants: Teaching Responsible Computing Using Robotics and Mainstreaming Responsible Computing (RC) in ICT Student Innovations.</p>
+            <!-- Read More Button -->
+            <a href="https://foundation.mozilla.org/en/blog/robotics-and-ethics-intersect-for-rcc-awardee-jomo-kenyatta-university/" target="_blank" class="mt-auto mt-2 self-end w-fit items-center px-4 py-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:text-custom-lintingGreenDark transition duration-300">
+                Read more
+                <i class="ml-2 fa fa-external-link" aria-hidden="true"></i>
+            </a>
         </div>
     </div>
     <!-- Right Side with One Image and a Paragraph -->
-    <div class="flex flex-col mt-8 lg:mt-0">
-        <div class="w-full overflow-hidden">
-            <img src="{% static 'img/Responsible-3.jpeg' %}" alt="Responsible-Computing-3" class="w-full h-auto lg:h-64">
+    <div class="flex flex-col justify-between mt-8 lg:mt-0">
+        <div class="max-w-full mx-auto lg:mx-0 overflow-hidden shadow-lg">
+            <img src="{% static 'img/Responsible-3.jpeg' %}" alt="Responsible-Computing-3" class="w-full h-48 lg:h-64 object-fill">
         </div>
-        <div class="mt-4 lg:mt-4">
-            <a href="https://www.linkedin.com/posts/jkuat_mozilla-has-pledged-to-support-jomo-kenyatta-activity-7170346068797337600-qY-Y?utm_source=share&utm_medium=member_desktop" target="_blank">
-                <h2 class="text-lg font-bold mb-2 hover:underline hover:text-blue-500">Integrating ethical perspectives within robotics curriculum</h2>
-            </a>
+        <div class="mt-4 lg:mt-4 flex flex-col flex-grow">
+            <h2 class="text-lg font-bold mb-2">Integrating ethical perspectives within robotics curriculum</h2>
             <p class="text-gray-600 text-sm">JKUAT is successfully cultivating the core values of RCC by introducing undergraduates to ethical perspectives within BSc Computer Science and BSc Technology courses. Their goal? Equipping the next generation of tech builders with the critical skills to develop more inclusive, healthier, and safer digital tools.</p>
+            <!-- Read More Button -->
+            <a href="https://www.linkedin.com/posts/jkuat_mozilla-has-pledged-to-support-jomo-kenyatta-activity-7170346068797337600-qY-Y?utm_source=share&utm_medium=member_desktop" target="_blank" class="mt-auto mt-2 self-end w-fit items-center px-4 py-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:text-custom-lintingGreenDark transition duration-300">
+                Read more
+                <i class="ml-2 fa fa-external-link" aria-hidden="true"></i>
+            </a>
         </div>
     </div>
 </div>
 <div class="my-10">
     <h2 class="text-3xl font-bold font-raleway">RCC PROGRAM AWARD</h2>
-    <div class="w-full p-1 bg-black"></div>
+    <div class="w-full p-0.5 bg-black"></div>
 </div>
 <!-- Video  iframe Section -->
 <div class="relative w-full" style="padding-top: 42%;">
