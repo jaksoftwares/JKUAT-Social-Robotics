@@ -42,16 +42,16 @@ Responsible Computing
 <!-- Larger flex box with the three images -->
 <div class="flex mt-5 flex-col lg:flex-row justify-between gap-5 lg:gap-20 overflow-hidden">
     <!-- Left Side with Two Images and a Paragraph in one flexbox -->
-    <div class="flex flex-col">
+    <div class="flex flex-col justify-between">
         <div class="flex flex-col sm:flex-row justify-center items-center gap-5">
             <div class="w-full sm:w-1/2 lg:w-128 overflow-hidden">
-                <img src="{% static 'img/Responsible-1.jpeg' %}" alt="Responsible-Computing-1" class="w-full h-auto">
+                <img src="{% static 'img/Responsible-1.jpeg' %}" alt="Responsible-Computing-1" class="w-full h-48 lg:h-64 object-cover">
             </div>
             <div class="w-full sm:w-1/2 lg:w-128 overflow-hidden">
-                <img src="{% static 'img/Responsible-2.jpeg' %}" alt="Responsible-Computing-2" class="w-full h-auto">
+                <img src="{% static 'img/Responsible-2.jpeg' %}" alt="Responsible-Computing-2" class="w-full h-48 lg:h-64 object-cover">
             </div>
         </div>
-        <div class="mt-4 sm:mt-0 lg:mt-4">
+        <div class="mt-4 lg:mt-4">
             <a href="https://foundation.mozilla.org/en/blog/robotics-and-ethics-intersect-for-rcc-awardee-jomo-kenyatta-university/" target="_blank">
                 <h2 class="text-lg font-bold mb-2 hover:underline hover:text-blue-500">Mozilla pledges to support JKUAT in training to enhance Responsible Computer Science (RCC) capacity.</h2>
             </a>
@@ -59,15 +59,19 @@ Responsible Computing
         </div>
     </div>
     <!-- Right Side with One Image and a Paragraph -->
-    <div class="flex flex-col mt-8 lg:mt-0">
-        <div class="w-full overflow-hidden">
-            <img src="{% static 'img/Responsible-3.jpeg' %}" alt="Responsible-Computing-3" class="w-full h-auto lg:h-64">
+    <div class="flex flex-col justify-between mt-8 lg:mt-0">
+        <div class="max-w-full mx-auto lg:mx-0 overflow-hidden shadow-lg">
+            <img src="{% static 'img/Responsible-3.jpeg' %}" alt="Responsible-Computing-3" class="w-full h-48 lg:h-64 object-fill">
         </div>
         <div class="mt-4 lg:mt-4">
             <a href="https://www.linkedin.com/posts/jkuat_mozilla-has-pledged-to-support-jomo-kenyatta-activity-7170346068797337600-qY-Y?utm_source=share&utm_medium=member_desktop" target="_blank">
-                <h2 class="text-lg font-bold mb-2 hover:underline hover:text-blue-500">Integrating ethical perspectives within robotics curriculum</h2>
+                <h2 class="text-lg font-bold mb-2 hover:underline hover:text-blue-500 transition duration-200">
+                    Integrating ethical perspectives within robotics curriculum
+                </h2>
             </a>
-            <p class="text-gray-600 text-sm">JKUAT is successfully cultivating the core values of RCC by introducing undergraduates to ethical perspectives within BSc Computer Science and BSc Technology courses. Their goal? Equipping the next generation of tech builders with the critical skills to develop more inclusive, healthier, and safer digital tools.</p>
+            <p class="text-gray-600 text-sm">
+                JKUAT is successfully cultivating the core values of RCC by introducing undergraduates to ethical perspectives within BSc Computer Science and BSc Technology courses. Their goal? Equipping the next generation of tech builders with the critical skills to develop more inclusive, healthier, and safer digital tools.
+            </p>
         </div>
     </div>
 </div>
