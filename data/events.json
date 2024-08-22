@@ -1,11 +1,29 @@
 [
     {
-        "title": "",
-        "description": "",
-        "cover_image": "",
-        "location": "",
-        "external_link": "",
-        "date_starting": "2024-08-10T00:00:00+03:00",
-        "date_ending": "2024-08-10T00:00:00+03:00"
+        "title": "Mozilla Event in India",
+        "description": "Join us for an exciting Mozilla event in India! This gathering brings together tech enthusiasts, developers, and Mozilla community members to explore the latest in open-source technologies and innovations. Don't miss this opportunity to network, learn, and contribute to the vibrant Mozilla ecosystem.",
+        "cover_image": "https://example.com/cover-image.jpg", 
+        "location": "New Delhi, India",  
+        "external_link": "https://www.robotex-india.in/",  
+        "date_starting": "2024-08-10T00:00:00+03:00"
+    },
+    {
+        "title": "UNESCO Skill Building Workshop",
+        "description": "Enhance your skills and knowledge with UNESCO's Skill Building Workshop! This event offers hands-on training and insights into key areas of professional development. Join experts and peers in a collaborative environment to gain valuable skills and advance your career.",
+        "cover_image": "https://example.com/unesco-workshop.jpg",  
+        "location": "Caribbean", 
+        "external_link": "https://uis.unesco.org/en/event/regional-workshop-science-technology-and-innovation-sti-policy-and-indicators-caribbean",  
+        "date_starting": "2024-09-15T09:00:00+03:00"
+    },
+    {
+        "title": "National Research Festival to be attended by MSC students",
+        "description": "Join us at the National Research Festival, a premier event showcasing groundbreaking research and innovations. This festival is an excellent opportunity for MSc students to present their research, network with peers and industry experts, and gain insights into the latest developments in various fields of study.",
+        "cover_image": "https://example.com/national-research-festival.jpg",  
+        "location": "Nairobi, Kenya",  
+        "external_link": "https://festival.nrf.go.ke/",  
+        "date_starting": "2024-10-05T00:00:00+03:00"
     }
+    
+    
+
 ]
