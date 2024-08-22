@@ -42,13 +42,13 @@ Responsible Computing
 <!-- Larger flex box with the three images -->
 <div class="flex mt-5 flex-col lg:flex-row justify-between gap-5 lg:gap-20 overflow-hidden">
     <!-- Left Side with Two Images and a Paragraph in one flexbox -->
-    <div class="flex flex-col">
+    <div class="flex flex-col justify-between">
         <div class="flex flex-col sm:flex-row justify-center items-center gap-5">
             <div class="w-full sm:w-1/2 lg:w-128 overflow-hidden">
-                <img src="{% static 'img/Responsible-1.jpeg' %}" alt="Responsible-Computing-1" class="w-full h-auto">
+                <img src="{% static 'img/Responsible-1.jpeg' %}" alt="Responsible-Computing-1" class="w-full h-48 lg:h-64 object-cover">
             </div>
             <div class="w-full sm:w-1/2 lg:w-128 overflow-hidden">
-                <img src="{% static 'img/Responsible-2.jpeg' %}" alt="Responsible-Computing-2" class="w-full h-auto">
+                <img src="{% static 'img/Responsible-2.jpeg' %}" alt="Responsible-Computing-2" class="w-full h-48 lg:h-64 object-cover">
             </div>
         </div>
         <div class="mt-4 sm:mt-0 lg:mt-4 flex flex-col flex-grow">
@@ -62,9 +62,9 @@ Responsible Computing
         </div>
     </div>
     <!-- Right Side with One Image and a Paragraph -->
-    <div class="flex flex-col mt-8 lg:mt-0">
-        <div class="w-full overflow-hidden">
-            <img src="{% static 'img/Responsible-3.jpeg' %}" alt="Responsible-Computing-3" class="w-full h-auto lg:h-64">
+    <div class="flex flex-col justify-between mt-8 lg:mt-0">
+        <div class="max-w-full mx-auto lg:mx-0 overflow-hidden shadow-lg">
+            <img src="{% static 'img/Responsible-3.jpeg' %}" alt="Responsible-Computing-3" class="w-full h-48 lg:h-64 object-fill">
         </div>
         <div class="mt-4 lg:mt-4 flex flex-col flex-grow">
             <h2 class="text-lg font-bold mb-2">Integrating ethical perspectives within robotics curriculum</h2>
