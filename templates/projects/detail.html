@@ -2,14 +2,51 @@
 {% load static %}
 
 {% block title %}
-Project
+Project Details
 {% endblock title %}
 
-
 {% block body %}
-<h1>{{ project }}</h1>
-<p>{{ project.description }}</p>
-
-<img src="{% if project.cover_image %}{{ project.cover_image.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ project }}">
-<a href="{% url 'projects:list' %}">Back to list</a>
+<div class="bg-gray-50 min-h-screen p-6 md:p-8">
+    <!-- Project Title -->
+    <h1 class="text-4xl font-bold text-gray-900 mb-6">{{ project.title }}</h1>
+    <!-- Project Image -->
+    <div class="mb-8">
+        <img src="{% if project.cover_image %}{{ project.cover_image.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ project.title }}" class="w-full max-w-3xl h-auto rounded-xl shadow-lg mx-auto">
+    </div>
+    <!-- Short Description -->
+    <p class="text-xl text-gray-800 mb-6">{{ project.short_description }}</p>
+    <!-- Project Description -->
+    <div class="prose lg:prose-xl mb-8">
+        <p>{{ project.description }}</p>
+    </div>
+    <!-- Team Members -->
+    <div class="mb-8">
+        <h2 class="text-3xl font-semibold text-gray-900 mb-4">Team Members</h2>
+        <ul class="list-disc list-inside text-gray-800 space-y-1">
+            {% for member in project.team.all %}
+            <li>{{ member.first_name }} {{ member.last_name }}</li>
+            {% empty %}
+            <li>No team members available.</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <!-- Back to List Link -->
+    <a href="{% url 'projects:list' %}" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+        <svg
+            class="w-4 h-4 mr-2"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+            />
+        </svg>
+        Back to list
+    </a>
+</div>
 {% endblock body %}

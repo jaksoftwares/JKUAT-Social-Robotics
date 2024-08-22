@@ -6,6 +6,7 @@ from django.db import models
 
 class BaseModel(models.Model):
     title = models.CharField(_("Title"), max_length=200, unique=True)
+    short_description = models.TextField(_("Short Description"), blank=True, null=True)
     description = models.TextField(_("Description"), blank=True, null=True)
     cover_image = models.ImageField(
         _("Cover Image"),

@@ -9,6 +9,29 @@
 
 {% block content %}
 <div class="container mx-auto px-4">
+    <h2 class="text-4xl md:text-5xl lg:text-6xl my-4">Principal Investigator</h2>
+    <div class="border border-black"></div>
+    <div class="my-8 md:my-16">
+        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10 justify-center">
+            <div class="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
+                <div>
+                    <h2 class="font-bold text-2xl md:text-3xl lg:text-4xl">{{ principal_investigator.first_name }} {{ principal_investigator.last_name }}</h2>
+                    <h4 class="text-custom-lintingGreenDark text-lg md:text-xl">{{ principal_investigator.specialty }}</h4>
+                </div>
+                <div>
+                    <h4 class="italic text-lg md:text-xl">Focus</h4>
+                    <p class="text-sm md:text-base">{{ principal_investigator.focus_long }}</p>
+                </div>
+                <a href="{% url 'people:detail' principal_investigator.slug %}" class="p-2 w-fit bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300">
+                    <span class="text-xl">Visit Profile</span>
+                    <i class="fa-solid fa-arrow-right-long ml-2"></i>
+                </a>
+            </div>
+            <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
+                <img src="{% if principal_investigator.profile_picture %}{{ principal_investigator.profile_picture.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ principal_investigator.first_name }} {{ principal_investigator.last_name }}" class="w-full h-full object-cover rounded-full">
+            </div>
+        </div>
+    </div>
     <h2 class="text-4xl md:text-5xl lg:text-6xl my-4">Postgraduate Students</h2>
     <div class="border border-black"></div>
     {% for postgrad in postgraduates %}
@@ -17,15 +40,16 @@
             <div class="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
                 <div>
                     <h2 class="font-bold text-2xl md:text-3xl lg:text-4xl">{{ postgrad.first_name }} {{ postgrad.last_name }}</h2>
-                    <h4 class="text-custom-navyBlue text-lg md:text-xl">{{ postgrad.specialty }}</h4>
+                    <h4 class="text-custom-lintingGreenDark text-lg md:text-xl">{{ postgrad.specialty }}</h4>
                 </div>
                 <div>
                     <h4 class="italic text-lg md:text-xl">Focus</h4>
                     <p class="text-sm md:text-base">{{ postgrad.focus_long }}</p>
                 </div>
-                <div class="{% if forloop.counter|divisibleby:2 %}{% endif %}">
-                    <a class="inline-block p-2 bg-custom-navyBlue text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-navyBlue hover:text-custom-navyBlue transition duration-300" href="{% url 'people:detail' postgrad.slug %}">Visit Profile</a>
-                </div>
+                <a href="{% url 'people:detail' principal_investigator.slug %}" class="{% if forloop.counter|divisibleby:2 %}{% endif %} p-2 w-fit bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300">
+                    <span class="text-xl">Visit Profile</span>
+                    <i class="fa-solid fa-arrow-right-long ml-2"></i>
+                </a>
             </div>
             <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
                 <img src="{% if postgrad.profile_picture %}{{ postgrad.profile_picture.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ postgrad.first_name }} {{ postgrad.last_name }}" class="w-full h-full object-cover rounded-full">
@@ -40,7 +64,7 @@
         <h2 class="text-4xl md:text-5xl lg:text-6xl mb-4">Undergraduate Students</h2>
         <div class="border border-black mb-8"></div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="aspect-square border rounded-lg bg-custom-navyBlue text-white flex flex-col p-6">
+            <div class="aspect-square border rounded-lg bg-custom-lintingGreenDark text-white flex flex-col p-6">
                 <div class="h-3/4">
                     <h2 class="font-bold text-3xl md:text-4xl lg:text-5xl">
                         Computer Science Undergraduate Students

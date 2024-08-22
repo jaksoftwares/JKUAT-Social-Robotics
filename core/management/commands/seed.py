@@ -125,30 +125,37 @@ class Command(BaseCommand):
     def handle_project(self, data, entry):
         if "team" in data:
             team_data = data.pop("team")
+
             project, created = self.create_instance(data, entry)
+
             if project:
                 for member in team_data:
                     current_datetime = datetime.now().strftime("%Y%m%d%H%M%S%f")
                     member["slug"] = slugify(
                         f"{member['first_name']}-{member['last_name']}___{current_datetime}"
                     )
+
                     person, person_created = Person.objects.get_or_create(
                         first_name=member["first_name"],
                         last_name=member["last_name"],
                         defaults=member,
                     )
+
                     if person_created:
                         self.stdout.write(
                             self.style.SUCCESS(f"Created new team member: {person}")
                         )
-                    person.project = project
-                    person.save()
-                    self.stdout.write(
-                        self.style.SUCCESS(
-                            f"Added team member: {person} to project: {project}"
+
+                    if person not in project.team.all():
+                        project.team.add(person)
+                        self.stdout.write(
+                            self.style.SUCCESS(
+                                f"Added team member: {person} to project: {project}"
+                            )
                         )
-                    )
+                project.save()
         else:
+            # Create the project instance if no team data is provided
             self.create_instance(data, entry)
 
     def create_instance(self, data, entry):

@@ -26,6 +26,14 @@ def admin(request):
     return render(request, "core/moderator.html")
 
 
+def activities(request):
+    context = {
+        "news": NEWS_MODELS.News.objects.all(),
+        "events": EVENTS_MODELS.Event.objects.all(),
+    }
+    return render(request, "core/activities.html", context=context)
+
+
 def search(request):
     query = request.GET.get("q", "")
     if query:
