@@ -38,9 +38,9 @@ Home
             <img src="{% static 'img/image 3.jpg' %}" alt="About Image" class="w-full h-auto object-cover  shadow-lg">
         </div>
         <!-- Text Section -->
-        <div class="w-full md:w-1/3 items-center flex flex-col text-center md:text-left gap-6">
+        <div class="w-full md:w-1/3 items-center flex flex-col text-center md:text-left gap-4">
             <h2 class="text-2xl md:text-3xl font-raleway">MEET OUR TEAM</h2>
-            <p class="text-gray-800 font-lato text-lg  px-7 md:px-20 ">
+            <p class="text-gray-800 font-lato text-lg md:text-xl  px-7 md:px-20 ">
                 Our team consists of researchers, engineers, and students who are passionate about creating robots that align with human values and promote social well-being. 
                 Together, we work to push the boundaries of social robotics research and develop innovative solutions that address real-world challenges.
             </p>
@@ -82,7 +82,7 @@ Home
                 <div class="w-full h-48 mb-4">
                     <img src={{news.cover_image.url}} alt="news image" class="w-full h-full object-cover rounded-md">
                 </div>
-                <p class="text-gray-700 mb-6">{{ news.description }}</p>
+                <p class="text-gray-700 mb-6 text-lg">{{ news.description }}</p>
                 {% if news.external_link %}
                 <a href="{{ news.external_link }}" class="text-custom-lintingGreenDark font-semibold hover:underline">Read More</a>
                 {% endif %}
