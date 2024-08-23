@@ -7,7 +7,7 @@
 
 {% block content %} 
 {% for publication in publications %}
-<div class="bg-white shadow-md rounded-lg p-5 my-6 mx-4 sm:mx-6 lg:mx-96">
+<div class="bg-white shadow-md rounded-lg p-5 my-6 mx-4 sm:mx-6 lg:mx-16">
     <h2 class="text-xl font-bold mb-2">{{ publication.title }}</h2>
     <div class="flex flex-col sm:flex-row gap-2">
         <img src="{% if publication.cover_image %}{{ publication.cover_image.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ publication.title }}" class="object-cover rounded-lg w-full sm:w-1/2 h-auto">
