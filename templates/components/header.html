@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <div class=" hidden md:block border-b "></div>
+        <div class=" hidden md:block border-b mx-3"></div>
         
         <!-- Search bar for mobile view -->
         <div id="mobile-search-bar" class="hidden md:hidden mt-2 drop-shadow-lg  shadow-black text-white">
@@ -48,49 +48,49 @@
                 class="hidden py-2 md:flex md:items-center md:justify-center gap-6 md:gap-12 text-white opacity-90 md:opacity-1 duration-300  absolute top-0 left-0 right-0 bg-custom-lintingGreenDark z-10 md:relative md:bg-transparent">
                 <li>
                     <a href="{% url 'core:home' %}"
-                        class="relative inline-block pb-1 text-lg {% if request.path == '/' %}text-custom-lintingGreenDark  font-bold{% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-lintingGreenDark after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/' %}text-custom-red   d{% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-red after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
                         Home
                     </a>
                 </li>
                 <li>
                     <a href="{% url 'core:about' %}"
-                        class="relative inline-block pb-1 text-lg {% if request.path == '/about/' %}text-custom-lintingGreenDark font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-lintingGreenDark after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/about/' %}text-custom-red   {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-red after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
                         About
                     </a>
                 </li>
                 <li>
                     <a href="{% url 'people:list' %}"
-                        class="relative inline-block pb-1 text-lg {% if request.path == '/team/' %}text-custom-lintingGreenDark font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-lintingGreenDark after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/team/' %}text-custom-red   {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-red after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
                         Team
                     </a>
                 </li>
                 <li>
                     <a href="{% url 'core:activities' %}"
-                        class="relative inline-block pb-1 text-lg {% if request.path == '/activities/' %}text-custom-lintingGreenDark font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-lintingGreenDark after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/activities/' %}text-custom-red   {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-red after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
                         Activities
                     </a>
                 </li>
                 <li>
                     <a href="{% url 'projects:list' %}"
-                        class="relative inline-block pb-1 text-lg {% if request.path == '/projects/' %}text-custom-lintingGreenDark font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-lintingGreenDark after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/projects/' %}text-custom-red   {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-red after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
                         Projects
                     </a>
                 </li>
                 <li>
                     <a href="{% url 'publications:list' %}"
-                        class="relative inline-block pb-1 text-lg {% if request.path == '/publications/' %}text-custom-lintingGreenDark font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-lintingGreenDark after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/publications/' %}text-custom-red   {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-red after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
                         Publications
                     </a>
                 </li>
                 <li>
                     <a href="{% url 'responsible_computing:responsible_computing' %}"
-                        class="relative inline-block pb-1 text-lg {% if request.path == '/responsible_computing/' %}text-custom-lintingGreenDark font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-lintingGreenDark after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/responsible_computing/' %}text-custom-red   {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-red after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
                         Responsible Computing
                     </a>
                 </li>
                 <li>
                     <a href="{% url 'robots:list' %}"
-                        class="relative inline-block pb-1 text-lg {% if request.path == '/robots/' %}text-custom-lintingGreenDark font-bold {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-lintingGreenDark after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
+                        class="relative inline-block pb-1 text-lg {% if request.path == '/robots/' %}text-custom-red   {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-red after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
                         Robots
                     </a>
                 </li>
