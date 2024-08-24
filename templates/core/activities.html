@@ -45,23 +45,7 @@ Outreach
                         <a href="{{ news.external_link }}" target="_blank" class="text-custom-lintingGreenDark text-xl font-semibold hover:underline">{{ news.title }}</a>
                         <p class="text-gray-600 mt-2">{{ news.created_at }}</p>
                         <p class="text-gray-700 mt-4">{{ news.description|truncatewords:30 }}</p>
-                        
-                    {% if static %}
-                    
-                    <div class="flex items-end">
-                           
-                            <a href="{{ news.external_link }}" target="_blank"class="mt-4 self-end w-fit items-center px-4 py-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:text-custom-lintingGreenDark transition duration-300">
-                                    Read more
-                                    <i class="fa-solid fa-arrow-right-long ml-2"></i>
-                                </a>
-                       
-                            
-                        </div>
-                    {% endif %}
-                    
                     </div>
-                    
-                    
                 </div>
                 {% endfor %}
             </div>
@@ -73,8 +57,8 @@ Outreach
             <div class="grid grid-cols-1 gap-8">
                 <article>
                     <h3 class="text-xl font-semibold text-custom-lintingGreenDark mb-4">Programme to Attract Young Women to STEM Unveiled</h3>
-                    <img src="../../static/img/projects/care-givers.png." alt="Lab Robots" class="w-full h-64 object-cover rounded-lg mb-6">
-                    <div class="text-black font-lato  space-y-4">
+                    <img src="../../static/img/labrobots.jpeg" alt="Lab Robots" class="w-full h-64 object-cover rounded-lg mb-6">
+                    <div class="text-gray-700 space-y-4">
                         <p>
                             The enduring perception, mostly stereotypical, that girls are not well adopted to pursue courses and careers
                             in science, technology, engineering and mathematics (STEM) has stopped many girls from enrolling into STEM
