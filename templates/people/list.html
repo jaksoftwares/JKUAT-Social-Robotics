@@ -9,14 +9,17 @@
 
 {% block content %}
 <div class="container mx-auto px-4">
-    <h2 class="text-4xl md:text-5xl lg:text-6xl my-4">Principal Investigator</h2>
-    <div class="border border-black"></div>
+    <h2 class="text-2xl md:text-3xl lg:text-3xl mt-4 md:mt-8">PRINCIPAL INVESTIGATOR</h2>
+    <div class="border "></div>
     <div class="my-8 md:my-16">
         <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10 justify-center">
+            <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
+                <img src="{% if principal_investigator.profile_picture %}{{ principal_investigator.profile_picture.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ principal_investigator.first_name }} {{ principal_investigator.last_name }}" class="w-full h-full object-cover ">
+            </div>
             <div class="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
                 <div>
                     <h2 class="font-bold text-2xl md:text-3xl lg:text-4xl">{{ principal_investigator.first_name }} {{ principal_investigator.last_name }}</h2>
-                    <h4 class="text-custom-lintingGreenDark text-lg md:text-xl">{{ principal_investigator.specialty }}</h4>
+                    <h4 class="text-custom-red text-lg md:text-xl">{{ principal_investigator.specialty }}</h4>
                 </div>
                 <div>
                     <h4 class="italic text-lg md:text-xl">Focus</h4>
@@ -27,12 +30,9 @@
                     <i class="fa-solid fa-arrow-right-long ml-2"></i>
                 </a>
             </div>
-            <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
-                <img src="{% if principal_investigator.profile_picture %}{{ principal_investigator.profile_picture.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ principal_investigator.first_name }} {{ principal_investigator.last_name }}" class="w-full h-full object-cover rounded-full">
-            </div>
         </div>
     </div>
-    <h2 class="text-4xl md:text-5xl lg:text-6xl my-4">Postgraduate Students</h2>
+    <h2 class="text-2xl md:text-3xl lg:text-3xl mt-4 md:mt-8">POSTGRADUATE STUDENTS</h2>
     <div class="border border-black"></div>
     {% for postgrad in postgraduates %}
     <div class="my-8 md:my-16 {% if forloop.counter|divisibleby:2 %}{% endif %}">
@@ -40,7 +40,7 @@
             <div class="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
                 <div>
                     <h2 class="font-bold text-2xl md:text-3xl lg:text-4xl">{{ postgrad.first_name }} {{ postgrad.last_name }}</h2>
-                    <h4 class="text-custom-lintingGreenDark text-lg md:text-xl">{{ postgrad.specialty }}</h4>
+                    <h4 class="text-custom-red text-lg md:text-xl">{{ postgrad.specialty }}</h4>
                 </div>
                 <div>
                     <h4 class="italic text-lg md:text-xl">Focus</h4>
@@ -61,7 +61,7 @@
     {% endif %}
     {% endfor %}
     <div class="mt-16">
-        <h2 class="text-4xl md:text-5xl lg:text-6xl mb-4">Undergraduate Students</h2>
+        <h2 class="text-2xl md:text-3xl lg:text-3xl mt-4 md:mt-8">UNDERGRADUATE STUDENTS</h2>
         <div class="border border-black mb-8"></div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="aspect-square border rounded-lg bg-custom-lintingGreenDark text-white flex flex-col p-6">
