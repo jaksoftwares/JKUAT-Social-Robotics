@@ -1,9 +1,7 @@
 {% load static %}
 <footer style="margin-top: 150px" class="bg-[#003B6D] text-white py-8 relative" id="mainfooter">
-    <!-- Added relative positioning for consistent layout -->
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
-            <!-- Updated layout to be responsive with space between items -->
+    <div class="max-w-6xl mx-auto px-4 lg:px-0">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0 lg:space-x-20">
             <div>
                 <h3 class="text-xl font-bold mb-2">Reach out to us</h3>
                 <div>
@@ -40,8 +38,7 @@
             </div>
             <div>
                 <h3 class="text-xl font-bold mb-2">Links</h3>
-                <ul class="space-y-2">
-                    <!-- Added spacing between list items -->
+                <ul class="space-y-2 md:space-y-3">
                     <li>
                         <a href="{% url 'core:about' %}" class="target-link">About</a>
                     </li>
@@ -55,14 +52,10 @@
                         <a href="{% url 'projects:list' %}" class="target-link">Projects</a>
                     </li>
                     <li>
-                        <a href="{% url 'publications:list' %}" class="target-link">
-                            Publications
-                        </a>
+                        <a href="{% url 'publications:list' %}" class="target-link">Publications</a>
                     </li>
                     <li>
-                        <a href="{% url 'responsible_computing:responsible_computing' %}" class="target-link">
-                            Responsible Computing
-                        </a>
+                        <a href="{% url 'responsible_computing:responsible_computing' %}" class="target-link">Responsible Computing</a>
                     </li>
                     <li>
                         <a href="{% url 'robots:list' %}" class="target-link">Robots</a>
@@ -72,118 +65,101 @@
                     </li>
                 </ul>
             </div>
-            <div class="relative" id="footer-robot">
-                <!-- Added relative positioning for the image container -->
+            <div class="relative md:flex-1" id="footer-robot">
                 <img
                     src="{% static 'img/core/nao-sitted.png' %}"
                     alt="Robot"
-                    class="w-64 h-auto"
+                    class="w-64 h-auto md:w-auto"
                     id="footer-robot-img"
                 >
-                <!-- Added hover effect to slightly enlarge the image -->
             </div>
         </div>
     </div>
 </footer>
 <style>
-  /* Hover effect for target links */
-
-  .target-link {
-    color: #b0b0b0;
-    /* Gray color for links */
-    text-decoration: none;
-    /* Remove default underline */
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-    /* Smooth transition for color and border */
-  }
-
-  .target-link:hover {
-    color: #ffffff;
-    /* White color on hover */
-    border-bottom: 2px solid #ffffff;
-    /* Underline on hover */
-  }
-  /* Smooth transition for image scaling */
-
-  .transition-transform {
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .target-link:hover::after {
-    width: 100%;
-    background: #ffffff;
-    /* Underline color on hover */
-  }
-
-  #footer-robot {
-    margin-right: -200px;
-    margin-top: -300px;
-    margin-bottom: -120px;
-  }
-  /* CSS for the footer robot image */
-
-  #footer-robot-img {
-    height: 400px;
-    width: 440px;
-  }
-  /* Media queries for footer responsiveness */
-
-  @media (max-width: 768px) {
-    footer #footer-robot {
-      margin-right: 0;
-      margin-top: 0;
-      margin-bottom: 0;
-      text-align: center; /* Center align the robot image */
+    .target-link {
+        color: #b0b0b0;
+        text-decoration: none;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+    .target-link:hover {
+        color: #ffffff;
+        border-bottom: 2px solid #ffffff;
+    }
+    .transition-transform {
+        transition: transform 0.3s ease-in-out;
+    }
+    .target-link:hover::after {
+        width: 100%;
+        background: #ffffff;
+    }
+    #footer-robot {
+        margin-right: -200px;
+        margin-top: -300px;
+        margin-bottom: -120px;
+    }
+    #footer-robot-img {
+        height: 400px;
+        width: 440px;
     }
 
-    footer #footer-robot-img {
-      height: auto;
-      width: 100%;
-      max-width: 300px; /* Adjust the maximum width of the robot image */
-      margin: 0 auto;
+    @media (max-width: 768px) {
+        footer #footer-robot {
+            margin-right: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            text-align: center;
+            flex-basis: auto;
+        }
+        footer #footer-robot-img {
+            height: auto;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        footer .flex-col.md\\:flex-row {
+            flex-direction: column;
+            text-align: center;
+        }
+        footer .space-y-8.md\\:space-y-0 {
+            margin-bottom: 16px;
+        }
+        footer h3 {
+            font-size: 1.25rem;
+        }
+        footer p,
+        footer span {
+            font-size: 1rem;
+        }
+        footer ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
-    footer .flex-col.md\\:flex-row {
-      flex-direction: column; /* Stack items vertically */
-      text-align: center; /* Center align text */
+    @media (max-width: 480px) {
+        footer #footer-robot-img {
+            max-width: 200px;
+        }
+        footer h3 {
+            font-size: 1rem;
+        }
+        footer p,
+        footer span {
+            font-size: 0.875rem;
+        }
+        footer ul {
+            gap: 4px;
+        }
     }
 
-    footer .space-y-8.md\\:space-y-0 {
-      margin-bottom: 16px; /* Add bottom margin between sections */
+    @media (min-width: 1024px) {
+        footer .max-w-6xl {
+            justify-content: space-between;
+        }
+        footer .lg\\:space-x-20 {
+            column-gap: 5rem;
+        }
     }
-
-    footer h3 {
-      font-size: 1.25rem; /* Adjust font size for headings */
-    }
-
-    footer p,
-    footer span {
-      font-size: 1rem; /* Adjust font size for text */
-    }
-
-    footer ul {
-      display: flex;
-      flex-direction: column; /* Stack links vertically */
-      align-items: center;
-    }
-  }
-
-  @media (max-width: 480px) {
-    footer #footer-robot-img {
-      max-width: 200px; /* Further adjust the maximum width of the robot image */
-    }
-
-    footer h3 {
-      font-size: 1rem; /* Further adjust font size for headings */
-    }
-
-    footer p,
-    footer span {
-      font-size: 0.875rem; /* Further adjust font size for text */
-    }
-
-    footer ul {
-      gap: 4px; /* Reduce spacing between links */
-    }
-  }
 </style>
