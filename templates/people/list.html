@@ -8,7 +8,7 @@
 {% endblock banner_title %}
 
 {% block content %}
-<div class="container mx-auto px-4">
+<div class="container mx-auto font-lato px-4">
     <h2 class="text-2xl md:text-3xl lg:text-3xl mt-4 md:mt-8">PRINCIPAL INVESTIGATOR</h2>
     <div class="border "></div>
     <div class="my-8 md:my-16">
@@ -18,7 +18,7 @@
             </div>
             <div class="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
                 <div>
-                    <h2 class="font-bold text-2xl md:text-3xl lg:text-4xl">{{ principal_investigator.first_name }} {{ principal_investigator.last_name }}</h2>
+                    <h2 class="font-semibold text-xl md:text-2xl lg:text-3xl">{{ principal_investigator.first_name }} {{ principal_investigator.last_name }}</h2>
                     <h4 class="text-custom-red text-lg md:text-xl">{{ principal_investigator.specialty }}</h4>
                 </div>
                 <div>
@@ -39,7 +39,7 @@
         <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10 justify-center {% if forloop.counter|divisibleby:2 %}md:flex-row-reverse{% endif %}">
             <div class="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
                 <div>
-                    <h2 class="font-bold text-2xl md:text-3xl lg:text-4xl">{{ postgrad.first_name }} {{ postgrad.last_name }}</h2>
+                    <h2 class="font-semibold text-xl md:text-2xl lg:text-3xl">{{ postgrad.first_name }} {{ postgrad.last_name }}</h2>
                     <h4 class="text-custom-red text-lg md:text-xl">{{ postgrad.specialty }}</h4>
                 </div>
                 <div>
