@@ -52,9 +52,9 @@ Home
     </div>
 </section>
 <!--Upcoming events section  -->
-<section class="py-20 px-40 bg-white">
+<section class="py-20 md:px-40 px-5 bg-white">
     <div>
-        <h2 class=" text-2xl md:text-4xl  font-raleway  text-center mb-10">UPCOMING EVENTS</h2>
+        <h2 class=" text-2xl md:text-4xl  font-raleway  text-center mb-5 md:mb-10">UPCOMING EVENTS</h2>
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 font-lato">
             {% for event in events %}
             <div class="bg-custom-lightGray p-6 rounded-lg shadow-lg">
@@ -71,9 +71,9 @@ Home
     </div>
 </section>
 <!-- Latest News Section -->
-<section class="py-20 px-40">
+<section class="py-10 md:py-20 px-5 md:px-40">
     <div>
-        <h2 class="text-2xl md:text-4xl font-raleway text-center mb-10">LATEST NEWS</h2>
+        <h2 class="text-2xl md:text-4xl font-raleway text-center mb:5 md:mb-10">LATEST NEWS</h2>
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
             {% for news in news %}
             <div class="bg-white p-6 rounded-lg shadow-lg">
