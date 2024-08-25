@@ -14,7 +14,7 @@
     <div class="my-8 md:my-16">
         <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10 justify-center">
             <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
-                <img src="{% if principal_investigator.profile_picture %}{{ principal_investigator.profile_picture.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ principal_investigator.first_name }} {{ principal_investigator.last_name }}" class="w-full h-full object-cover ">
+                <img src="{% if principal_investigator.profile_picture %}{{ principal_investigator.profile_picture.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ principal_investigator.first_name }} {{ principal_investigator.last_name }}" class="w-full h-full object-cover rounded-full">
             </div>
             <div class="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
                 <div>

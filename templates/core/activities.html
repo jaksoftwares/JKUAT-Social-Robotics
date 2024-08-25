@@ -1,8 +1,6 @@
 {% extends 'base_list.html' %}
 {% load static %}
 
-
-
 {% block title %}
 Activities
 {% endblock title %}
@@ -11,13 +9,11 @@ Activities
 Outreach
 {% endblock banner_title %}
 
-
 {% block content %}
 <div class="flex flex-col lg:flex-row container mx-auto px-4 py-8 lg:py-16">
-
-        <!-- sidebar -->
-        <aside class="w-full lg:w-1/4 mb-8 lg:mb-0 lg:pr-8">
-            <h2 class="text-2xl font-semibold mb-4">Upcoming Events</h2>
+    <!-- sidebar -->
+    <aside class="w-full lg:w-1/4 mb-8 lg:mb-0 lg:pr-8">
+        <h2 class="text-2xl font-semibold mb-4">Upcoming Events</h2>
         {% for event in events %}
         <div class="bg-custom-lightGray p-4 rounded-lg shadow-lg mb-4">
             <h3 class="text-xl font-semibold">{{ event.title }}</h3>
@@ -29,7 +25,6 @@ Outreach
         <p class="text-gray-600">No upcoming events.</p>
         {% endfor %}
     </aside>
-
     <!-- main content -->
     <main class="w-full lg:w-3/4">
         <!-- the news section -->
@@ -41,23 +36,29 @@ Outreach
                     <div class="lg:w-1/2 mb-6 sm:mr-4">
                         <img src="{% if news.cover_image %}{{ news.cover_image.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ news }}" class="object-cover rounded-lg w-full h-40">
                     </div>
-                    <div class="lg:w-1/2 text-center sm:text-left">
-                        <a href="{{ news.external_link }}" target="_blank" class="text-custom-lintingGreenDark text-xl font-semibold hover:underline">{{ news.title }}</a>
-                        <p class="text-gray-600 mt-2">{{ news.created_at }}</p>
-                        <p class="text-gray-700 mt-4">{{ news.description|truncatewords:30 }}</p>
+                    <div class="lg:w-1/2 text-center flex gap-5 flex-col sm:text-left">
+                        <div>
+                            <span href="{{ news.external_link }}" target="_blank" class="text-custom-lintingGreenDark text-xl font-semibold hover:underline">{{ news.title }}</span>
+                            <p class="text-gray-600 mt-2">{{ news.created_at }}</p>
+                            <p class="text-gray-700 mt-4">{{ news.description|truncatewords:30 }}</p>
+                        </div>
+                        {% if news.external_link %}
+                            <a href="{{ news.external_link }}" class="mt-auto self-end w-fit items-center px-4 py-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:text-custom-lintingGreenDark transition duration-300">
+                                Read more
+                                <i class="fa-solid fa-arrow-right-long ml-2"></i>
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </section>
-
-        
         <section>
             <h2 class="text-2xl font-semibold mb-4">Latest Activities</h2>
             <div class="grid grid-cols-1 gap-8">
                 <article>
                     <h3 class="text-xl font-semibold text-custom-lintingGreenDark mb-4">Programme to Attract Young Women to STEM Unveiled</h3>
-                    <img src="../../static/img/labrobots.jpeg" alt="Lab Robots" class="w-full h-64 object-cover rounded-lg mb-6">
+                    <img src="{% static 'img/activities/girls.jpeg' %}" alt="Lab Robots" class="w-full h-128 object-cover rounded-lg mb-6">
                     <div class="text-gray-700 space-y-4">
                         <p>
                             The enduring perception, mostly stereotypical, that girls are not well adopted to pursue courses and careers
@@ -108,4 +109,5 @@ Outreach
             </div>
         </section>
     </main>
+</div>
 {% endblock content %}
