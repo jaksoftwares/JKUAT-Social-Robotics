@@ -20,7 +20,7 @@ class BaseModel(models.Model):
     external_link = models.URLField(
         _("External Link"), max_length=200, blank=True, null=True
     )
-    slug = models.SlugField(unique=True, max_length=100)
+    slug = models.SlugField(unique=True, max_length=200)
     created_at = models.DateTimeField(_("Date Created"), auto_now_add=True)
     updated_at = models.DateTimeField(_("Date Updated"), auto_now=True)
 

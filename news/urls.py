@@ -12,7 +12,7 @@ app_name = "news"
 urlpatterns = [
     path("", NewsListView.as_view(), name="list"),
     path("<slug:slug>/", NewsDetailView.as_view(), name="detail"),
-    path("create/", NewsCreateView.as_view(), name="create"),
-    path("<slug:slug>/update/", NewsUpdateView.as_view(), name="update"),
-    path("<slug:slug>/delete/", NewsDeleteView.as_view(), name="delete"),
+    # path("create/", NewsCreateView.as_view(), name="create"),
+    # path("<slug:slug>/update/", NewsUpdateView.as_view(), name="update"),
+    # path("<slug:slug>/delete/", NewsDeleteView.as_view(), name="delete"),
 ]

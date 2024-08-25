@@ -48,10 +48,10 @@ BASE_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    "django_browser_reload",
+    "crispy_tailwind",
     "crispy_forms",
-    
-
-    
+    "fontawesomefree",
 ]
 
 INTERNAL_APPS = [
@@ -69,13 +69,6 @@ INTERNAL_APPS = [
 ]
 
 INSTALLED_APPS = BASE_APPS + THIRD_PARTY_APPS + INTERNAL_APPS
-
-if DEBUG:
-    INSTALLED_APPS += [
-        "django_browser_reload",
-        "crispy_tailwind",
-        "fontawesomefree",
-    ]
 
 
 MIDDLEWARE = [
