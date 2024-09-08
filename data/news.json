@@ -10,7 +10,21 @@
         "title": "Girls In ICT - JKUAT",
         "description": "The enduring perception, mostly, stereotypical, that girls are not well adopted to pursue courses and careers in science, technology, engineering and mathematics (STEM) has stopped many girls from enrolling into STEM subjects.To unroll this practice, Jomo Kenyatta University of Agriculture and Technology has launched a strategic initiative designed to empower and woo young women enrolled in the Competency-Based Curriculum (CBC) system, guiding them toward Science, Technology, Engineering, and Mathematics (STEM) careers.",
         "cover_image": "./../static/img/News/ict-girls.jpg",
-        "external_link": "https://www.jkuat.ac.ke/programme-to-attract-young-women-to-stem-unveiled/#:~:text=To%20unroll%20this%20practice%2C%20Jomo,and%20Mathematics%20(STEM)%20careers.",
+        "external_link": "https://www.jkuat.ac.ke/programme-to-attract-young-women-to-stem-unveiled/#:~:text=To%unroll%this%practice%2C",
         "date_published": "2024-04-05T00:00:00+03:00"
+    },
+    {
+        "title": "JKUAT Showcases Innovations at Inaugural National Research Festival",
+        "description": "This article highlights JKUAT's participation in the first Kenya National Research Festival, showcasing their innovations in agriculture, technology, and health. It discusses projects like Push-Pull technology and indigenous African vegetables, and mentions several JKUAT researchers who were recognized for their work.",
+        "cover_image": "./../static/img/news/Dr.-Susan-Whyche.jpeg",
+        "external_link": "https://www.jkuat.ac.ke/jkuat-showcase-innovations-at-inaugural-national-research-festival/",
+        "date_published": "2024-08-01T00:00:00+03:00"
+    },
+    {
+        "title": "Integrating African Perspectives in Technology and Design Processes",
+        "description": "This article discusses the importance of incorporating African cultural norms and experiences into technology and design, in order to create solutions that are culturally appropriate and effective. It also highlights the potential for technology to address specific needs in African communities, and emphasizes the importance of collaboration between researchers and practitioners.",
+        "cover_image": "./../static/img/news/DRSHEM_1-RESIZED-1024x683.jpg",
+        "external_link": "https://discover.jkuat.ac.ke/integrating-african-perspectives-in-technology-and-design-processes/",
+        "date_published": "2024-08-01T00:00:00+03:00"
     }
 ]
