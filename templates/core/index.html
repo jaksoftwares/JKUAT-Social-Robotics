@@ -54,18 +54,19 @@ Home
 <!--Upcoming events section  -->
 <section class="py-20 md:px-40 px-5 bg-white">
     <div>
-        <h2 class=" text-2xl md:text-4xl  font-raleway  text-center mb-5 md:mb-10">UPCOMING EVENTS</h2>
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 font-lato">
+        <h2 class="text-2xl md:text-4xl font-raleway text-center mb-5 md:mb-10">UPCOMING EVENTS</h2>
+
+        <div class="{% if events|length == 2 %}flex justify-center{% else %}grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3{% endif %} font-lato">
             {% for event in events %}
-            <div class="bg-custom-lightGray p-6 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-semibold ">{{ event.title }}</h3>
-                <p class="text-gray-600 ">{{ event.date_starting }}</p>
+            <div class="bg-custom-lightGray p-6 rounded-lg shadow-lg w-full md:max-w-lg">
+                <h3 class="text-2xl font-semibold">{{ event.title }}</h3>
+                <p class="text-gray-600">{{ event.date_starting }}</p>
                 <p class="text-gray-600 mb-6">{{ event.location }}</p>
                 <p class="text-gray-700 mb-4">{{ event.description }}</p>
                 <a href="{{ event.external_link }}" class="text-custom-lintingGreenDark font-semibold hover:underline">Learn More</a>
             </div>
             {% empty %}
-            <div>No events</div>
+            <div class="col-span-1 text-center text-gray-700">No upcoming events</div>
             {% endfor %}
         </div>
     </div>

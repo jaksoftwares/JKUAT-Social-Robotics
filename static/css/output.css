@@ -632,6 +632,10 @@ video {
   order: 2;
 }
 
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
+
 .float-left {
   float: left;
 }
@@ -1844,6 +1848,10 @@ video {
 
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:max-w-lg {
+    max-width: 32rem;
   }
 
   .md\:flex-1 {
