@@ -7,12 +7,13 @@ from outreach import models as OUTREACH_MODELS
 from robots import models as ROBOTS_MODELS
 from news import models as NEWS_MODELS
 from events import models as EVENTS_MODELS
+from datetime import datetime
 
 
 def home(request):
     context = {
         "news": NEWS_MODELS.News.objects.all(),
-        "events": EVENTS_MODELS.Event.objects.all(),
+        "events": EVENTS_MODELS.Event.objects.filter(date_starting__gte=datetime.now()),
     }
 
     return render(request, "core/index.html", context=context)
