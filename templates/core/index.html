@@ -22,7 +22,8 @@ Home
             <h2 class="text-3xl sm:mt-4 sm:mx-2 md:text-6xl font-raleway mb-2">SOCIAL ROBOTICS</h2>
             <p class="mt-8 text-2xl mb-8 font-lato"></p>
             <div class="sm:mb-8">
-                <a href="#about-us" class="p-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:border-2 hover:text-custom-lintingGreenDark transition duration-300">
+                <a href="#about-us"
+                    class="p-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:border-2 hover:text-custom-lintingGreenDark transition duration-300">
                     <span class="text-xl">About us</span>
                     <i class="fa-solid fa-arrow-right-long ml-2"></i>
                 </a>
@@ -41,10 +42,13 @@ Home
         <div class="w-full md:w-1/3 items-center flex flex-col text-center md:text-left gap-4">
             <h2 class="text-4xl md:text-3xl font-raleway">MEET OUR TEAM</h2>
             <p class="text-gray-800 font-lato text-lg md:text-xl  px-7 md:px-20 ">
-                Our team consists of researchers, engineers, and students who are passionate about creating robots that align with human values and promote social well-being. 
-                Together, we work to push the boundaries of social robotics research and develop innovative solutions that address real-world challenges.
+                Our team consists of researchers, engineers, and students who are passionate about creating robots that
+                align with human values and promote social well-being.
+                Together, we work to push the boundaries of social robotics research and develop innovative solutions
+                that address real-world challenges.
             </p>
-            <a href="{% url 'core:about' %}" class="p-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:border-2 hover:text-custom-lintingGreenDark transition duration-300">
+            <a href="{% url 'people:list' %}"
+                class="p-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:border-2 hover:text-custom-lintingGreenDark transition duration-300">
                 <span class="text-xl">Meet the Team</span>
                 <i class="fa-solid fa-arrow-right-long ml-2"></i>
             </a>
@@ -54,19 +58,41 @@ Home
 <!--Upcoming events section  -->
 <section class="py-20 md:px-40 px-5 bg-white">
     <div>
-        <h2 class="text-2xl md:text-4xl font-raleway text-center mb-5 md:mb-10">UPCOMING EVENTS</h2>
 
-        <div class="{% if events|length == 2 %}flex justify-center{% else %}grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3{% endif %} font-lato">
-            {% for event in events %}
+        {% if upcoming_events %}
+        <h2 class="text-2xl md:text-4xl font-raleway text-center mb-5 md:mb-10">UPCOMING EVENTS</h2>
+        {% else %}
+        <h2 class="text-2xl md:text-4xl font-raleway text-center mb-5 md:mb-10">PAST EVENTS</h2>
+        {% endif %}
+
+        <div
+            class="{% if events|length == 2 %}flex justify-center{% else %}grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3{% endif %} font-lato">
+            {% for event in upcoming_events %}
             <div class="bg-custom-lightGray p-6 rounded-lg shadow-lg w-full md:max-w-lg">
                 <h3 class="text-2xl font-semibold">{{ event.title }}</h3>
                 <p class="text-gray-600">{{ event.date_starting }}</p>
                 <p class="text-gray-600 mb-6">{{ event.location }}</p>
                 <p class="text-gray-700 mb-4">{{ event.description }}</p>
-                <a href="{{ event.external_link }}" class="text-custom-lintingGreenDark font-semibold hover:underline">Learn More</a>
+                <a href="{{ event.external_link }}"
+                    class="mt-auto self-end w-fit items-center px-2 py-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:text-custom-lintingGreenDark transition duration-300">
+                    Learn more
+                    <i class="ml-2 fa fa-external-link" aria-hidden="true"></i>
+                </a>
             </div>
             {% empty %}
-            <div class="col-span-1 text-center text-gray-700">No upcoming events</div>
+            {% for event in past_events %}
+            <div class="bg-custom-lightGray p-6 rounded-lg shadow-lg w-full md:max-w-lg">
+                <h3 class="text-2xl font-semibold">{{ event.title }}</h3>
+                <p class="text-gray-600">{{ event.date_starting }}</p>
+                <p class="text-gray-600 mb-6">{{ event.location }}</p>
+                <p class="text-gray-700 mb-4">{{ event.description }}</p>
+                <a href="{{ event.external_link }}"
+                    class="mt-auto self-end w-fit items-center px-2 py-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:text-custom-lintingGreenDark transition duration-300">
+                    Learn more
+                    <i class="ml-2 fa fa-external-link" aria-hidden="true"></i>
+                </a>
+            </div>
+            {% endfor %}
             {% endfor %}
         </div>
     </div>
@@ -81,11 +107,16 @@ Home
                 <h3 class="text-2xl font-semibold mb-2">{{ news.title }}</h3>
                 <p class="text-gray-500 text-sm mb-4">Published on {{ news.date_published }}</p>
                 <div class="w-full mb-4">
-                    <img src="{{ news.cover_image.url }}" alt="news image" class="w-full h-auto max-h-64 object-scale-down rounded-md">
+                    <img src="{{ news.cover_image.url }}" alt="news image"
+                        class="w-full h-auto max-h-64 object-scale-down rounded-md">
                 </div>
                 <p class="text-gray-700 mb-6 text-lg">{{ news.description }}</p>
                 {% if news.external_link %}
-                <a href="{{ news.external_link }}" class="text-custom-lintingGreenDark font-semibold hover:underline">Read More</a>
+                <a href="{{ news.external_link }}"
+                    class="mt-auto self-end w-fit items-center px-2 py-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:text-custom-lintingGreenDark transition duration-300">
+                    Read more
+                    <i class="ml-2 fa fa-external-link" aria-hidden="true"></i>
+                </a>
                 {% endif %}
             </div>
             {% empty %}

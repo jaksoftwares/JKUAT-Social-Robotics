@@ -13,7 +13,12 @@ from datetime import datetime
 def home(request):
     context = {
         "news": NEWS_MODELS.News.objects.all(),
-        "events": EVENTS_MODELS.Event.objects.filter(date_starting__gte=datetime.now()),
+        "upcoming_events": EVENTS_MODELS.Event.objects.filter(
+            date_starting__gte=datetime.now()
+        ),
+        "past_events": EVENTS_MODELS.Event.objects.filter(
+            date_starting__lte=datetime.now()
+        ),
     }
 
     return render(request, "core/index.html", context=context)
