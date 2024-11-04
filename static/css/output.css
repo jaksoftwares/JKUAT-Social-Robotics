@@ -107,7 +107,7 @@
 }
 
 /*
-! tailwindcss v3.4.14 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.10 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -644,6 +644,13 @@ video {
   clear: both;
 }
 
+<<<<<<< Updated upstream
+.m-0 {
+  margin: 0px;
+}
+
+=======
+>>>>>>> Stashed changes
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -704,6 +711,19 @@ video {
   margin-bottom: 2rem;
 }
 
+<<<<<<< Updated upstream
+.mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+=======
+>>>>>>> Stashed changes
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -1827,10 +1847,13 @@ video {
     width: auto;
   }
 
+<<<<<<< Updated upstream
   .md\:max-w-lg {
     max-width: 32rem;
   }
 
+=======
+>>>>>>> Stashed changes
   .md\:flex-1 {
     flex: 1 1 0%;
   }
