@@ -21,9 +21,8 @@ class PersonListView(ListView):
         context["undergraduates"] = Person.objects.filter(
             category=Person.UNDERGRADRUATE
         )
-        context["principal_investigator"] = Person.objects.get(
-            category=Person.PI
-        )
+        context["principal_investigator"] = Person.objects.get(category=Person.PI)
+        context["admin"] = Person.objects.get(category=Person.ADMIN)
         return context
 
 

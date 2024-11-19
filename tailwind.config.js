@@ -12,8 +12,7 @@ module.exports = {
       },
       colors: {
         'custom-lintingGreenDark': '#94C83D',
-        'custom-cyanBlue': '#0095D9',
-        'custom-cyanBlue': '#0095D9',
+        'custom-cyanBlue': '#7CCBF2', 
         'custom-red': '#FF0000',
         'custom-lightGray': '#ECEDF2',
         'custom-gray': '#D9D9D9',

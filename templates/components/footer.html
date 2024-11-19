@@ -1,23 +1,25 @@
 {% load static %}
 <footer style="margin-top: 150px" class="bg-[#003B6D] text-white py-8 relative" id="mainfooter">
     <div class="max-w-6xl mx-auto px-4 lg:px-0">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0 lg:space-x-20">
+        <div
+            class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0 lg:space-x-20">
             <div>
                 <h3 class="text-xl font-bold mb-2">Reach out to us</h3>
                 <div>
-                    Social Robotics
+                    Social Robotics Lab
                     <br>
-                    JKUAT
+                    Computing Department, JKUAT
                     <br>
                     Juja, Kiambu
                 </div>
                 <div class="mt-4">
                     <span class="block">
                         <i class="fa-solid fa-envelope"></i>
-                        eunice.njeri@jkuat.ac.ke
+                        socialroboticslabjkuat@gmail.com
                     </span>
                     <span class="block">
                         <i class="fa-solid fa-phone"></i>
+                        Dr.Eunice Njeri
                         +254 721 284110
                     </span>
                 </div>
@@ -25,12 +27,12 @@
                     <br>
                     JKUAT Computing Department
                     <br>
-                    P.O. BOX 62000-010000
+                    P.O. BOX 62000-00200
                     <br>
                     NAIROBI – KENYA
                     <br>
                     <i class="fa-solid fa-envelope"></i>
-                    067-5352711 ext.2805
+                    067587001/2345
                     <br>
                     <i class="fa-solid fa-phone"></i>
                     computing@icsit.jkuat.ac.ke
@@ -55,7 +57,8 @@
                         <a href="{% url 'publications:list' %}" class="target-link">Publications</a>
                     </li>
                     <li>
-                        <a href="{% url 'responsible_computing:responsible_computing' %}" class="target-link">Responsible Computing</a>
+                        <a href="{% url 'responsible_computing:responsible_computing' %}"
+                            class="target-link">Responsible Computing</a>
                     </li>
                     <li>
                         <a href="{% url 'robots:list' %}" class="target-link">Robots</a>
@@ -66,12 +69,8 @@
                 </ul>
             </div>
             <div class="relative md:flex-1" id="footer-robot">
-                <img
-                    src="{% static 'img/core/nao-sitted.png' %}"
-                    alt="Robot"
-                    class="w-64 h-auto md:w-auto"
-                    id="footer-robot-img"
-                >
+                <img src="{% static 'img/core/nao-sitted.png' %}" alt="Robot" class="w-64 h-auto md:w-auto"
+                    id="footer-robot-img">
             </div>
         </div>
     </div>
@@ -82,22 +81,27 @@
         text-decoration: none;
         transition: color 0.3s ease, border-bottom 0.3s ease;
     }
+
     .target-link:hover {
         color: #ffffff;
         border-bottom: 2px solid #ffffff;
     }
+
     .transition-transform {
         transition: transform 0.3s ease-in-out;
     }
+
     .target-link:hover::after {
         width: 100%;
         background: #ffffff;
     }
+
     #footer-robot {
         margin-right: -200px;
         margin-top: -300px;
         margin-bottom: -120px;
     }
+
     #footer-robot-img {
         height: 400px;
         width: 440px;
@@ -111,26 +115,32 @@
             text-align: center;
             flex-basis: auto;
         }
+
         footer #footer-robot-img {
             height: auto;
             width: 100%;
             max-width: 300px;
             margin: 0 auto;
         }
+
         footer .flex-col.md\\:flex-row {
             flex-direction: column;
             text-align: center;
         }
+
         footer .space-y-8.md\\:space-y-0 {
             margin-bottom: 16px;
         }
+
         footer h3 {
             font-size: 1.25rem;
         }
+
         footer p,
         footer span {
             font-size: 1rem;
         }
+
         footer ul {
             display: flex;
             flex-direction: column;
@@ -142,13 +152,16 @@
         footer #footer-robot-img {
             max-width: 200px;
         }
+
         footer h3 {
             font-size: 1rem;
         }
+
         footer p,
         footer span {
             font-size: 0.875rem;
         }
+
         footer ul {
             gap: 4px;
         }
@@ -158,6 +171,7 @@
         footer .max-w-6xl {
             justify-content: space-between;
         }
+
         footer .lg\\:space-x-20 {
             column-gap: 5rem;
         }

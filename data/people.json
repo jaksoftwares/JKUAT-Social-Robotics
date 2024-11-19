@@ -19,7 +19,7 @@
         "first_name": "Margaret",
         "last_name": "Ngugi",
         "specialty": "Software Engineer",
-        "profile_picture": "./../static/img/people/postgraduate/margaret.jpg",
+        "profile_picture": "./../static/img/people/admin/margaret.jpg",
         "degree": "Bachelor of Science in Information Technology",
         "pursuing": "Master of Science Degree  in Software Engineering at the Department of Computing, Department of Computing, School of Computing and Information Technology (JKUAT)",
         "focus_title": "Human Computer Interaction",
@@ -27,7 +27,7 @@
         "focus_long": "Human-Computer Interaction (HCI) is a field of study that focuses on the design, evaluation and implementation of interactive systems and how people interact with them. It aims to create user-friendly interfaces by understanding human behavior, needs, and preferences. HCI combines principles from computer science, psychology, design, and cognitive science to improve the usability, accessibility, and overall user experience of digital products and technologies. The goal is to make technology intuitive and efficient, enhancing the way humans engage with computers in everyday life.",
         "quote": "A passionate software engineer who believes in using technology to create problem-solving solutions that make people's lives better",
         "bio": "A passionate software engineer who believes in using technology to create problem-solving solutions that make people's lives better.",
-        "category": "P"
+        "category": "A"
     },
     {
         "title": "MR",

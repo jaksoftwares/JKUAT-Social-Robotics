@@ -6,8 +6,8 @@ from core import models as CORE_MODELS
 
 class Event(CORE_MODELS.BaseModel):
     location = models.CharField(_("Location"), max_length=50, blank=True, null=True)
-    date_starting = models.DateTimeField(_("Date Starting"), blank=True, null=True)
-    date_ending = models.DateTimeField(_("Date Ending"), blank=True, null=True)
+    date_starting = models.DateField(_("Date Starting"), blank=True, null=True)
+    date_ending = models.DateField(_("Date Ending"), blank=True, null=True)
 
     class Meta:
         verbose_name = _("Event")

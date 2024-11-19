@@ -5,7 +5,7 @@ from core import models as CORE_MODELS
 
 
 class News(CORE_MODELS.BaseModel):
-    date_published = models.DateTimeField(_("Date Published"), blank=True, null=True)
+    date_published = models.DateField(_("Date Published"), blank=True, null=True)
 
     class Meta:
         verbose_name = _("News")

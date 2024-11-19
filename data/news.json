@@ -1,30 +1,16 @@
 [
     {
         "title": "Arrival of the pepper robot in JKUAT",
-        "description": "We are thrilled to announce the arrival of our very first Pepper robot at the JKUAT Social Robotics Club! Pepper is a humanoid robot known for its advanced capabilities in human-robot interaction, designed to recognize faces, understand emotions, and engage in meaningful conversations. This cutting-edge addition to our club will allow members to explore innovative research, develop new applications, and advance their understanding of social robotics. With Pepper, we aim to pioneer projects that push the boundaries of technology, making significant strides in the field of robotics and artificial intelligence. Stay tuned for exciting developments and projects as we embark on this new chapter in our club's journey!",
+        "description": "We are thrilled to announce the arrival of our very first Pepper robot at the JKUAT Social Robotics Lab! Pepper is a state-of-the-art humanoid robot developed by SoftBank Robotics, with advanced sensing capabilities in human-robot interaction. It can recognize faces, interpret emotions, and engage in conversations, making it an ideal platform for exploring the future of social robotics research. This addition to our lab will enable us advance our human robot interaction research, design innovations solutions, and deepen our understanding of human-centered robotics. We are excited to see the possibilities Pepper will bring to our ongoing projects and teaching!",
         "cover_image": "./../static/img/News/pepper.jpg",
         "external_link": "",
-        "date_published": "2024-08-10T00:00:00+03:00"
+        "date_published": "2024-08-10"
     },
     {
         "title": "Girls In ICT - JKUAT",
         "description": "The enduring perception, mostly, stereotypical, that girls are not well adopted to pursue courses and careers in science, technology, engineering and mathematics (STEM) has stopped many girls from enrolling into STEM subjects.To unroll this practice, Jomo Kenyatta University of Agriculture and Technology has launched a strategic initiative designed to empower and woo young women enrolled in the Competency-Based Curriculum (CBC) system, guiding them toward Science, Technology, Engineering, and Mathematics (STEM) careers.",
         "cover_image": "./../static/img/News/ict-girls.jpg",
         "external_link": "https://www.jkuat.ac.ke/programme-to-attract-young-women-to-stem-unveiled/#:~:text=To%unroll%this%practice%2C",
-        "date_published": "2024-04-05T00:00:00+03:00"
-    },
-    {
-        "title": "JKUAT Showcases Innovations at Inaugural National Research Festival",
-        "description": "JKUAT's participation in the first Kenya National Research Festival, showcased innovations in agriculture, technology, and health. Paul Ndemo, an MSc student at the School of Computing and Information Technology (SCIT) was privileged to showcase a research project, including the innovative robot NAO, programmed at the exhibition. ",
-        "cover_image": "./../static/img/news/DRSHEM_1-RESIZED-1024x683.jpg",
-        "external_link": "https://www.jkuat.ac.ke/jkuat-showcase-innovations-at-inaugural-national-research-festival/",
-        "date_published": "2024-08-01T00:00:00+03:00"
-    },
-    {
-        "title": "Integrating African Perspectives in Technology and Design Processes",
-        "description": "Without integrating African perspectives into technology and design, we severely undercut the potential for solutions that meet cultural norms and empower locally raised innovations to address universal solvable problems. It ensures that the unique contributions from African culture and experience are given the proper respect to shape the world we desire.",
-        "cover_image": "./../static/img/news/Dr.-Susan-Whyche.jpeg",
-        "external_link": "https://discover.jkuat.ac.ke/integrating-african-perspectives-in-technology-and-design-processes/",
-        "date_published": "2024-08-01T00:00:00+03:00"
+        "date_published": "2024-04-05"
     }
 ]

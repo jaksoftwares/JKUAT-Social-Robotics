@@ -1,26 +1,36 @@
 [
     {
-        "title": "Mozilla Event in India",
-        "description": "Join us for an exciting Mozilla event in India! This gathering brings together tech enthusiasts, developers, and Mozilla community members to explore the latest in open-source technologies and innovations. Don't miss this opportunity to network, learn, and contribute to the vibrant Mozilla ecosystem.",
-        "cover_image": "https://example.com/cover-image.jpg", 
-        "location": "New Delhi, India",  
-        "external_link": "https://www.robotex-india.in/",  
-        "date_starting": "2024-08-10T00:00:00+03:00"
+        "title": "Integrating African Perspectives in Technology and Design Processes",
+        "description": "Without integrating African perspectives into technology and design, we severely undercut the potential for solutions that meet cultural norms and empower locally raised innovations to address universal solvable problems. It ensures that the unique contributions from African culture and experience are given the proper respect to shape the world we desire.",
+        "cover_image": "./../static/img/news/Dr.-Susan-Whyche.jpeg",
+        "location": "Department of Computing, JKUAT",
+        "external_link": "https://discover.jkuat.ac.ke/integrating-african-perspectives-in-technology-and-design-processes/",
+        "date_starting": "2024-08-28"
     },
     {
-        "title": "UNESCO Skill Building Workshop",
-        "description": "Enhance your skills and knowledge with UNESCO's Skill Building Workshop! This event offers hands-on training and insights into key areas of professional development. Join experts and peers in a collaborative environment to gain valuable skills and advance your career.",
-        "cover_image": "https://example.com/unesco-workshop.jpg",  
-        "location": "Caribbean", 
-        "external_link": "https://uis.unesco.org/en/event/regional-workshop-science-technology-and-innovation-sti-policy-and-indicators-caribbean",  
-        "date_starting": "2024-09-15T09:00:00+03:00"
+        "title": "Mozilla Responsible Computing Challenge (RCC) Global Conference ",
+        "description": "Dr. Eunice participated in the inaugural Mozilla Responsible Computing Challenge (RCC) Global Conference held in Kottayam, India supported by the Mozilla Foundation and USAID. The Conference brought together academicians and researchers from Kenya, India, and the United States who are advancing responsible computing initiatives. This event facilitated interdisciplinary discussions across diverse disciplines and countries, fostering insightful conversations on the future and direction of responsible computing.",
+        "location": "Kerala, India",
+        "external_link": "https://foundation.mozilla.org/en/blog/responsible-computing-for-sustainable-futures/",
+        "date_starting": "2024-10-21",
+        "date_ending": "2024-10-24"
     },
     {
-        "title": "National Research Festival to be attended by MSC students",
+        "title": "2024 TWAS Skill Building Workshop in Dakar, Senegal",
+        "description": "Dr. Eunice was among the participants at the TWAS event, which focused on enhancing the scientific skills of African scientists, establishing networks, and building interdisciplinary collaborations to foster a stronger and more connected scientific community across the continent.",
+        "cover_image": "./../static/img/news/senegal.png",
+        "location": "Dakar, Senegal",
+        "external_link": "https://twas.org/article/connecting-african-scientists-2024-twas-skill-building-workshop-dakar-senegal",
+        "date_starting": "2024-11-5",
+        "date_ending": "2024-11-8"
+    },
+    {
+        "title": "JKUAT Social Robotics Lab showcases their work at the National Research Festival",
         "description": "Join us at the National Research Festival, a premier event showcasing groundbreaking research and innovations. This festival is an excellent opportunity for MSc students to present their research, network with peers and industry experts, and gain insights into the latest developments in various fields of study.",
-        "cover_image": "https://example.com/national-research-festival.jpg",  
-        "location": "Nairobi, Kenya",  
-        "external_link": "https://festival.nrf.go.ke/",  
-        "date_starting": "2024-10-05T00:00:00+03:00"
+        "cover_image": "./../static/img/news/paul-ndemo-nrf.jpg",
+        "location": "Nairobi, Kenya",
+        "external_link": "https://www.jkuat.ac.ke/jkuat-showcase-innovations-at-inaugural-national-research-festival/",
+        "date_starting": "2024-8-19",
+        "date_ending": "2024-8-23"
     }
 ]
