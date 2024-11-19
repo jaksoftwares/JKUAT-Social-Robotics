@@ -64,12 +64,6 @@
                         Team
                     </a>
                 </li>
-                {% comment %} <li>
-                    <a href="{% url 'core:activities' %}"
-                        class="relative inline-block pb-1 text-lg {% if request.path == '/activities/' %}text-custom-red   {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-red after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
-                        Activities
-                    </a>
-                </li> {% endcomment %}
                 <li>
                     <a href="{% url 'projects:list' %}"
                         class="relative inline-block pb-1 text-lg {% if request.path == '/projects/' %}text-custom-red   {% endif %} after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-custom-red after:right-0 after:bottom-0 after:transition-width after:duration-400 hover:after:w-full hover:after:left-0 transform hover:-translate-y-1 transition-transform">
