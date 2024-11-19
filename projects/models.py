@@ -6,6 +6,15 @@ from core import models as CORE_MODELS
 
 class Project(CORE_MODELS.BaseModel):
     team = models.ManyToManyField("accounts.Profile", related_name="projects")
+    MSC = "M"
+    RE = "R"
+    PROJECT_CATEGORIES = (
+        (MSC, "MSC"),
+        (RE, "RESPONSIBLE COMPUTING"),
+    )
+    category = models.CharField(
+        _("Category"), choices=PROJECT_CATEGORIES, max_length=1, blank=True, null=True
+    )
 
     class Meta:
         verbose_name = _("Project")

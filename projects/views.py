@@ -15,6 +15,14 @@ class ProjectListView(ListView):
     template_name = "projects/list.html"
     context_object_name = "projects"
 
+    def get_context_data(self, **kwargs):
+        context = {}
+        context["msc_projects"] = Project.objects.filter(category=Project.MSC)
+        context["responsible_computing_projects"] = Project.objects.filter(
+            category=Project.RE
+        )
+        return context
+
 
 class ProjectDetailView(DetailView):
     model = Project
@@ -22,7 +30,6 @@ class ProjectDetailView(DetailView):
     context_object_name = "project"
     slug_field = "slug"
     slug_url_kwarg = "slug"
-
 
 
 class ProjectCreateView(LoginRequiredMixin, CreateView):
