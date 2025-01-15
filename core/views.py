@@ -20,7 +20,6 @@ def home(request):
             date_starting__lte=datetime.now()
         ),
     }
-    print(context["past_events"][0].__dict__)
 
     return render(request, "core/index.html", context=context)
 

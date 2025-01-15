@@ -51,7 +51,7 @@ THIRD_PARTY_APPS = [
     "django_browser_reload",
     "crispy_tailwind",
     "crispy_forms",
-    "fontawesomefree",
+    # "fontawesomefree",
 ]
 
 INTERNAL_APPS = [
