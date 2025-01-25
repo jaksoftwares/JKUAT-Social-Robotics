@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from decouple import config, Csv
 import dj_database_url
+# import os
+# from dotenv import load_dotenv
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,14 +28,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config("SECRET_KEY", default="django-insecure-#!q5vs")
 
+# load_dotenv()
+# SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DEBUG", default=True, cast=bool)
+DEBUG = config("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = config(
     "ALLOWED_HOSTS",
     default="""
-        127.0.0.1,
-        localhost
+        www.jkuatsocialroboticslab.com,
+        jkuatsocialroboticslab.com,
+        webapp-2436907.pythonanywhere.com
     """,
     cast=Csv(),
 )
@@ -142,6 +150,26 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Logging error for the server
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "file": {
+            "level": "ERROR",
+            "class": "logging.FileHandler",
+            "filename": "/home/Dovepeakdigital/error.log",
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["file"],
+            "level": "ERROR",
+            "propagate": True,
+        },
+    },
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
@@ -159,7 +187,10 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 # Define STATIC_ROOT for both development and production
-STATIC_ROOT = f"{BASE_DIR}/staticfiles"
+# STATIC_ROOT = f"{BASE_DIR}/staticfiles"
+STATIC_ROOT = "/home/Dovepeakdigital/JKUATSocialRobotics/JKUAT-Social-Robotics/staticfiles"
+
+
 
 # Additional locations of static files
 STATICFILES_DIRS = [
@@ -174,6 +205,8 @@ else:
     # For production
     # Use WhiteNoise for efficient static file serving
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
 
 # Media files
 MEDIA_URL = "/media/"
