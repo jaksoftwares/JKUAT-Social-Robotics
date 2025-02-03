@@ -74,6 +74,7 @@ INTERNAL_APPS = [
     "outreach",
     "faqs",
     "events",
+    "dashboard",
 ]
 
 INSTALLED_APPS = BASE_APPS + THIRD_PARTY_APPS + INTERNAL_APPS
@@ -151,24 +152,24 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Logging error for the server
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "handlers": {
-        "file": {
-            "level": "ERROR",
-            "class": "logging.FileHandler",
-            "filename": "/home/Dovepeakdigital/error.log",
-        },
-    },
-    "loggers": {
-        "django": {
-            "handlers": ["file"],
-            "level": "ERROR",
-            "propagate": True,
-        },
-    },
-}
+# LOGGING = {
+#     "version": 1,
+#     "disable_existing_loggers": False,
+#     "handlers": {
+#         "file": {
+#             "level": "ERROR",
+#             "class": "logging.FileHandler",
+#             "filename": "/home/Dovepeakdigital/error.log",
+#         },
+#     },
+#     "loggers": {
+#         "django": {
+#             "handlers": ["file"],
+#             "level": "ERROR",
+#             "propagate": True,
+#         },
+#     },
+# }
 
 
 # Internationalization

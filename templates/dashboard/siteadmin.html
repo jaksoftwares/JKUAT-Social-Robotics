@@ -1,0 +1,309 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKUAT-Social Robotics Lab Admin Dashboard</title>
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/siteadmin_dashboard.css' %}">
+    {% endblock %} 
+</head>
+<body>
+    <div class="admin-dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar bg-gray-900 text-white w-64 min-h-screen p-4">
+            <h2 class="text-xl font-semibold mb-6 text-center">JKUAT-SR Admin</h2>
+            <nav>
+                <ul class="space-y-4">
+                    <li>
+                        <a href="#" id="dashboard-link" data-section="dashboard"
+                            class="block px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-200">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="manage-people-link" data-section="manage-people"
+                            class="block px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-200">
+                            Manage People
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="manage-events-link" data-section="manage-events"
+                            class="block px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-200">
+                            Manage Events
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="manage-news-link" data-section="manage-news"
+                            class="block px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-200">
+                            Manage News
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="manage-publications-link" data-section="manage-publications"
+                            class="block px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-200">
+                            Manage Publications
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="manage-robots-link" data-section="manage-robots"
+                            class="block px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-200">
+                            Manage Robots
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="settings-link" data-section="settings"
+                            class="block px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-200">
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+<!-- Main Content -->
+<main class="main-content flex-1 p-6 bg-gray-100 min-h-screen">
+    <header class="mb-6">
+        <h1 class="text-2xl font-semibold text-gray-800">Welcome, Admin!</h1>
+        <p class="text-gray-600">Manage JKUAT-SR efficiently.</p>
+    </header>
+
+    <section id="dashboard" class="content-section active bg-white p-6 shadow-md rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Dashboard Overview</h2>
+        
+        <!-- Flexbox container for horizontal layout -->
+        <div class="flex flex-wrap justify-between gap-4">
+            <div class="card bg-blue-500 text-white p-4 rounded-lg shadow-md w-full sm:w-1/2 md:w-1/4">
+                <h3 class="text-lg font-medium">Total People</h3>
+                <p class="text-2xl font-bold">{{ people.count }}</p>
+            </div>
+            <div class="card bg-green-500 text-white p-4 rounded-lg shadow-md w-full sm:w-1/2 md:w-1/4">
+                <h3 class="text-lg font-medium">Total Events</h3>
+                <p class="text-2xl font-bold">0</p>
+            </div>
+            <div class="card bg-yellow-500 text-white p-4 rounded-lg shadow-md w-full sm:w-1/2 md:w-1/4">
+                <h3 class="text-lg font-medium">Total Projects</h3>
+                <p class="text-2xl font-bold">0</p>
+            </div>
+            <div class="card bg-red-500 text-white p-4 rounded-lg shadow-md w-full sm:w-1/2 md:w-1/4">
+                <h3 class="text-lg font-medium">Total Robots</h3>
+                <p class="text-2xl font-bold">0</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Manage People Section -->
+    <section id="manage-people" class="content-section hidden bg-white p-6 shadow-md rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Manage People</h2>
+        <button id="add-service-btn" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Add a Person</button>
+        <div class="overflow-x-auto mt-4">
+            <table class="w-full border-collapse border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="p-2 border">First Name</th>
+                        <th class="p-2 border">Last Name</th>
+                        <th class="p-2 border">Title</th>
+                        <th class="p-2 border">Profile</th>
+                        <th class="p-2 border">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for person in people %}
+                    <tr class="hover:bg-gray-100">
+                        <td class="p-2 border">{{ person.first_name }}</td>
+                        <td class="p-2 border">{{ person.last_name }}</td>
+                        <td class="p-2 border">{{ person.get_category_display }}</td>
+                        <td class="p-2 border">
+                            <div class="profile-container flex justify-center">
+                                {% if person.profile_picture %}
+                                    <img src="{{ person.profile_picture.url }}" alt="Profile Picture" class="profile-img w-10 h-10 rounded-full">
+                                {% else %}
+                                    <p class="text-gray-500">No Image</p>
+                                {% endif %}
+                            </div>
+                        </td>
+                        <td class="p-2 border space-x-2">
+                            <button class="edit-btn bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 transition" data-slug="{{ person.slug }}">Edit</button>
+                            <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition" href="{% url 'dashboard:delete_person' slug=person.slug %}">Delete</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div id="edit-form-container"></div>
+    </section>
+
+  <!-- Manage Events Section -->
+<section id="manage-events" class="content-section hidden bg-white p-6 shadow-md rounded-lg">
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">Manage Events</h2>
+    <button id="add-event-btn" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Add an Event</button>
+
+    <div class="overflow-x-auto mt-4">
+        <table class="w-full border-collapse border border-gray-300">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="p-2 border">Event Location</th>
+                    <th class="p-2 border">Start Date</th>
+                    <th class="p-2 border">End Date</th>
+                    <th class="p-2 border">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in events %}
+                <tr class="hover:bg-gray-100">
+                    <td class="p-2 border">{{ event.location }}</td>
+                    <td class="p-2 border">{{ event.date_starting }}</td>
+                    <td class="p-2 border">{{ event.date_ending }}</td>
+                    <td class="p-2 border space-x-2">
+                        <button class="edit-event-btn bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 transition" data-id="{{ event.id }}">Edit</button>
+                        <a class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition" href="{% url 'dashboard:delete_event' event.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4" class="text-center text-gray-500 p-4">No events available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div id="edit-event-form-container"></div>
+</section>
+
+<!-- Manage Publications Section -->
+<section id="manage-publications" class="content-section hidden bg-white p-6 shadow-md rounded-lg">
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">Manage Publications</h2>
+    <button id="add-publication-btn" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Add a Publication</button>
+
+    <div class="overflow-x-auto mt-4">
+        <table class="w-full border-collapse border border-gray-300">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="p-2 border">Title</th>
+                    <th class="p-2 border">Date Created</th>
+                    <th class="p-2 border">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for publication in publications %}
+                <tr class="hover:bg-gray-100">
+                    <td class="p-2 border">{{ publication.title }}</td>
+                    <td class="p-2 border">{{ publication.created_at }}</td>
+                    <td class="p-2 border space-x-2">
+                        <button class="edit-publication-btn bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 transition" data-id="{{ publication.id }}">Edit</button>
+                        <a class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition" href="{% url 'dashboard:delete_publication' publication.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3" class="text-center text-gray-500 p-4">No publications available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div id="edit-publication-form-container"></div>
+</section>
+
+    <!-- Manage Robots Section -->
+   
+    <section id="manage-robots" class="content-section hidden bg-white p-6 shadow-md rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Manage Robots</h2>
+        <button id="add-publication-btn" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Add a Robot</button>
+    
+        <div class="overflow-x-auto mt-4">
+            <table class="w-full border-collapse border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="p-2 border">Title</th>
+                        <th class="p-2 border">Description</th>
+                        <th class="p-2 border">Image</th>
+                        <th class="p-2 border">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for robot in robots %}
+                    <tr class="hover:bg-gray-100">
+                        <td class="p-2 border">{{ robot.title }}</td>
+                        <td class="p-2 border">{{ robot.description}}</td>
+                        <td class="p-2 border">
+                            <div class="profile-container flex justify-center">
+                                {% if person.profile_picture %}
+                                    <img src="{{ robot.cover_image }}" alt="Profile Picture" class="profile-img w-10 h-10 rounded-full">
+                                {% else %}
+                                    <p class="text-gray-500">No Image</p>
+                                {% endif %}
+                            </div>
+                        </td>
+
+                        <td class="p-2 border space-x-2">
+                            <button class="edit-publication-btn bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 transition" data-id="{{ publication.id }}">Edit</button>
+                            <a class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition" href="{% url 'dashboard:delete_publication' publication.id %}">Delete</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="3" class="text-center text-gray-500 p-4">No Robots available.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div id="edit-publication-form-container"></div>
+    </section>
+
+    <!-- News Section -->
+    
+     <section id="manage-news" class="content-section hidden bg-white p-6 shadow-md rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Manage News</h2>
+        <button id="add-news-btn" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Add News</button>
+        <div class="overflow-x-auto mt-4">
+            <table class="w-full border-collapse border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="p-2 border">Title</th>
+                        <th class="p-2 border">Date Published</th>
+                        <th class="p-2 border">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for news in news_list %}
+                    <tr class="hover:bg-gray-100">
+                        <td class="p-2 border">{{ news.title }}</td>
+                        <td class="p-2 border">{{ news.date_published }}</td>
+                        <td class="p-2 border space-x-2">
+                            <button class="edit-news-btn bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 transition" data-id="{{ news.id }}">Edit</button>
+                            <button class="delete-news-btn bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition" data-id="{{ news.id }}">Delete</button>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="3" class="p-2 text-center text-gray-500">No news available.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    
+    </section>
+
+    <!-- Settings Section -->
+    <section id="settings" class="content-section hidden bg-white p-6 shadow-md rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-800">Settings</h2>
+        <p class="text-gray-600">Settings will be implemented here.</p>
+    </section>
+</main>
+
+
+    </div>
+
+    <script src="{% static 'js/siteadmin.js'%}" ></script>
+    <script>
+        const csrfToken = '{{ csrf_token }}';
+    </script>
+</body>
+</html>

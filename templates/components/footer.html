@@ -1,5 +1,5 @@
 {% load static %}
-<footer style="margin-top: 150px" class="bg-[#003B6D] text-white py-8 relative" id="mainfooter">
+<footer style="margin-top: 150px" class="bg-[#003B6D] text-white py-8 relative fade-in-section" id="mainfooter">
     <div class="max-w-6xl mx-auto px-4 lg:px-0">
         <div
             class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0 lg:space-x-20">
@@ -10,14 +10,14 @@
                     <br>
                     Computing Department, JKUAT
                     <br>
-                    Juja, Kiambu
+                    Juja, Nairobi, Kenya
                 </div>
                 <div class="mt-4">
-                    <span class="block">
+                    <span class="block contact-item">
                         <i class="fa-solid fa-envelope"></i>
                         socialroboticslabjkuat@gmail.com
                     </span>
-                    <span class="block">
+                    <span class="block contact-item">
                         <i class="fa-solid fa-phone"></i>
                         Dr.Eunice Njeri
                         +254 721 284110
@@ -31,149 +31,117 @@
                     <br>
                     NAIROBI – KENYA
                     <br>
-                    <i class="fa-solid fa-envelope"></i>
-                    067587001/2345
+                    <span class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        067587001/2345
+                    </span>
                     <br>
-                    <i class="fa-solid fa-phone"></i>
-                    computing@icsit.jkuat.ac.ke
+                    <span class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        computing@icsit.jkuat.ac.ke
+                    </span>
                 </div>
             </div>
             <div>
                 <h3 class="text-xl font-bold mb-2">Links</h3>
                 <ul class="space-y-2 md:space-y-3">
-                    <li>
-                        <a href="{% url 'core:about' %}" class="target-link">About</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'people:list' %}" class="target-link">Team</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'core:activities' %}" class="target-link">Activities</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'projects:list' %}" class="target-link">Projects</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'publications:list' %}" class="target-link">Publications</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'responsible_computing:responsible_computing' %}"
-                            class="target-link">Responsible Computing</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'robots:list' %}" class="target-link">Robots</a>
-                    </li>
-                    <!--<li>-->
-                    <!--    <a href="https://jkuat-social-robotics.onrender.com/admin/" class="target-link">Login</a>-->
-                    <!--</li>-->
+                    <li><a href="{% url 'core:about' %}" class="target-link">About</a></li>
+                    <li><a href="{% url 'people:list' %}" class="target-link">Team</a></li>
+                    <li><a href="{% url 'core:activities' %}" class="target-link">Activities</a></li>
+                    <li><a href="{% url 'projects:list' %}" class="target-link">Projects</a></li>
+                    <li><a href="{% url 'publications:list' %}" class="target-link">Publications</a></li>
+                    <li><a href="{% url 'responsible_computing:responsible_computing' %}" class="target-link">Responsible Computing</a></li>
+                    <li><a href="{% url 'robots:list' %}" class="target-link">Robots</a></li>
                 </ul>
             </div>
             <div class="relative md:flex-1" id="footer-robot">
-                <img src="{% static 'img/core/nao-sitted.png' %}" alt="Robot" class="w-64 h-auto md:w-auto"
-                    id="footer-robot-img">
+                <img src="{% static 'img/core/nao-sitted.png' %}" alt="Robot" class="robot-image" id="footer-robot-img">
             </div>
         </div>
     </div>
 </footer>
+
 <style>
+    /* Fade-in animation */
+    .fade-in-section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in-active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Links Animation */
     .target-link {
         color: #b0b0b0;
         text-decoration: none;
         transition: color 0.3s ease, border-bottom 0.3s ease;
     }
-
     .target-link:hover {
         color: #ffffff;
         border-bottom: 2px solid #ffffff;
     }
 
-    .transition-transform {
-        transition: transform 0.3s ease-in-out;
+    /* Contact Hover Animation */
+    .contact-item {
+        transition: color 0.3s ease, transform 0.2s ease-in-out;
+    }
+    .contact-item:hover {
+        color: #ffffff;
+        transform: translateX(5px);
     }
 
-    .target-link:hover::after {
-        width: 100%;
-        background: #ffffff;
-    }
-
-    #footer-robot {
-        margin-right: -200px;
-        margin-top: -300px;
-        margin-bottom: -120px;
-    }
-
-    #footer-robot-img {
+    /* Floating Robot Effect */
+    .robot-image {
         height: 400px;
         width: 440px;
+        animation: float 3s ease-in-out infinite;
+        margin-top: -200px;
+    }
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
     }
 
+    /* Responsive Adjustments */
     @media (max-width: 768px) {
-        footer #footer-robot {
-            margin-right: 0;
-            margin-top: 0;
-            margin-bottom: 0;
-            text-align: center;
-            flex-basis: auto;
+        .robot-image{
+            margin-top: 0px;
         }
-
+        footer #footer-robot {
+            text-align: center;
+        }
         footer #footer-robot-img {
-            height: auto;
             width: 100%;
             max-width: 300px;
-            margin: 0 auto;
+            height: auto;
         }
-
-        footer .flex-col.md\\:flex-row {
+        footer .flex-col.md\:flex-row {
             flex-direction: column;
             text-align: center;
-        }
-
-        footer .space-y-8.md\\:space-y-0 {
-            margin-bottom: 16px;
-        }
-
-        footer h3 {
-            font-size: 1.25rem;
-        }
-
-        footer p,
-        footer span {
-            font-size: 1rem;
-        }
-
-        footer ul {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-
-    @media (max-width: 480px) {
-        footer #footer-robot-img {
-            max-width: 200px;
-        }
-
-        footer h3 {
-            font-size: 1rem;
-        }
-
-        footer p,
-        footer span {
-            font-size: 0.875rem;
-        }
-
-        footer ul {
-            gap: 4px;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        footer .max-w-6xl {
-            justify-content: space-between;
-        }
-
-        footer .lg\\:space-x-20 {
-            column-gap: 5rem;
         }
     }
 </style>
+
+<script>
+    // Fade-in effect when scrolling
+    document.addEventListener("DOMContentLoaded", function () {
+        const fadeSections = document.querySelectorAll(".fade-in-section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("fade-in-active");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        fadeSections.forEach(section => observer.observe(section));
+    });
+</script>

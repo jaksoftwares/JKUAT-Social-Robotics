@@ -1,0 +1,22 @@
+<!-- edit_person.html -->
+{% if errors %}
+    <div class="error-messages">
+        <h3>There were errors in your form submission:</h3>
+        <ul>
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+        </div>
+    {% endfor %}
+    <button type="submit">Save Changes</button>
+</form>

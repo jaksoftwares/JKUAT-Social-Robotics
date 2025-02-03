@@ -65,3 +65,117 @@
 #publication-card {
     padding: 80px;
 }
+
+/* Site Interactivity section, Addition of animations, effects and dynamicity */
+
+/* 1. Homepage interactivity */
+    /* Typing effect for the text */
+   /* Typing Effect */
+.typing-effect {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.1em solid transparent; /* Creates the cursor effect */
+    animation: typing 4s steps(40) 1s 1 normal both, blink 0.75s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking Cursor */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Reverse Typing Effect */
+.typing-reverse {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.1em solid transparent;
+    animation: typing-reverse 4s steps(40) 1s 1 normal both, blink 0.75s step-end infinite;
+}
+
+/* Reverse Typing (deleting the text) */
+@keyframes typing-reverse {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+
+    /* first section */
+    /* Custom Slide-in from Left */
+    @keyframes fadeInLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-80px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Custom Slide-in from Right */
+    @keyframes fadeInRight {
+        0% {
+            opacity: 0;
+            transform: translateX(80px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Apply Tailwind Custom Animations */
+    .animate-fadeInLeft {
+        animation: fadeInLeft 1s ease-out forwards;
+    }
+
+    .animate-fadeInRight {
+        animation: fadeInRight 1s ease-out forwards;
+    }
+    /* Upcoming events slider */
+    .swiper-container {
+        width: 100%;
+        overflow: hidden; /* Ensures the swiper stays within bounds */
+    }
+    
+    .swiper-wrapper {
+        display: flex; 
+    }
+    
+    .swiper-slide {
+        width: calc(33.33% - 10px); 
+        margin-right: 10px;
+    }
+    
+    /* For responsiveness */
+    @media screen and (max-width: 1024px) {
+        .swiper-slide {
+           /* width: calc(50% - 10px);  2 cards per row on medium screens */
+            width: calc(33.33% - 10px);
+        }
+    }
+    
+    @media screen and (max-width: 768px) {
+        .swiper-slide {
+            width: 100%; /* 1 card per row on smaller screens */
+        }
+    }
+
+    

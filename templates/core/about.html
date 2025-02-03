@@ -6,30 +6,31 @@
 <div class="bg-white">
 
     {% comment %} TEAM SECTION {% endcomment %}
-    <section class="py-20">
-        <div class="flex flex-col md:flex-row justify-center gap-10 py-10 px-4 md:px-8">
-            <!-- Image Section -->
-            <div class="flex justify-center md:w-1/2">
-                <img src="{% static 'img/image 3.jpg' %}" alt="About Image"
-                    class="w-full h-auto object-cover shadow-xl rounded-lg">
-            </div>
-
-            <!-- Text Section -->
-            <div class="w-full md:w-1/2 flex flex-col text-center md:text-left gap-6 md:gap-8">
-                <h2 class="text-3xl md:text-4xl font-raleway text-gray-800 mb-4">MEET OUR TEAM</h2>
-                <p class="text-gray-800 font-lato text-lg md:text-xl px-6 md:px-12 leading-relaxed">
-                    Our team consists of researchers, engineers, and students who are passionate about creating robots
-                    that align with human values and promote social well-being. Together, we work to push the boundaries
-                    of social robotics research and develop innovative solutions that address real-world challenges.
-                </p>
-                <a href="{% url 'people:list' %}"
-                    class="w-fit items-center p-3 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300">
-                    <span class="text-xl">Meet the Team</span>
-                    <i class="fa-solid fa-arrow-right-long ml-2"></i>
-                </a>
-            </div>
+<section class="py-20">
+    <div class="flex flex-col md:flex-row justify-center gap-10 py-10 px-4 md:px-8">
+        <!-- Image Section -->
+        <div class="flex justify-center md:w-1/2">
+            <img src="{% static 'img/image 3.jpg' %}" alt="About Image"
+                class="w-full h-auto object-cover shadow-xl rounded-lg transform transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl">
         </div>
-    </section>
+
+        <!-- Text Section -->
+        <div class="w-full md:w-1/2 flex flex-col text-center md:text-left gap-6 md:gap-8">
+            <h2 class="text-3xl md:text-4xl font-raleway text-gray-800 mb-4">MEET OUR TEAM</h2>
+            <p class="text-gray-800 font-lato text-lg md:text-xl px-6 md:px-12 leading-relaxed">
+                Our team consists of researchers, engineers, and students who are passionate about creating robots
+                that align with human values and promote social well-being. Together, we work to push the boundaries
+                of social robotics research and develop innovative solutions that address real-world challenges.
+            </p>
+            <a href="{% url 'people:list' %}"
+                class="w-fit items-center p-3 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300">
+                <span class="text-xl">Meet the Team</span>
+                <i class="fa-solid fa-arrow-right-long ml-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
 
 
     <!-- Second Section -->
@@ -101,16 +102,16 @@
         <div class="lg:w-1/2">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center lg:text-left">Our Team</h2>
             <div class="mb-6">
-                <h3 class="text-xl font-semibold text-gray-600 mb-3 text-center lg:text-left">Guided by visionary
-                    leaders</h3>
+                <!-- <h3 class="text-xl font-semibold text-gray-600 mb-3 text-center lg:text-left">Guided by visionary
+                    leaders</h3> -->
                 <p class="text-gray-600 text-base text-center lg:text-left">
-                    The JKUAT Social Robotics initiative is spearheaded by Eunice Njeri, a distinguished lecturer and PI
+                    The JKUAT Social Robotics initiative is spearheaded by Dr. Eunice Njeri, a lecturer and PI
                     for the Mozilla Responsible Computer Challenge (RCC) project in the Department of Computing at Jomo
                     Kenyatta University of Agriculture and Technology (JKUAT) and Prof. Stephen Kimani, the Director ICT
                     in JKUAT who is also part of the Mozilla RCC Project.
                 </p>
             </div>
-            <div>
+            <!-- <div>
                 <h3 class="text-xl font-semibold text-gray-600 mb-3 text-center lg:text-left">Collaborative Excellence
                 </h3>
                 <p class="text-gray-600 text-base text-center lg:text-left">
@@ -120,7 +121,7 @@
                     lasting impact on both the academic community and society. It also includes 5 undergraduate students
                     who are eager to learn and enthusiastic about social robotics and ethics in technology.
                 </p>
-            </div>
+            </div> -->
         </div>
         <div class="lg:w-1/2 flex items-center justify-center">
             <img src="{% static 'img/about/about-team.jpg' %}" alt="Our Team"

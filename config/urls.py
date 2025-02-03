@@ -20,6 +20,7 @@ urlpatterns = [
         "responsible_computing/",
         include("responsible_computing.urls", namespace="responsible_computing"),
     ),
+    path("dashboard/", include("dashboard.urls", namespace='dashboard')),
 ]
 
 
