@@ -17,7 +17,7 @@ class ProjectListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = {}
-        context["msc_projects"] = Project.objects.filter(category=Project.Msc)
+        context["msc_projects"] = Project.objects.filter(category=Project.MSC)
         context["responsible_computing_projects"] = Project.objects.filter(
             category=Project.RE
         )
