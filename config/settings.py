@@ -188,8 +188,8 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 # Define STATIC_ROOT for both development and production
-STATIC_ROOT = f"{BASE_DIR}/staticfiles"
-# STATIC_ROOT = "/home/Dovepeakdigital/JKUATSocialRobotics/JKUAT-Social-Robotics/staticfiles"
+# STATIC_ROOT = f"{BASE_DIR}/staticfiles"
+STATIC_ROOT = "/home/Dovepeakdigital/JKUATSocialRobotics/JKUAT-Social-Robotics/staticfiles"
 
 
 
