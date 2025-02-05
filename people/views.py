@@ -1,4 +1,5 @@
 from django.urls import reverse_lazy
+from django.utils.safestring import mark_safe
 from django.views.generic import (
     ListView,
     DetailView,
@@ -23,6 +24,7 @@ class PersonListView(ListView):
         )
         context["principal_investigator"] = Person.objects.get(category=Person.PI)
         context["admin"] = Person.objects.get(category=Person.ADMIN)
+        context["principal_investigator"].focus_long = mark_safe(context["principal_investigator"].focus_long)
         return context
 
 

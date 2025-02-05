@@ -19,6 +19,10 @@ def home(request):
         "past_events": EVENTS_MODELS.Event.objects.filter(
             date_starting__lte=datetime.now()
         ),
+        # "msc_projects" :PROJECTS_MODELS.Project.objects.filter(category=PROJECTS_MODELS.Project.MSC)
+         "projects": PROJECTS_MODELS.Project.objects.filter( category=PROJECTS_MODELS.Project.RE
+        ),
+        
     }
 
     return render(request, "core/index.html", context=context)

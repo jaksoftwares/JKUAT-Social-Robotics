@@ -6,30 +6,31 @@
 <div class="bg-white">
 
     {% comment %} TEAM SECTION {% endcomment %}
-<section class="py-20">
-    <div class="flex flex-col md:flex-row justify-center gap-10 py-10 px-4 md:px-8">
-        <!-- Image Section -->
-        <div class="flex justify-center md:w-1/2">
-            <img src="{% static 'img/image 3.jpg' %}" alt="About Image"
-                class="w-full h-auto object-cover shadow-xl rounded-lg transform transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl">
+    <section class="py-20">
+        <div class="flex flex-col md:flex-row justify-center gap-10 py-10 px-4 md:px-8">
+            <!-- Image Section -->
+            <div class="flex justify-center md:w-1/2">
+                <img src="{% static 'img/image 3.jpg' %}" alt="About Image"
+                    class="w-full h-auto object-cover shadow-xl rounded-lg transform transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl">
+            </div>
+    
+            <!-- Text Section -->
+            <div class="w-full md:w-1/2 flex flex-col text-left gap-6 md:gap-8">
+                <h2 class="text-3xl md:text-4xl font-raleway text-gray-800 mb-4 font-bold">OUR TEAM</h2>
+                <p class="text-gray-800 font-lato text-lg md:text-xl leading-relaxed">
+                    We have a team of five MSc. Engineering students at the Department of Computing, JKUAT, supported under the Social Robotics Lab. 
+                    The team is led by Dr. Eunice Njeri in collaboration with faculty members from the Department of Computing. 
+                    The lab's projects focus on designing intuitive social interactions by integrating human-centered design, responsible computing,
+                     artificial intelligence, machine learning, computer vision, natural language processing, and affective computing. 
+                     Our goal is to address societal challenges in education, social training, and social care through innovative and impactful research.
+                </p>
+                <a href="{% url 'people:list' %}" class="w-fit items-center p-3 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300 ">
+                    <span class="text-xl">Discover Our Team</span>
+                    <i class="fa-solid fa-arrow-right-long ml-2"></i>
+                </a>
+            </div>
         </div>
-
-        <!-- Text Section -->
-        <div class="w-full md:w-1/2 flex flex-col text-center md:text-left gap-6 md:gap-8">
-            <h2 class="text-3xl md:text-4xl font-raleway text-gray-800 mb-4">MEET OUR TEAM</h2>
-            <p class="text-gray-800 font-lato text-lg md:text-xl px-6 md:px-12 leading-relaxed">
-                Our team consists of researchers, engineers, and students who are passionate about creating robots
-                that align with human values and promote social well-being. Together, we work to push the boundaries
-                of social robotics research and develop innovative solutions that address real-world challenges.
-            </p>
-            <a href="{% url 'people:list' %}"
-                class="w-fit items-center p-3 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300">
-                <span class="text-xl">Meet the Team</span>
-                <i class="fa-solid fa-arrow-right-long ml-2"></i>
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
 
 
 
@@ -38,9 +39,9 @@
         <div class="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 items-center">
             <!-- Text Section -->
             <div class="w-full md:w-1/2 p-4 md:p-0 md:pr-6 lg:pr-10 order-2 md:order-1">
-                <h2 class="text-xl md:text-2xl font-raleway text-gray-800 mb-4">EXPLORING THE INTERSECTION OF TECHNOLOGY
+                <h2 class="text-xl md:text-2xl font-raleway text-gray-800 mb-4 font-bold">EXPLORING THE INTERSECTION OF TECHNOLOGY
                     AND HUMANITY</h2>
-                <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                <p class="text-gray-800 font-lato text-lg md:text-xl  leading-relaxed ">
                     The lab focuses on creating robots that enhance social interaction and support human well-being
                     through empathetic and inclusive design. Research at the social robotics lab focuses on various
                     aspects of human-robot interaction, including how robots can be designed to understand and respond
@@ -60,7 +61,7 @@
             </div>
         </div>
     </div>
-    <!-- Vision Section -->
+    <!-- Vision Section
     <div class="my-16 md:my-28 px-4 md:px-8 lg:px-16 xl:px-40">
         <h2 class="text-2xl md:text-3xl text-custom-lintingGreenDark font-raleway text-center mb-4">OUR VISION</h2>
         <p class="text-gray-600 text-center text-sm md:text-base">
@@ -70,7 +71,7 @@
             (HCI) courses, we challenge our students to consider the societal impacts of their work and to develop
             robotic applications that prioritize human welfare and ethical accountability.
         </p>
-    </div>
+    </div> -->
     <!-- Methodology Section -->
     <div
         class="mb-16 flex flex-col gap-5 px-4 md:px-8 lg:px-16 xl:px-40 md:flex-row items-center justify-center bg-[#ECEDF2] py-8">
@@ -79,9 +80,9 @@
                 class="rounded-lg w-full md:w-auto h-auto md:h-[400px] shadow-md">
         </div>
         <div class="md:w-1/2">
-            <h2 class="text-xl md:text-3xl font-raleway text-gray-800 mb-2">METHODOLOGY</h2>
-            <span class="text-gray-600 mb-4 font-semibold italic">An innovative learning approach</span>
-            <p class="text-gray-600 mb-4 text-sm md:text-base">
+            <h2 class="text-xl md:text-3xl font-raleway text-gray-800 mb-2 font-bold">METHODOLOGY</h2>
+            <span class="text-gray-800 mb-4 font-semibold italic">An innovative learning approach</span>
+            <p class="text-gray-800 font-lato text-lg md:text-xl leading-relaxed">
                 Our approach to education goes beyond technical proficiency. We start with a strong theoretical
                 foundation in ethical frameworks and human-centered design principles. Students are organized into teams
                 to work on projects that require them to incorporate responsible computing practices into their designs.
@@ -98,12 +99,12 @@
         </div>
     </div>
     <!-- Team Section -->
-    <div class="flex flex-col lg:flex-row gap-8 px-4 md:px-8 lg:px-16 xl:px-40 pb-10">
+    <!-- <div class="flex flex-col lg:flex-row gap-8 px-4 md:px-8 lg:px-16 xl:px-40 pb-10">
         <div class="lg:w-1/2">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center lg:text-left">Our Team</h2>
             <div class="mb-6">
-                <!-- <h3 class="text-xl font-semibold text-gray-600 mb-3 text-center lg:text-left">Guided by visionary
-                    leaders</h3> -->
+                <h3 class="text-xl font-semibold text-gray-600 mb-3 text-center lg:text-left">Guided by visionary
+                    leaders</h3>
                 <p class="text-gray-600 text-base text-center lg:text-left">
                     The JKUAT Social Robotics initiative is spearheaded by Dr. Eunice Njeri, a lecturer and PI
                     for the Mozilla Responsible Computer Challenge (RCC) project in the Department of Computing at Jomo
@@ -111,7 +112,7 @@
                     in JKUAT who is also part of the Mozilla RCC Project.
                 </p>
             </div>
-            <!-- <div>
+            <div>
                 <h3 class="text-xl font-semibold text-gray-600 mb-3 text-center lg:text-left">Collaborative Excellence
                 </h3>
                 <p class="text-gray-600 text-base text-center lg:text-left">
@@ -121,21 +122,21 @@
                     lasting impact on both the academic community and society. It also includes 5 undergraduate students
                     who are eager to learn and enthusiastic about social robotics and ethics in technology.
                 </p>
-            </div> -->
+            </div>
         </div>
         <div class="lg:w-1/2 flex items-center justify-center">
             <img src="{% static 'img/about/about-team.jpg' %}" alt="Our Team"
                 class="w-full max-w-md h-auto object-cover rounded-lg shadow-md">
         </div>
-    </div>
+    </div> -->
     <!--Last section-->
     <div class="bg-[#ECEDF2] p-4 md:p-6" id="about-lower">
         <!-- Impact Section -->
         <div class="bg-white p-4 md:p-6 rounded-lg my-8 md:m-16" id="lower-section1">
             <img src="{% static 'img/impact-icon.png' %}" alt="about-image" class="float-left mr-4 mb-4">
-            <h2 class="text-xl md:text-2xl font-raleway text-gray-800">IMPACT AND SOCIETAL CONTRIBUTIONS</h2>
+            <h2 class="text-xl md:text-2xl font-raleway text-gray-800 font-bold">IMPACT AND SOCIETAL CONTRIBUTIONS</h2>
             <span class="italic text-lg md:text-xl text-gray-800 block mb-2">Transformative Outcomes</span>
-            <p class="text-gray-600 text-sm md:text-base clear-both">
+            <p class="clear-both text-gray-800 font-lato text-lg md:text-xl leading-relaxed">
                 The JKUAT Social Robotics initiative is already making significant strides. Our projects have led to
                 innovations that support children with special needs, advancements in AI accessibility, and the
                 development of ethical computing applications. These achievements underscore the project's commitment to
@@ -147,10 +148,10 @@
         <div class="bg-white p-4 md:p-6 rounded-lg my-8 md:m-16" id="lower-section1">
             <div>
                 <img src="{% static 'img/reflections-icon.png' %}" alt="about-image" class="float-left mr-4 mb-4">
-                <h2 class="text-xl md:text-2xl font-raleway text-gray-800">REFLECTIONS AND FUTURE DIRECTIONS</h2>
+                <h2 class="text-xl md:text-2xl font-raleway text-gray-800 font-bold">REFLECTIONS AND FUTURE DIRECTIONS</h2>
                 <span class="italic text-lg md:text-xl text-gray-800 block mb-2">Shaping the future of social
                     robotics</span>
-                <p class="text-gray-600 text-sm md:text-base clear-both">
+                <p class="clear-both text-gray-800 font-lato text-lg md:text-xl leading-relaxed">
                     As we look to the future, we are committed to addressing the challenges and opportunities at the
                     intersection of ethics and technology. Key lessons from our initiative highlight the importance of
                     data protection and privacy, especially in sensitive sectors like healthcare. Guided by Mozilla's

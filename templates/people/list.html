@@ -25,7 +25,7 @@
                 </div>
                 <div>
                     <h4 class="italic text-lg md:text-xl">Specialization</h4>
-                    <p class="text-sm md:text-base">{{ principal_investigator.focus_long }}</p>
+                    <p class="text-sm md:text-base">{{ principal_investigator.focus_long|safe}}</p>
                 </div>
                 <a href="{% url 'people:detail' principal_investigator.slug %}" class="p-2 w-fit bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300">
                     <span class="text-xl">View Profile</span>
@@ -48,7 +48,7 @@
             </div>
             <div class="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
                 <div>
-                    <h2 class="font-semibold text-xl md:text-2xl lg:text-3xl">{{admin.title}}. {{ admin.first_name }} {{ admin.last_name }}</h2>
+                    <h2 class="font-semibold text-xl md:text-2xl lg:text-3xl">{{ admin.first_name }} {{ admin.last_name }}</h2>
                     <h4 class="text-custom-red text-lg md:text-xl">{{ admin.specialty }}</h4>
                 </div>
                 <div>

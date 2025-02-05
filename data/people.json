@@ -1,6 +1,6 @@
 [
     {
-        "title": "DR",
+        "title": "Dr.",
         "first_name": "Eunice",
         "last_name": "Njeri Mwangi",
         "specialty": "Socially Intelligent Systems",
@@ -9,7 +9,7 @@
         "pursuing": "Mainstreaming Responsible Computing",
         "focus_title": "Founder and Head of Social Robotics Research Lab",
         "focus_short": "Designing social behaviour for robots in educational settings.",
-        "focus_long": "Dr. Eunice Njeri Mwangi is an expert in Socially Intelligent Systems with over 14 years of experience. She is the founder and head of the Social Robotics Research Lab at JKUAT. Her research focuses on leveraging robotics and AI to advance educational and health goals in Kenya and across Africa. She has received multiple fellowships and grant awards for her innovative work.",
+         "focus_long": "I am a Lecturer and Researcher at the Department of Computing, Jomo Kenyatta University of Agriculture and Technology (JKUAT), Kenya, where I lead the Social Robotics Lab Initiative. I received a Joint PhD in Interactive and Cognitive Environments from Eindhoven University of Technology (TU/e), Netherlands, and UPC, Spain, in October 2020. My research interests are in the areas of social robotics, human-centered design, and responsible computing. My research focuses on applying human-centered methodologies to design effective social interactions with robots. Over the last nine years, I have extensively researched on the design of social behaviours (verbal and nonverbal) for robots in educational settings, particularly in social training and tutoring roles. I am also part of the organizing committee for the 2025 IEEE International Conference on Robot and Human Interactive Communication, IEEE RO-MAN 2025(https://www.ro-man2025.org/)",
         "quote": "Passionate about leveraging cutting-edge technologies, including robotics and AI, to advance educational and health goals in Kenya and across Africa.",
         "bio": "Dr. Eunice Njeri Mwangi is an award-winning Lecturer and Researcher with over 14 years of experience in Socially Intelligent Systems. She received a Joint PhD Degree in Interactive Cognitive Environments and has founded the Social Robotics Research Lab at JKUAT. Dr. Mwangi has conducted extensive research on social robotics in educational settings and has been recognized with several awards and fellowships. She actively organizes forums and workshops on AI, Robotics, and Responsible Computing in Kenya and Africa, and has published her work internationally.",
         "category": "I"
@@ -92,7 +92,7 @@
     {
         "first_name": "Daniel",
         "last_name": "Karume",
-        "degree": "Bachelors of Science in Computer Science",
+        "degree": "BSC. Computer Science",
         "profile_picture": "./../static/img/people/undergraduate/daniel-karume.jpeg",
         "linked_in_link": "https://www.linkedin.com/in/daniel-karume/",
         "category": "U"
@@ -100,7 +100,7 @@
     {
         "first_name": "Peaches",
         "last_name": "Njenga",
-        "degree": "Bachelors of Science in Computer Science",
+        "degree": "BSC. Computer Science",
         "profile_picture": "./../static/img/people/undergraduate/peaches-njenga.jpeg",
         "linked_in_link": "https://www.linkedin.com/in/peaches-njenga/",
         "category": "U"
@@ -108,7 +108,7 @@
     {
         "first_name": "Irke",
         "last_name": "Konzolo",
-        "degree": "Bachelors of Science in Computer Science",
+        "degree": "BSC. Computer Science",
         "profile_picture": "./../static/img/people/undergraduate/irke-konzolo.jpeg",
         "linked_in_link": "https://www.linkedin.com/in/irke-konzolo/",
         "category": "U"
@@ -116,7 +116,7 @@
     {
         "first_name": "Jeff",
         "last_name": "Kimani",
-        "degree": "Bachelors of Science in Computer Science",
+        "degree": "BSC. Computer Science",
         "profile_picture": "./../static/img/people/undergraduate/jeff.jpg",
         "linked_in_link": "https://www.linkedin.com/in/jeff-chege-502387277/",
         "category": "U"
@@ -124,7 +124,7 @@
     {
         "first_name": "Joseph",
         "last_name": "Kirika",
-        "degree": "Bachelors of Science in Computer Science",
+        "degree": "BSC. Computer Science",
         "profile_picture": "./../static/img/people/undergraduate/joseph-kirika.jpeg",
         "linked_in_link": "https://www.linkedin.com/in/joseph-kirika-4a821b278/",
         "category": "U"
