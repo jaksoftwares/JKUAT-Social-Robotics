@@ -15,7 +15,7 @@
         "category": "I"
     },
     {
-        "title": "MRS",
+        "title": "",
         "first_name": "Margaret",
         "last_name": "Ngugi",
         "specialty": "Msc. Software Engineer",
@@ -30,7 +30,7 @@
         "category": "A"
     },
     {
-        "title": "MR",
+        "title": "",
         "first_name": "Paul",
         "last_name": "Ndemo",
         "specialty": "Msc. Software Engineering Student",
@@ -45,7 +45,7 @@
         "category": "P"
     },
     {
-        "title": "MR",
+        "title": "",
         "first_name": "Eric",
         "last_name": "Otieno",
         "specialty": " Msc. Software Engineering Student",
@@ -60,7 +60,7 @@
         "category": "P"
     },
     {
-        "title": "MS",
+        "title": "",
         "first_name": "Caroline",
         "last_name": "Katumbi",
         "specialty": " Msc. Software Engineering Student",
@@ -75,7 +75,7 @@
         "category": "P"
     },
     {
-        "title": "MR",
+        "title": "",
         "first_name": "Peter",
         "last_name": "Kabunyi",
         "specialty": "Msc. Software Engineering Student",

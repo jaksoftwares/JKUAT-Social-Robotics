@@ -12,19 +12,19 @@ Responsible Computing
 
 {% block content %}
 <div class="md:mt-14 my:5">
-    <h2 class="text-3xl  font-raleway text-center">SELECTED PROJECTS</h2>
+    <h2 class="text-xl md:text-3xl  font-bold text-left">SELECTED PROJECTS</h2>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
     {% for project in projects %}
     <div class="bg-custom-lightGray p-6 my-8 rounded-lg shadow-lg w-full md:max-w-lg">
-        <h3 class="text-2xl font-semibold">{{ project.title }}</h3>
+        <h3 class="text-xl font-semibold">{{ project.title }}</h3>
         {% if project.cover_image %}
         <img src="{{ project.cover_image.url }}" alt="news image"
             class="w-full h-auto max-h-64 object-scale-down rounded-md">
         {% endif %}
-        <p class="text-gray-600">{{ project.date_starting }}</p>
-        <p class="text-gray-600 mb-6">{{ project.location }}</p>
-        <p class="text-gray-700 mb-4">{{ project.short_description }}</p>
+        <p class="text-gray-600 text-lg">{{ project.date_starting }}</p>
+        <p class="text-gray-600 mb-6 text-lg">{{ project.location }}</p>
+        <p class="text-gray-700 mb-4 text-lg">{{ project.short_description }}</p>
         <a href="{{ project.get_absolute_url }}"
             class="mt-auto self-end w-fit items-center px-2 py-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:text-custom-lintingGreenDark transition duration-300">
             Learn more
@@ -34,7 +34,7 @@ Responsible Computing
     {% endfor %}
 </div>
 <div class="my-5 md:mt-14">
-    <h2 class="text-3xl  font-raleway">RECENT ACTIVITIES</h2>
+    <h2 class="text-xl md:text-3xl  font-bold">RECENT ACTIVITIES</h2>
     <div class="border"></div>
 </div>
 
@@ -53,9 +53,9 @@ Responsible Computing
             </div>
         </div>
         <div class="mt-4 sm:mt-0 lg:mt-4 flex flex-col flex-grow">
-            <h2 class="text-lg font-bold mb-2">Mozilla pledges to support JKUAT in training to enhance Responsible
+            <h2 class="text-lg font-semibold mb-2">Mozilla pledges to support JKUAT in training to enhance Responsible
                 Computer Science (RCC) capacity.</h2>
-            <p class="text-gray-600 text-sm">During a visit to the university on Wednesday, February 28, 2024, Dr.
+            <p class="text-gray-600 text-lg">During a visit to the university on Wednesday, February 28, 2024, Dr.
                 Mbogho revealed developments stemming from JKUAT's successful acquisition of two Mozilla grants:
                 Teaching Responsible Computing Using Robotics and Mainstreaming Responsible Computing (RC) in ICT
                 Student Innovations. Click <a href="https://youtu.be/0Poy3Iavmeg" class="underline" target="_blank">here </a>for more</p>

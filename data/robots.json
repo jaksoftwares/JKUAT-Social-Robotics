@@ -2,7 +2,7 @@
     {
         "title": "NAO",
         "description": "NAO is a robot with a knack for knowledge – both learning and sharing it. Fluent in over 20 languages, communicates effortlessly with students from diverse cultures.  NAO is equipped with tactile sensors in its head, hands, and feet, NAO responds to its environment by recognizing people and their emotions. Designed for natural movement, NAO can detect obstacles, avoid falls, and recover independently. Fully programmable, NAO operates on the flexible NAOqi OS, offering customization through various Software Development Kits, visual programming interfaces like Blockly and Scratch, and user-friendly graphical software like Choregraphe.",
-        "cover_image": "./../static/img/robots/working-with-nao.jpeg",
+        "cover_image": "./../static/img/robots/Nao.jpeg",
         "external_link": "https://us.softbankrobotics.com/nao"
     },
     {

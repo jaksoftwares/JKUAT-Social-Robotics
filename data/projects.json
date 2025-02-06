@@ -1,6 +1,6 @@
 [
     {
-        "title": "Education",
+        "title": "EDUCATION",
         "description": "Designing robots to support tutoring and social training for accessibility and inclusivity.",
         "cover_image": "./../static/img/projects/educating.png",
         "category": "M",
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "title": "Social Training",
+        "title": "SOCIAL TRAINING",
         "description": "Designing gaze using state transition graphs to improve social interaction skills in children with autism.",
         "cover_image": "./../static/img/projects/social-training.png",
         "category": "M",
@@ -52,9 +52,9 @@
         ]
     },
     {
-        "title": "Responsible Robotics",
+        "title": "RESPONSIBLE COMPUTING",
         "description": "Ethical, and social awareness and risks of using technology in social spaces (trust, privacy, economic impact, andinclusio) inclusion)",
-        "cover_image": "./../static/img/projects/responsible-robotics.png",
+        "cover_image": "./../static/img/projects/responsible-computing.jpeg",
         "category": "M",
         "team": [
             {
@@ -84,7 +84,7 @@
         ]
     },
     {
-        "title": "Assistive Learning",
+        "title": "ASSISTIVE LEARNING",
         "description": "representing knowledge in robots for assistive learning among children with visual impairment",
         "cover_image": "./../static/img/projects/assistive-learning.png",
         "category": "M",
@@ -144,7 +144,7 @@
         "title": "Designing A Robotic Assistant Secretary For Institutions",
         "description": "The robotic campus secretary assistant was designed for administrative use on campus. The robot can be positioned at the entrance of the office, to answer frequently asked questions( e.g., about exam dates, labs, games, and upcoming events like career talks and hackathons). It uses face recognition and speech recognition modules of the NAO  robot. In designing this application , the student considered a number of responsible computing principles including inclusivity and accessibility , privacy, and empathy to design for inclusivity and accessibility, the students reduced the speech recognition confidence threshold to accommodate non-native English speakers and also included an option to adjust the robot volume for individuals with hearing challenges. For privacy, the robot  was designed to verbalize that the feedback collected will be used to improve student-admin interaction and will be kept anonymous.  To design empathetic interactions with the robot secretary and address social anxiety, the robot speech was designed to use a friendly and approachable tone. Through these collaborative design projects, students developed knowledge and understanding of key responsible computing principles.",
         "short_description": "The robotic campus secretary assistant was designed for administrative use on campus. The robot can be positioned at the entrance of the office, to answer frequently asked questions( e.g., about exam dates, labs, games, and upcoming events like career talks and hackathons).",
-        "cover_image": "./../static/img/projects/secretary-assistant2.png",
+        "cover_image": "./../static/img/projects/secretary-assistant.png",
         "category": "R",
         "team": [
             {
