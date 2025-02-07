@@ -15,7 +15,7 @@ Project Details
     </div>
     <!-- Project Description -->
     <div class="prose lg:prose-xl mb-8">
-        <p>{{ project.description }}</p>
+        <p>{{ project.description|safe }}</p>
     </div>
     <!-- Team Members -->
     <div class="mb-8">
@@ -24,7 +24,10 @@ Project Details
             {% for member in project.team.all %}
             <li>{{ member.first_name }} {{ member.last_name }}</li>
             {% empty %}
-            <li>No team members available.</li>
+            <li>
+                <!-- No team members available. -->
+
+            </li>
             {% endfor %}
         </ul>
     </div>

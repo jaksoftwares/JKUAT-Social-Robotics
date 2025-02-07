@@ -76,6 +76,21 @@
     },
     {
         "title": "",
+        "first_name": "Magret",
+        "last_name": "",
+        "specialty": " Msc. Software Engineering Student",
+        "profile_picture": "./../static/img/people/postgraduate/Magret.jpg",
+        "degree": "",
+        "pursuing": "Master of Science Degree in Software Engineering",
+        "focus_title": "Designing robot behavior",
+        "focus_short": "Developing a Personalized Interaction Model for Pepper Using Generative AI in ASD Speech Therapy",
+        "focus_long": "The research I do at the lab aims to assist in speech therapy using social robots for children with autism by integrating Pepper with generative AI and developing a model that provides personalized speech therapeutic activities.",
+        "quote": "A passionate software engineer who believes in using technology to create problem-solving solutions that make people's lives better",
+        "bio": "A dedicated and results-driven DevOps Engineer with a robust background in designing, implementing, and maintaining scalable and reliable systems",
+        "category": "P"
+    },
+    {
+        "title": "",
         "first_name": "Peter",
         "last_name": "Kabunyi",
         "specialty": "Msc. Software Engineering Student",
