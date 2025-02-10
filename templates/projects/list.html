@@ -19,13 +19,15 @@
             
             <!-- Project Description (Aligned to the left) -->
             <div class="flex-grow w-full sm:w-1/2 lg:w-2/3 text-left">
-                <h2 class="text-xl md:text-3xl font-bold text-red-700 mb-4 hover:text-red-800 transition-colors duration-300">{{ project.title }}</h2>
-                <p class="text-gray-600 text-justify leading-relaxed mb-6 tracking-wide">
-                    <!-- {% if project.description %}{{ project.description }}{% else %}No description available.{% endif %} -->
-                     {{project.description|safe}}
-                   
+                <div class="text-xl md:text-3xl font-raleway text-gray-800 font-bold">
+                    <h2>
+                        {{ project.title }}
+                    </h2>
+                </div>
                 
-                </p>
+                <div class="text-gray-600 text-lg text-justify leading-relaxed">
+                    {{ project.description|safe }}
+                </div>
                 
                 <!-- Learn More Button -->
                 <div class="mt-4">
@@ -58,5 +60,6 @@ body{
     top: 0;
     left: 0;
 }
+
 </style>
 {% endblock content %}

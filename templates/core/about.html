@@ -16,7 +16,7 @@
     
             <!-- Text Section -->
             <div class="w-full md:w-1/2 flex flex-col text-left gap-6 md:gap-8">
-                <h2 class="text-xl md:text-2xl font-raleway text-gray-800  font-bold">OUR TEAM</h2>
+                <h2 class="text-xl md:text-3xl font-raleway text-gray-800  font-bold">OUR TEAM</h2>
                 <p class="text-gray-600 text-justify  text-lg leading-relaxed">
                     We have a team of five MSc. Engineering students at the Department of Computing, JKUAT, supported under the Social Robotics Lab. 
                     The team is led by Dr. Eunice Njeri in collaboration with faculty members from the Department of Computing. 
@@ -39,7 +39,7 @@
         <div class="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 items-center">
             <!-- Text Section -->
             <div class="w-full md:w-1/2 p-4 md:p-0 md:pr-6 lg:pr-10 order-2 md:order-1">
-                <h2 class="text-xl md:text-2xl font-raleway text-gray-800 mb-4 font-bold">
+                <h2 class="text-xl md:text-3xl font-raleway text-gray-800 mb-4 font-bold">
                     Responsible Robotics in Social Environments
                     <!-- EXPLORING THE INTERSECTION OF TECHNOLOGY  AND HUMANITY -->
                 </h2>
@@ -81,27 +81,34 @@
             robotic applications that prioritize human welfare and ethical accountability.
         </p>
     </div> -->
-    <!-- Methodology Section -->
-    <div
+            <!-- Methodology Section -->
+        <div
         class="mb-16 flex flex-col gap-5 px-4 md:px-8 lg:px-16 xl:px-40 md:flex-row items-center justify-center bg-[#ECEDF2] py-8">
         <div class="md:pr-0 mb-8 md:mb-0">
             <img src="{% static 'img/about-image.png' %}" alt="about-image"
                 class="rounded-lg w-full md:w-auto h-auto md:h-[400px] shadow-md">
         </div>
         <div class="md:w-1/2">
-            <h2 class="text-xl md:text-2xl font-raleway text-gray-800 mb-2 font-bold">TEACHING RESPONSIBLE COMPUTING- METHODOLOGY</h2>
+            <h2 class="text-xl md:text-3xl font-raleway text-gray-800 mb-2 font-bold">
+                TEACHING RESPONSIBLE COMPUTING - METHODOLOGY
+            </h2>
             <span class="text-gray-800 mb-4 font-semibold italic">Training Approach</span>
-            <p class="text-gray-600 text-lg  text-justifyleading-relaxed">
+            
+            <p class="text-gray-600 text-lg text-justify leading-relaxed">
                 Our methodology emphasizes hands-on learning and real-world design scenarios to make Responsible Computing (RC) and ethics both practical and engaging.
-                <ul>
-               <li> Team-Based RC Projects – Students collaborate in teams to design projects that integrate RC principles, fostering critical thinking and ethical awareness.</li>
-                <li>Ethical Training Workshops – We conduct structured workshops incorporating design scenarios, case studies, and expert guest lectures to provide a comprehensive understanding of RC.</li>
-                <li>Industry and Academic Engagement – Guest lecturers from both industry and academia share insights on responsible technology development.</li>
-                <li>Applied Learning – Students apply the RC knowledge gained to their projects, enabling them to internalize ethical principles and implement them in real-world scenarios.</li>
-            </ul>
             </p>
+            
+            <ul class="text-gray-600 text-lg list-disc list-inside pl-10  space-y-2">
+                <li class="ml-8">Team-Based RC Projects – Students collaborate in teams to design projects that integrate RC principles, fostering critical thinking and ethical awareness.</li>
+                <li class="ml-8">Ethical Training Workshops – We conduct structured workshops incorporating design scenarios, case studies, and expert guest lectures to provide a comprehensive understanding of RC.</li>
+                <li class="ml-8">Industry and Academic Engagement – Guest lecturers from both industry and academia share insights on responsible technology development.</li>
+                <li class="ml-8">Applied Learning – Students apply the RC knowledge gained to their projects, enabling them to internalize ethical principles and implement them in real-world scenarios.</li>
+            </ul>
+            
+            
         </div>
-    </div>
+        </div>
+
     <!-- Team Section -->
     <!-- <div class="flex flex-col lg:flex-row gap-8 px-4 md:px-8 lg:px-16 xl:px-40 pb-10">
         <div class="lg:w-1/2">
@@ -151,42 +158,43 @@
             <p class="text-lg text-gray-700 font-bold">
                 Explore some of the impact the lab has made:
             </p>
-            <ul class="  space-y-2 text-lg text-gray-700 ">
+            <ul class="space-y-1 text-lg text-gray-600 pl-8 list-disc list-inside">
                 <li>
                     RCC programme 
-                    <a href="https://youtu.be/0Poy3Iavmeg" target="_blank" class="text-blue-600 hover:underline font-semibold">
+                    <a href="https://youtu.be/0Poy3Iavmeg" target="_blank" class="text-blue-600 hover:underline font-semibold block">
                         Click here to see the video
                     </a>
                 </li>
                 <li>
                     RCC programme and student impact 
                     <a href="https://foundation.mozilla.org/en/blog/robotics-and-ethics-intersect-for-rcc-awardee-jomo-kenyatta-university/" 
-                       target="_blank" class="text-blue-600 hover:underline font-semibold">
+                       target="_blank" class="text-blue-600 hover:underline font-semibold block">
                         Click here to see the blog
                     </a>
                 </li>
                 <li>
                     Responsible AI webinar 
                     <a href="https://discover.jkuat.ac.ke/responsible-ai-key-to-harnessing-its-potential/" 
-                       target="_blank" class="text-blue-600 hover:underline font-semibold">
+                       target="_blank" class="text-blue-600 hover:underline font-semibold block">
                         Click here to see the blog
                     </a>
                 </li>
                 <li>
                     Ethical design workshop 
                     <a href="https://discover.jkuat.ac.ke/integrating-african-perspectives-in-technology-and-design-processes/" 
-                       target="_blank" class="text-blue-600 hover:underline font-semibold">
+                       target="_blank" class="text-blue-600 hover:underline font-semibold block">
                         Click here to see the resource
                     </a>
                 </li>
                 <li>
                     Girls in robotics 
                     <a href="https://www.jkuat.ac.ke/programme-to-attract-young-women-to-stem-unveiled/#:~:text=To%unroll%this%practice%2C" 
-                       target="_blank" class="text-blue-600 hover:underline font-semibold">
+                       target="_blank" class="text-blue-600 hover:underline font-semibold block">
                         Click here to see the resource
                     </a>
                 </li>
             </ul>
+            
                         
             
         </div>

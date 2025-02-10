@@ -376,4 +376,20 @@ button:hover {
     width: 100%;
     height: auto;
 }
-    
+
+/* Justify text */
+.justify-text {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+
+/* Truncate project lines on small screens */
+@media (max-width: 768px) {
+    .line-clamp {
+        display: -webkit-box;
+        -webkit-line-clamp: 7; /* Show only 3 lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}

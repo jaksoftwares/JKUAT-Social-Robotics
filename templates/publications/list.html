@@ -11,8 +11,10 @@
     <div class="flex flex-col sm:flex-row gap-4 md:p-5 md:px-10">
         <img src="{% if publication.cover_image %}{{ publication.cover_image.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ publication.title }}" class="object-cover rounded-lg w-full sm:w-1/2 h-auto">
         <div class="">
-            <h2 class="text-xl font-semibold ">{{ publication.title }}</h2>
-            <p class="">{{ publication.description }}</p>
+            <h2 class="text-xl md:text-3xl font-raleway text-gray-800  font-bold ">{{ publication.title }}</h2>
+            <div>
+            <p class="text-gray-600 text-justify  text-lg leading-relaxed">{{ publication.description }}</p>
+            </div>
                 <a href="{{ publication.external_link }}" class="mt-4 w-fit flex justify-between items-center p-2  bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:border-2 hover:text-custom-lintingGreenDark transition duration-300" target="_blank">
                     <span>Go to Paper</span>
                     <i class="ml-2 fa fa-external-link" aria-hidden="true"></i>
@@ -27,8 +29,8 @@
     </div>
     <!-- Project Description -->
     <div class="flex-grow w-full sm:w-2/3 lg:w-3/4 flex flex-col md:px-10 ">
-        <h2 class="text-xl sm:text-md font-raleway font-semibold mb-2">{{ publication.title }}</h2>
-        <p class="text-sm sm:text-base text-gray-700 font-lato mb-4 md:px-">{{ publication.description }}</p>
+        <h2 class="text-xl md:text-2xl font-raleway text-gray-800  font-bold">{{ publication.title }}</h2>
+        <p class="text-gray-600 text-justify  text-lg leading-relaxed">{{ publication.description }}</p>
         <!-- Read More Button -->
         <div class="mt-4 w-fit flex justify-center items-center p-2 bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300">
             <a href="{{publication.external_link  }}" target='_blank' class="flex items-center">

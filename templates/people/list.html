@@ -9,7 +9,7 @@
 
 {% block content %}
 <div class="container mx-auto font-lato px-4">
-    <h2 class="text-xl md:text-3xl lg:text-3xl mt-4 md:mt-8 font-bold">PRINCIPAL INVESTIGATOR</h2>
+    <h2 class="mt-4 md:mt-8 text-xl md:text-3xl font-raleway text-gray-800  font-bold">PRINCIPAL INVESTIGATOR</h2>
     <div class="border"></div>
     <div class="my-8 md:my-16">
         <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10 justify-center">
@@ -25,12 +25,18 @@
                 </div>
                 <div>
                     <!-- <h4 class="italic text-lg md:text-xl">Specialization</h4> -->
-                    <p class="text-gray-600 text-justify">{{ principal_investigator.focus_long|safe}}</p>
+                    <p class="text-gray-600 text-justify break-words justify-text">{{ principal_investigator.focus_long|safe}}</p>
                 </div>
                 <a href="{% url 'people:detail' principal_investigator.slug %}" class="p-2 w-fit bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300">
                     <span class="text-xl">View Profile</span>
                     <i class="fa-solid fa-arrow-right-long ml-2"></i>
                 </a>
+               <!-- <a href="https://www.ro-man2025.org/" 
+                class="p-2 w-fit bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300">
+                    <span class="text-xl">View Profile</span>
+                    <i class="fa-solid fa-arrow-right-long ml-2"></i>
+                </a> -->
+
             </div>
         </div>
     </div>
@@ -53,7 +59,7 @@
                 </div>
                 <div>
                     <h4 class="italic text-lg md:text-xl">Specialization</h4>
-                    <p class="text-gray-600 text-justify">{{ admin.focus_long }}</p>
+                    <p class="text-gray-600 text-justify break-words">{{ admin.focus_long }}</p>
                 </div>
                 <a href="{% url 'people:detail' admin.slug %}" class="p-2 w-fit bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300">
                     <span class="text-xl">View Profile</span>
@@ -64,7 +70,7 @@
     </div>
 
 
-    <h2 class="text-xl md:text-3xl lg:text-3xl mt-4 md:mt-8 font-bold" >POSTGRADUATE STUDENTS</h2>
+    <h2 class="mt-4 md:mt-8 text-xl md:text-3xl font-raleway text-gray-800  font-bold" >POSTGRADUATE STUDENTS</h2>
     <div class="border border-black"></div>
     {% for postgrad in postgraduates %}
     <div class="my-8 md:my-16 {% if forloop.counter|divisibleby:2 %}{% endif %}">
@@ -76,7 +82,7 @@
                 </div>
                 <div>
                     <h4 class="italic text-lg md:text-xl">Specialization</h4>
-                    <p class="text-gray-600 text-justify">{{ postgrad.focus_long }}</p>
+                    <p class="text-gray-600 text-justify break-words">{{ postgrad.focus_long }}</p>
                 </div>
                 <a href="{% url 'people:detail' postgrad.slug %}" class="{% if forloop.counter|divisibleby:2 %}{% endif %} p-2 w-fit bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300">
                     <span class="text-xl">View Profile</span>
@@ -93,7 +99,7 @@
     {% endif %}
     {% endfor %}
     <div class="mt-16">
-        <h2 class="text-xl md:text-3xl lg:text-3xl mt-4 md:mt-8 font-bold">UNDERGRADUATE STUDENTS</h2>
+        <h2 class="mt-4 md:mt-8 text-xl md:text-3xl font-raleway text-gray-800  font-bold">UNDERGRADUATE STUDENTS</h2>
         <div class="border border-black mb-8"></div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="aspect-square border rounded-lg bg-custom-lintingGreenDark text-white flex flex-col p-6">

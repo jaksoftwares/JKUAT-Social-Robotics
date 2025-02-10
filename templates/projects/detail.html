@@ -17,20 +17,18 @@ Project Details
     <div class="prose lg:prose-xl mb-8">
         <p>{{ project.description|safe }}</p>
     </div>
+    {% if project.team.all %}
     <!-- Team Members -->
     <div class="mb-8">
         <h2 class="text-3xl font-semibold text-gray-900 mb-4">Team Members</h2>
         <ul class="list-disc list-inside text-gray-800 space-y-1">
             {% for member in project.team.all %}
-            <li>{{ member.first_name }} {{ member.last_name }}</li>
-            {% empty %}
-            <li>
-                <!-- No team members available. -->
-
-            </li>
+                <li>{{ member.first_name }} {{ member.last_name }}</li>
             {% endfor %}
         </ul>
     </div>
+{% endif %}
+
     <!-- Back to List Link -->
     <a href="{% url 'projects:list' %}" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
         <svg

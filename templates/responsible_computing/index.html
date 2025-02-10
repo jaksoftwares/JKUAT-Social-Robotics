@@ -24,13 +24,18 @@
         <div class="flex flex-col md:flex-row {% if forloop.counter|divisibleby:2 %} md:flex-row-reverse {% endif %} items-center md:items-start gap-6 md:flex-wrap">
             
             <!-- Content -->
-            <div class="flex-grow w-full md:w-1/2 text-left">
+            <div class="flex-grow w-full md:w-1/2 text-left ">
+                <div class="text-xl md:text-3xl font-raleway text-gray-800  font-bold">
                 <h3 class="text-xl md:text-2xl font-bold text-red-700 mb-4 hover:text-red-800 transition-colors duration-300">
                     {{ mainproject.title }}
                 </h3>
-                <p class="text-gray-600 text-justify leading-relaxed mb-6 tracking-wide">
-                    {{ mainproject.short_description|safe }}
-                </p>
+                </div>
+                
+                <div class="text-gray-600 text-justify leading-relaxed mb-6 tracking-wide">
+                    <p>
+                        {{ mainproject.short_description|safe }}
+                    </p>
+                </div>
                 
                 <!-- Learn More Button -->
                 {% if mainproject.get_absolute_url %}
@@ -66,16 +71,17 @@
             
             <!-- Project Description -->
             <div class="flex-grow w-full sm:w-1/2 lg:w-2/3 text-left">
+                
                 <h3 class="text-xl md:text-2xl font-bold text-red-700 mb-4 hover:text-red-800 transition-colors duration-300">
                     {{ project.title }}
                 </h3>
-                <p class="text-gray-600 text-justify leading-relaxed mb-6 tracking-wide">
+                <div class="text-gray-600 text-justify leading-relaxed mb-6 tracking-wide">
                     {% if project.short_description %}
                         {{ project.short_description }}
                     {% else %}
                         No description available.
                     {% endif %}
-                </p>
+               </div>
                 
                 <!-- Learn More Button -->
                 <div class="mt-4">
@@ -98,7 +104,7 @@
 </div>
 
 <div class="my-5 md:mt-14">
-    <h2 class="text-xl md:text-3xl  font-bold">RECENT ACTIVITIES</h2>
+    <h2 class="text-xl md:text-3xl  font-bold">RECENT EVENTS</h2>
     <div class="border"></div>
 </div>
 
@@ -147,7 +153,7 @@
         
         <div class="mt-4 lg:mt-4 flex flex-col flex-grow">
             <h2 class="text-lg font-bold mb-2">Integrating ethical perspectives within robotics curriculum</h2>
-            <p class="text-gray-600 text-sm">JKUAT is successfully cultivating the core values of RCC by introducing
+            <p class="text-gray-600 text-lg">JKUAT is successfully cultivating the core values of RCC by introducing
                 undergraduates to ethical perspectives within BSc Computer Science and BSc Technology courses. Their
                 goal? Equipping the next generation of tech builders with the critical skills to develop more inclusive,
                 healthier, and safer digital tools.</p>
@@ -162,6 +168,7 @@
     </div>
 </div>
 <div class="my-10 md:mt-14">
+</div>
 </div>
 <!-- Video  iframe Section -->
 <!-- <div class="relative w-full" style="padding-top: 42%;">
