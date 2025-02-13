@@ -11,6 +11,7 @@ class Person(ACCOUNTS_MODELS.Profile):
     UNDERGRADRUATE = "U"
     ADMIN = "A"
     PI = "I"
+    PROF="S"
     LECTURER = "L"
     MSC = "M"
     PERSON_CATEGORIES = (

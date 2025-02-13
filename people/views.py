@@ -24,6 +24,7 @@ class PersonListView(ListView):
         )
         context["principal_investigator"] = Person.objects.get(category=Person.PI)
         context["admin"] = Person.objects.get(category=Person.ADMIN)
+        context["prof"] = Person.objects.get(category=Person.PROF)
         context["principal_investigator"].focus_long = mark_safe(context["principal_investigator"].focus_long)
         return context
 
