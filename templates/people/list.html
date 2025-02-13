@@ -42,7 +42,33 @@
     </div>
 </div>
 
-
+<div class="border "></div>
+<div class="my-8 md:my-16">
+    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10 justify-center">
+        <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-full overflow-hidden flex items-center justify-center bg-gray-60">
+            <img src="{% if prof.profile_picture %}{{ prof.profile_picture.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" 
+                 alt="{{ prof.first_name }} {{ prof.last_name }}" 
+                 class="w-auto h-full object-cover">
+        </div>
+        
+        
+        
+        <div class="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
+            <div>
+                <h2 class="font-semibold text-xl md:text-2xl lg:text-3xl">{{prof.title}}{{ prof.first_name }} {{ prof.last_name }}</h2>
+                <h4 class="text-custom-red text-lg md:text-xl">{{ prof.specialty }}</h4>
+            </div>
+            <div>
+                <h4 class="italic text-lg md:text-xl">Specialization</h4>
+                <p class="text-gray-600 text-justify break-words">{{ prof.focus_long }}</p>
+            </div>
+            <a href="{% url 'people:detail' prof.slug %}" class="p-2 w-fit bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300">
+                <span class="text-xl">View Profile</span>
+                <i class="fa-solid fa-arrow-right-long ml-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
 
 
     <!-- <h2 class="text-2xl md:text-3xl lg:text-3xl mt-4 md:mt-8">Msc. Software Engineering</h2> -->
@@ -62,30 +88,6 @@
                     <p class="text-gray-600 text-justify break-words">{{ admin.focus_long }}</p>
                 </div>
                 <a href="{% url 'people:detail' admin.slug %}" class="p-2 w-fit bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300">
-                    <span class="text-xl">View Profile</span>
-                    <i class="fa-solid fa-arrow-right-long ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="border "></div>
-    <div class="my-8 md:my-16">
-        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10 justify-center">
-            <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
-                <img src="{% if prof.profile_picture %}{{ prof.profile_picture.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ prof.first_name }} {{ prof.last_name }}" class="w-full h-full object-cover rounded-full">
-            </div>
-            <div class="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
-                <div>
-                    <h2 class="font-semibold text-xl md:text-2xl lg:text-3xl">{{prof.title}}{{ prof.first_name }} {{ prof.last_name }}</h2>
-                    <h4 class="text-custom-red text-lg md:text-xl">{{ prof.specialty }}</h4>
-                </div>
-                <div>
-                    <h4 class="italic text-lg md:text-xl">Specialization</h4>
-                    <p class="text-gray-600 text-justify break-words">{{ prof.focus_long }}</p>
-                </div>
-                <a href="{% url 'people:detail' prof.slug %}" class="p-2 w-fit bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-2 border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300">
                     <span class="text-xl">View Profile</span>
                     <i class="fa-solid fa-arrow-right-long ml-2"></i>
                 </a>
@@ -138,9 +140,13 @@
             </div>
             {% for undergrad in undergraduates %}
             <div class="aspect-square rounded-lg shadow-lg flex flex-col overflow-hidden">
-                <div class="bg-black h-3/4">
-                    <img src="{% if undergrad.profile_picture %}{{ undergrad.profile_picture.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" alt="{{ undergrad.first_name }} {{ undergrad.last_name }}" class="w-full h-full object-cover rounded-t-lg">
+                <div class="bg-black h-3/4 flex items-center justify-center overflow-hidden rounded-t-lg">
+                    <img src="{% if undergrad.profile_picture %}{{ undergrad.profile_picture.url }}{% else %}{% static 'img/core/default-image.png' %}{% endif %}" 
+                         alt="{{ undergrad.first_name }} {{ undergrad.last_name }}" 
+                         class="w-full h-full object-fit object-center">
                 </div>
+                
+                
                 <div class="flex items-center justify-center gap-4 p-4 h-1/4 md:gap-20">
                     <div>
                         <h2 class="font-bold text-lg md:text-xl">{{ undergrad.first_name }} {{ undergrad.last_name }}</h2>
