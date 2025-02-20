@@ -9,6 +9,7 @@ from accounts import models as ACCOUNTS_MODELS
 class Person(ACCOUNTS_MODELS.Profile):
     POSTGRADUATE = "P"
     UNDERGRADRUATE = "U"
+    CURRENTUNDERGRADUATE = "C"
     ADMIN = "A"
     PI = "I"
     PROF="S"
@@ -21,6 +22,7 @@ class Person(ACCOUNTS_MODELS.Profile):
         (ADMIN, "Admin"),
         (PI, "PI"),
         (LECTURER, "Lecturer"),
+        (CURRENTUNDERGRADUATE, "Currentundergraduate")
     )
     degree = models.CharField("Degree", blank=True, null=True, max_length=200)
     specialty = models.CharField("Specialty", blank=True, null=True, max_length=200)

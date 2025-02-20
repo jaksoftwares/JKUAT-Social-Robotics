@@ -19,8 +19,11 @@ class PersonListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["postgraduates"] = Person.objects.filter(category=Person.POSTGRADUATE)
-        context["undergraduates"] = Person.objects.filter(
-            category=Person.UNDERGRADRUATE
+        # context["undergraduates"] = Person.objects.filter(
+        #     category=Person.UNDERGRADRUATE
+        # )
+        context["currentundergraduates"] = Person.objects.filter(
+            category=Person.CURRENTUNDERGRADUATE
         )
         context["principal_investigator"] = Person.objects.get(category=Person.PI)
         context["admin"] = Person.objects.get(category=Person.ADMIN)
