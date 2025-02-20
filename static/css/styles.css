@@ -287,14 +287,7 @@ table td {
     border-bottom: 1px solid #ccc;
 }
 
-button {
-    background: #1abc9c;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+
 
 button:hover {
     background: #16a085;
@@ -392,4 +385,27 @@ button:hover {
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
+}
+
+/* Ensure the section is positioned relative */
+.events-section {
+    position: relative;
+}
+
+/* Style the navigation buttons container */
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(-50%);
+    z-index: 50; /* Ensures the buttons are on top */
+}
+
+/* Ensure the buttons remain clickable */
+.nav-buttons button {
+    pointer-events: auto;
 }

@@ -103,63 +103,80 @@ Home
 
 
 <!-- Upcoming Events Section -->
-<section class="py-20 md:px-40 px-5 bg-white">
-    <div>
+<section class="events-section py-20 md:px-40 px-5 bg-white relative">  
+        
+    <div class="relative" >
+     
         {% if upcoming_events %}
-        <h2 class="text-xl md:text-3xl  text-center mb-5 md:mb-10 font-bold">UPCOMING EVENTS</h2>
+        <h2 class="text-xl md:text-3xl text-center mb-5 md:mb-10 font-bold">UPCOMING EVENTS</h2>
         {% else %}
-        <h2 class="text-xl md:text-3xl  text-center mb-5 md:mb-10 font-bold">RECENT EVENTS</h2>
+        <h2 class="text-xl md:text-3xl text-center mb-5 md:mb-10 font-bold">RECENT EVENTS</h2>
         {% endif %}
 
-        <!-- Swiper Carousel for events -->
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                {% for event in upcoming_events %}
-                <div class="swiper-slide">
-                    <div class="bg-custom-lightGray p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 w-full md:max-w-lg">
-                        <h3 class="text-2xl font-semibold">{{ event.title }}</h3>
-                        {% if event.cover_image %}
-                        <img src="{{ event.cover_image.url }}" alt="Event Image"
-                            class="w-full h-auto max-h-64 object-scale-down rounded-md mb-4">
-                        {% endif %}
-                        <p class="text-gray-600 text-lg ">{{ event.date_starting }}</p>
-                        <p class="text-gray-600 mb-6 text-lg">{{ event.location }}</p>
-                        <p class="text-gray-700 mb-4 text-lg">{{ event.description }}</p>
-                        <a href="{{ event.external_link }}"
-                            class="mt-auto self-end w-fit items-center px-4 py-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:text-custom-lintingGreenDark transition duration-300">
-                            Learn more
-                            <i class="ml-2 fa fa-external-link" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-                {% empty %}
-                {% for event in past_events %}
-                <div class="swiper-slide">
-                    <div class="bg-custom-lightGray p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 w-full md:max-w-lg">
-                        <h3 class="text-2xl font-semibold">{{ event.title }}</h3>
-                        {% if event.cover_image %}
-                        <img src="{{ event.cover_image.url }}" alt="Event Image"
-                            class="w-full h-auto max-h-64 object-scale-down rounded-md mb-4">
-                        {% endif %}
-                        <div class="flex gap-x-4">
-                            <p class="text-gray-600 text-lg">{{ event.date_starting }}</p>
-                            {% if event.date_ending %}
-                            - <p class="text-gray-600 text-lg">{{ event.date_ending }}</p>
+        <!-- Swiper Carousel for Events -->           
+            <div class="swiper-container">
+         
+                <div class="swiper-wrapper">
+                    {% for event in upcoming_events %}
+                    <div class="swiper-slide">
+                        <div class="bg-custom-lightGray p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 w-full md:max-w-lg">
+                            <h3 class="text-2xl font-semibold">{{ event.title }}</h3>
+                            {% if event.cover_image %}
+                            <img src="{{ event.cover_image.url }}" alt="Event Image"
+                                class="w-full h-auto max-h-64 object-scale-down rounded-md mb-4">
                             {% endif %}
+                            <p class="text-gray-600 text-lg ">{{ event.date_starting }}</p>
+                            <p class="text-gray-600 mb-6 text-lg">{{ event.location }}</p>
+                            <p class="text-gray-700 mb-4 text-lg">{{ event.description }}</p>
+                            <a href="{{ event.external_link }}"
+                                class="mt-auto self-end w-fit px-4 py-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:text-custom-lintingGreenDark transition duration-300">
+                                Learn more
+                                <i class="ml-2 fa fa-external-link" aria-hidden="true"></i>
+                            </a>
                         </div>
-                        <p class="text-gray-600 mb-6 text-lg">{{ event.location }}</p>
-                        <p class="text-gray-600 mb-4 text-lg">{{ event.description }}</p>
-                        <a href="{{ event.external_link }}"
-                            class="mt-auto self-end w-fit items-center px-4 py-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:text-custom-lintingGreenDark transition duration-300">
-                            Learn more
-                            <i class="ml-2 fa fa-external-link" aria-hidden="true"></i>
-                        </a>
                     </div>
+                    {% empty %}
+                    {% for event in past_events %}
+                    <div class="swiper-slide">
+                        <div class="bg-custom-lightGray p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 w-full md:max-w-lg">
+                            <h3 class="text-2xl font-semibold">{{ event.title }}</h3>
+                            {% if event.cover_image %}
+                            <img src="{{ event.cover_image.url }}" alt="Event Image"
+                                class="w-full h-auto max-h-64 object-scale-down rounded-md mb-4">
+                            {% endif %}
+                            <div class="flex gap-x-4">
+                                <p class="text-gray-600 text-lg">{{ event.date_starting }}</p>
+                                {% if event.date_ending %}
+                                - <p class="text-gray-600 text-lg">{{ event.date_ending }}</p>
+                                {% endif %}
+                            </div>
+                            <p class="text-gray-600 mb-6 text-lg">{{ event.location }}</p>
+                            <p class="text-gray-600 mb-4 text-lg">{{ event.description }}</p>
+                            <a href="{{ event.external_link }}"
+                                class="mt-auto self-end w-fit px-4 py-2 bg-custom-lintingGreenDark text-white border-2 border-custom-lintingGreenDark rounded-lg hover:bg-transparent hover:text-custom-lintingGreenDark transition duration-300">
+                                Learn more
+                                <i class="ml-2 fa fa-external-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endfor %}
                 </div>
-                {% endfor %}
-                {% endfor %}
-            </div>
+               <!-- Navigation Buttons (Centered Vertically in Section) -->
+               <div class="nav-buttons ">
+                    <button id="prevBtn"
+                        class="absolute left-0 -ml-14 md:-ml-16  bg-custom-lintingGreenDark  text-white w-24 h-24 flex items-center justify-center rounded-full shadow-lg hover:bg-custom-lintingGreenDark transition duration-300 z-50">
+                        <i class="fa fa-chevron-left text-xl"></i>
+                    </button>
+
+                    <button id="nextBtn"
+                        class="absolute right-0 -mr-14 md:-mr-16   bg-custom-lintingGreenDark text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:bg-gray-600 transition duration-300 z-50">
+                        <i class="fa fa-chevron-right text-xl"></i>
+                    </button>  
+                </div>              
+            </div>    
         </div>
+
     </div>
 </section>
 

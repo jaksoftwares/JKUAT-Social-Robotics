@@ -1,50 +1,101 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("JavaScript loaded successfully!");
 
-    // Ensure Swiper is properly initialized for your general swiper usage (including partners)
+    // Initialize Swiper with autoplay and navigation
     var swiper = new Swiper('.swiper-container', {
         loop: true,
-        slidesPerView: 1, // Default: Show 1 card per view (small screens)
-        spaceBetween: 10, // Space between slides
-        loop: true, // Enable infinite scrolling
+        slidesPerView: 1,
+        spaceBetween: 10,
         autoplay: {
-            delay: 3000, // Auto-slide every 3 seconds
+            delay: 5000, // Pause for 5 seconds before sliding
+            disableOnInteraction: true, // Stops autoplay if user interacts
+        },
+        navigation: {
+            nextEl: "#nextBtn",
+            prevEl: "#prevBtn",
         },
         breakpoints: {
-            768: { // Medium screens and up (tablets)
-                slidesPerView: 2,
-                spaceBetween: 15,
-            },
-            1024: { // Large screens (desktops)
-                slidesPerView: 3,
-                spaceBetween: 20,
-            }
-        }
+            768: { slidesPerView: 2, spaceBetween: 15 },
+            1024: { slidesPerView: 3, spaceBetween: 20 },
+        },
     });
 
     console.log("Swiper initialized successfully!");
 
-    // Carousel Scroll Controls (For non-Swiper elements, if any)
-    const carousel = document.getElementById('carousel');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+    // Pause autoplay when hovering over the swiper container
+    const swiperContainer = document.querySelector('.swiper-container');
 
-    if (carousel && prevBtn && nextBtn) {
-        console.log("Carousel controls found!");
+    swiperContainer.addEventListener('mouseenter', () => {
+        swiper.autoplay.stop();
+        console.log("Autoplay paused on hover");
+    });
 
-        // Calculate the width of a single slide dynamically
-        const slideWidth = document.querySelector('.w-full')?.clientWidth || 300;
+    swiperContainer.addEventListener('mouseleave', () => {
+        swiper.autoplay.start();
+        console.log("Autoplay resumed after hover");
+    });
 
-        prevBtn.addEventListener('click', () => {
-            carousel.scrollBy({ left: -slideWidth, behavior: 'smooth' });
-        });
+    // Pause autoplay on mobile when touching
+    swiperContainer.addEventListener('touchstart', () => {
+        swiper.autoplay.stop();
+        console.log("Autoplay paused on touch");
+    });
 
-        nextBtn.addEventListener('click', () => {
-            carousel.scrollBy({ left: slideWidth, behavior: 'smooth' });
-        });
-    } else {
-        console.warn("Carousel elements not found! Check HTML structure.");
-    }
+    swiperContainer.addEventListener('touchend', () => {
+        swiper.autoplay.start();
+        console.log("Autoplay resumed after touch");
+    });
+
+
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     console.log("JavaScript loaded successfully!");
+
+//     // Ensure Swiper is properly initialized for your general swiper usage (including partners)
+//     var swiper = new Swiper('.swiper-container', {
+//         loop: true,
+//         slidesPerView: 1, // Default: Show 1 card per view (small screens)
+//         spaceBetween: 10, // Space between slides
+//         loop: true, // Enable infinite scrolling
+//         autoplay: {
+//             delay: 3000, // Auto-slide every 3 seconds
+//         },
+//         breakpoints: {
+//             768: { // Medium screens and up (tablets)
+//                 slidesPerView: 2,
+//                 spaceBetween: 15,
+//             },
+//             1024: { // Large screens (desktops)
+//                 slidesPerView: 3,
+//                 spaceBetween: 20,
+//             }
+//         }
+//     });
+
+//     console.log("Swiper initialized successfully!");
+
+    // // Carousel Scroll Controls (For non-Swiper elements, if any)
+    // const carousel = document.getElementById('carousel');
+    // const prevBtn = document.getElementById('prevBtn');
+    // const nextBtn = document.getElementById('nextBtn');
+
+    // if (carousel && prevBtn && nextBtn) {
+    //     console.log("Carousel controls found!");
+
+    //     // Calculate the width of a single slide dynamically
+    //     const slideWidth = document.querySelector('.w-full')?.clientWidth || 300;
+
+    //     prevBtn.addEventListener('click', () => {
+    //         carousel.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+    //     });
+
+    //     nextBtn.addEventListener('click', () => {
+    //         carousel.scrollBy({ left: slideWidth, behavior: 'smooth' });
+    //     });
+    // } else {
+    //     console.warn("Carousel elements not found! Check HTML structure.");
+    // }
 
     // Continuous Typing and Deleting Animation
     function animateText() {
