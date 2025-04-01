@@ -59,6 +59,7 @@ THIRD_PARTY_APPS = [
     "django_browser_reload",
     "crispy_tailwind",
     "crispy_forms",
+    'compressor',
     # "fontawesomefree",
 ]
 
@@ -206,7 +207,12 @@ else:
     # For production
     # Use WhiteNoise for efficient static file serving
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# settings.py
+WHITENOISE_AUTOREFRESH = False  # Disable auto-refreshing static files in development
+WHITENOISE_KEEP_ONLY_HASHED_FILES = True  # Keep only hashed static files for production
 
+# Make sure the following header is being added:
+WHITENOISE_EXPIRE_HEADERS = True
 
 
 # Media files
