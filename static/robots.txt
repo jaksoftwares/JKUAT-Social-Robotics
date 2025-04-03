@@ -1,15 +1,8 @@
 # Allow all search engines to crawl everything
 User-agent: *
-Disallow: 
-
-# Block search engines from crawling admin pages
 Disallow: /admin/
-
-# Block search engines from crawling user login pages
 Disallow: /login/
 Disallow: /logout/
-
-# Block search engines from crawling any private or sensitive pages
 Disallow: /private/
 
 # Allow specific bots access to specific pages
