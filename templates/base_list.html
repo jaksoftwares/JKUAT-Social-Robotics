@@ -1,26 +1,88 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Dynamic Title -->
         <title>JKUAT Social Robotics | {% block title %}{% endblock title %}</title>
+
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="{% block description %}Explore the JKUAT Social Robotics Lab for AI and robotics research and innovation.{% endblock description %}">
+        <meta name="keywords" content="{% block keywords %}Social Robotics, AI, Robotics, JKUAT, Innovation, Engineering, Technology{% endblock keywords %}">
+        
+        <!-- Open Graph Meta Tags for Social Sharing -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{% block og_title %}JKUAT Social Robotics Lab{% endblock og_title %}">
+        <meta property="og:description" content="{% block og_description %}Discover innovative AI and robotics research at JKUAT Social Robotics Lab.{% endblock og_description %}">
+
+        <meta property="og:image" content="{% static 'img/og-image.jpg' %}">
+ 
+        <meta property="og:site_name" content="JKUAT Social Robotics Lab">
+        
+        <!-- Twitter Card Meta Tags for Optimized Social Sharing -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{% block twitter_title %}JKUAT Social Robotics Lab{% endblock twitter_title %}">
+        <meta name="twitter:description" content="{% block twitter_description %}Cutting-edge research in robotics and AI at JKUAT Social Robotics Lab.{% endblock twitter_description %}">
+    
+        <meta name="twitter:image" content="{% static 'img/twitter-card.jpg' %}">
+
+        <!-- Favicon -->
+        <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+
+        <!-- Link to CSS Dependencies (Ensure it's optimized with critical styles first) -->
         {% include './dependancies/css.html' %}
+
+        <!-- Optional: Adding Google Fonts or Custom Fonts for Better User Experience -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        
+        <!-- Structured Data: JSON-LD for Rich Snippets in Google Search Results -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "JKUAT Social Robotics Lab",
+                "logo": "{% static 'img/logo.png' %}",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+254 000 000 000",
+                    "contactType": "customer service"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/jkuatsocialrobotics",
+                    "https://twitter.com/jkuatsocialrobotics",
+                    "https://www.linkedin.com/company/jkuatsocialrobotics"
+                ]
+            }
+        </script>
+        
     </head>
     <body>
         {% include './components/header.html' %}
         {% include './components/sidebar.html' %}
+        
+        <!-- Banner Section -->
         <div class="bg-custom-lintingGreenDark p-8">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-
                 <h1 class="text-white font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center sm:text-left mt-10 mb-6 px-4">
                     {% block banner_title %}{% endblock banner_title %}
                 </h1>
             </div>
-
         </div>
+
+        <!-- Content Section -->
         <div class="container mx-auto md:p-0 p-4">
             {% block content %}{% endblock content %}
         </div>
+
         {% include './components/footer.html' %}
+
+        <!-- JavaScript Dependencies -->
+        {% include './dependancies/js.html' %}
+        
+        <!-- Optional: Add Any Custom Scripts -->
+        <!-- <script src="{% static 'js/index.js' %}"></script> -->
     </body>
 </html>

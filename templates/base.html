@@ -1,21 +1,94 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JKUAT Social Robotics | {% block title %}{% endblock title %}</title>
-        {% include './dependancies/css.html' %}
-    </head>
-    <body>
-        {% include './components/header.html' %}
-        {% include './components/sidebar.html' %}
-        {% block body %}{% endblock body %}
-        {% include './components/footer.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title Tag: Dynamic Title for Each Page -->
+    <title>{% block title %}{% endblock title %}</title>
+
+    <!-- Meta Description: Dynamic Description for Each Page -->
+    <meta name="description" content="{% block description %}Learn more about JKUAT Social Robotics Lab, focusing on AI, Robotics, and innovative research.{% endblock description %}">
+
+    <!-- Meta Keywords: Add targeted keywords relevant to each page -->
+    <meta name="keywords" content="{% block keywords %}Social Robotics, AI, Robotics, Machine Learning, JKUAT, Engineering, Innovation{% endblock keywords %}">
+
+    <!-- Open Graph Meta Tags for Social Media Optimization -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% block og_title %}JKUAT Social Robotics Lab{% endblock og_title %}">
+    <meta property="og:description" content="{% block og_description %}Discover the JKUAT Social Robotics Lab's mission and research on AI and robotics.{% endblock og_description %}">
+    <meta property="og:image" content="{% block og_image %}{% static 'img/og-image.jpg' %}{% endblock og_image %}">
+    <meta property="og:url" content="{% block og_url %}{% url 'core:home' %}{% endblock og_url %}">
+    <meta property="og:site_name" content="JKUAT Social Robotics Lab">
+
+    <!-- favicon -->
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
 
 
-        {% include './dependancies/js.html' %}
-        <!-- <script src="{% static 'js/index.js' %}"></script> -->
-    </body>
+    <!-- Twitter Card Meta Tags for Optimized Social Sharing on Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}JKUAT Social Robotics Lab{% endblock twitter_title %}">
+    <meta name="twitter:description" content="{% block twitter_description %}Learn about JKUAT's cutting-edge research in robotics and AI.{% endblock twitter_description %}">
+    <meta name="twitter:image" content="{% block twitter_image %}{% static 'img/twitter-card.jpg' %}{% endblock twitter_image %}">
+    <meta name="twitter:creator" content="@jkuatsocialrobotics">
+
+    <!-- Structured Data: JSON-LD for Rich Snippets in Google Search Results -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "JKUAT Social Robotics Lab",
+            "url": "https://www.jkuatsocialroboticslab.com",
+            "logo": "{% static 'img/logo.png' %}",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+254 000 000 000",
+                "contactType": "customer service"
+            },
+            "sameAs": [
+                "https://www.facebook.com/jkuatsocialrobotics",
+                "https://twitter.com/jkuatsocialrobotics",
+                "https://www.linkedin.com/company/jkuatsocialrobotics"
+            ]
+        }
+    </script>
+
+    <!-- Favicons -->
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+
+    <!-- Include Your CSS Dependencies -->
+    {% include './dependancies/css.html' %}
+
+    <!-- Additional Meta Tags for Better Performance -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="JKUAT Social Robotics Lab">
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- Fonts (Add Google Fonts or Custom Fonts for Better User Experience) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Include Header -->
+    {% include './components/header.html' %}
+
+    <!-- Include Sidebar (if any) -->
+    {% include './components/sidebar.html' %}
+
+    <!-- Body Content -->
+    {% block body %}{% endblock body %}
+
+    <!-- Include Footer -->
+    {% include './components/footer.html' %}
+
+    <!-- Include Your JavaScript Dependencies -->
+    {% include './dependancies/js.html' %}
+
+    <!-- Optional: Add Any Custom Scripts -->
+    <!-- <script src="{% static 'js/index.js' %}"></script> -->
+</body>
 
 </html>

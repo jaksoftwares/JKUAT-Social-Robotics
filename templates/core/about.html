@@ -1,6 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} About {% endblock title %}
+{% block title %} {{ title }} {% endblock title %}
+{% block extra_head %}
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="{{ description }}">
+
+    <!-- Meta Keywords for SEO -->
+    <meta name="keywords" content="{{ keywords }}">
+
+    <!-- Open Graph Meta Tags for Social Media Optimization -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ og_title }}">
+    <meta property="og:description" content="{{ og_description }}">
+    <meta property="og:image" content="{% static og_image %}">
+    <meta property="og:url" content="{{ og_url }}">
+    <meta property="og:site_name" content="JKUAT Social Robotics Lab">
+
+    <!-- Twitter Card Meta Tags for Optimized Social Sharing on Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ twitter_title }}">
+    <meta name="twitter:description" content="{{ twitter_description }}">
+    <meta name="twitter:image" content="{% static twitter_image %}">
+    <meta name="twitter:creator" content="@jkuatsocialrobotics">
+
+    <!-- Canonical Link to Prevent Duplicate Content Issues -->
+    <link rel="canonical" href="{{ og_url }}">
+{% endblock extra_head %}
 
 {% block body %}
 <div class="bg-white">

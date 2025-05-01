@@ -29,7 +29,21 @@ def home(request):
 
 
 def about(request):
-    return render(request, "core/about.html")
+    # SEO content for the About page
+    seo_data = {
+        "title": "About Us | JKUAT Social Robotics Lab",
+        "description": "Learn about the mission, vision, and innovative work done by the JKUAT Social Robotics Lab in AI, Robotics, and Engineering.",
+        "keywords": "Social Robotics, AI, Robotics, JKUAT, Engineering, Innovation, Robotics Lab, About Us",
+        "og_title": "About JKUAT Social Robotics Lab",
+        "og_description": "Discover the vision and mission behind the JKUAT Social Robotics Lab and the cutting-edge research in Robotics and AI.",
+        "og_image": "img/og-image-about.jpg",  # Make sure this image exists in your static folder
+        "og_url": request.build_absolute_uri(),  # This will dynamically get the full URL of the page
+        "twitter_title": "About JKUAT Social Robotics Lab",
+        "twitter_description": "Explore the innovative research happening at the JKUAT Social Robotics Lab.",
+        "twitter_image": "img/twitter-card-about.jpg",  # Make sure this image exists in your static folder
+    }
+
+    return render(request, "core/about.html", seo_data)
 
 
 def admin(request):

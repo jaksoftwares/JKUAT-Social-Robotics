@@ -1,11 +1,43 @@
 {% extends 'base_list.html' %}
 {% load static %}
 
-{% block title %}Team{% endblock title %}
+{% block title %}
+Our Team | JKUAT Social Robotics Lab
+{% endblock title %}
 
-{% block banner_title %}
-    Our Team
-{% endblock banner_title %}
+{% block description %}
+Meet the dedicated team behind the JKUAT Social Robotics Lab, experts in robotics, artificial intelligence, and innovation.
+{% endblock description %}
+
+{% block keywords %}
+Team, Robotics, AI, Engineers, JKUAT, Social Robotics Lab, Experts, Technology, Research, Innovation
+{% endblock keywords %}
+
+{% block og_title %}
+Meet Our Expert Team at JKUAT Social Robotics Lab
+{% endblock og_title %}
+
+{% block og_description %}
+Discover the talented team driving innovation and cutting-edge research in robotics and AI at JKUAT Social Robotics Lab.
+{% endblock og_description %}
+
+{% block og_image %}
+{% static 'img/team-og-image.jpg' %}
+{% endblock og_image %}
+
+{% block twitter_title %}
+Meet the Team | JKUAT Social Robotics Lab
+{% endblock twitter_title %}
+
+{% block banner_title %} Our Team {% endblock banner_title %} 
+
+{% block twitter_description %}
+Get to know the experts behind our innovative work in robotics and AI at JKUAT Social Robotics Lab.
+{% endblock twitter_description %}
+
+{% block twitter_image %}
+{% static 'img/team-twitter-card.jpg' %}
+{% endblock twitter_image %}
 
 {% block content %}
 <div class="container mx-auto font-lato px-4">

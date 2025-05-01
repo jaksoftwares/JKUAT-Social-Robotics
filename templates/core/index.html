@@ -1,12 +1,41 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block title %}
-Home
+Home | JKUAT Social Robotics Lab
 {% endblock title %}
 
+{% block description %}
+Welcome to JKUAT Social Robotics Lab, where innovation meets robotics and artificial intelligence research.
+{% endblock description %}
 
+{% block keywords %}
+Home, JKUAT, Social Robotics, AI, Robotics, Research, Innovation, Technology
+{% endblock keywords %}
+
+{% block og_title %}
+Welcome to JKUAT Social Robotics Lab
+{% endblock og_title %}
+
+{% block og_description %}
+Explore our cutting-edge research on robotics, AI, and how we are advancing technology at JKUAT.
+{% endblock og_description %}
+
+{% block og_image %}
+{% static 'img/og-home-image.jpg' %}
+{% endblock og_image %}
+
+{% block twitter_title %}
+JKUAT Social Robotics Lab | Innovation in Robotics and AI
+{% endblock twitter_title %}
+
+{% block twitter_description %}
+Join us at JKUAT Social Robotics Lab and discover our innovative projects on AI and robotics that are changing the future of technology.
+{% endblock twitter_description %}
+
+{% block twitter_image %}
+{% static 'img/twitter-home-card.jpg' %}
+{% endblock twitter_image %}
 
 {% block body %}
 <!-- Hero Section -->
