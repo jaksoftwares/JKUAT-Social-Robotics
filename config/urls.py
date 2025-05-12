@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import TemplateView
+from django.views.static import serve
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -22,9 +22,9 @@ urlpatterns = [
         include("responsible_computing.urls", namespace="responsible_computing"),
     ),
     path("dashboard/", include("dashboard.urls", namespace='dashboard')),
-    path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
-    path("sitemap.xml", TemplateView.as_view(template_name="sitemap.xml", content_type="application/xml")),
-    path("BingSiteAuth.xml", TemplateView.as_view(template_name="BingSiteAuth.xml", content_type="application/xml")),
+    path("robots.txt", serve, {'path': 'robots.2bc9352e8c4d.txt', 'document_root': settings.STATIC_ROOT}),
+    path("sitemap.xml", serve, {'path': 'sitemap.8e420fb99fae.xml', 'document_root': settings.STATIC_ROOT}),
+    path("BingSiteAuth.xml", serve, {'path': 'BingSiteAuth.xml', 'document_root': settings.STATIC_ROOT}),
 ]
 
 
