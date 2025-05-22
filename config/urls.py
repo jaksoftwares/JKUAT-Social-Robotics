@@ -21,10 +21,9 @@ urlpatterns = [
         "responsible_computing/",
         include("responsible_computing.urls", namespace="responsible_computing"),
     ),
-    path("dashboard/", include("dashboard.urls", namespace='dashboard')),
-    path("robots.txt", serve, {'path': 'robots.2bc9352e8c4d.txt', 'document_root': settings.STATIC_ROOT}),
-    path("sitemap.xml", serve, {'path': 'sitemap.8e420fb99fae.xml', 'document_root': settings.STATIC_ROOT}),
-    path("BingSiteAuth.xml", serve, {'path': 'BingSiteAuth.xml', 'document_root': settings.STATIC_ROOT}),
+    path("robots.txt", serve, {'path': 'seo/robots.txt', 'document_root': settings.STATIC_ROOT}),
+    path("sitemap.xml", serve, {'path': 'seo/sitemap.xml', 'document_root': settings.STATIC_ROOT}),
+    path("BingSiteAuth.xml", serve, {'path': 'seo/BingSiteAuth.xml', 'document_root': settings.STATIC_ROOT}),
 ]
 
 
